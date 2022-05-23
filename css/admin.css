@@ -1,0 +1,158 @@
+html {
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* FOR THE SIDEBAR */
+
+.container_left {
+    height: 100%; 
+    flex: 1;
+    width: 100px; 
+    background-color:#f1787c;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: fixed;
+}
+
+.menu_categories_icons{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.menu_categories:hover{
+    background-color: #da5055;
+}
+
+
+/* FOR THE CONTENT */
+
+.container_right{
+    margin: 0 0 0 100px;
+    flex: 4;
+    background-color: #eae8e1;
+    overflow-y: scroll;
+}
+
+.homeHeader1{
+    font-family: 'Dosis', sans-serif;
+    font-size: 5.5vw;
+    color: #ffffff;
+    display: block;
+    padding: 100px 0 100px 0px;
+    margin: 0 0 0 5vw;
+    text-align: left;
+}
+
+.homeHeader2{
+    font-family: 'Dosis', sans-serif;
+    font-size: calc(10px + 2vw);
+    color: #000000;
+    padding: 0;
+    margin: 15px 0 0 0;
+}
+
+.h2_reversecolor{
+    color: #ffffff;
+}
+
+p{
+    font-family: 'Inter', sans-serif;
+    font-size: calc(5px + 1vw);
+    color: #000000;
+}
+
+.p_reversecolor{
+    color: #ffffff;
+}
+
+.homeHeader3{
+    font-family: 'Dosis', sans-serif;
+    font-size: calc(10px + 1vw);
+    color: #000000;
+    padding: 0;
+    margin: 0;
+}
+
+
+.h3_reversecolor{
+    color: #f1787c;
+    text-shadow: 3px 3px 8px #000000;
+}
+
+.pane {
+    margin: 50px 7% 0 7%;
+    padding: 0 0 50px 0;
+}
+
+form {
+    margin: 50px 7% 0 7%;
+    padding: 0 0 50px 0;
+}
+
+form input[type="text"], input[type="email"], input[type="date"], input[type="file"]{
+    font-family: 'Inter', sans-serif;
+    outline: 0;
+    background: #cfcfcf;
+    width: 100%;
+    border: 0;
+    padding: 15px 0px 15px 30px;
+    margin: 7px 0 12px 0;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+
+/* LESSONS PAGE */
+.trumbowyg-editor{
+    background-color: #ffffff;
+}
+tr, td {
+    border: 1px solid black !important;
+}
+
+#viewLessonsPage, #lessonForm {
+    display: none;
+}
+
+.topic {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 2px solid #f1787c;
+    padding: 2vw;
+    word-break: break-word;
+    margin-left: 3vw;
+}
+
+.topicTitle{
+    margin-left: 3vw;
+}
+
+.errorMsg, #successMsg{
+    display: none;
+    background-color: #f08080;
+    padding: 0.5em;
+    border: 1px solid red;
+    border-radius: 20px;
+    color: white;
+    text-align: center; 
+}
+
+#successMsg {
+    background-color: #00A878;
+    border: 1px solid #388659;
+}

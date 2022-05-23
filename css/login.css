@@ -1,0 +1,137 @@
+html{
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-image: url(images/background_registration.avif);
+}
+
+.container_left{
+    min-height: 100%;
+    flex: 1;
+    min-width: 300px;
+    background-color: #ffffff;  
+}
+
+.form{
+    width: 75%;
+    margin: auto;
+    padding-top: 20%;
+}
+
+.form input {
+    font-family: 'Inter', sans-serif;
+    outline: 0;
+    background: #cfcfcf;
+    width: 100%;
+    border: 0;
+    padding: 15px 0px 15px 30px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.form button{
+    background: #f1787c;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 15px;
+    width: 70%;  
+    border-radius: 20px;
+    border: none;
+    padding: 12px 0 12px 0;
+    margin: 20px 0 0px 15%;
+}
+
+.form button:hover{
+    background: #f1a3a6;
+}
+
+.container_right{
+    flex: 4;  
+}
+
+/* BOX SHADOW */
+h1{
+   margin-left: 10%;
+   margin-top: 100px;
+   width: 60%;
+   font-family: 'Dosis', sans-serif;
+   font-size: 5vw;
+   color: #f1787c;
+   text-shadow: 3px 3px 8px #000000;
+}
+
+h2{
+    margin-left: 10%;
+    width: 70%;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2vw;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.login_option{
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 0 30px 0 43px;
+    cursor: pointer;
+}
+
+#loginErrorMsg, #registerErrorMsg, #registerSuccessMsg{
+    display: none;
+    background-color: #f08080;
+    padding: 0.5em;
+    border: 1px solid red;
+    border-radius: 20px;
+    color: white;
+    text-align: center; 
+}
+
+#registerSuccessMsg{
+    background-color: #00A878;
+    border: 1px solid #388659;
+}
+
+#formRegister{
+    display: none;
+}
+
+table{
+    padding: 10px 0 10px 2.5vw;
+}
+
+tr{
+    width: 90%;
+}
+
+.bday_category{
+    height: 35px;
+}
+  
+form input[type="radio"], input[type="date"]{
+  margin-top: 0px;
+  margin-right: -10px;
+  padding-left: 15px;
+}
+
+.registration_option{
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 0 20px 0 43px;
+    cursor: pointer;
+    
+}
+
+.registration_option a, .login_option a{
+    color: rgb(45, 45, 255);
+    text-decoration: underline;
+}
+
+  
