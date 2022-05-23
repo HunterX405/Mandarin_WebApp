@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     //Redirect user to login page when home is accessed via link
     if(!sessionStorage.getItem("user")){
-        window.location.href="index.html";
+        window.location.href="index.php";
     }else{
         //Only show home page when user is logged in.
         $("html").css("visibility", "visible");
@@ -196,7 +196,7 @@ $(document).ready(function(){
                 //Hide home page html to avoid loading home page via link access when already logged out
                 $("html").css("visibility", "hidden");
                 sessionStorage.removeItem("user");
-                window.location.href="index.html";
+                window.location.href="index.php";
             },
             Cancel: function() {
                 $( this ).dialog( "close" );

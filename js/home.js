@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     //Redirect user to login page when home is accessed via link
     if(!sessionStorage.getItem("user")){
-        window.location.href="index.html";
+        window.location.href="index.php";
     }else{
         //Only show home page when user is logged in.
         $("html").css("visibility", "visible");
@@ -326,7 +326,7 @@ $(document).ready(function(){
                     //If user data is corrupted, go back to login page to refresh user data
                     }else if(changePassObj.message == "Account Not Found!"){
                         sessionStorage.removeItem("user");
-                        window.location.href="index.html";
+                        window.location.href="index.php";
                     
                     //Changed Password Successfully
                     }else{
@@ -349,7 +349,7 @@ $(document).ready(function(){
             success: function (deleteAccountResponse) {
                 if(deleteAccountResponse == "Success!"){
                     sessionStorage.removeItem("user");
-                    window.location.href="index.html";
+                    window.location.href="index.php";
                 }else{
                     $("#profileError").text(deleteAccountResponse).show(200);
                 }
@@ -440,7 +440,7 @@ $("#addLesson").click(function () {
                 //Hide home page html to avoid loading home page via link access when already logged out
                 $("html").css("visibility", "hidden");
                 sessionStorage.removeItem("user");
-                window.location.href="index.html";
+                window.location.href="index.php";
             },
             Cancel: function() {
                 $( this ).dialog( "close" );

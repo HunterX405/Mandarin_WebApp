@@ -1,7 +1,7 @@
 <?php
     // Redirect to Login Page when accessed via link.
     if (!isset($_POST['loggedUser'])) {
-        header('location: index.html');
+        header('location: index.php');
         exit;
     }
 
