@@ -1,8 +1,11 @@
 {
+    "name" : "e-learning/mandarin",
+    "description": "An E-learning Website for Mandarin Language",
+    "license": "proprietary",
     "require" : {
         "php" : ">=8.1.5",
-        "components/jquery" : "3.6.0",
-        "components/jqueryui" : "1.12.1",
+        "components/jquery" : "~3.6",
+        "components/jqueryui" : "~1.12",
         "ext-mbstring": "*"
     }
 }
