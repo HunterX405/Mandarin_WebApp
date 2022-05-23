@@ -59,7 +59,7 @@
         $name->appendChild($middleName);
         $name->appendChild($lastName);
 
-        $image = $xml->createElement("profileImage", 'css/images/profile_icon.avif');
+        $image = $xml->createElement("profileImage", '/images/profile_icon.avif');
         $password = $xml->createElement("password", $regPass);
         $homeAddress = $xml->createElement("homeAddress", $regHome);
         $school = $xml->createElement("school", $regSchool);
