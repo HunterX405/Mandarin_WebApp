@@ -140,8 +140,6 @@ $(document).ready(function(){
                         url: "./php/getLessons.php",
                         success: function (lessonsResponse) {
                             lessonsResponseObj = JSON.parse(lessonsResponse);
-                            console.log(lessonsResponseObj);
-                            lessonsHtml = "<h2 class=\"homeHeader2\">LESSONS</h2>";
                             lessonsResponseObj.forEach(function (item) {
                                 lessonsHtml += "<div><h1>"+item.title+"</h1>";
                                 item.topics.forEach(function(topic){

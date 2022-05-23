@@ -23,7 +23,6 @@ $(document).ready(function(){
 
     //Hide icons and empty div when screen width gets to small
     $(window).resize(function () { 
-        $("#pass-dialog-form").dialog("option","position","center");
         if($(this).width() < 1220){
             $(".empty").hide();
         }else{
@@ -40,12 +39,6 @@ $(document).ready(function(){
     //Transform buttons to jQuery UI button and radio button.
     $(".btn").button();
 
-    $( ".checkRadio" ).change(function(e){
-        e.preventDefault();
-        console.log("changed");
-        $("html").css("height", $(window).height());
-    });
-
     //Transition of Student's Profile to Edit Profile
     $("#toEditProfile").click(function(){
         $("#editBday").datepicker({
@@ -56,7 +49,7 @@ $(document).ready(function(){
         });
         $( ".checkRadio" ).checkboxradio({
             icon: false
-          });
+        });
         $(".updateErrorMsg").slideUp(100);
         $("#student_profile").fadeOut(250, function(){
             $.ajax({
@@ -375,24 +368,29 @@ $(document).ready(function(){
         $( "#delete-dialog-confirm" ).dialog("open");
     });
 
+
+function getLessons(){
+    $.ajax({
+        url: "./php/getLessons.php",
+        success: function (lessonsResponse) {
+            lessonsResponseObj = JSON.parse(lessonsResponse);
+            var lessonsHtml = "";
+            lessonsResponseObj.forEach(function (item) {
+                lessonsHtml += "<div><h1>"+item.title+"</h1>";
+                item.topics.forEach(function(topic){
+                    lessonsHtml += "<h2 class='topicTitle'>Topic: "+topic.topicTitle+"</h2><div class='topic'>"+topic.content+"</div></div>";                        
+                })
+            });
+            $("#lessons").html(lessonsHtml);
+        }
+    });
+}
+
 //VIEW LESSONS
-$("#lessonBtn").click(function (e) { 
+$(".lessonBtn").click(function (e) { 
     e.preventDefault();
     if(activeWindow != "#lessonsPage"){
-        $.ajax({
-            url: "./php/getLessons.php",
-            success: function (lessonsResponse) {
-                lessonsResponseObj = JSON.parse(lessonsResponse);
-                var lessonsHtml = "";
-                lessonsResponseObj.forEach(function (item) {
-                    lessonsHtml += "<div><h1>"+item.title+"</h1>";
-                    item.topics.forEach(function(topic){
-                        lessonsHtml += "<h2 class='topicTitle'>Topic: "+topic.topicTitle+"</h2><div class='topic'>"+topic.content+"</div></div>";                        
-                    })
-                });
-                $("#lessons").html(lessonsHtml);
-            }
-        });
+        getLessons();
         $(activeWindow).fadeOut(500, function(){
             activeWindow = "#lessonsPage";
             $("#lessonsPage").fadeIn(500);
