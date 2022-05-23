@@ -2,13 +2,13 @@
 <users>
   <user username="hunterxhenrick" email="johnhenrick.espiritu.sc@bulsu.edu.ph">
     <name>
-      <firstName>John Henrick</firstName>
-      <middleName>Sta. Cruz</middleName>
+      <firstName>John</firstName>
+      <middleName></middleName>
       <lastName>Espiritu</lastName>
     </name>
     <profileImage>images/PIA24431-full-res.jpg</profileImage>
     <password>$2y$10$bXyr8JLVDk6wMBC.lk/9SOsgRoalPqwIYyOpSSWz7A1HYjcuhKmU.</password>
-    <homeAddress>Dakila, Malolos City, Bulacan</homeAddress>
+    <homeAddress>Malolos City</homeAddress>
     <school>Bulacan State University</school>
     <birthday>12/16/2000</birthday>
     <gender>Male</gender>
