@@ -80,27 +80,6 @@
     //Save XML file
     $xml->save("lessons.xml");
 
-
-    // $xml = simplexml_load_file("lessons.xml");
-
-
-    // foreach($xml->children() as $lesson){
-    //     if($lessonTitle == $lesson['title']){
-    //         $newLesson = new SimpleXMLElement("lesson");
-    //         $newLesson->addAttribute('title',$lessonTitle);
-
-    //         foreach($lesson->topic as $oldTopic){
-    //             $newTopic = new SimpleXMLElement("topic");
-    //             $newTopic->addAttribute('topicTitle',$oldTopic['topicTitle']);
-    //             $newTopic->addChild('content',$oldTopic->content);
-    //             $newLesson->addChild($newTopic);
-    //         }
-
-
-
-    //     }
-    // }
-
     //JSON Response
     echo json_encode($response);
 ?>

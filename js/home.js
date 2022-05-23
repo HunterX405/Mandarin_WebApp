@@ -375,57 +375,30 @@ $(document).ready(function(){
         $( "#delete-dialog-confirm" ).dialog("open");
     });
 
-//LESSONS
-$("#lessonBtn").click(function () { 
+//VIEW LESSONS
+$("#lessonBtn").click(function (e) { 
+    e.preventDefault();
     if(activeWindow != "#lessonsPage"){
-        $("#textEditor").trumbowyg({
-            btnsDef: {
-                upload: {
-                    ico: 'insertImage'
-                }
-            },
-            // Redefine the button pane
-            btns: [
-                ['historyUndo','historyRedo'],
-                ['fontfamily'],
-                ['fontsize'],
-                ['formatting'],
-                ['strong', 'em', 'del'],
-                ['superscript', 'subscript'],
-                ['foreColor', 'backColor'],
-                ['link'],
-                ['upload'],
-                ['table'],
-                ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
-                ['indent', 'outdent'],
-                ['unorderedList', 'orderedList'],
-                ['horizontalRule'],
-                ['removeformat'],
-                ['fullscreen']
-            ],
-            plugins: {
-                upload: {
-                    serverPath: './php/upload.php',
-                    fileFieldName: 'image',
-                },
-                resizimg: {
-                    minSize: 64,
-                    step: 16,
-                }
+        $.ajax({
+            url: "./php/getLessons.php",
+            success: function (lessonsResponse) {
+                lessonsResponseObj = JSON.parse(lessonsResponse);
+                var lessonsHtml = "";
+                lessonsResponseObj.forEach(function (item) {
+                    lessonsHtml += "<div><h1>"+item.title+"</h1>";
+                    item.topics.forEach(function(topic){
+                        lessonsHtml += "<h2 class='topicTitle'>Topic: "+topic.topicTitle+"</h2><div class='topic'>"+topic.content+"</div></div>";                        
+                    })
+                });
+                $("#lessons").html(lessonsHtml);
             }
         });
         $(activeWindow).fadeOut(500, function(){
             activeWindow = "#lessonsPage";
             $("#lessonsPage").fadeIn(500);
         });
-    }    
+    }
 });
-
-$("#addLesson").click(function () { 
-    $("#output").html($("#textEditor").val());
-    console.log($("#textEditor").val());    
-});
-
 
 //LOGOUT
     $( "#logout-dialog-confirm" ).dialog({

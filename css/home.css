@@ -317,3 +317,15 @@ form label{
 tr, td {
     border: 1px solid black !important;
 }
+.topic {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 2px solid #f1787c;
+    padding: 2vw;
+    word-break: break-word;
+    margin-left: 3vw;
+}
+
+.topicTitle{
+    margin-left: 3vw;
+}

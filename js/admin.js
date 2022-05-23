@@ -56,6 +56,7 @@ $(document).ready(function(){
         }
     });
 
+    //ADD LESSON
     $("#toAddLessonBtn").click(function () { 
         
         $("#lessonList").selectmenu();
@@ -116,7 +117,6 @@ $(document).ready(function(){
         });
     });
 
-    //ADD LESSON
     $("#lessonForm").submit(function (e) { 
         e.preventDefault();
 
