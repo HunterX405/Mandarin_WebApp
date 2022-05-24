@@ -23,4 +23,19 @@
       <content><![CDATA[<p>SAMPLE CONTENTS HERE</p>]]></content>
     </topic>
   </lesson>
+  <lesson title="LESSON 5">
+    <topic topicTitle="NEW IMAGE LESSON">
+      <content><![CDATA[<p><img src="/Project/Mandarin_WebAppv3/php/images/lessons/277424531_2998681467106882_2267106758611412562_n.png"><br></p>]]></content>
+    </topic>
+  </lesson>
+  <lesson title="LESSON 6">
+    <topic topicTitle="TEST">
+      <content><![CDATA[<p>AAAAA<img src="/Project/Mandarin_WebAppv3/php/images/lessons/1.jpg"></p>]]></content>
+    </topic>
+  </lesson>
+  <lesson title="LESSON 7">
+    <topic topicTitle="image">
+      <content><![CDATA[<p>aaaa</p>]]></content>
+    </topic>
+  </lesson>
 </lessons>

@@ -53,7 +53,6 @@ $(document).ready(function(){
         $.ajax({
             url: "./php/getLessons.php",
             success: function (lessonsListResponse) {
-                console.log("ajax");
                 lessonsListResponseObj = JSON.parse(lessonsListResponse);
                 var dropdownHtml = "<option value='New Lesson' selected>New Lesson</option>";
                 lessonsListResponseObj.forEach(function (item) {
