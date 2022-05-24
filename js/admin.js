@@ -5,23 +5,26 @@ $(document).ready(function(){
         window.location.href="index.php";
     }else{
         //Only show home page when user is logged in.
+        getLessons();
         $("html").css("visibility", "visible");
     }
 
-    $.ajax({
-        url: "./php/getLessons.php",
-        success: function (lessonsResponse) {
-            lessonsResponseObj = JSON.parse(lessonsResponse);
-            var lessonsHtml = "";
-            lessonsResponseObj.forEach(function (item) {
-                lessonsHtml += "<div><h1>"+item.title+"</h1>";
-                item.topics.forEach(function(topic){
-                    lessonsHtml += "<h2 class='topicTitle'>Topic: "+topic.topicTitle+"</h2><div class='topic'>"+topic.content+"</div></div>";                        
-                })
-            });
-            $("#lessons").html(lessonsHtml);
-        }
-    });
+    function getLessons(){
+        $.ajax({
+            url: "./php/getLessons.php",
+            success: function (lessonsResponse) {
+                lessonsResponseObj = JSON.parse(lessonsResponse);
+                var lessonsHtml = "";
+                lessonsResponseObj.forEach(function (item) {
+                    lessonsHtml += "<div><h1>"+item.title+"</h1>";
+                    item.topics.forEach(function(topic){
+                        lessonsHtml += "<h2 class='topicTitle'>Topic: "+topic.topicTitle+"</h2><div class='topic'>"+topic.content+"</div></div>";                        
+                    })
+                });
+                $("#lessons").html(lessonsHtml);
+            }
+        });
+    }
     
     //Set active window variable
     var activeWindow = "#lessonsPage";
@@ -35,20 +38,7 @@ $(document).ready(function(){
     $("#lessonBtn").click(function (e) { 
         e.preventDefault();
         if(activeWindow != "#lessonsPage"){
-            $.ajax({
-                url: "./php/getLessons.php",
-                success: function (lessonsResponse) {
-                    lessonsResponseObj = JSON.parse(lessonsResponse);
-                    var lessonsHtml = "";
-                    lessonsResponseObj.forEach(function (item) {
-                        lessonsHtml += "<div><h1>"+item.title+"</h1>";
-                        item.topics.forEach(function(topic){
-                            lessonsHtml += "<h2 class='topicTitle'>Topic: "+topic.topicTitle+"</h2><div class='topic'>"+topic.content+"</div></div>";                        
-                        })
-                    });
-                    $("#lessons").html(lessonsHtml);
-                }
-            });
+            getLessons();
             $(activeWindow).fadeOut(500, function(){
                 activeWindow = "#lessonsPage";
                 $("#lessonsPage").fadeIn(500);
@@ -135,19 +125,10 @@ $(document).ready(function(){
                 //Parse JSON response from PHP AJAX
                 const addObj = JSON.parse(addResponse);
 
+                //Update Lessons Page
+                getLessons();
+
                 $("#lessonForm").fadeOut(500, function(){
-                    $.ajax({
-                        url: "./php/getLessons.php",
-                        success: function (lessonsResponse) {
-                            lessonsResponseObj = JSON.parse(lessonsResponse);
-                            lessonsResponseObj.forEach(function (item) {
-                                lessonsHtml += "<div><h1>"+item.title+"</h1>";
-                                item.topics.forEach(function(topic){
-                                    lessonsHtml += "<h2 class='topicTitle'>Topic: "+topic.topicTitle+"</h2><div class='topic'>"+topic.content+"</div></div>";                        })
-                            });
-                            $("#lessons").html(lessonsHtml);
-                        }
-                    });
                     $("#viewLessons").fadeIn(500, function(){
                         //Reset form values
                         $("#lessonsPage form")[0].reset();

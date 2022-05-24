@@ -17,8 +17,10 @@
     </topic>
   </lesson>
   <lesson title="LESSON 3">
-    <topic topicTitle="UPLOAD IMAGE TEST">
-      <content><![CDATA[<p><img src="/Project/Mandarin_WebAppv3/php/images/lessons/cozy-autumn-rain-thumb.jpg"><br></p>]]></content>
+  </lesson>
+  <lesson title="LESSON 4">
+    <topic topicTitle="SAMPLE TOPIC 4">
+      <content><![CDATA[<p>SAMPLE CONTENTS HERE</p>]]></content>
     </topic>
   </lesson>
 </lessons>
