@@ -13,4 +13,17 @@
     <birthday>12/16/2000</birthday>
     <gender>Male</gender>
   </user>
+  <user username="user" email="email@gmail.com">
+    <name>
+      <firstName>First</firstName>
+      <middleName>Middle</middleName>
+      <lastName>Last</lastName>
+    </name>
+    <profileImage>images/1.png</profileImage>
+    <password>$2y$10$GLXaGHBvuYUdLedxT257KeDVZw5VVrkmdvnioSoWR6qyMjmsrh.iK</password>
+    <homeAddress>Address</homeAddress>
+    <school>School</school>
+    <birthday>2022-05-25</birthday>
+    <gender>Male</gender>
+  </user>
 </users>

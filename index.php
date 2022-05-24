@@ -35,46 +35,43 @@
       </form>
 
       <!-- Registration Form -->
-      <div class="form" id="formRegister">
-        <form>
-            <div id="registerErrorMsg">Error</div>
-            <label for="fname"></label>
-            <input type="text" id="fname" name="fname" placeholder="Enter First Name"/>
-            <input type="text" id="mname" name="mname" placeholder="Enter Middle Name(Optional)"/>
-            <input type="text" id="lname" name="lname" placeholder="Enter Last Name"/>
-            <input type="text" id="uname" name="uname" placeholder="Enter Username"/>
-            <input type="email" id="email" name="email" placeholder="Email Address"/>
-            <input type="password" id="pass" name="pass" placeholder="Enter Password"/>
-            <input type="password" id="passConf" name="passConf" placeholder="Confirm Password"/>
+      <form id="formRegister">
+        <div id="registerErrorMsg">Error</div>
+        <input type="text" id="fname" name="fname" placeholder="Enter First Name" required/>
+        <input type="text" id="mname" name="mname" placeholder="Enter Middle Name(Optional)"/>
+        <input type="text" id="lname" name="lname" placeholder="Enter Last Name" required/>
+        <input type="text" id="uname" name="uname" placeholder="Enter Username" required/>
+        <input type="email" id="email" name="email" placeholder="Email Address" required/>
+        <input type="password" id="pass" name="pass" placeholder="Enter Password" autocomplete="on" required/>
+        <input type="password" id="passConf" name="passConf" placeholder="Confirm Password" autocomplete="on" required/>
 
-            <input type="text" id="address" name="home" placeholder="Home Address(Optional)"/>
-            <input type="text" id="school" name="school" placeholder="School(Optional)"/>
+        <input type="text" id="address" name="home" placeholder="Home Address(Optional)"/>
+        <input type="text" id="school" name="school" placeholder="School(Optional)"/>
 
-            <table>
-                <tr>
-                  <td> <label for="bday">Birthday:</label> </td>
-                  <td> <input class="bday_category" id="bday" type="date" name="bday"/> </td>
-                </tr>
-                <tr> 
-                  <td> <label>Gender:</label> </td>						
-                </tr>	
-                <tr>
-                  <td> <input class="gender_category" id="male" type="radio" name="gender" value="Male"> </td>	
-                  <td> <label for="male">Male</label> </td>     
-                </tr>
-                <tr>	    
-                  <td> <input class="gender_category" id="female" type="radio" name="gender" value="Female"> </td>
-                  <td> <label for="female">Female</label> </td>
-                </tr>
-              </table>
+        <table>
+            <tr>
+              <td> <label for="bday">Birthday:</label> </td>
+              <td> <input class="bday_category" id="bday" type="date" name="bday" required/> </td>
+            </tr>
+            <tr> 
+              <td> <label>Gender:</label> </td>						
+            </tr>	
+            <tr>
+              <td> <input class="gender_category" id="male" type="radio" name="gender" value="Male" required> </td>	
+              <td> <label for="male">Male</label> </td>     
+            </tr>
+            <tr>	    
+              <td> <input class="gender_category" id="female" type="radio" name="gender" value="Female" required> </td>
+              <td> <label for="female">Female</label> </td>
+            </tr>
+          </table>
 
-              <button id="registerBtn" type="button">Register</button>
+          <button id="registerBtn" type="submit">Register</button>
 
-              <p class="registration_option" id="toLogin">Already have an Account? 
-                <em class="link"> Login here. </em>
-              </p>
-        </form>
-      </div>
+          <p class="registration_option" id="toLogin">Already have an Account? 
+            <em class="link"> Login here. </em>
+          </p>
+      </form>
     </div>
     
     <div class="container_right">
