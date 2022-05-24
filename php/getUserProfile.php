@@ -2,7 +2,7 @@
     session_start();
     //Redirect to Login Page when accessed via link.
     if (!isset($_SESSION['user'])) {
-        header('location: ../index.php');
+        header('location: ../');
         exit;
     }
 

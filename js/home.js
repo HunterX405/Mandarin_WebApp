@@ -8,7 +8,7 @@ $(document).ready(function(){
                 console.log(checkResponse);
                 $("html").css("visibility", "visible");
             }else{
-                window.location.href="index.php";
+                window.location.href="./";
                 console.log(checkResponse);
             }
         }
@@ -313,7 +313,7 @@ $(document).ready(function(){
 
                     //If user data is corrupted, go back to login page to refresh user data
                     }else if(changePassObj.message == "Account Not Found!"){
-                        window.location.href="index.php";
+                        window.location.href="./";
                     
                     //Changed Password Successfully
                     }else{
@@ -333,7 +333,7 @@ $(document).ready(function(){
             url: "./php/deleteUser.php",
             success: function (deleteAccountResponse) {
                 if(deleteAccountResponse == "Success!"){
-                    window.location.href="index.php";
+                    window.location.href="./";
                 }else{
                     $("#profileError").text(deleteAccountResponse).show(200);
                 }
@@ -406,7 +406,7 @@ $(".lessonBtn").click(function (e) {
                     success: function (checkResponse) {
                         if(checkResponse == "Logged Out"){
                             $("html").css("visibility", "hidden");
-                            window.location.href="index.php";
+                            window.location.href="./";
                         }else{
                             console.log(checkResponse);
                         }

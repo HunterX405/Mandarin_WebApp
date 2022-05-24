@@ -11,7 +11,7 @@ $(document).ready(function(){
                 getLessons();
                 $("html").css("visibility", "visible");
             }else{
-                window.location.href="index.php";
+                window.location.href="./";
                 console.log(checkResponse);
             }
         }
@@ -185,7 +185,7 @@ $(document).ready(function(){
                     success: function (checkResponse) {
                         if(checkResponse == "Logged Out"){
                             $("html").css("visibility", "hidden");
-                            window.location.href="index.php";
+                            window.location.href="./";
                         }else{
                             console.log(checkResponse);
                         }

@@ -1,7 +1,7 @@
 <?php
     // Redirect to Login Page when accessed via link.
     if (!isset($_POST['lesson']) && !isset($_POST['topic']) && !isset($_POST['content'])) {
-        header('location: ../index.php');
+        header('location: ../');
         exit;
     }
 

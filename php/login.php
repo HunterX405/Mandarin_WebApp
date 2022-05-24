@@ -2,7 +2,7 @@
     session_start();
     // Redirect to Login Page when accessed via link.
     if (!isset($_POST['username']) && !isset($_POST['password'])) {
-        header('location: ../index.php');
+        header('location: ../');
         exit;
     }
 

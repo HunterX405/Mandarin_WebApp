@@ -2,7 +2,7 @@
     //Redirect to Login Page when accessed via link.
     if (!isset($_POST['fname']) && !isset($_POST['lname']) && !isset($_POST['uname']) 
             && !isset($_POST['email']) && !isset($_POST['pass']) && !isset($_POST['bday']) && !isset($_POST['gender'])) {
-        header('location: ../index.php');
+        header('location: ../');
         exit;
     }
 
