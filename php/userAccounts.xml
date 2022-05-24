@@ -6,23 +6,11 @@
       <middleName/>
       <lastName>Espiritu</lastName>
     </name>
-    <profileImage>images/PIA24431-full-res.jpg</profileImage>
+    <profileImage>images/1.png</profileImage>
     <password>$2y$10$bXyr8JLVDk6wMBC.lk/9SOsgRoalPqwIYyOpSSWz7A1HYjcuhKmU.</password>
     <homeAddress>Malolos City</homeAddress>
     <school>Bulacan State University</school>
     <birthday>12/16/2000</birthday>
     <gender>Male</gender>
-  </user>
-  <user username="johndoe" email="johndoe@gmail.com">
-    <name>
-      <firstName>John</firstName>
-      <middleName/>
-      <lastName>Doe</lastName>
-    </name>
-    <password>$2y$10$BkRvGjBFRuHrQecI/tkVcOOKSvgPa2cNCL6ODoecpHiq5BbihpiAO</password>
-    <homeAddress/>
-    <school/>
-    <birthday>2022-05-15</birthday>
-    <gender>Female</gender>
   </user>
 </users>
