@@ -119,8 +119,11 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
 .trumbowyg-editor{
     background-color: #ffffff;
 }
-tr, td {
+.topic tr, .topic td {
     border: 1px solid black !important;
+}
+.topic table {
+    width: 100%;
 }
 
 #viewLessonsPage, #lessonForm {

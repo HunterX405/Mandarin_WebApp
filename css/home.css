@@ -314,8 +314,11 @@ form label{
     padding: 2vw;
     word-break: break-word;
 }
-tr, td {
+.topic tr, .topic td {
     border: 1px solid black !important;
+}
+.topic table {
+    width: 100%;
 }
 .topic {
     background-color: #ffffff;
