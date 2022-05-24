@@ -1,5 +1,4 @@
 <?php
-    session_start();
 
     //Load XML
     $xml = simplexml_load_file("lessons.xml");

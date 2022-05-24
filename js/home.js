@@ -5,7 +5,6 @@ $(document).ready(function(){
         url: "./php/checkUser.php",
         success: function (checkResponse) {
             if(checkResponse == "Already Logged In"){
-                sessionStorage.setItem("login","true");
                 console.log(checkResponse);
                 $("html").css("visibility", "visible");
             }else{
@@ -60,9 +59,7 @@ $(document).ready(function(){
         $(".updateErrorMsg").slideUp(100);
         $("#student_profile").fadeOut(250, function(){
             $.ajax({
-                type: "get",
                 url: "./php/getUserProfile.php",
-                data: "user=" + sessionStorage.getItem("user"),
                 success: function (response) {
 
                     //Parse JSON response from getUserProfile.php AJAX
@@ -105,9 +102,7 @@ $(document).ready(function(){
 
                 //Get profile data via getUserProfile.php AJAX
                 $.ajax({
-                    type: "get",
                     url: "./php/getUserProfile.php",
-                    data: "user=" + sessionStorage.getItem("user"),
                     success: function (response) {
 
                         //Parse JSON response from PHP AJAX
@@ -184,7 +179,6 @@ $(document).ready(function(){
 
             //Get Form details
             var updateformData = new FormData(this);
-            updateformData.append("loggedUser",sessionStorage.getItem("user"));
 
             //Send ajax request to updateUserProfile.php
             $.ajax({
@@ -208,10 +202,6 @@ $(document).ready(function(){
                     $("#birthday").html("Birthday: " + updateObj.bday);
                     $("#gender").html("Gender: " + updateObj.gender);
                     $(".profile_icon").attr("src", "php/"+updateObj.image);
-                    console.log(updateObj.imageNull);
-                    //Resetting user login token
-                    sessionStorage.removeItem("user");
-                    sessionStorage.setItem("user",updateObj.uname);
 
                     //Display update success message
                     $("#updateSuccessMsg").html(updateObj.message);
@@ -307,7 +297,6 @@ $(document).ready(function(){
         if ( valid ) {
 
             var changePassformData = changePasswordForm.serializeArray();
-            changePassformData.push({name:"loggedUser", value: sessionStorage.getItem("user")});
             //Send ajax request to updateUserProfile.php
             $.ajax({
                 type: "post",
@@ -324,7 +313,6 @@ $(document).ready(function(){
 
                     //If user data is corrupted, go back to login page to refresh user data
                     }else if(changePassObj.message == "Account Not Found!"){
-                        sessionStorage.removeItem("user");
                         window.location.href="index.php";
                     
                     //Changed Password Successfully
@@ -342,12 +330,9 @@ $(document).ready(function(){
 //DELETE ACCOUNT
     function deleteAccount(){
         $.ajax({
-            type: "post",
             url: "./php/deleteUser.php",
-            data: "loggedUser=" + sessionStorage.getItem("user"),
             success: function (deleteAccountResponse) {
                 if(deleteAccountResponse == "Success!"){
-                    sessionStorage.removeItem("user");
                     window.location.href="index.php";
                 }else{
                     $("#profileError").text(deleteAccountResponse).show(200);

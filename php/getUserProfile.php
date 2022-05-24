@@ -1,11 +1,12 @@
 <?php
+    session_start();
     //Redirect to Login Page when accessed via link.
     if (!isset($_SESSION['user'])) {
-        header('location: index.php');
+        header('location: ../index.php');
         exit;
     }
 
-    $logUser = $_GET['user'];
+    $logUser = $_SESSION['user'];
 
     //Open XML Document
     $xml = simplexml_load_file("userAccounts.xml");

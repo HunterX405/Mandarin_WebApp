@@ -1,7 +1,8 @@
 <?php
+    session_start();
     // Redirect to Login Page when accessed via link.
     if (!isset($_SESSION['user'])) {
-        header('location: index.php');
+        header('location: ../index.php');
         exit;
     }
 
@@ -12,7 +13,7 @@
     $response = array("message"=> "Transaction Failed!");
 
     //Get logged user
-    $loggedUser = $_POST['loggedUser'];
+    $loggedUser = $_SESSION['user'];
 
     //For image url
     $targetFilePath = "";
