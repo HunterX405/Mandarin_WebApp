@@ -1,6 +1,6 @@
 <?php
-
-    //Redirect to Login Page when accessed via link.
+    session_start();
+    // Redirect to Login Page when accessed via link.
     if (!isset($_POST['username']) && !isset($_POST['password'])) {
         header('location: index.php');
         exit;
@@ -29,6 +29,7 @@
             $isUser = true;
 
             if(password_verify($loginPassword,$compPassword)){
+                $_SESSION['user'] = $compUname;
                 echo "Login Success!";
                 break;
             }else{

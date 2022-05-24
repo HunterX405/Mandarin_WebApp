@@ -16,13 +16,13 @@ body {
     background-color: #ffffff;  
 }
 
-.form{
+form{
     width: 75%;
     margin: auto;
     padding-top: 20%;
 }
 
-.form input {
+form input {
     font-family: 'Inter', sans-serif;
     outline: 0;
     background: #cfcfcf;
@@ -35,7 +35,13 @@ body {
     font-size: 12px;
 }
 
-.form button{
+form input[type="radio"], input[type="date"]{
+    margin-top: 0px;
+    margin-right: -10px;
+    padding-left: 15px;
+}
+
+form button{
     background: #f1787c;
     color: #ffffff;
     text-transform: uppercase;
@@ -47,7 +53,7 @@ body {
     margin: 20px 0 0px 15%;
 }
 
-.form button:hover{
+form button:hover{
     background: #f1a3a6;
 }
 
@@ -113,12 +119,6 @@ tr{
 .bday_category{
     height: 35px;
 }
-  
-form input[type="radio"], input[type="date"]{
-  margin-top: 0px;
-  margin-right: -10px;
-  padding-left: 15px;
-}
 
 .registration_option{
     color: #222222;
@@ -129,7 +129,7 @@ form input[type="radio"], input[type="date"]{
     
 }
 
-.registration_option a, .login_option a{
+.link {
     color: rgb(45, 45, 255);
     text-decoration: underline;
 }

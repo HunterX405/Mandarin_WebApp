@@ -23,17 +23,16 @@
       </div>
 
       <!-- Login Form -->
-      <div class="form" id="formLogin">
-
+      <form id="formLogin">
           <div id="loginErrorMsg">Error</div>
           <div id="registerSuccessMsg">Success!</div>
-          <input id="username" placeholder="Username or Email" required>
-          <input id="password" type="password" name="password" placeholder="Password" required>
-          <button id="loginBtn" type="button">login</button>
+          <input id="username" placeholder="Username or Email" name="username" autocomplete="on" required>
+          <input id="password" type="password" name="password" placeholder="password" autocomplete="on" required>
+          <button id="loginBtn" type="submit">login</button>
           <p class="login_option" id="toRegister">Don't have an Account? 
-            <a> Register here. </a>
+            <em class="link"> Register here. </em>
           </p>          
-      </div>
+      </form>
 
       <!-- Registration Form -->
       <div class="form" id="formRegister">
@@ -72,7 +71,7 @@
               <button id="registerBtn" type="button">Register</button>
 
               <p class="registration_option" id="toLogin">Already have an Account? 
-                <a> Login here. </a>
+                <em class="link"> Login here. </em>
               </p>
         </form>
       </div>

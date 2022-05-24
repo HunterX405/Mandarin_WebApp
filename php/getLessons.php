@@ -1,9 +1,5 @@
 <?php
-    //Redirect to Login Page when accessed via link.
-    // if (!isset($_GET['user'])) {
-    //     header('location: index.php');
-    //     exit;
-    // }
+    session_start();
 
     //Load XML
     $xml = simplexml_load_file("lessons.xml");

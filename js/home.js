@@ -1,12 +1,19 @@
 $(document).ready(function(){
 
-    //Redirect user to login page when home is accessed via link
-    if(!sessionStorage.getItem("user")){
-        window.location.href="index.php";
-    }else{
-        //Only show home page when user is logged in.
-        $("html").css("visibility", "visible");
-    }
+    //Redirect user to login page if not yet logged in
+    $.ajax({
+        url: "./php/checkUser.php",
+        success: function (checkResponse) {
+            if(checkResponse == "Already Logged In"){
+                sessionStorage.setItem("login","true");
+                console.log(checkResponse);
+                $("html").css("visibility", "visible");
+            }else{
+                window.location.href="index.php";
+                console.log(checkResponse);
+            }
+        }
+    });
 
     //Set active window variable
     var activeWindow = "#homePage";
@@ -406,11 +413,21 @@ $(".lessonBtn").click(function (e) {
         modal: true,
         buttons: {
             Confirm: function(){
-                $( this ).dialog( "close" );
-                //Hide home page html to avoid loading home page via link access when already logged out
-                $("html").css("visibility", "hidden");
-                sessionStorage.removeItem("user");
-                window.location.href="index.php";
+                //Destroy user Session
+                $.ajax({
+                    type: "POST",
+                    url: "./php/checkUser.php",
+                    data: "logout=true",
+                    success: function (checkResponse) {
+                        if(checkResponse == "Logged Out"){
+                            $("html").css("visibility", "hidden");
+                            window.location.href="index.php";
+                        }else{
+                            console.log(checkResponse);
+                        }
+                    }
+                });  
+                $( this ).dialog( "close" );                   
             },
             Cancel: function() {
                 $( this ).dialog( "close" );
@@ -424,7 +441,7 @@ $(".lessonBtn").click(function (e) {
 
     //TEMPORARY!! TO ADMIN PAGE
     $("#settingsBtn").click(function () { 
-        window.location.href="admin.html";
+        window.location.replace("admin.html");
     });
 
 });

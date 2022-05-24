@@ -1,6 +1,6 @@
 <?php
     // Redirect to Login Page when accessed via link.
-    if (!isset($_POST['loggedUser'])) {
+    if (!isset($_SESSION['user'])) {
         header('location: index.php');
         exit;
     }

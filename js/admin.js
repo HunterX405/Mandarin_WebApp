@@ -1,13 +1,21 @@
 $(document).ready(function(){
 
-    //Redirect user to login page when home is accessed via link
-    if(!sessionStorage.getItem("user")){
-        window.location.href="index.php";
-    }else{
-        //Only show home page when user is logged in.
-        getLessons();
-        $("html").css("visibility", "visible");
-    }
+
+    //Redirect user to login page if not yet logged in
+    $.ajax({
+        type:'GET',
+        url: "./php/checkUser.php",
+        data: "",
+        success: function (checkResponse) {
+            if(checkResponse == "Already Logged In"){
+                getLessons();
+                $("html").css("visibility", "visible");
+            }else{
+                window.location.href="index.php";
+                console.log(checkResponse);
+            }
+        }
+    });
 
     function getLessons(){
         $.ajax({
@@ -170,11 +178,20 @@ $(document).ready(function(){
         modal: true,
         buttons: {
             Confirm: function(){
+                $.ajax({
+                    type: "POST",
+                    url: "./php/checkUser.php",
+                    data: "logout=true",
+                    success: function (checkResponse) {
+                        if(checkResponse == "Logged Out"){
+                            $("html").css("visibility", "hidden");
+                            window.location.href="index.php";
+                        }else{
+                            console.log(checkResponse);
+                        }
+                    }
+                });
                 $( this ).dialog( "close" );
-                //Hide home page html to avoid loading home page via link access when already logged out
-                $("html").css("visibility", "hidden");
-                sessionStorage.removeItem("user");
-                window.location.href="index.php";
             },
             Cancel: function() {
                 $( this ).dialog( "close" );

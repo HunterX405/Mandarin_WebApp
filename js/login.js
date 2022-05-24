@@ -1,14 +1,21 @@
 $(document).ready(function(){
-    if(!sessionStorage.getItem("user")){
-        //Only show login page when user is not yet logged in.
-        $("html").css("visibility", "visible");
-    }else{
-        window.location.href="home_page.html";
-    }
+    //Check if user is not logged in
+    $.ajax({
+        url: "./php/checkUser.php",
+        success: function (checkResponse) {
+            if(checkResponse == "Not Logged In"){
+                $("html").css("visibility", "visible");
+            }else{
+                window.location.href="home_page.html";
+                console.log(checkResponse);
+            }
+        }
+    });
 
     //Check if Login details are Valid.
     var loginValid = false;
-    $("#loginBtn").click(function(){
+    $("#formLogin").on('submit', function (e) { 
+        e.preventDefault();
         $("#registerSuccessMsg").slideUp(100);
         if(!$("#username").val().trim()){
             $("#loginErrorMsg").text("Username or Email is required.");
@@ -25,42 +32,32 @@ $(document).ready(function(){
         }else{
             $("#loginErrorMsg").slideUp(100);
 
-            //Get login credentials.
-            var logUserEmail = $("#username").val().trim();
-            var logPassword = $("#password").val().trim();
+            var loginformData = new FormData(this);
 
-            //Create an AJAX XMLHttpRequest
-            var xhr = new XMLHttpRequest();
-
-            //Get response(responseText) from the XMLHttpRequest to register.php
-            xhr.onreadystatechange = () =>{
-                if(xhr.readyState ==4 && xhr.status == 200){
-                    console.log(xhr.responseText);
-                    if(xhr.responseText == "Login Success!"){
-                        //Reset input values.
+            $.ajax({
+                type: "POST",
+                url: "./php/login.php",
+                data: loginformData,
+                contentType: false,
+                cache: false,
+                processData: false,  
+                success: function (result){
+                    if(result == "Login Success!"){
+                       //Reset input values.
                         $("#username").val("");
                         $("#password").val("");
 
-                        //Set username is sessionStorage to be able to access home_page.html
-                        sessionStorage.setItem("user", logUserEmail);
-                        
                         //Hide Login page html to avoid loading login page via link access when already logged in
                         $("html").css("visibility", "hidden");
 
                         //Redirect to home page.
                         window.location.href="home_page.html";
-                        
                     }else{
-                        $("#loginErrorMsg").text(xhr.responseText);
+                        $("#loginErrorMsg").text(result);
                         $("#loginErrorMsg").slideDown(100);
                     }
                 }
-            }
-
-            //Send registration details via POST method to login.php asynchronously.
-            xhr.open("POST", "./php/login.php", true);
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            xhr.send("username="+logUserEmail+"&password="+logPassword);
+              });
         }
     });
 
@@ -129,6 +126,9 @@ $(document).ready(function(){
                 type: "post",
                 url: "./php/register.php",
                 data: formData,
+                contentType: false,
+                cache: false,
+                processData: false,  
                 success: function (response) {
                     console.log(response);
                     if(response == "Registration Successfull!"){
