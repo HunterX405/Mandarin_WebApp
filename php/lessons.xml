@@ -1,27 +1,12 @@
 <?xml version="1.0"?>
 <lessons>
   <lesson title="LESSON 1">
-    <topic topicTitle="SAMPLE TOPIC">
-      <content><![CDATA[<p>SAMPLE CONTENT</p>]]></content>
-    </topic>
   </lesson>
   <lesson title="LESSON 2">
-    <topic topicTitle="TOPIC 1">
-      <content><![CDATA[<p>SAMPLE TOPIC 1</p>]]></content>
-    </topic>
-    <topic topicTitle="TOPIC 2">
-      <content><![CDATA[<p>SAMPLE TOPIC 2</p>]]></content>
-    </topic>
-    <topic topicTitle="TOPIC 3">
-      <content><![CDATA[<p>SAMPLE TOPIC 3</p>]]></content>
-    </topic>
   </lesson>
   <lesson title="LESSON 3">
   </lesson>
   <lesson title="LESSON 4">
-    <topic topicTitle="SAMPLE TOPIC 4">
-      <content><![CDATA[<p>SAMPLE CONTENTS HERE</p>]]></content>
-    </topic>
   </lesson>
   <lesson title="LESSON 5">
   </lesson>
