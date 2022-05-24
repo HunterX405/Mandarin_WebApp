@@ -127,7 +127,6 @@ $(document).ready(function(){
     //Update image on edit profile page to show new uploaded image
     $("#file").change(function (e) {
         $("#editImg").attr("src", URL.createObjectURL(e.target.files[0]));
-        console.log(URL.createObjectURL(e.target.files[0]));
     });
 
     //Regex for email validation from https://emailregex.com/
@@ -141,7 +140,7 @@ $(document).ready(function(){
         //Input Validation
         var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif|\.avif|\.webp)$/i;
         var filePath = $("#file").val();
-        if(!allowedExtensions.exec(filePath)){
+        if(!allowedExtensions.exec(filePath) && filePath != ""){
             $(".updateErrorMsg").text("Invalid file type.");
             $("#file").val("");
             updateValid = false;
@@ -194,8 +193,6 @@ $(document).ready(function(){
                     const updateObj = JSON.parse(updateResponse);
                     
                     //Updating profile text values.
-                    $("#editImg").attr("src", "php/"+updateObj.image);
-                    $(".profile_icon").attr("src", "php/"+updateObj.image);
                     $("#student_profile h2").html(updateObj.fname+" "+updateObj.mname+" "+updateObj.lname);
                     $("#username").html("Username: " + updateObj.uname);
                     $("#email").html("Email: " + updateObj.email);
@@ -203,7 +200,8 @@ $(document).ready(function(){
                     $("#school").html("School: " + updateObj.school);
                     $("#birthday").html("Birthday: " + updateObj.bday);
                     $("#gender").html("Gender: " + updateObj.gender);
-                    
+                    $(".profile_icon").attr("src", "php/"+updateObj.image);
+                    console.log(updateObj.imageNull);
                     //Resetting user login token
                     sessionStorage.removeItem("user");
                     sessionStorage.setItem("user",updateObj.uname);
@@ -214,6 +212,7 @@ $(document).ready(function(){
 
                     //Transition to student profile
                     $("#student_profile_edit").fadeOut(250, function(){
+                        $(".profile_icon").attr("src", "php/"+updateObj.image);
                         $("#student_profile").fadeIn(250);
                     });
                 }

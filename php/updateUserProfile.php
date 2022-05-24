@@ -90,6 +90,9 @@
                     if($uploadStatus == 1){
                         $response["message"] = "Success.";
                     }
+                }else{
+                    //Get current Image if there is no uploaded image or if in change password form.
+                    $targetFilePath = $compUser->getElementsByTagName("profileImage")[0]->nodeValue;
                 }
 
                 //Get data from AJAX POST
@@ -107,6 +110,7 @@
                 $editPass = $compUser->getElementsByTagName("password")[0]->nodeValue;
 
                 //Set response values to update profile page values
+                $response["image"] = $targetFilePath;
                 $response["fname"] = $editFname;
                 $response["mname"] = $editMname;
                 $response["lname"] = $editLname;
@@ -116,11 +120,6 @@
                 $response["school"] = $editSchool;
                 $response["bday"] = $editBday;
                 $response["gender"] = $editGender;
-            }
-
-            //Get current Image if there is no uploaded image or if in change password form.
-            if($targetFilePath == ""){
-                $targetFilePath = $compUser->getElementsByTagName("profileImage")[0]->nodeValue;
             }
 
             //Change password: if old password is correct.

@@ -17,5 +17,8 @@
     </topic>
   </lesson>
   <lesson title="LESSON 3">
+    <topic topicTitle="UPLOAD IMAGE TEST">
+      <content><![CDATA[<p><img src="/Project/Mandarin_WebAppv3/php/images/lessons/cozy-autumn-rain-thumb.jpg"><br></p>]]></content>
+    </topic>
   </lesson>
 </lessons>

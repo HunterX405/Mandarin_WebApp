@@ -329,3 +329,7 @@ tr, td {
 .topicTitle{
     margin-left: 3vw;
 }
+
+.topic img {
+    max-width:100%;
+}

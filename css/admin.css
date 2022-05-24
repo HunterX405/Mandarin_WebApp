@@ -154,3 +154,6 @@ tr, td {
     background-color: #00A878;
     border: 1px solid #388659;
 }
+.topic img {
+    max-width:100%;
+}
