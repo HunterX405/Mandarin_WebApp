@@ -1,7 +1,7 @@
-<FilesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|avif|webp)$">
+<FilesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|swf|avif|webp)$">
   Header set Cache-Control "max-age=63072000, public"
 </FilesMatch>
 
-<FilesMatch "\.(html|htm|xml|txt|xsl)$">
+<FilesMatch "\.(html|htm|xml|txt|xsl|js|css)$">
 Header set Cache-Control "no-cache, must-revalidate"
 </FilesMatch>
