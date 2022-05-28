@@ -378,13 +378,75 @@ function getLessons(){
 }
 
 //VIEW LESSONS
-$(".lessonBtn").click(function (e) { 
-    e.preventDefault();
+var sidebarState = false;
+$("#lessonBtn").click(function () {
+    $("#lessonsPage").css("display", "flex");
+    if(sidebarState == false){
+        if($("#sidebar").html() == ""){
+            $.ajax({
+                type: "POST",
+                url: "./php/getLessons.php",
+                data: "data=title",
+                success: function (response) {
+                    responseObj = JSON.parse(response);
+                    console.log(responseObj);
+                    $("#sidebar").append("<h1>LESSONS</h1>");
+                    responseObj.forEach(function (item) {
+                        $("#sidebar").append("<p class='lessonView'>"+item.title+"</p>");
+                    });
+                },
+            });
+        }  
+        sidebarState = true;  
+        $("#sidebar").width("calc(170px + 3vw)");
+        $("#tabs").css("margin-left", "calc(170px + 3vw)");    
+    }else{
+        $("#sidebar").width("0");
+        $("#tabs").css("margin-left", "0");
+        sidebarState = false;
+    }
     if(activeWindow != "#lessonsPage"){
-        getLessons();
         $(activeWindow).fadeOut(500, function(){
             activeWindow = "#lessonsPage";
-            $("#lessonsPage").fadeIn(500);
+            $("#lessonsPage").show(0);
+        });
+    }
+});
+
+var activeLesson = "";
+$("#sidebar").on("click","p.lessonView",function () {
+    var lessonTitle = $(this).text();
+    if(activeLesson != lessonTitle){
+        $.ajax({
+            type: "POST",
+            url: "./php/getLessons.php",
+            data: {
+                data: "lesson",
+                lesson: lessonTitle
+            },
+            beforeSend: function() {
+                if($( "#tabs" ).html()!="<ul></ul>"){
+                    $( "#tabs" ).fadeOut(0, function(){
+                        $( "#tabs" ).tabs('destroy').html("<ul></ul>");
+                    });
+                }else{
+                    $( "#tabs" ).fadeOut().html("<ul></ul>");
+                }
+            },
+            success: function (response) {
+                responseObj = JSON.parse(response);
+                responseObj[0].forEach(function (item) {
+                    var topic = item.topicTitle.split(" ");
+                    topic = topic.join("-");
+                    $("#tabs ul").append("<li><a href=\"#"+topic+"\">"+item.topicTitle+"</a></li>");
+                    $("#tabs").append("<div id='"+topic+"'>"+item.content+"</div>");
+                });
+            },
+            complete: function() {
+                activeLesson = lessonTitle;
+                $( "#tabs" ).tabs({ active: 0 });
+                $("#tabs").fadeIn(500);
+            }
         });
     }
 });

@@ -43,6 +43,7 @@ body {
     flex: 4;
     background-color: #eae8e1;
     overflow-y: scroll;
+    display: flex;
 }
 
 .homeHeader1{
@@ -94,6 +95,9 @@ p{
 .pane {
     margin: 50px 7% 0 7%;
     padding: 0 0 50px 0;
+    position: absolute;
+    top: 0;
+    z-index: 0;
 }
 
 form {
@@ -116,18 +120,68 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
 }
 
 /* LESSONS PAGE */
-.trumbowyg-editor{
-    background-color: #ffffff;
+#sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    margin-left: 100px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f1787c;
+    overflow-x: hidden;
+    transition: 0.5s;
 }
-.topic tr, .topic td {
-    border: 1px solid black !important;
+  
+#sidebar h1{
+    text-align: center;
 }
-.topic table {
-    width: 100%;
+#sidebar p {
+    cursor: pointer;
+    padding: 8px 0px 8px 0px;
+    text-align: center;
+    font-size: 25px;
+    color: #000000;
+    display: block;
+    transition: 0.3s;
+}
+  
+#sidebar p:hover {
+    background-color:darkgrey;
+    color: #f1f1f1;
 }
 
-#viewLessonsPage, #lessonForm {
+#tabs{
     display: none;
+    width: -moz-fit-content;
+    width:fit-content;
+    flex: 5;
+}
+
+.ui-tabs-vertical .ui-tabs-nav { 
+    float: left; 
+    width: calc(7em + 5vw); 
+    height: 100%;
+    margin-right: 2em;
+}
+
+.ui-tabs-vertical .ui-tabs-nav li { 
+    clear: left; 
+    width: 100%; 
+    border-bottom-width: 1px !important; 
+    border-right-width: 0 !important; 
+}
+
+.ui-tabs-vertical .ui-tabs-nav li a { 
+    display:block; 
+}
+
+.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { 
+    border-right-width: 1px; 
+}
+
+.ui-tabs-anchor {
+    width: -webkit-fill-available;
 }
 
 .topic {
@@ -159,4 +213,18 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
 }
 .topic img {
     max-width:100%;
+}
+.topic tr, .topic td {
+    border: 1px solid black !important;
+}
+.topic table {
+    width: 100%;
+}
+
+/* ADD LESSON */
+#lessonForm {
+    display: none;
+}
+.trumbowyg-editor{
+    background-color: #ffffff;
 }
