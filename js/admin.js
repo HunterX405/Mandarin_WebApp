@@ -4,7 +4,7 @@ $(document).ready(function(){
     //Redirect user to login page if not yet logged in
     $.ajax({
         type:'GET',
-        url: "./php/checkUser.php",
+        url: "./php/checkuser.php",
         data: "",
         success: function (checkResponse) {
             if(checkResponse == "Already Logged In"){
@@ -244,7 +244,7 @@ $(document).ready(function(){
             Confirm: function(){
                 $.ajax({
                     type: "POST",
-                    url: "./php/checkUser.php",
+                    url: "./php/checkuser.php",
                     data: "logout=true",
                     success: function (checkResponse) {
                         if(checkResponse == "Logged Out"){

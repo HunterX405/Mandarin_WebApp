@@ -1,7 +1,7 @@
 $(document).ready(function(){
     //Check if user is not logged in
     $.ajax({
-        url: "./php/checkUser.php",
+        url: "./php/checkuser.php",
         success: function (checkResponse) {
             if(checkResponse == "Not Logged In"){
                 $("html").css("visibility", "visible");

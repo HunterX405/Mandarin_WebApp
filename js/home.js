@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     //Redirect user to login page if not yet logged in
     $.ajax({
-        url: "./php/checkUser.php",
+        url: "./php/checkuser.php",
         success: function (checkResponse) {
             if(checkResponse == "Already Logged In"){
                 console.log(checkResponse);
@@ -463,7 +463,7 @@ $("#sidebar").on("click","p.lessonView",function () {
                 //Destroy user Session
                 $.ajax({
                     type: "POST",
-                    url: "./php/checkUser.php",
+                    url: "./php/checkuser.php",
                     data: "logout=true",
                     success: function (checkResponse) {
                         if(checkResponse == "Logged Out"){
