@@ -217,14 +217,15 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
 
 /* LOADING MODAL */
 .modal {
-    display:    none;
+    display: none;
+    line-height: 90vh;
+    text-align: center;
     position:   fixed;
     z-index:    1000;
     top:        0;
-    left:       0;
     height:     100%;
     width:      100%;
-    background: rgba( 255, 255, 255, .8 ) 
+    background: rgba(255, 255, 255, 0.1) 
                 url('http://sampsonresume.com/labs/pIkfp.gif') 
                 50% 50% 
                 no-repeat;
