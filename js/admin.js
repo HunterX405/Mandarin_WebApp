@@ -16,6 +16,13 @@ $(document).ready(function(){
             }
         }
     });
+
+    //Setup Loading Modal
+    $body = $("body");
+    $(document).on({
+        ajaxStart: function() { $body.addClass("loading");   console.log("loading"); },
+        ajaxStop: function() { $body.removeClass("loading"); console.log("done"); }    
+    });
     
     //Set active window variable
     var activeWindow = "#lessonsPage";
