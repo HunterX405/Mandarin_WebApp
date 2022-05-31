@@ -21,6 +21,7 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     position: fixed;
+    z-index: 2;
 }
 
 .menu_categories_icons{
@@ -122,9 +123,9 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
 /* LESSONS PAGE */
 #sidebar {
     height: 100%;
-    width: 0;
+    width: calc(170px + 3vw);
     position: fixed;
-    margin-left: 100px;
+    margin-left: calc(-170px + -3vw);
     z-index: 1;
     top: 0;
     left: 0;
@@ -153,8 +154,6 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
 
 #tabs{
     display: none;
-    width: -moz-fit-content;
-    width:fit-content;
     flex: 5;
 }
 
@@ -184,19 +183,6 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     width: -webkit-fill-available;
 }
 
-.topic {
-    background-color: #ffffff;
-    border-radius: 20px;
-    border: 2px solid #f1787c;
-    padding: 2vw;
-    word-break: break-word;
-    margin-left: 3vw;
-}
-
-.topicTitle{
-    margin-left: 3vw;
-}
-
 .errorMsg, #successMsg{
     display: none;
     background-color: #f08080;
@@ -211,7 +197,7 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     background-color: #00A878;
     border: 1px solid #388659;
 }
-.topic img {
+/* .topic img {
     max-width:100%;
 }
 .topic tr, .topic td {
@@ -219,7 +205,7 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
 }
 .topic table {
     width: 100%;
-}
+} */
 
 /* ADD LESSON */
 #lessonForm {

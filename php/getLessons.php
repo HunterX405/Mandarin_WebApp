@@ -5,39 +5,34 @@
 
     //Storage for response
     $response = array();
+    $response['title'] = array();
 
     //Get Lessons
     foreach($xml->children() as $lesson){
-
-        if(!isset($_POST["data"])){
-            //Get Topics
-            $topicInstance = array();
-            $lessonTopics = array();
-            foreach($lesson->topic as $oldTopic){
-                $topicInstance['topicTitle'] = (string) $oldTopic['topicTitle'];
-                $topicInstance['content'] = (string) $oldTopic->content;
-                array_push($lessonTopics,$topicInstance);
-            }
-            $lessonInstance['topics'] = $lessonTopics;
-            array_push($response,$lessonInstance);
-        }else{
-            $lessonTitle = (string) $lesson['title'];
-            if($_POST["data"] == "title"){
-                $lessonInstance = array();
-                $lessonInstance['title'] = $lessonTitle;
-                array_push($response,$lessonInstance);
-            }else if($_POST["data"] == "lesson"){
-                if($_POST["lesson"] == $lessonTitle){
-                    $topicInstance = array();
-                    $lessonTopics = array();
-                    foreach($lesson->topic as $oldTopic){
-                        $topicInstance['topicTitle'] = (string) $oldTopic['topicTitle'];
-                        $topicInstance['content'] = (string) $oldTopic->content;
-                        array_push($lessonTopics,$topicInstance);
+        $lessonTitle = (string) $lesson['title'];
+        if($_POST["data"] == "title"){
+            array_push($response['title'],$lessonTitle);
+        }else if($_POST["data"] == "lesson"){
+            if($_POST["lesson"] == $lessonTitle){
+                $response['topicTitle'] = array();
+                foreach($lesson->topic as $topic){
+                    $topicTitle = (string) $topic['topicTitle'];
+                    if(isset($_POST['topic'])){
+                        if($_POST['topic'] == $topicTitle){
+                            $response['content'] = (string) $topic->content;
+                            break;
+                        }
                     }
-                    array_push($response,$lessonTopics);
-                    break;
+                    array_push($response['topicTitle'],$topicTitle);
                 }
+                if(!isset($_POST['topic'])){
+                    if(!empty($lesson->topic[0]->content)){
+                        $response['content'] = (string) $lesson->topic[0]->content;
+                    }else{
+                        $response['content'] = "";
+                    }
+                }
+                break;
             }
         }
     }

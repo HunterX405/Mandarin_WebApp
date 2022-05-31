@@ -21,6 +21,7 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     position: fixed;
+    z-index: 2;
 }
 
 .menu_categories_icons{
@@ -145,7 +146,7 @@ p{
     color: #ffffff;
     text-transform: uppercase;
     font-size: calc(7px + 0.4vw);
-    width: moz-fit-content;  
+    width: -moz-fit-content;
     width: fit-content;
     border-radius: 20px;
     border: none;
@@ -208,7 +209,7 @@ form label{
 
 #buttonGroup {
     margin: auto;
-    width: moz-fit-content;  
+    width: -moz-fit-content;  
     width: fit-content;
     margin-top: 20px;
 }
@@ -306,9 +307,9 @@ form label{
 }
 #sidebar {
     height: 100%;
-    width: 0;
+    width: calc(170px + 3vw);
     position: fixed;
-    margin-left: 100px;
+    margin-left: calc(-170px + -3vw);
     z-index: 1;
     top: 0;
     left: 0;
@@ -337,8 +338,6 @@ form label{
 
 #tabs{
     display: none;
-    width: -moz-fit-content;
-    width:fit-content;
     flex: 5;
 }
 
@@ -366,41 +365,4 @@ form label{
 
 .ui-tabs-anchor {
     width: -webkit-fill-available;
-}
-
-.topic {
-    background-color: #ffffff;
-    border-radius: 20px;
-    border: 2px solid #f1787c;
-    padding: 2vw;
-    word-break: break-word;
-    margin-left: 3vw;
-}
-
-.topicTitle{
-    margin-left: 3vw;
-}
-
-.errorMsg, #successMsg{
-    display: none;
-    background-color: #f08080;
-    padding: 0.5em;
-    border: 1px solid red;
-    border-radius: 20px;
-    color: white;
-    text-align: center; 
-}
-
-#successMsg {
-    background-color: #00A878;
-    border: 1px solid #388659;
-}
-.topic img {
-    max-width:100%;
-}
-.topic tr, .topic td {
-    border: 1px solid black !important;
-}
-.topic table {
-    width: 100%;
 }
