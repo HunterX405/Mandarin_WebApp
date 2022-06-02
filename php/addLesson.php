@@ -1,52 +1,57 @@
 <?php
     // Redirect to Login Page when accessed via link.
-    if (!isset($_POST['lesson']) && !isset($_POST['topic']) && !isset($_POST['content'])) {
-        header('location: ../');
+    if (!isset($_POST['lessonList']) && (!isset($_POST['lesson']) && !isset($_POST['topic']) && !isset($_POST['content']))) {
+        header('location: ../admin.html');
         exit;
     }
-
-    //Get POST variable
-    $lessonTitle = $_POST['lessonList'];
-    $topicTitle = $_POST['topic'];
-    $topicContent = $_POST['content'];
-
+    
     //Load XML
     $xml = new DOMDocument();
     $xml->preserveWhiteSpace = false;
     $xml->formatOutput = true;
     $xml->load("lessons.xml");
 
-    //Create topic element
-    $newTopic = $xml->createElement("topic");
-    $newTopic->setAttribute("topicTitle",$topicTitle);
-    $content = $xml->createElement("content");
-    $content->appendChild($xml->createCDATASection($topicContent));
-    $newTopic->appendChild($content);
-
-    //PHP Response variable
-    $response = array("message" => "default");
-
     //Create New Lesson Element
     $lesson = $xml->createElement("lesson");
 
     $lessons = $xml->getElementsByTagName("lesson");
 
-    if($lessonTitle == "New Lesson"){
-        //Get last lesson number and add 1 for next lesson.
-        $lastTitle = $lessons[count($lessons)-1]->getAttribute("title");
-        $lessonTitle = "LESSON " . strval(explode(" ",$lastTitle)[1]+1);
+    if(isset($_POST['newLesson'])){
+        //Get POST variable
+        $newLessonTitle = $_POST['newLesson'];
 
-        //Set new lesson title attribute
-        $lesson->setAttribute("title", $lessonTitle);
+        $uniqueTitle = true;
+        foreach($lessons as $inCompLesson){
+            $inCompTitle = $inCompLesson->getAttribute("title");
+            if($newLessonTitle == $inCompTitle){
+                $uniqueTitle = false;
+            }
+        }
+        if($uniqueTitle){
+            //Set new lesson title attribute
+            $lesson->setAttribute("title", $newLessonTitle);
 
-        //Append topic to new lesson
-        $lesson->appendChild($newTopic);
+            //Add lesson to xml
+            $xml->getElementsByTagName("lessons")->item(0)->appendChild($lesson);
 
-        //Add lesson to xml
-        $xml->getElementsByTagName("lessons")->item(0)->appendChild($lesson);
+            $response = "Lesson Added Successfully!";
+        }else{
+            $response = "Lesson Already Exists!";
+        }
 
-        $response["message"] = "New Lesson Added Successfully!";
     }else{
+        //Get POST variable
+        $lessonTitle = $_POST['addLessonTitle'];
+        $topicTitle = $_POST['topic'];
+        $topicContent = $_POST['content'];
+
+        //Create topic element
+        $newTopic = $xml->createElement("topic");
+        $newTopic->setAttribute("topicTitle",$topicTitle);
+        $content = $xml->createElement("content");
+        $content->appendChild($xml->createCDATASection($topicContent));
+        $newTopic->appendChild($content);
+
         //Find lesson in xml if not new lesson
         foreach($lessons as $compLesson){
             $compTitle = $compLesson->getAttribute("title");
@@ -72,7 +77,7 @@
 
                 //Replace old lesson node($compLesson) to new lesson node($lesson)
                 $xml->getElementsByTagName("lessons")->item(0)->replaceChild($lesson,$compLesson);
-                $response["message"] = "Lesson Updated Successfully!";
+                $response = "Topic Added Successfully!";
             }
         }
     }
@@ -81,5 +86,5 @@
     $xml->save("lessons.xml");
 
     //JSON Response
-    echo json_encode($response);
+    echo $response;
 ?>

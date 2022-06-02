@@ -69,11 +69,11 @@ body {
     color: #ffffff;
 }
 
-p{
+/* p{
     font-family: 'Inter', sans-serif;
     font-size: calc(5px + 1vw);
     color: #000000;
-}
+} */
 
 .p_reversecolor{
     color: #ffffff;
@@ -139,20 +139,89 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
 }
 #sidebar p {
     cursor: pointer;
-    padding: 8px 0px 8px 0px;
-    text-align: center;
+    padding: 8px 0px 8px calc(15px + 1vw);
     font-size: 25px;
-    color: #000000;
     display: block;
     transition: 0.3s;
+    flex: 3;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    word-break: break-word;
 }
   
 #sidebar p:hover {
-    background-color:darkgrey;
-    color: #f1f1f1;
+    background-color:#7A8B99;
+    color: white;
 }
 
-#tabs{
+.active {
+    background-color: #493843;
+    color:white;
+}
+
+.sidebarLesson {
+    display: flex;
+}
+
+/* DELETE LESSON */
+.lessonDeleteBtn {
+    background: url("images/delete.avif") no-repeat center;
+    border: none;
+    flex: 1;
+    padding: 0;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+}
+
+.lessonDeleteBtn:hover{
+    background-color:#F2D0A4;
+}
+
+/* ADD LESSON */
+#lessonAddBtn{
+    width: -webkit-fill-available;
+}
+
+.dialogForm {
+    margin: 0;
+    padding: 0;
+}
+
+#lessonErrorMsg{
+    display: none;
+    margin: 0;
+}
+
+#addLessonDialog #lessonErrorMsg
+{ 
+    border: 1px solid transparent;
+    padding: 0.3em;
+    font-size: medium;
+}
+
+#addLessonDialog label, #addLessonDialog input { 
+    display:block; 
+}
+#addLessonDialog input.text { 
+    margin-bottom:12px;
+    width:95%;
+}
+#addLessonDialog fieldset { 
+    padding:0; border:0;
+    margin-top:15px; 
+}
+#addLessonDialog h1 { 
+    font-size: 1.2em;
+    margin: .6em 0; 
+}
+.ui-dialog .ui-state-error {
+     padding: .3em; 
+}
+.ui-dialog .ui-dialog-titlebar{
+    background-color: #f08080;
+}
+
+#viewLessons{
     display: none;
     flex: 5;
 }
@@ -183,6 +252,14 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     width: -webkit-fill-available;
 }
 
+.ui-button{
+    margin: 10px;
+}
+
+#toEditTopicBtn, #toDeleteTopicBtn{
+    float: right;
+}
+
 .errorMsg, #successMsg{
     display: none;
     background-color: #f08080;
@@ -197,20 +274,20 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     background-color: #00A878;
     border: 1px solid #388659;
 }
-/* .topic img {
-    max-width:100%;
+h4{
+    text-align: center;
 }
-.topic tr, .topic td {
-    border: 1px solid black !important;
-}
-.topic table {
-    width: 100%;
-} */
 
-/* ADD LESSON */
+/* ADD TOPIC */
 #lessonForm {
     display: none;
 }
+
+#lessonForm input[type="text"]{
+    width: 50%;
+    padding: 10px 0 10px 20px;
+}
+
 .trumbowyg-editor{
     background-color: #ffffff;
 }
@@ -225,10 +302,8 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     top:        0;
     height:     100%;
     width:      100%;
-    background: rgba(255, 255, 255, 0.1) 
-                url('http://sampsonresume.com/labs/pIkfp.gif') 
-                50% 50% 
-                no-repeat;
+    background: rgba(255, 255, 255, 0) 
+                url('https://i.pinimg.com/originals/65/ba/48/65ba488626025cff82f091336fbf94bb.gif') no-repeat center center;
 }
 
 body.loading {
@@ -237,4 +312,9 @@ body.loading {
 
 body.loading .modal {
     display: block;
+}
+
+/* DIALOGS */
+.dialog p{
+    text-align: center;
 }

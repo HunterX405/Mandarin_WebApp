@@ -57,27 +57,34 @@
             </div>                
         </div>
         
+
         <!-- VIEW LESSON PAGE -->
         <div class="container_right" id="lessonsPage">
-            <div class="pane" id="viewLessons">
-                <div id="successMsg">Success!</div>
-                <div id="lessons"></div>
-            </div>
             <div id="sidebar"></div>
-            <div id="tabs"><ul></ul></div>
-            <!-- LOADING MODAL -->
-            <div class="modal">LOADING...</div>
-        </div>
+            <div id="viewLessons">
+                <div id="tabs"><ul></ul></div>
+            </div>
+
+            <!-- ADD LESSON DIALOG -->
+            <div class="dialog" id="addLessonDialog" title="Add Lesson">
+                <h4 id="lessonErrorMsg"></h4>
+                <form class="dialogForm">
+                    <fieldset>
+                        <label for="lessonTitle">Lesson Title: </label>
+                        <input type="text" name="lessonTitle" id="lessonTitle" class="text ui-widget-content ui-corner-all" autocomplete="off" required>
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- DELETE LESSON DIALOG -->
+            <div class="dialog" id="deleteLessonDialog" title="Delete Lesson"></div>
             
-
+            <!-- LOADING MODAL -->
+            <div class="modal"></div>
             <form class="form" id="lessonForm">
-                <h2 class="homeHeader2">MANAGE LESSONS</h2>
+                <h2 class="homeHeader2" id="addTopicHeader">ADD TOPIC</h2>
                 <fieldset>
-
-                    <label for="lessonList">CHOOSE LESSON:</label>
-                    <select name="lessonList" id="lessonList">
-                    </select>
-
+                    <input type="hidden" id="addLessonTitle" name="addLessonTitle">
                     <input type="text" id="topicTitle" name="topic" placeholder="TOPIC TITLE" required>
                     <textarea id="textEditor" name="content" placeholder="Type here...." required></textarea>
 
@@ -85,13 +92,18 @@
                     <button type="button" id="cancelAddLessonBtn">CANCEL</button>
                 </fieldset>
             </form>
-
         </div>
 
+        <!-- SUCCESS MODAL -->
+        <div class="dialog" id="successDialog" title="Success!">
+            <p><span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 0 0;"></span></p>
+        </div>
+
+        <div id="errorDialog" title="Error!"></div>
         <!-- LOGOUT MODAL -->
-        <div id="logout-dialog-confirm" title="Logout">
-            <h4><span class="ui-icon ui-icon-alert"></span>
-                Are you sure you want to log out of your account?</h4>
+        <div class="dialog" id="logout-dialog-confirm" title="Logout">
+            <p><span class="ui-icon ui-icon-alert"></span>
+                Are you sure you want to log out of your account?</p>
         </div>
 
     </body>

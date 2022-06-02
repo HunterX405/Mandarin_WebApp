@@ -17,6 +17,13 @@ $(document).ready(function(){
     //Set active window variable
     var activeWindow = "#homePage";
 
+    //Setup Loading Modal
+    $body = $("body");
+    $(document).on({
+        ajaxStart: function() { $body.addClass("loading");},
+        ajaxStop: function() { $body.removeClass("loading");}    
+    });
+
     //Hide empty div upon load of document with screen width < 1220px
     if($(window).width() < 1220){
         $(".empty").hide();
@@ -228,6 +235,53 @@ $(document).ready(function(){
     });
 
 //CHANGE PASSWORD
+
+    function changePassword() {
+        var valid = true;
+        allFields.removeClass( "ui-state-error" );
+        
+        if(!checkLength( $("#oldPassword"), "Old Password", 5 )) valid = false;
+        else if(!checkLength( $("#newPassword"), "New Password", 5 )) valid = false;
+        else if($("#newPassword").val().trim() != $("#confPassword").val().trim()){
+            errorResponse("New Password and Confirm Password does not match.");
+            valid = false;
+        }else{
+            valid = true;
+        }
+        
+        if ( valid ) {
+
+            var changePassformData = changePasswordForm.serializeArray();
+            //Send ajax request to updateUserProfile.php
+            $.ajax({
+                type: "post",
+                url: "./php/updateUserProfile.php",
+                data: $.param(changePassformData),
+                success: function (changePassResponse) {
+                    
+                    //Parse JSON response from PHP AJAX
+                    const changePassObj = JSON.parse(changePassResponse);
+
+                    //If old password is incorrect
+                    if(changePassObj.message == "Wrong Password"){
+                        errorResponse(changePassObj.message);
+
+                    //If user data is corrupted, go back to login page to refresh user data
+                    }else if(changePassObj.message == "Account Not Found!"){
+                        window.location.href="./";
+                    
+                    //Changed Password Successfully
+                    }else{
+                        successMessage.text(changePassObj.message);
+                        successMessage.slideDown(200).delay(5000).slideUp(200);
+                        changePasswordDialog.dialog( "close" );
+                    }
+                }
+            });
+        }
+        return valid;
+    }
+
     var oldPasswordField = $("#oldPassword"),
     newPasswordField = $("#newPassword"),
     confPasswordField = $("#confPassword"),
@@ -281,52 +335,6 @@ $(document).ready(function(){
         }
     }
 
-    function changePassword() {
-        var valid = true;
-        allFields.removeClass( "ui-state-error" );
-        
-        if(!checkLength( $("#oldPassword"), "Old Password", 5 )) valid = false;
-        else if(!checkLength( $("#newPassword"), "New Password", 5 )) valid = false;
-        else if($("#newPassword").val().trim() != $("#confPassword").val().trim()){
-            errorResponse("New Password and Confirm Password does not match.");
-            valid = false;
-        }else{
-            valid = true;
-        }
-        
-        if ( valid ) {
-
-            var changePassformData = changePasswordForm.serializeArray();
-            //Send ajax request to updateUserProfile.php
-            $.ajax({
-                type: "post",
-                url: "./php/updateUserProfile.php",
-                data: $.param(changePassformData),
-                success: function (changePassResponse) {
-                    
-                    //Parse JSON response from PHP AJAX
-                    const changePassObj = JSON.parse(changePassResponse);
-
-                    //If old password is incorrect
-                    if(changePassObj.message == "Wrong Password"){
-                        errorResponse(changePassObj.message);
-
-                    //If user data is corrupted, go back to login page to refresh user data
-                    }else if(changePassObj.message == "Account Not Found!"){
-                        window.location.href="./";
-                    
-                    //Changed Password Successfully
-                    }else{
-                        successMessage.text(changePassObj.message);
-                        successMessage.slideDown(200).delay(5000).slideUp(200);
-                        changePasswordDialog.dialog( "close" );
-                    }
-                }
-            });
-        }
-        return valid;
-    }
-
 //DELETE ACCOUNT
     function deleteAccount(){
         $.ajax({
@@ -361,7 +369,7 @@ $(document).ready(function(){
 
 //VIEW LESSONS
     var sidebarState = false;
-    $("#lessonBtn").click(function () { 
+    $(".lessonBtn").click(function () { 
         if($("#sidebar").html() == ""){
             $.ajax({
                 type: "POST",
@@ -413,6 +421,8 @@ $(document).ready(function(){
     var activeLesson = "";
     $("#sidebar").on("click","p.lessonView",function () {
         var lessonTitle = $(this).text();
+        $("p.lessonView").css({"background-color":"#f1787c","color":"black"});
+        $(this).css({"background-color":"darkgrey","color":"#f1f1f1"});
         if(activeLesson != lessonTitle){
             $.ajax({
                 type: "POST",

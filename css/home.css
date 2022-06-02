@@ -366,3 +366,25 @@ form label{
 .ui-tabs-anchor {
     width: -webkit-fill-available;
 }
+
+/* LOADING MODAL */
+.modal {
+    display: none;
+    line-height: 90vh;
+    text-align: center;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    height:     100%;
+    width:      100%;
+    background: rgba(255, 255, 255, 0) 
+                url('https://i.pinimg.com/originals/65/ba/48/65ba488626025cff82f091336fbf94bb.gif') no-repeat center center;
+}
+
+body.loading {
+    overflow: hidden;   
+}
+
+body.loading .modal {
+    display: block;
+}
