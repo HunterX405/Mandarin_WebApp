@@ -219,7 +219,7 @@ $(document).ready(function(){
                         $("#successDialog p").append(response);
                         $("#successDialog").dialog("open");
 
-                        $("#lessonForm").fadeOut(500, function(){
+                        $("#addTopicForm").fadeOut(500, function(){
                             //Reset Dialog
                             errorMessage.text("");
                             errorMessage.hide();
@@ -322,13 +322,13 @@ $(document).ready(function(){
             $("#sidebar").css("margin-left", "calc(-170px + -3vw)");
             $("#viewLessons").css("margin-left", "0");
             sidebarState = false;
-            $("#lessonForm").fadeIn(100);
+            $("#addTopicForm").fadeIn(100);
         });
     })
 
 
     //ADD TOPIC
-    $("#lessonForm").submit(function (e) { 
+    $("#addTopicForm").submit(function (e) { 
         e.preventDefault();
 
         //Get Form details
@@ -348,12 +348,13 @@ $(document).ready(function(){
                 $("#successDialog p").append(response);
                 $("#successDialog").dialog("open");
 
-                $("#lessonForm").fadeOut(500, function(){
+                $("#addTopicForm").fadeOut(500, function(){
                     //Display Sidebar
                     $("#sidebar").css("margin-left", "100px");
                     $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
                     sidebarState = true; 
                     //Reset form values
+                    $("#addTopicHeader").html("ADD TOPIC");
                     $("#lessonsPage form")[0].reset();
                     $("#lessonList").selectmenu("destroy");
                     $("#lessonList").html("");
@@ -365,18 +366,17 @@ $(document).ready(function(){
     });
 
     //CANCEL ADD TOPIC
-    $("#cancelAddLessonBtn").click(function (e) { 
+    $("#cancelAddTopicBtn").click(function (e) { 
         e.preventDefault();
-        $("#lessonForm").fadeOut(500, function(){
+        $("#addTopicForm").fadeOut(500, function(){
                 //Display Sidebar
                 $("p.lessonView").removeClass("active");
                 $("#sidebar").css("margin-left", "100px");
                 $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
                 sidebarState = true; 
                 //Reset form values
+                $("#addTopicHeader").html("ADD TOPIC");
                 $("#lessonsPage form")[0].reset();
-                $("#lessonList").selectmenu("destroy");
-                $("#lessonList").html("");
                 $("#textEditor").val("");
                 $(".trumbowyg-editor").html("");
         });        
@@ -384,7 +384,130 @@ $(document).ready(function(){
 
 
     //EDIT TOPIC
-    
+    //TO ADD TOPIC
+    $("#viewLessons").on("click","#toEditTopicBtn", function(){
+
+        //GET ACTIVE TOPIC TITLE AND CONTENT IN TAB
+        var active = $("#tabs").tabs('option','active');
+        var topicTitle = $("#tabs ul>li a").eq(active).text();
+        var topicContent = $("#"+toId(topicTitle)).html();
+
+        //SET LESSON AND TOPIC
+        $("#editTopicHeader").append(" "+activeLesson+" - "+topicTitle);
+        $("#editLessonTitle").val(activeLesson);
+        $("#editTopicTitle").val(topicTitle);
+
+        $("#editTopicContent").trumbowyg({
+            btnsDef: {
+                upload: {
+                    ico: 'insertImage'
+                }
+            },
+            // Redefine the button pane
+            btns: [
+                ['historyUndo','historyRedo'],
+                ['fontfamily'],
+                ['fontsize'],
+                ['formatting'],
+                ['strong', 'em', 'del'],
+                ['superscript', 'subscript'],
+                ['foreColor', 'backColor'],
+                ['link'],
+                ['upload'],
+                ['table'],
+                ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+                ['indent', 'outdent'],
+                ['unorderedList', 'orderedList'],
+                ['horizontalRule'],
+                ['removeformat'],
+                ['fullscreen']
+            ],
+            plugins: {
+                upload: {
+                    serverPath: './php/upload.php',
+                    fileFieldName: 'image',
+                },
+                resizimg: {
+                    minSize: 64,
+                    step: 16,
+                }
+            }
+        });
+
+        //Set Text Editor Content
+        $(".trumbowyg-editor").html(topicContent);
+        console.log($("#editTopicContent").val());
+
+        $("#viewLessons").fadeOut(500, function(){
+            //Reset Tabs
+            $( "#tabs" ).fadeOut(100);
+            activeLesson = "";
+            //Hide Sidebar
+            $("#sidebar").css("margin-left", "calc(-170px + -3vw)");
+            $("#viewLessons").css("margin-left", "0");
+            sidebarState = false;
+            $("#editTopicForm").fadeIn(100);
+        });
+    })
+
+
+    //EDIT TOPIC
+    $("#editTopicForm").submit(function (e) { 
+        e.preventDefault();
+
+        //GET OLD TOPIC TITLE
+        var active = $("#tabs").tabs('option','active');
+        var oldTopicTitle = $("#tabs ul>li a").eq(active).text();
+
+        //Get Form details
+        var editTopicFormData = new FormData(this);
+        editTopicFormData.append("oldTopicTitle",oldTopicTitle);
+
+        //Send ajax request to addLesson.php
+        $.ajax({
+            type: "post",
+            url: "./php/editTopic.php",
+            data: editTopicFormData,
+            processData: false,
+            contentType: false, 
+            success: function (response) {
+                
+                //Update Lessons List in Sidebar
+                refreshSidebar();
+                $("#successDialog p").append(response);
+                $("#successDialog").dialog("open");
+
+                $("#editTopicForm").fadeOut(500, function(){
+                    //Display Sidebar
+                    $("#sidebar").css("margin-left", "100px");
+                    $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                    sidebarState = true; 
+                    //Reset form values
+                    $("#editTopicHeader").html("EDIT");
+                    $("#lessonsPage form")[0].reset();
+                    $("#editTopicContent").val("");
+                    $(".trumbowyg-editor").html("");
+                });
+            }
+        });
+    });
+
+    //CANCEL EDIT TOPIC
+    $("#cancelEditTopicBtn").click(function (e) { 
+        e.preventDefault();
+        $("#editTopicForm").fadeOut(500, function(){
+                //Display Sidebar
+                $("p.lessonView").removeClass("active");
+                $("#sidebar").css("margin-left", "100px");
+                $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                sidebarState = true; 
+                //Reset form values
+                $("#editTopicHeader").html("EDIT");
+                $("#lessonsPage form")[0].reset();
+                $("#editTopicContent").val("");
+                $(".trumbowyg-editor").html("");
+        });        
+    });
 
 
     //DELETE LESSON

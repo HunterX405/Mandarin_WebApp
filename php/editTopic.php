@@ -1,0 +1,77 @@
+<?php
+    // Redirect to Login Page when accessed via link.
+    if (!isset($_POST['editLessonTitle']) && !isset($_POST['editTopicTitle']) && !isset($_POST['editTopicContent']) && !isset($_POST['oldTopicTitle'])) {
+        header('location: ../admin.html');
+        exit;
+    }
+
+    //Get POST Variables
+    $lessonTitle = $_POST['editLessonTitle'];
+    $topicTitle = $_POST['editTopicTitle'];
+    $topicContent = $_POST['editTopicContent'];
+    $oldTopicTitle = $_POST['oldTopicTitle'];
+    
+    //Load Lessons XML
+    $xml = new DOMDocument();
+    $xml->preserveWhiteSpace = false;
+    $xml->formatOutput = true;
+    $xml->load("lessons.xml");
+
+    //Find Lesson
+    $lessonFound = false;
+    $lessons = $xml->getElementsByTagName("lesson");
+    foreach ($lessons as $lesson) {
+        $compLessonTitle = $lesson->getAttribute("title");
+
+        if($lessonTitle == $compLessonTitle){
+            $lessonFound = true;
+            //Create New Lesson Element
+            $newLesson = $xml->createElement("lesson");
+            $newLesson->setAttribute("title", $lessonTitle);
+
+            //Find Topic
+            $topicFound = false;
+            $topics = $lesson->getElementsByTagName("topic");
+            foreach($topics as $topic){
+                $compTopicTitle = $topic->getAttribute("topicTitle");
+                if($oldTopicTitle == $compTopicTitle){
+                    $topicFound = true;
+                    //Create New Topic Element
+                    $newTopic = $xml->createElement("topic");
+                    $newTopic->setAttribute("topicTitle", $topicTitle);
+                    $newContent = $xml->createElement("content");
+                    $newContent->appendChild($xml->createCDATASection($topicContent));
+                    $newTopic->appendChild($newContent);
+
+                    //Append new topic to new lesson
+                    $newLesson->appendChild($newTopic);
+                }else{
+                    $oldTopic = $xml->createElement("topic");
+                    $oldTopic->setAttribute("topicTitle", $compTopicTitle);
+                    $oldContent = $xml->createElement("content");
+                    $oldContent->appendChild($xml->createCDATASection($topic->getElementsByTagName("content")[0]->nodeValue));
+                    $oldTopic->appendChild($oldContent);
+
+                    $newLesson->appendChild($oldTopic);
+                }
+            }
+            //Replace old lesson node($lesson) to new lesson node($newLesson) in xml
+            $xml->getElementsByTagName("lessons")->item(0)->replaceChild($newLesson,$lesson);
+        }
+    }
+
+    if($topicFound == false){
+        $response = "Topic Not Found.";
+    }else if($lessonFound == false){
+        $response = "Lesson Not Found.";
+    }else{
+        //Save XML file
+        $xml->save("lessons.xml");
+
+        //Success Response
+        $response = "Topic Edited Successfully!";
+    }
+
+    //PHP Response
+    echo $response;
+?>

@@ -81,17 +81,33 @@
             
             <!-- LOADING MODAL -->
             <div class="modal"></div>
-            <form class="form" id="lessonForm">
+
+            <!-- ADD TOPIC FORM -->
+            <form class="form" id="addTopicForm">
                 <h2 class="homeHeader2" id="addTopicHeader">ADD TOPIC</h2>
                 <fieldset>
                     <input type="hidden" id="addLessonTitle" name="addLessonTitle">
                     <input type="text" id="topicTitle" name="topic" placeholder="TOPIC TITLE" required>
                     <textarea id="textEditor" name="content" placeholder="Type here...." required></textarea>
 
-                    <button type="submit" id="addLessonBtn">ADD LESSON</button>
-                    <button type="button" id="cancelAddLessonBtn">CANCEL</button>
+                    <button type="submit" id="addTopicBtn">ADD TOPIC</button>
+                    <button type="button" id="cancelAddTopicBtn">CANCEL</button>
                 </fieldset>
             </form>
+
+            <!-- EDIT TOPIC FORM -->
+            <form class="form" id="editTopicForm">
+                <h2 class="homeHeader2" id="editTopicHeader">EDIT</h2>
+                <fieldset>
+                    <input type="hidden" id="editLessonTitle" name="editLessonTitle">
+                    <input type="text" id="editTopicTitle" name="editTopicTitle" placeholder="TOPIC TITLE" required>
+                    <textarea id="editTopicContent" name="editTopicContent" placeholder="Type here...." required></textarea>
+
+                    <button type="submit" id="editTopicBtn">EDIT TOPIC</button>
+                    <button type="button" id="cancelEditTopicBtn">CANCEL</button>
+                </fieldset>
+            </form>
+
         </div>
 
         <!-- SUCCESS MODAL -->
