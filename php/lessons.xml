@@ -88,36 +88,15 @@ to meet you.</span></p><p><hr></p><p class="MsoNormal" style="text-align: center
     <topic topicTitle="EDIT TOPIC TITLE 5">
       <content><![CDATA[<p>EDIT TOPIC TITLE 5</p>]]></content>
     </topic>
-    <topic topicTitle="wwwwwwwwwww">
-      <content><![CDATA[<p>wwwwwwwwwwww</p>]]></content>
-    </topic>
   </lesson>
   <lesson title="LESSON 5">
-    <topic topicTitle="w3333333r3r">
-      <content><![CDATA[<p>a3r3adad</p>]]></content>
-    </topic>
     <topic topicTitle="EDIT TEST TOPIC 7">
       <content><![CDATA[<p>EDIT TEST TOPIC CONTENT 7</p>]]></content>
     </topic>
   </lesson>
   <lesson title="LESSON 6">
-    <topic topicTitle="EDITtest 1">
-      <content><![CDATA[<p>EDITtest 1</p>]]></content>
-    </topic>
-    <topic topicTitle="EDITtest 2">
-      <content><![CDATA[<p>EDITtest 2</p>]]></content>
-    </topic>
-    <topic topicTitle="EDITtest 3">
-      <content><![CDATA[<p>EDITtest 3</p>]]></content>
-    </topic>
-    <topic topicTitle="EDITtest 4">
-      <content><![CDATA[<p>EDITtest 4</p>]]></content>
-    </topic>
-    <topic topicTitle="EDITtest 5">
-      <content><![CDATA[<p>EDITtest 5</p>]]></content>
-    </topic>
-    <topic topicTitle="EDITtest 6">
-      <content><![CDATA[<p>EDITtest 6</p>]]></content>
+    <topic topicTitle="NEW TEST TOPIC">
+      <content><![CDATA[<p>NEW TEST CONTENT</p>]]></content>
     </topic>
   </lesson>
 </lessons>

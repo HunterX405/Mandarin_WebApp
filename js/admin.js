@@ -49,6 +49,20 @@ $(document).ready(function(){
         }
     });
 
+    $("#errorDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        buttons: {
+            "Close": function(){
+                $( this ).dialog( "close" );
+                $("#errorDialog p").html("<span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span>");
+            }
+        }
+    });
+
 
 //LESSONS PAGE
     var activeLesson = "";
@@ -330,39 +344,48 @@ $(document).ready(function(){
     //ADD TOPIC
     $("#addTopicForm").submit(function (e) { 
         e.preventDefault();
+        if($("#topicTitle").val().trim() == ""){
+            $("#errorDialog p").append("Topic Title is Required!");
+            $("#errorDialog").dialog("open");
+        }else{
+            //Get Form details
+            var lessonformData = new FormData(this);
 
-        //Get Form details
-        var lessonformData = new FormData(this);
+            //Send ajax request to addLesson.php
+            $.ajax({
+                type: "post",
+                url: "./php/addLesson.php",
+                data: lessonformData,
+                processData: false,
+                contentType: false, 
+                success: function (response) {
 
-        //Send ajax request to addLesson.php
-        $.ajax({
-            type: "post",
-            url: "./php/addLesson.php",
-            data: lessonformData,
-            processData: false,
-            contentType: false, 
-            success: function (response) {
-                
-                //Update Lessons List in Sidebar
-                refreshSidebar();
-                $("#successDialog p").append(response);
-                $("#successDialog").dialog("open");
+                    if(response == "Topic Title Already Exists!"){
+                        $("#errorDialog p").append(response);
+                        $("#errorDialog").dialog("open");
+                    }else{
+                        //Update Lessons List in Sidebar
+                        refreshSidebar();
+                        $("#successDialog p").append(response);
+                        $("#successDialog").dialog("open");
 
-                $("#addTopicForm").fadeOut(500, function(){
-                    //Display Sidebar
-                    $("#sidebar").css("margin-left", "100px");
-                    $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
-                    sidebarState = true; 
-                    //Reset form values
-                    $("#addTopicHeader").html("ADD TOPIC");
-                    $("#lessonsPage form")[0].reset();
-                    $("#lessonList").selectmenu("destroy");
-                    $("#lessonList").html("");
-                    $("#textEditor").val("");
-                    $(".trumbowyg-editor").html("");
-                });
-            }
-        });
+                        $("#addTopicForm").fadeOut(500, function(){
+                            //Display Sidebar
+                            $("#sidebar").css("margin-left", "100px");
+                            $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                            sidebarState = true; 
+                            //Reset form values
+                            $("#addTopicHeader").html("ADD TOPIC");
+                            $("#lessonsPage form")[0].reset();
+                            $("#lessonList").selectmenu("destroy");
+                            $("#lessonList").html("");
+                            $("#textEditor").val("");
+                            $(".trumbowyg-editor").html("");
+                        });
+                    }
+                }
+            });
+        }
     });
 
     //CANCEL ADD TOPIC
@@ -509,6 +532,66 @@ $(document).ready(function(){
         });        
     });
 
+    //DELETE TOPIC
+    var topicToDelete = "";
+    $("#viewLessons").on("click","#toDeleteTopicBtn",function () {
+        //GET OLD TOPIC TITLE
+        var active = $("#tabs").tabs('option','active');
+        topicToDelete = $("#tabs ul>li a").eq(active).text();
+        $("#deleteTopicDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+topicToDelete+" in "+activeLesson+"?</p>");
+        $("#deleteTopicDialog").dialog("open");
+    });
+
+    //DELETE TOPIC DIALOG
+    $("#deleteTopicDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        buttons: {
+            Cancel: function() {
+                topicToDelete = "";
+                $( this ).dialog( "close" );
+            },
+            Confirm: function(){
+                $.ajax({
+                    type: "POST",
+                    url: "./php/editTopic.php",
+                    data: {
+                        oldTopicTitle: topicToDelete,
+                        editLessonTitle: activeLesson
+                    },
+                    beforeSend: function (){
+                        //Reset Tabs
+                        $( "#tabs" ).fadeOut(100);
+                        $( "#viewLessons" ).fadeOut(100);
+                        activeLesson = "";
+                        //Reset and Hide Sidebar
+                        $("#sidebar").css("margin-left", "calc(-170px + -3vw)");
+                        $("#viewLessons").css("margin-left", "0");
+                        sidebarState = false;
+                        $("p.lessonView").removeClass("active");
+                    },
+                    success: function (response) {
+                        refreshSidebar();
+                        $("#successDialog p").append(response);
+                        $("#successDialog").dialog("open");
+                    },
+                    complete: function (){
+                        //Reset Variable
+                        lessonToDelete = "";
+                        //Display Sidebar
+                        $("#sidebar").css("margin-left", "100px");
+                        $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                        sidebarState = true; 
+                    }
+                });
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+
 
     //DELETE LESSON
     var lessonToDelete = "";
@@ -530,7 +613,7 @@ $(document).ready(function(){
                 $.ajax({
                     type: "POST",
                     url: "./php/deleteLesson.php",
-                    data: "lessonDelete="+lessonToDelete+"",
+                    data: "lessonDelete="+lessonToDelete,
                     beforeSend: function (){
                         //Reset Tabs
                         $( "#tabs" ).fadeOut(100);

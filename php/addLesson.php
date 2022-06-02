@@ -40,44 +40,58 @@
         }
 
     }else{
-        //Get POST variable
         $lessonTitle = $_POST['addLessonTitle'];
-        $topicTitle = $_POST['topic'];
-        $topicContent = $_POST['content'];
-
-        //Create topic element
-        $newTopic = $xml->createElement("topic");
-        $newTopic->setAttribute("topicTitle",$topicTitle);
-        $content = $xml->createElement("content");
-        $content->appendChild($xml->createCDATASection($topicContent));
-        $newTopic->appendChild($content);
-
         //Find lesson in xml if not new lesson
         foreach($lessons as $compLesson){
             $compTitle = $compLesson->getAttribute("title");
             if($lessonTitle == $compTitle){
+                //Get POST variable
+                $topicTitle = $_POST['topic'];
+                $topicContent = $_POST['content'];
+
+                //Create new topic element
+                $newTopic = $xml->createElement("topic");
+                $newTopic->setAttribute("topicTitle",$topicTitle);
+                $content = $xml->createElement("content");
+                $content->appendChild($xml->createCDATASection($topicContent));
+                $newTopic->appendChild($content);
+
                 //Create new lesson to replace old one with same title attribute
                 $lesson->setAttribute("title", $compTitle);
 
-                //Get and append all topics from old lesson node to new lesson node
-                foreach($compLesson->getElementsByTagName("topic") as $topic){
-                    $oldTopic = $xml->createElement("topic");
-                    $oldTopic->setAttribute("topicTitle", $topic->getAttribute("topicTitle"));
+                //Check if new topic title exists already
+                $isUniqueTopic = true;
 
-                    $oldContent = $xml->createElement("content");
-                    $oldContent->appendChild($xml->createCDATASection($topic->getElementsByTagName("content")[0]->textContent));
-                    
-                    $oldTopic->appendChild($oldContent);
-                    
-                    $lesson->appendChild($oldTopic);
+                //Get and append all topics from old lesson node to new lesson node
+                $topics = $compLesson->getElementsByTagName("topic");
+                foreach($topics as $topic){
+                    $oldTopicTitle = $topic->getAttribute("topicTitle");
+                    if($oldTopicTitle == $topicTitle){
+                        $isUniqueTopic = false;
+                        break;
+                    }else{
+                        $oldTopic = $xml->createElement("topic");
+                        $oldTopic->setAttribute("topicTitle", $oldTopicTitle);
+
+                        $oldContent = $xml->createElement("content");
+                        $oldContent->appendChild($xml->createCDATASection($topic->getElementsByTagName("content")[0]->textContent));
+                        
+                        $oldTopic->appendChild($oldContent);
+                        
+                        $lesson->appendChild($oldTopic);
+                    }
                 }
 
-                //Append new topic to lesson
-                $lesson->appendChild($newTopic);
+                if($isUniqueTopic){
+                    //Append new topic to lesson
+                    $lesson->appendChild($newTopic);
 
-                //Replace old lesson node($compLesson) to new lesson node($lesson)
-                $xml->getElementsByTagName("lessons")->item(0)->replaceChild($lesson,$compLesson);
-                $response = "Topic Added Successfully!";
+                    //Replace old lesson node($compLesson) to new lesson node($lesson)
+                    $xml->getElementsByTagName("lessons")->item(0)->replaceChild($lesson,$compLesson);
+                    $response = "Topic Added Successfully!";
+                }else{
+                    $response = "Topic Title Already Exists!";
+                }
             }
         }
     }

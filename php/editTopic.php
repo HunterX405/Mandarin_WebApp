@@ -7,8 +7,6 @@
 
     //Get POST Variables
     $lessonTitle = $_POST['editLessonTitle'];
-    $topicTitle = $_POST['editTopicTitle'];
-    $topicContent = $_POST['editTopicContent'];
     $oldTopicTitle = $_POST['oldTopicTitle'];
     
     //Load Lessons XML
@@ -31,20 +29,32 @@
 
             //Find Topic
             $topicFound = false;
+            $topicDeleted = false;
             $topics = $lesson->getElementsByTagName("topic");
             foreach($topics as $topic){
                 $compTopicTitle = $topic->getAttribute("topicTitle");
                 if($oldTopicTitle == $compTopicTitle){
+                    
                     $topicFound = true;
-                    //Create New Topic Element
-                    $newTopic = $xml->createElement("topic");
-                    $newTopic->setAttribute("topicTitle", $topicTitle);
-                    $newContent = $xml->createElement("content");
-                    $newContent->appendChild($xml->createCDATASection($topicContent));
-                    $newTopic->appendChild($newContent);
+                    if(isset($_POST['editTopicContent']) && isset($_POST['oldTopicTitle'])){
+                        //EDIT TOPIC
+                        //Get POST variables for EDIT
+                        $topicContent = $_POST['editTopicContent'];
+                        $topicTitle = $_POST['editTopicTitle'];
 
-                    //Append new topic to new lesson
-                    $newLesson->appendChild($newTopic);
+                        //Create New Topic Element
+                        $newTopic = $xml->createElement("topic");
+                        $newTopic->setAttribute("topicTitle", $topicTitle);
+                        $newContent = $xml->createElement("content");
+                        $newContent->appendChild($xml->createCDATASection($topicContent));
+                        $newTopic->appendChild($newContent);
+
+                        //Append new topic to new lesson
+                        $newLesson->appendChild($newTopic);
+                    }else{
+                        //DELETE TOPIC
+                        $topicDeleted = true;
+                    }
                 }else{
                     $oldTopic = $xml->createElement("topic");
                     $oldTopic->setAttribute("topicTitle", $compTopicTitle);
@@ -60,16 +70,21 @@
         }
     }
 
-    if($topicFound == false){
+    if(!$topicFound){
         $response = "Topic Not Found.";
-    }else if($lessonFound == false){
+    }else if(!$lessonFound){
         $response = "Lesson Not Found.";
     }else{
+
         //Save XML file
         $xml->save("lessons.xml");
 
         //Success Response
-        $response = "Topic Edited Successfully!";
+        if($topicDeleted){
+            $response = "Topic Deleted Successfully!";
+        }else{
+            $response = "Topic Edited Successfully!";
+        }  
     }
 
     //PHP Response
