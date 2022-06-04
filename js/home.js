@@ -367,7 +367,7 @@ $(document).ready(function(){
         $( "#delete-dialog-confirm" ).dialog("open");
     });
 
-//VIEW LESSONS
+//LESSONS PAGE
     var sidebarState = false;
     $(".lessonBtn").click(function () { 
         if($("#sidebar").html() == ""){
@@ -418,11 +418,13 @@ $(document).ready(function(){
         return id;
     }
 
+    //VIEW LESSON
     var activeLesson = "";
     $("#sidebar").on("click","p.lessonView",function () {
         var lessonTitle = $(this).text();
-        $("p.lessonView").css({"background-color":"#f1787c","color":"black"});
-        $(this).css({"background-color":"darkgrey","color":"#f1f1f1"});
+        $("p.lessonView").removeClass("active");
+        $(this).addClass("active");
+        
         if(activeLesson != lessonTitle){
             $.ajax({
                 type: "POST",
@@ -475,8 +477,55 @@ $(document).ready(function(){
                         }
                     }).data('destroyed',false);
                     $("#tabs").fadeIn(100);
+                    $("#sidebar").css("margin-left", "calc(-170px + -3vw)");
+                    $("#tabs").css("margin-left", "0");
+                    sidebarState = false;
                 }
             });
+        }
+    });
+
+// DICTIONARY PAGE
+    function refreshDictionary(){
+        $("#dictionaryTable").html("<tr><th>Pinyin</th><th>Hanzi</th><th>Definition</th><th>Part of Speech</th><th>Sentence</th></tr>");
+        $.ajax({
+            type: "post",
+            url: "./php/getDictionary.php",
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                responseObj.forEach(element => {
+                    var rowHtml = "<tr>";
+                    rowHtml += "<td>"+element.pinyin+"</td>";
+                    rowHtml += "<td>"+element.hanzi+"</td>";
+                    rowHtml += "<td>"+element.definition+"</td>";
+                    rowHtml += "<td>"+element.speech+"</td>";
+                    rowHtml += "<td>"+element.sentence+"</td>";
+                    rowHtml += "</tr>";
+                    $("#dictionaryTable").append(rowHtml);
+                });
+            }
+        });
+    }
+
+    $(".dictionaryBtn").click(function () { 
+    // VIEW WORDS
+        if(activeWindow != "#dictionaryPage"){
+            refreshDictionary();
+            if(activeWindow == ""){
+                activeWindow = "#dictionaryPage";
+                $("#dictionaryPage").show(100);
+                $("#sidebar").css("margin-left", "100px");
+                $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                sidebarState = true; 
+            }else{
+                $(activeWindow).fadeOut(500, function(){
+                    activeWindow = "#dictionaryPage";
+                    $("#dictionaryPage").show(100);
+                    $("#sidebar").css("margin-left", "100px");
+                    $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                    sidebarState = true; 
+                });
+            }
         }
     });
 

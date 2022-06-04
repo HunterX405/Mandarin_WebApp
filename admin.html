@@ -56,8 +56,17 @@
                 <div class="menu_categories" id="logoutBtn"><img class="menu_categories_icons" src="css/images/menu_logout.avif" alt="Logout"></div>                                 
             </div>                
         </div>
-        
 
+        <!-- SUCCESS DIALOG -->
+        <div class="dialog" id="successDialog" title="Success!">
+            <p><span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 0 0;"></span></p>
+        </div>
+
+        <!-- ERROR DIALOG -->
+        <div id="errorDialog" title="Error!">
+            <p><span class="ui-icon ui-icon-alert" style="margin:12px 12px 15px 0"></span></p>
+        </div>
+        
         <!-- VIEW LESSON PAGE -->
         <div class="container_right" id="lessonsPage">
             <div id="sidebar"></div>
@@ -90,8 +99,8 @@
                     <input type="text" id="topicTitle" name="topic" placeholder="TOPIC TITLE" required>
                     <textarea id="textEditor" name="content" placeholder="Type here...." required></textarea>
 
-                    <button type="submit" id="addTopicBtn">ADD TOPIC</button>
-                    <button type="button" id="cancelAddTopicBtn">CANCEL</button>
+                    <button type="submit" class="button" id="addTopicBtn">ADD TOPIC</button>
+                    <button type="button" class="button" id="cancelAddTopicBtn">CANCEL</button>
                 </fieldset>
             </form>
 
@@ -103,8 +112,8 @@
                     <input type="text" id="editTopicTitle" name="editTopicTitle" placeholder="TOPIC TITLE" required>
                     <textarea id="editTopicContent" name="editTopicContent" placeholder="Type here...." required></textarea>
 
-                    <button type="submit" id="editTopicBtn">EDIT TOPIC</button>
-                    <button type="button" id="cancelEditTopicBtn">CANCEL</button>
+                    <button type="submit" class="button" id="editTopicBtn">EDIT TOPIC</button>
+                    <button type="button" class="button" id="cancelEditTopicBtn">CANCEL</button>
                 </fieldset>
             </form>
 
@@ -113,14 +122,97 @@
 
         </div>
 
-        <!-- SUCCESS DIALOG -->
-        <div class="dialog" id="successDialog" title="Success!">
-            <p><span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 0 0;"></span></p>
-        </div>
+        <!-- DICTIONARY PAGE -->
+        <div class="container_right" id="dictionaryPage">
+            <!-- VIEW WORDS -->
+            <div class="pane">
+                <h2>DICTIONARY</h2>
+                <button type="button" class='button' id="toAddWordBtn">ADD WORD</button>
+                <table id="dictionaryTable">
+                    <tr>
+                        <th>Pinyin</th>
+                        <th>Hanzi</th>
+                        <th>Definition</th>
+                        <th>Part of Speech</th>
+                        <th>Sentence</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+            </div>
 
-        <!-- ERROR DIALOG -->
-        <div id="errorDialog" title="Error!">
-            <p><span class="ui-icon ui-icon-alert" style="margin:12px 12px 15px 0"></span></p>
+            <!-- ADD WORD DIALOG -->
+            <div class="dialog" id="addWordDialog" title="Add Word">
+                <h4 id="wordErrorMsg"></h4>
+                <form class="dialogForm">
+                    <fieldset>
+                        <label for="pinyin">Pinyin: </label>
+                        <input type="text" name="pinyin" id="pinyin" class="text ui-widget-content ui-corner-all" autocomplete="off" required>
+                        <label for="hanzi">Hanzi: </label>
+                        <input type="text" name="hanzi" id="hanzi" class="text ui-widget-content ui-corner-all" autocomplete="off" required>
+                        <label for="definition">Definition: </label>
+                        <input type="text" name="definition" id="definition" class="text ui-widget-content ui-corner-all" autocomplete="off" required>
+
+                        <label for="speech">Part of Speech: </label>
+                        <select name="speech" id="speech">
+                            <option selected="selected">Noun</option>
+                            <option>Verb</option>
+                            <option>Adverb</option>
+                            <option>Adjective</option>
+                            <option>Numeral</option>
+                            <option>Quantifier</option>
+                            <option>Auxiliary</option>
+                            <option>Personal Pronoun</option>
+                            <option>Demonstrative Pronoun</option>
+                            <option>Interrogative Pronoun</option>
+                            <option>Conjunction</option>
+                            <option>Preposition</option>
+                            <option>Interjection</option>
+                        </select>
+
+                        <label for="sentence">Sentence: </label>
+                        <input type="text" name="sentence" id="sentence" class="text ui-widget-content ui-corner-all" autocomplete="off" required>
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- EDIT WORD DIALOG -->
+            <div class="dialog" id="editWordDialog" title="Edit Word">
+                <h4 id="editWordErrorMsg"></h4>
+                <form class="dialogForm">
+                    <fieldset>
+                        <label for="editPinyin">Pinyin: </label>
+                        <input type="text" name="editPinyin" id="editPinyin" class="text ui-widget-content ui-corner-all" autocomplete="off" required>
+                        <label for="editHanzi">Hanzi: </label>
+                        <input type="text" name="editHanzi" id="editHanzi" class="text ui-widget-content ui-corner-all" autocomplete="off" required>
+                        <label for="editDefinition">Definition: </label>
+                        <input type="text" name="editDefinition" id="editDefinition" class="text ui-widget-content ui-corner-all" autocomplete="off" required>
+
+                        <label for="editSpeech">Part of Speech: </label>
+                        <select name="editSpeech" id="editSpeech">
+                            <option selected="selected">Noun</option>
+                            <option>Verb</option>
+                            <option>Adverb</option>
+                            <option>Adjective</option>
+                            <option>Numeral</option>
+                            <option>Quantifier</option>
+                            <option>Auxiliary</option>
+                            <option>Personal Pronoun</option>
+                            <option>Demonstrative Pronoun</option>
+                            <option>Interrogative Pronoun</option>
+                            <option>Conjunction</option>
+                            <option>Preposition</option>
+                            <option>Interjection</option>
+                        </select>
+
+                        <label for="editSentence">Sentence: </label>
+                        <input type="text" name="editSentence" id="editSentence" class="text ui-widget-content ui-corner-all" autocomplete="off" required>
+                    </fieldset>
+                </form>
+            </div>
+
+            <!-- DELETE WORD DIALOG -->
+            <div class="dialog" id="deleteWordDialog" title="Delete Word"></div>
+
         </div>
 
         <!-- LOGOUT MODAL -->

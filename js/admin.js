@@ -27,11 +27,11 @@ $(document).ready(function(){
     
 
 //SET ACTIVE WINDOW
-    var activeWindow = "#lessonsPage";
+    var activeWindow = "";
 
 
 //USE JQUERY UI BUTTONS
-    $("button").button();
+    $(".button").button();
 
 
 //DIALOG MESSAGES
@@ -95,23 +95,26 @@ $(document).ready(function(){
     };
 
     var sidebarState = false;
-    $("#lessonBtn").click(function () { 
+    $("#lessonBtn").click(function () {
         if($("#sidebar").html() == ""){
             refreshSidebar();
         }
         if(activeWindow != "#lessonsPage"){
-            $(activeWindow).fadeOut(500, function(){
+            if(activeWindow == ""){
                 activeWindow = "#lessonsPage";
                 $("#lessonsPage").show(100);
                 $("#sidebar").css("margin-left", "100px");
                 $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
                 sidebarState = true; 
-            });
-        }
-        if($("#tabs").html()=="<ul></ul>" || $("#tabs").html()==""){
-            $("#sidebar").css("margin-left", "100px");
-            $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
-            sidebarState = true; 
+            }else{
+                $(activeWindow).fadeOut(500, function(){
+                    activeWindow = "#lessonsPage";
+                    $("#lessonsPage").show(100);
+                    $("#sidebar").css("margin-left", "100px");
+                    $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                    sidebarState = true; 
+                });
+            }
         }else{
             if(!sidebarState){
                 $("#sidebar").css("margin-left", "100px");
@@ -192,6 +195,9 @@ $(document).ready(function(){
                     activeLesson = lessonTitle;
                     $(".button").button();
                     $("#tabs").fadeIn(500);
+                    $("#sidebar").css("margin-left", "calc(-170px + -3vw)");
+                    $("#viewLessons").css("margin-left", "0");
+                    sidebarState = false;
                 }
             });
         }
@@ -270,6 +276,12 @@ $(document).ready(function(){
         },
         close: function() {
             $("#addLessonDialog form")[0].reset();
+            errorMessage.text("");
+            errorMessage.hide();
+            //Display Sidebar
+            $("#sidebar").css("margin-left", "100px");
+            $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+            sidebarState = true; 
             $(this).dialog( "close" );
             $("#lessonTitle").removeClass( "ui-state-error" );
         }
@@ -592,7 +604,6 @@ $(document).ready(function(){
         }
     });
 
-
     //DELETE LESSON
     var lessonToDelete = "";
     $("#sidebar").on("click","button.lessonDeleteBtn",function () {
@@ -643,6 +654,304 @@ $(document).ready(function(){
             },
             Cancel: function() {
                 lessonToDelete = "";
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+
+//DICTIONARY PAGE
+    function refreshDictionary(){
+        $("#dictionaryTable").html("<tr><th>Pinyin</th><th>Hanzi</th><th>Definition</th><th>Part of Speech</th><th>Sentence</th><th>Action</th></tr>");
+        $.ajax({
+            type: "post",
+            url: "./php/getDictionary.php",
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                responseObj.forEach(element => {
+                    var rowHtml = "<tr>";
+                    rowHtml += "<td>"+element.pinyin+"</td>";
+                    rowHtml += "<td>"+element.hanzi+"</td>";
+                    rowHtml += "<td>"+element.definition+"</td>";
+                    rowHtml += "<td>"+element.speech+"</td>";
+                    rowHtml += "<td>"+element.sentence+"</td>";
+                    rowHtml += "<td><button type=\"button\" class='editWordBtn' title=\"edit\"></button><button type=\"button\" class='deleteWordBtn' title=\"delete\"></button></td>";  
+                    rowHtml += "</tr>";
+                    $("#dictionaryTable").append(rowHtml);
+                });
+            }
+        });
+    }
+
+    $("#dictionaryBtn").click(function () { 
+    // VIEW WORDS
+        if(activeWindow != "#dictionaryPage"){
+            refreshDictionary();
+            if(activeWindow == ""){
+                activeWindow = "#dictionaryPage";
+                $("#dictionaryPage").show(100);
+                $("#sidebar").css("margin-left", "100px");
+                $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                sidebarState = true; 
+            }else{
+                $(activeWindow).fadeOut(500, function(){
+                    activeWindow = "#dictionaryPage";
+                    $("#dictionaryPage").show(100);
+                    $("#sidebar").css("margin-left", "100px");
+                    $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                    sidebarState = true; 
+                });
+            }
+        }
+    });
+
+    // ADD WORD
+    function addWord(){
+        errorMessage = $("#wordErrorMsg");
+        if(!$("#pinyin").val().trim()){
+            errorResponse("Pinyin is Required!");
+        }else if(!$("#hanzi").val().trim()){
+            errorResponse("Hanzi is Required!");
+        }else if(!$("#definition").val().trim()){
+            errorResponse("Definition is Required!");
+        }else if(!$("#sentence").val().trim()){
+            errorResponse("Sentence is Required!");
+        }else{
+
+            var formData = new FormData($("#addWordDialog form")[0]);
+
+            //Send ajax request to addLesson.php
+            $.ajax({
+                type: "post",
+                url: "./php/addWord.php",
+                data: formData,
+                processData: false,
+                contentType: false, 
+                beforeSend: function(){
+                    //Hide Dictionary Table
+                    $("#dictionaryTable").fadeOut(100);
+                },
+                success: function (response) {
+
+                    if(response == "Word Already Exists!"){
+                        $("#dictionaryTable").fadeIn(100);
+                        errorResponse(response);
+                    }else{
+                        //Update Dictionary Table
+                        refreshDictionary();
+                        $("#successDialog p").append(response);
+                        $("#successDialog").dialog("open");
+
+                        //Reset Dialog
+                        errorMessage.text("");
+                        errorMessage.hide();
+                        $("#addWordDialog form")[0].reset();
+                        $("#addWordDialog").dialog("close");
+
+                        $("#dictionaryTable").fadeIn(100);
+                    }
+                }
+            });
+        }
+    }
+
+    $("#addWordDialog").dialog({
+        autoOpen: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        closeOnEscape: true,
+        buttons: {
+        "Add Word": addWord,
+        Cancel: function() {
+            $("#dictionaryTable").fadeIn(100);
+            //Reset Dialog
+            errorMessage.text("");
+            errorMessage.hide();
+            $(this).dialog( "close" );
+        }
+        },
+        close: function() {
+            $("#dictionaryTable").fadeIn(100);
+            $("#addWordDialog form")[0].reset();
+            errorMessage.text("");
+            errorMessage.hide();
+            $(this).dialog( "close" );
+            $("#wordErrorMsg").removeClass( "ui-state-error" );
+        }
+    });
+
+    $("#toAddWordBtn").click(function () { 
+        $( "#speech" ).selectmenu();
+        $("#addWordDialog").dialog("open"); 
+    });
+
+    $("#addWordDialog form").on("submit", function(e){
+        e.preventDefault();
+        addWord();
+    });
+
+    // EDIT WORD
+    function editWord(){
+        errorMessage = $("#editWordErrorMsg");
+        if(!$("#editPinyin").val().trim()){
+            errorResponse("Pinyin is Required!");
+        }else if(!$("#editHanzi").val().trim()){
+            errorResponse("Hanzi is Required!");
+        }else if(!$("#editDefinition").val().trim()){
+            errorResponse("Definition is Required!");
+        }else if(!$("#editSentence").val().trim()){
+            errorResponse("Sentence is Required!");
+        }else{
+
+            var formData = new FormData($("#editWordDialog form")[0]);
+            formData.append("oldPinyin", wordDetails[0]);
+            console.log(wordDetails[0]);
+
+            //Send ajax request to addLesson.php
+            $.ajax({
+                type: "post",
+                url: "./php/editWord.php",
+                data: formData,
+                processData: false,
+                contentType: false, 
+                beforeSend: function(){
+                    //Hide Dictionary Table
+                    $("#dictionaryTable").fadeOut(100);
+                },
+                success: function (response) {
+
+                    if(response != "Word Edited Successfully!"){
+                        $("#dictionaryTable").fadeIn(100);
+                        errorResponse(response);
+                    }else{
+                        //Update Dictionary Table
+                        refreshDictionary();
+                        $("#successDialog p").append(response);
+                        $("#successDialog").dialog("open");
+
+                        //Reset Dialog
+                        errorMessage.text("");
+                        errorMessage.hide();
+                        $("#editWordDialog form")[0].reset();
+                        $("#editWordDialog").dialog("close");
+
+                        $("#dictionaryTable").fadeIn(100);
+                    }
+                }
+            });
+        }
+    }
+
+    $("#editWordDialog").dialog({
+        autoOpen: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        closeOnEscape: true,
+        buttons: {
+        "Edit Word": editWord,
+        Cancel: function() {
+            $("#dictionaryTable").fadeIn(100);
+            //Reset Dialog
+            errorMessage.text("");
+            errorMessage.hide();
+            $(this).dialog( "close" );
+        }
+        },
+        close: function() {
+            $("#dictionaryTable").fadeIn(100);
+            $("#editWordDialog form")[0].reset();
+            errorMessage.text("");
+            errorMessage.hide();
+            $(this).dialog( "close" );
+            $("#editWordErrorMsg").removeClass( "ui-state-error" );
+        }
+    });
+
+    var wordDetails = [];
+    $("#dictionaryTable").on("click",".editWordBtn",function () {
+        $("#editSpeech").selectmenu();
+        $("#editWordDialog").dialog("open"); 
+
+        //Get row details
+        var row = $(this).closest("tr"),
+        rowDetails = row.find("td");
+        var indx = 0;
+        $.each(rowDetails, function () {
+            wordDetails[indx] = $(this).text();
+            indx++;
+        });
+        
+        //Set details to edit dialog form
+        $("#editPinyin").val(wordDetails[0]);
+        $("#editHanzi").val(wordDetails[1]);
+        $("#editDefinition").val(wordDetails[2]);
+        $("#editSpeech").val(wordDetails[3]);
+        $("#editSpeech").selectmenu("refresh");
+        $("#editSentence").val(wordDetails[4]);
+    });
+
+    $("#editWordDialog form").on("submit", function(e){
+        e.preventDefault();
+        addWord();
+    });
+
+    // DELETE WORD
+    var wordToDelete = "";
+    var row = "";
+    $("#dictionaryTable").on("click",".deleteWordBtn",function () {
+        //Get row details
+        row = $(this).closest("tr"),
+        wordToDelete = row.find("td:first-child").text();
+        var hanziToDelete = row.find("td:nth-child(2)").text();
+        $("#deleteWordDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+wordToDelete+"("+hanziToDelete+") in dictionary?</p>");
+        $("#deleteWordDialog").dialog("open");
+    });
+
+    //DELETE WORD MODAL
+    $("#deleteWordDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        buttons: {
+            Confirm: function(){
+                //Get row details
+                wordToDelete = row.find("td:first-child").text();
+                console.log(wordToDelete);
+
+                $.ajax({
+                    type: "POST",
+                    url: "./php/deleteWord.php",
+                    data: "wordDelete="+wordToDelete,
+                    beforeSend: function (){
+                        //Hide Dictionary Table
+                        $("#dictionaryTable").fadeOut(100);
+                    },
+                    success: function (response) {
+                        console.log(wordToDelete);
+                        if(response != "Word Deleted Successfully!"){
+                            $("#dictionaryTable").fadeIn(100);
+                            $("#errorDialog p").append(response);
+                            $("#errorDialog").dialog("open");
+                        }else{
+                            //Update Dictionary Table
+                            refreshDictionary();
+                            $("#successDialog p").append(response);
+                            $("#successDialog").dialog("open");
+                            $("#dictionaryTable").fadeIn(100);
+                        }
+                    },
+                    complete: function (){
+                        //Reset Variable
+                        wordToDelete = "";
+                    }
+                });
+                $( this ).dialog( "close" );
+            },
+            Cancel: function() {
+                wordToDelete = "";
                 $( this ).dialog( "close" );
             }
         }

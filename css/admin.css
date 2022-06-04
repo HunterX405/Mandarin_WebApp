@@ -12,6 +12,18 @@ body {
 }
 
 /* FOR THE SIDEBAR */
+@media only screen and (max-width: 500px) {
+    .container_left {
+        width: 80px !important;
+    }
+    .container_right {
+        margin-left: 80px !important;
+    }
+    #sidebar {
+        left: -20px !important;
+    }
+}
+
 
 .container_left {
     height: 100%; 
@@ -93,14 +105,6 @@ body {
     text-shadow: 3px 3px 8px #000000;
 }
 
-.pane {
-    margin: 50px 7% 0 7%;
-    padding: 0 0 50px 0;
-    position: absolute;
-    top: 0;
-    z-index: 0;
-}
-
 form {
     margin: 50px 7% 0 7%;
     padding: 0 0 50px 0;
@@ -121,6 +125,10 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
 }
 
 /* LESSONS PAGE */
+#lessonsPage {
+    display: none;
+}
+
     /* LESSONS SIDEBAR */
     #sidebar {
         height: 100%;
@@ -138,6 +146,7 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     #sidebar h1{
         text-align: center;
     }
+
     #sidebar p {
         cursor: pointer;
         padding: 8px 0px 8px calc(15px + 1vw);
@@ -197,7 +206,10 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     }
     
     .ui-button{
-        margin: 10px;
+        margin: 0.5vw;
+        padding: 0.5em;
+        width: -moz-fit-content;
+        width: fit-content;
     }
     
     #toEditTopicBtn, #toDeleteTopicBtn{
@@ -283,6 +295,93 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     /* EDIT TOPIC */
     #editTopicForm {
         display: none;
+    }
+
+/* DICTIONARY PAGE */
+#dictionaryPage {
+    display: none;
+}
+
+    .pane {
+        margin: 1vw 1vw 1vw 2vw;
+        width: -webkit-fill-available;
+    }
+
+    .pane h2{
+        margin: 0;
+    }
+
+    .pane button{
+        margin-left: 0;
+        font-size: calc(5px + 0.7vw);
+    }
+
+    /* WORD TABLE */
+    table{
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    th{
+        font-size: calc(5px + 1vw);
+        padding: 10px;
+    }
+
+    td{
+        font-size: calc(7px + 0.5vw);
+        padding: 0.5vw 0.3vw;
+    }
+
+    td:first-child{
+        width: 15%;
+    }
+
+    td:nth-child(6){
+        width: 25%;
+    }
+
+    td:last-child{
+        width: 20%;
+    }
+
+    tr:nth-child(even){
+        background-color: rgb(211, 200, 200);
+    }
+
+    tr td:last-child form{
+        display: inline-block;
+    }
+
+    /* DELETE AND EDIT BUTTONS */
+    .editWordBtn, .deleteWordBtn{
+        border: none;
+        width: 32px;
+        height: 32px;
+        padding: 5px;
+    }
+
+    .editWordBtn{
+        background: url("images/edit.avif") no-repeat center;
+        
+    }
+    .deleteWordBtn{
+        background: url("images/delete.avif") no-repeat center;
+    }
+
+    .editWordBtn:hover, .deleteWordBtn:hover{
+        background-color:#f1787c;
+    }
+
+    /* ADD WORD DIALOG */
+    .dialogForm input[type="text"], .ui-selectmenu-button{
+        display: block;
+    }
+
+    .dialogForm fieldset {        
+        border: none;
     }
 
 /* LOADING MODAL */

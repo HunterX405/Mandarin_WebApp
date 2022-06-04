@@ -36,7 +36,7 @@
                 <div class="menu_categories" id="homeBtn"><img class="menu_categories_icons" src="css/images/menu_home.avif" alt="Home"></div>
                 <div class="menu_categories lessonBtn"><img class="menu_categories_icons" src="css/images/menu_lesson.avif" alt="Lessons"></div>
                 <div class="menu_categories" id="assessmentBtn"><img class="menu_categories_icons" src="css/images/menu_assessment.avif" alt="Assessment"></div>
-                <div class="menu_categories" id="dictionaryBtn"><img class="menu_categories_icons" src="css/images/menu_dictionary.avif" alt="Dictionary"></div>
+                <div class="menu_categories dictionaryBtn"><img class="menu_categories_icons" src="css/images/menu_dictionary.avif" alt="Dictionary"></div>
                 <div class="menu_categories" id="testsBtn"><img class="menu_categories_icons" src="css/images/menu_test.avif" alt="Tests"></div>
                 <div class="menu_categories" id="settingsBtn"><img class="menu_categories_icons" src="css/images/menu_settings.avif" alt="Settings"></div>
                 <div class="menu_categories" id="logoutBtn"><img class="menu_categories_icons" src="css/images/menu_logout.avif" alt="Logout"></div>                                 
@@ -121,7 +121,7 @@
                         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
                         voluptate velit esse cillum dolore eu.
                         </p>
-                        <button class="home_button" type="button">GO TO DICTIONARY</button>
+                        <button class="home_button dictionaryBtn" type="button">GO TO DICTIONARY</button>
                     </div>
                 </div>
             </div>
@@ -244,6 +244,23 @@
             
             <!-- LOADING MODAL -->
             <div class="modal"></div>
+        </div>
+
+        <!-- DICTIONARY PAGE -->
+        <div class="container_right" id="dictionaryPage">
+            <!-- VIEW WORDS -->
+            <div class="pane">
+                <h2>DICTIONARY</h2>
+                <table id="dictionaryTable">
+                    <tr>
+                        <th>Pinyin</th>
+                        <th>Hanzi</th>
+                        <th>Definition</th>
+                        <th>Part of Speech</th>
+                        <th>Sentence</th>
+                    </tr>
+                </table>
+            </div>
         </div>
 
         <!-- LOGOUT MODAL -->
