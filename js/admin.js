@@ -7,12 +7,11 @@ $(document).ready(function(){
         url: "./php/checkuser.php",
         data: "",
         success: function (checkResponse) {
-            if(checkResponse == "Already Logged In"){
-                //getLessons();
+            if(checkResponse == "Admin"){
                 $("html").css("visibility", "visible");
             }else{
+                alert("Unauthorized");
                 window.location.href="./";
-                console.log(checkResponse);
             }
         }
     });
@@ -95,6 +94,7 @@ $(document).ready(function(){
     };
 
     var sidebarState = false;
+    var sidebarEnabled = true;
     $("#lessonBtn").click(function () {
         if($("#sidebar").html() == ""){
             refreshSidebar();
@@ -104,25 +104,25 @@ $(document).ready(function(){
                 activeWindow = "#lessonsPage";
                 $("#lessonsPage").show(100);
                 $("#sidebar").css("margin-left", "100px");
-                $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
                 sidebarState = true; 
             }else{
-                $(activeWindow).fadeOut(500, function(){
+                $(activeWindow).fadeOut(100, function(){
                     activeWindow = "#lessonsPage";
                     $("#lessonsPage").show(100);
                     $("#sidebar").css("margin-left", "100px");
-                    $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                    $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
                     sidebarState = true; 
                 });
             }
         }else{
-            if(!sidebarState){
+            if(!sidebarState && sidebarEnabled){
                 $("#sidebar").css("margin-left", "100px");
-                $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
                 sidebarState = true;     
             }else{
                 $("#sidebar").css("margin-left", "calc(-170px + -3vw)");
-                $("#viewLessons").css("margin-left", "0");
+                $(".lessonPane").css("margin-left", "0");
                 sidebarState = false;
             }
         }
@@ -186,17 +186,19 @@ $(document).ready(function(){
                                 });                  
                             }
                         }).data('destroyed',false);
+                        $("#toAddTopicBtn").css("width","auto");
                     }else{
                         $("#tabs").html("");
                         $("#viewLessons").html("<button type=\"button\" class='button' id=\"toAddTopicBtn\">ADD TOPIC</button><div id=\"tabs\"><ul></ul></div>");
+                        $("#toAddTopicBtn").css("width","-webkit-fill-available");
                     }
                 },
                 complete: function() {
                     activeLesson = lessonTitle;
                     $(".button").button();
-                    $("#tabs").fadeIn(500);
+                    $("#tabs").fadeIn(100);
                     $("#sidebar").css("margin-left", "calc(-170px + -3vw)");
-                    $("#viewLessons").css("margin-left", "0");
+                    $(".lessonPane").css("margin-left", "0");
                     sidebarState = false;
                 }
             });
@@ -226,7 +228,7 @@ $(document).ready(function(){
                 beforeSend: function(){
                     //Hide Sidebar
                     $("#sidebar").css("margin-left", "calc(-170px + -3vw)");
-                    $("#viewLessons").css("margin-left", "0");
+                    $(".lessonPane").css("margin-left", "0");
                     sidebarState = false;
                 },
                 success: function (response) {
@@ -239,14 +241,14 @@ $(document).ready(function(){
                         $("#successDialog p").append(response);
                         $("#successDialog").dialog("open");
 
-                        $("#addTopicForm").fadeOut(500, function(){
+                        $("#addTopicForm").fadeOut(100, function(){
                             //Reset Dialog
                             errorMessage.text("");
                             errorMessage.hide();
                             $("#addLessonDialog").dialog("close");
                             //Display Sidebar
                             $("#sidebar").css("margin-left", "100px");
-                            $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                            $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
                             sidebarState = true; 
                         });
                     }
@@ -269,7 +271,7 @@ $(document).ready(function(){
             errorMessage.hide();
             //Display Sidebar
             $("#sidebar").css("margin-left", "100px");
-            $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+            $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
             sidebarState = true; 
             $(this).dialog( "close" );
         }
@@ -280,7 +282,7 @@ $(document).ready(function(){
             errorMessage.hide();
             //Display Sidebar
             $("#sidebar").css("margin-left", "100px");
-            $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+            $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
             sidebarState = true; 
             $(this).dialog( "close" );
             $("#lessonTitle").removeClass( "ui-state-error" );
@@ -340,24 +342,30 @@ $(document).ready(function(){
             }
         });
 
-        $("#viewLessons").fadeOut(500, function(){
+        $("#viewLessons").fadeOut(100, function(){
             //Reset Tabs
             $( "#tabs" ).fadeOut(100);
             activeLesson = "";
             //Hide Sidebar
             $("#sidebar").css("margin-left", "calc(-170px + -3vw)");
-            $("#viewLessons").css("margin-left", "0");
+            $(".lessonPane").css("margin-left", "0");
             sidebarState = false;
+            // Disable Sidebar
+            sidebarEnabled = false;
             $("#addTopicForm").fadeIn(100);
         });
     })
 
 
-    //ADD TOPIC
+//ADD TOPIC
     $("#addTopicForm").submit(function (e) { 
         e.preventDefault();
-        if($("#topicTitle").val().trim() == ""){
+        var topicTitle = $("#topicTitle").val().trim();
+        if(topicTitle == ""){
             $("#errorDialog p").append("Topic Title is Required!");
+            $("#errorDialog").dialog("open");
+        }else if(/^[a-zA-Z0-9- ]*$/.test(topicTitle) == false){
+            $("#errorDialog p").append("Special Characters are not Allowed!");
             $("#errorDialog").dialog("open");
         }else{
             //Get Form details
@@ -381,10 +389,12 @@ $(document).ready(function(){
                         $("#successDialog p").append(response);
                         $("#successDialog").dialog("open");
 
-                        $("#addTopicForm").fadeOut(500, function(){
+                        $("#addTopicForm").fadeOut(100, function(){
+                            // Enable Sidebar
+                            sidebarEnabled = true;
                             //Display Sidebar
                             $("#sidebar").css("margin-left", "100px");
-                            $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                            $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
                             sidebarState = true; 
                             //Reset form values
                             $("#addTopicHeader").html("ADD TOPIC");
@@ -403,11 +413,13 @@ $(document).ready(function(){
     //CANCEL ADD TOPIC
     $("#cancelAddTopicBtn").click(function (e) { 
         e.preventDefault();
-        $("#addTopicForm").fadeOut(500, function(){
+        $("#addTopicForm").fadeOut(100, function(){
+                // Enable Sidebar
+                sidebarEnabled = true;
                 //Display Sidebar
                 $("p.lessonView").removeClass("active");
                 $("#sidebar").css("margin-left", "100px");
-                $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
                 sidebarState = true; 
                 //Reset form values
                 $("#addTopicHeader").html("ADD TOPIC");
@@ -418,8 +430,8 @@ $(document).ready(function(){
     });
 
 
-    //EDIT TOPIC
-    //TO ADD TOPIC
+//EDIT TOPIC
+    //TO EDIT TOPIC
     $("#viewLessons").on("click","#toEditTopicBtn", function(){
 
         //GET ACTIVE TOPIC TITLE AND CONTENT IN TAB
@@ -473,13 +485,15 @@ $(document).ready(function(){
         $(".trumbowyg-editor").html(topicContent);
         console.log($("#editTopicContent").val());
 
-        $("#viewLessons").fadeOut(500, function(){
+        $("#viewLessons").fadeOut(100, function(){
             //Reset Tabs
             $( "#tabs" ).fadeOut(100);
             activeLesson = "";
+            // Disable Sidebar
+            sidebarEnabled = false;
             //Hide Sidebar
             $("#sidebar").css("margin-left", "calc(-170px + -3vw)");
-            $("#viewLessons").css("margin-left", "0");
+            $(".lessonPane").css("margin-left", "0");
             sidebarState = false;
             $("#editTopicForm").fadeIn(100);
         });
@@ -512,10 +526,12 @@ $(document).ready(function(){
                 $("#successDialog p").append(response);
                 $("#successDialog").dialog("open");
 
-                $("#editTopicForm").fadeOut(500, function(){
+                $("#editTopicForm").fadeOut(100, function(){
+                    // Enable Sidebar
+                    sidebarEnabled = true;
                     //Display Sidebar
                     $("#sidebar").css("margin-left", "100px");
-                    $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                    $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
                     sidebarState = true; 
                     //Reset form values
                     $("#editTopicHeader").html("EDIT");
@@ -530,11 +546,13 @@ $(document).ready(function(){
     //CANCEL EDIT TOPIC
     $("#cancelEditTopicBtn").click(function (e) { 
         e.preventDefault();
-        $("#editTopicForm").fadeOut(500, function(){
+        $("#editTopicForm").fadeOut(100, function(){
+                // Enable Sidebar
+                sidebarEnabled = true;
                 //Display Sidebar
                 $("p.lessonView").removeClass("active");
                 $("#sidebar").css("margin-left", "100px");
-                $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
                 sidebarState = true; 
                 //Reset form values
                 $("#editTopicHeader").html("EDIT");
@@ -581,7 +599,7 @@ $(document).ready(function(){
                         activeLesson = "";
                         //Reset and Hide Sidebar
                         $("#sidebar").css("margin-left", "calc(-170px + -3vw)");
-                        $("#viewLessons").css("margin-left", "0");
+                        $(".lessonPane").css("margin-left", "0");
                         sidebarState = false;
                         $("p.lessonView").removeClass("active");
                     },
@@ -595,7 +613,7 @@ $(document).ready(function(){
                         lessonToDelete = "";
                         //Display Sidebar
                         $("#sidebar").css("margin-left", "100px");
-                        $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                        $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
                         sidebarState = true; 
                     }
                 });
@@ -632,7 +650,7 @@ $(document).ready(function(){
                         activeLesson = "";
                         //Reset and Hide Sidebar
                         $("#sidebar").css("margin-left", "calc(-170px + -3vw)");
-                        $("#viewLessons").css("margin-left", "0");
+                        $(".lessonPane").css("margin-left", "0");
                         sidebarState = false;
                         $("p.lessonView").removeClass("active");
                     },
@@ -646,7 +664,7 @@ $(document).ready(function(){
                         lessonToDelete = "";
                         //Display Sidebar
                         $("#sidebar").css("margin-left", "100px");
-                        $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                        $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
                         sidebarState = true; 
                     }
                 });
@@ -674,7 +692,7 @@ $(document).ready(function(){
                     rowHtml += "<td>"+element.definition+"</td>";
                     rowHtml += "<td>"+element.speech+"</td>";
                     rowHtml += "<td>"+element.sentence+"</td>";
-                    rowHtml += "<td><button type=\"button\" class='editWordBtn' title=\"edit\"></button><button type=\"button\" class='deleteWordBtn' title=\"delete\"></button></td>";  
+                    rowHtml += "<td><button type=\"button\" class='editWordBtn tableEditButton' title=\"edit\"></button><button type=\"button\" class='deleteWordBtn tableDeleteButton' title=\"delete\"></button></td>";  
                     rowHtml += "</tr>";
                     $("#dictionaryTable").append(rowHtml);
                 });
@@ -690,14 +708,14 @@ $(document).ready(function(){
                 activeWindow = "#dictionaryPage";
                 $("#dictionaryPage").show(100);
                 $("#sidebar").css("margin-left", "100px");
-                $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
                 sidebarState = true; 
             }else{
-                $(activeWindow).fadeOut(500, function(){
+                $(activeWindow).fadeOut(100, function(){
                     activeWindow = "#dictionaryPage";
                     $("#dictionaryPage").show(100);
                     $("#sidebar").css("margin-left", "100px");
-                    $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
+                    $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
                     sidebarState = true; 
                 });
             }
@@ -893,7 +911,7 @@ $(document).ready(function(){
 
     $("#editWordDialog form").on("submit", function(e){
         e.preventDefault();
-        addWord();
+        editWord();
     });
 
     // DELETE WORD
@@ -919,7 +937,6 @@ $(document).ready(function(){
             Confirm: function(){
                 //Get row details
                 wordToDelete = row.find("td:first-child").text();
-                console.log(wordToDelete);
 
                 $.ajax({
                     type: "POST",
@@ -930,7 +947,6 @@ $(document).ready(function(){
                         $("#dictionaryTable").fadeOut(100);
                     },
                     success: function (response) {
-                        console.log(wordToDelete);
                         if(response != "Word Deleted Successfully!"){
                             $("#dictionaryTable").fadeIn(100);
                             $("#errorDialog p").append(response);
@@ -956,6 +972,836 @@ $(document).ready(function(){
             }
         }
     });
+
+// ASSESSMENT PAGE
+
+    function refreshAssessments(){
+        $("#assessmentTable").html("<tr><th>Assessment Title</th><th>No. of Items</th><th>No. of Questions</th><th>Action</th></tr>");
+        $.ajax({
+            type: "post",
+            url: "./php/getAssessments.php",
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                responseObj.forEach(element => {
+                    var rowHtml = "<tr>";
+                    rowHtml += "<td>"+element.title+"</td>";
+                    rowHtml += "<td>"+element.items+"</td>";
+                    rowHtml += "<td>"+element.questionsCount+"</td>";
+                    rowHtml += "<td><button type=\"button\" class='editAssessmentBtn tableEditButton' title=\"edit\"></button><button type=\"button\" class='deleteAssessmentBtn tableDeleteButton' title=\"delete\"></button></td>";  
+                    rowHtml += "</tr>";
+                    $("#assessmentTable").append(rowHtml);
+                });
+            }
+        });
+    }
+
+    $("#assessmentBtn").click(function () { 
+    // VIEW ASSESSMENTS
+            if(activeWindow != "#assessmentPage"){
+                refreshAssessments();
+                if(activeWindow == ""){
+                    activeWindow = "#assessmentPage";
+                    $("#assessmentPage").show(100);
+                }else{
+                    $(activeWindow).fadeOut(100, function(){
+                        activeWindow = "#assessmentPage";
+                        $("#assessmentPage").show(100);
+                    });
+                }
+            }
+    });
+
+    // TO ADD ASSESSMENT FORM
+    $("#toAddAssessmentBtn").click(function () { 
+        $("#viewAssessments").fadeOut(100, function(){
+            $("select").selectmenu();
+            $("#totalItems").spinner({
+                min: 0
+            });
+            $("#addAssessmentForm").fadeIn(100);
+        });
+        
+    });
+
+        // ADD QUESTION IN ADD ASSESSMENT FORM
+        var questionNumber = 0;
+        var totalQuestions = 0;
+        var deleteIndexBuffer = [];
+        var getDelIndex = false;
+        $("#addNewQuestionBtn").click(function () {
+            if(deleteIndexBuffer.length > 0){
+                questionNumber = deleteIndexBuffer.shift();
+                getDelIndex = true;
+            }else{
+                questionNumber++;
+            }
+            var questionHtml = "<div class=\"question\" id='"+questionNumber+"'><button type=\"button\" class='deleteQuestionBtn button' title=\"delete\">DELETE</button>";
+            if($("#questionType").val() == "Multiple Choice"){
+                questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"multiple\">";
+                questionHtml += "<h3>Multiple Choice</h3>";
+
+                questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+                questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\">";
+                
+                questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+                questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+                
+                questionHtml += "<label for=\"choice-1-"+questionNumber+"\">Choice 1: </label>";
+                questionHtml += "<input type=\"text\" id=\"choice-1-"+questionNumber+"\" name=\"choice-1-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+                
+                questionHtml += "<label for=\"choice-2-"+questionNumber+"\">Choice 2: </label>";
+                questionHtml += "<input type=\"text\" id=\"choice-2-"+questionNumber+"\" name=\"choice-2-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+                
+                questionHtml += "<label for=\"choice-3-"+questionNumber+"\">Choice 3: </label>";
+                questionHtml += "<input type=\"text\" id=\"choice-3-"+questionNumber+"\" name=\"choice-3-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+                
+                questionHtml += "<label for=\"choice-4-"+questionNumber+"\">Choice 4: </label>";
+                questionHtml += "<input type=\"text\" id=\"choice-4-"+questionNumber+"\" name=\"choice-4-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+                
+                questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer: </label>";
+                questionHtml += "<select name=\"answer-"+questionNumber+"\" id=\"answer-"+questionNumber+"\">";
+                questionHtml += "<option selected=\"selected\" value=\"1\">Choice 1</option>";
+                questionHtml += "<option value=\"2\">Choice 2</option>";
+                questionHtml += "<option value=\"3\">Choice 3</option>";
+                questionHtml += "<option value=\"4\">Choice 4</option>";
+                questionHtml += "</select>";
+            }else if($("#questionType").val() == "True/False"){
+                questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"truefalse\">";
+                questionHtml += "<h3>True/False</h3>";
+                
+                questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+                questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\">";
+                
+                questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+                questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+                
+                questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer: </label>";
+                questionHtml += "<select name=\"answer-"+questionNumber+"\" id=\"answer-"+questionNumber+"\">";
+                questionHtml += "<option selected=\"selected\">True</option>";
+                questionHtml += "<option>False</option>";
+                questionHtml += "</select>";
+            }else if($("#questionType").val() == "Identification"){
+                questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"identify\">";
+                questionHtml += "<h3>Identification</h3>";
+                
+                questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+                questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\">";
+                
+                questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+                questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+                
+                questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer/s: (Separate all possible answers with a comma ex. Answer1,Answer2,Answer3. Capitalization is automatically ignored.)</label>";
+                questionHtml += "<input type=\"text\" id=\"answer-"+questionNumber+"\" name=\"answer-"+questionNumber+"\" placeholder=\"ANSWER\" required>";
+            }else{
+                questionHtml = "Invalid question type.";
+            }
+            questionHtml += "</div>";
+            $("#addAssessmentForm fieldset").append(questionHtml);
+            $(".button").button();
+            $("select").selectmenu();
+            totalQuestions++;
+            if(getDelIndex){
+                questionNumber = totalQuestions;
+            }
+            $("#questionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+        });
+
+        // DELETE QUESTION
+        $("#addAssessmentForm, #editAssessmentForm").on("click",".deleteQuestionBtn", function(){
+            deleteIndexBuffer.push($(this).closest(".question").attr("id"));
+            $(this).closest(".question").remove();
+            totalQuestions--;
+            $("#questionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+        });
+
+    // ADD ASSESSMENT
+    $("#addAssessmentForm").on("submit", function(e){
+        e.preventDefault();
+        var isValid = true;
+
+        var hasQuestion = true;
+        for(var x=1;x<=totalQuestions;x++){
+            while($.inArray(x.toString(),deleteIndexBuffer) !== -1){
+                x++;
+                totalQuestions++;
+            }
+            if(!$("#question-"+x+"").val().trim() && !$("#image-"+x+"").val()){
+                hasQuestion = false;
+            }
+        }
+
+        if(!$.isNumeric($("#totalItems").val().trim()) || $("#totalItems").val().trim() < 0){
+            isValid = false;
+            $("#errorDialog p").append("Total Items must be a positive number.");
+        }else if($("#totalItems").val()>totalQuestions){
+            isValid = false;
+            $("#errorDialog p").append("Not enough questions for total items.");
+        }else if(!hasQuestion){
+            isValid = false;
+            $("#errorDialog p").append("Question or Image is required.");
+        }
+        
+        if(isValid){
+            var formData = new FormData($("#addAssessmentForm")[0]);
+            formData.append("totalQuestions",totalQuestions);
+            $.ajax({
+                type: "post",
+                url: "./php/addAssessment.php",
+                data: formData,
+                processData: false,
+                contentType: false, 
+                success: function (response) {
+                    if(response == "Assessment Already Exists!"){
+                        $("#errorDialog p").append(response);
+                        $("#errorDialog").dialog("open");
+                    }else{
+                        questionNumber = 0;
+                        totalQuestions = 0;
+                        deleteIndexBuffer = [];
+                        getDelIndex = false;
+                        $("#questionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+                        $("#addAssessmentForm")[0].reset();
+                        $(".question").remove();
+                        $("#successDialog p").append(response);
+                        $("#successDialog").dialog("open");
+                        $("#addAssessmentForm").fadeOut(100, function(){
+                            refreshAssessments();
+                            $("#viewAssessments").fadeIn(100);
+                        });
+                    }
+                }
+            });
+        }else{
+            $("#errorDialog").dialog("open");
+        }
+    });
+
+    // BACK TO VIEW ASSESSMENTS
+    $("#cancelAddAssessmentBtn").click(function () { 
+        questionNumber = 0;
+        totalQuestions = 0;
+        deleteIndexBuffer = [];
+        getDelIndex = false;
+        $("#questionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+        $("#addAssessmentForm")[0].reset();
+        $(".question").remove();
+        $("#addAssessmentForm").fadeOut(100, function(){
+            $("#viewAssessments").fadeIn(100);
+        });
+    });
+    
+    // DELETE ASSESSMENT
+    var assessmentToDelete = "";
+    $("#assessmentTable").on("click",".deleteAssessmentBtn",function () {
+        //Get row details
+        row = $(this).closest("tr"),
+        assessmentToDelete = row.find("td:first-child").text();
+        $("#deleteAssessmentDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+assessmentToDelete+" Assessment?</p>");
+        $("#deleteAssessmentDialog").dialog("open");
+    });
+
+    //DELETE ASSESSMENT MODAL
+    $("#deleteAssessmentDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        buttons: {
+            Confirm: function(){
+                //Get row details
+                assessmentToDelete = row.find("td:first-child").text();
+
+                $.ajax({
+                    type: "POST",
+                    url: "./php/deleteAssessment.php",
+                    data: "assessmentDelete="+assessmentToDelete,
+                    beforeSend: function (){
+                        //Hide Assessment Table
+                        $("#assessmentTable").fadeOut(100);
+                    },
+                    success: function (response) {
+                        if(response != "Assessment Deleted Successfully!"){
+                            $("#assessmentTable").fadeIn(100);
+                            $("#errorDialog p").append(response);
+                            $("#errorDialog").dialog("open");
+                        }else{
+                            //Update Assessment Table
+                            refreshAssessments();
+                            $("#successDialog p").append(response);
+                            $("#successDialog").dialog("open");
+                            $("#assessmentTable").fadeIn(100);
+                        }
+                    },
+                    complete: function (){
+                        //Reset Variable
+                        assessmentToDelete = "";
+                    }
+                });
+                $( this ).dialog( "close" );
+            },
+            Cancel: function() {
+                assessmentToDelete = "";
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+
+    // EDIT ASSESSMENT
+    var assessmentToEdit = "";
+    $("#assessmentTable").on("click",".editAssessmentBtn",function () {
+        $(".button").button();
+        $("select").selectmenu();
+        //Get row details
+        row = $(this).closest("tr"),
+        assessmentToEdit = row.find("td:first-child").text();
+        $.ajax({
+            type: "post",
+            url: "./php/getAssessments.php",
+            data: "title="+assessmentToEdit,
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                console.log(responseObj.questions[0].answer);
+                $("#editAssessmentTitle").val(responseObj.title);
+                $("#editTotalItems").val(responseObj.items);
+                $("#editQuestionDatabank").text("Question Databank: "+responseObj.questionsCount+" Questions");
+                totalQuestions = responseObj.questionsCount;
+                questionNumber = responseObj.questionsCount;
+                responseObj.questions.forEach(question => {
+                    questionNumber = question.id;
+                    var questionHtml = "<div class=\"question\" id='"+questionNumber+"'><button type=\"button\" class='deleteQuestionBtn button' title=\"delete\">DELETE</button>";
+                    if(question.type == "multiple"){
+                        questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"multiple\">";
+                        questionHtml += "<h3>Multiple Choice</h3>";
+
+                        questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+                        questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\" value='"+question.text+"'>";
+                        
+                        questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+                        questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+                        
+                        questionHtml += "<label for=\"choice-1-"+questionNumber+"\">Choice 1: </label>";
+                        questionHtml += "<input type=\"text\" id=\"choice-1-"+questionNumber+"\" name=\"choice-1-"+questionNumber+"\" placeholder=\"CHOICE\" value='"+question.choices[0]+"' required>";
+                        
+                        questionHtml += "<label for=\"choice-2-"+questionNumber+"\">Choice 2: </label>";
+                        questionHtml += "<input type=\"text\" id=\"choice-2-"+questionNumber+"\" name=\"choice-2-"+questionNumber+"\" placeholder=\"CHOICE\" value='"+question.choices[1]+"' required>";
+                        
+                        questionHtml += "<label for=\"choice-3-"+questionNumber+"\">Choice 3: </label>";
+                        questionHtml += "<input type=\"text\" id=\"choice-3-"+questionNumber+"\" name=\"choice-3-"+questionNumber+"\" placeholder=\"CHOICE\" value='"+question.choices[2]+"' required>";
+                        
+                        questionHtml += "<label for=\"choice-4-"+questionNumber+"\">Choice 4: </label>";
+                        questionHtml += "<input type=\"text\" id=\"choice-4-"+questionNumber+"\" name=\"choice-4-"+questionNumber+"\" placeholder=\"CHOICE\" value='"+question.choices[3]+"' required>";
+                        
+                        questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer: </label>";
+                        questionHtml += "<select name=\"answer-"+questionNumber+"\" id=\"answer-"+questionNumber+"\">";
+
+                        if(question.answer == question.choices[0]){
+                            questionHtml += "<option selected=\"selected\" value=\"1\">Choice 1</option>";
+                            questionHtml += "<option value=\"2\">Choice 2</option>";
+                            questionHtml += "<option value=\"3\">Choice 3</option>";
+                            questionHtml += "<option value=\"4\">Choice 4</option>";
+                        }else if(question.answer == question.choices[1]){
+                            questionHtml += "<option value=\"1\">Choice 1</option>";
+                            questionHtml += "<option selected=\"selected\" value=\"2\">Choice 2</option>";
+                            questionHtml += "<option value=\"3\">Choice 3</option>";
+                            questionHtml += "<option value=\"4\">Choice 4</option>";
+                        }else if(question.answer == question.choices[2]){
+                            questionHtml += "<option value=\"1\">Choice 1</option>";
+                            questionHtml += "<option value=\"2\">Choice 2</option>";
+                            questionHtml += "<option selected=\"selected\" value=\"3\">Choice 3</option>";
+                            questionHtml += "<option value=\"4\">Choice 4</option>";
+                        }else{
+                            questionHtml += "<option value=\"1\">Choice 1</option>";
+                            questionHtml += "<option value=\"2\">Choice 2</option>";
+                            questionHtml += "<option value=\"3\">Choice 3</option>";
+                            questionHtml += "<option selected=\"selected\" value=\"4\">Choice 4</option>";
+                        }
+                        questionHtml += "</select>";
+                    }else if(question.type == "truefalse"){
+                        questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"truefalse\">";
+                        questionHtml += "<h3>True/False</h3>";
+                        
+                        questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+                        questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\" value='"+question.text+"'>";
+                        
+                        questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+                        questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+                        
+                        questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer: </label>";
+                        questionHtml += "<select name=\"answer-"+questionNumber+"\" id=\"answer-"+questionNumber+"\">";
+                        if(question.answer == "True"){
+                            questionHtml += "<option selected=\"selected\">True</option>";
+                            questionHtml += "<option>False</option>";
+                        }else{
+                            questionHtml += "<option>True</option>";
+                            questionHtml += "<option selected=\"selected\">False</option>";
+                        }
+                        questionHtml += "</select>";
+                    }else if(question.type == "identify"){
+                        questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"identify\">";
+                        questionHtml += "<h3>Identification</h3>";
+                        
+                        questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+                        questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\" value='"+question.text+"'>";
+                        
+                        questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+                        questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+                        
+                        questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer/s: (Separate all possible answers with a comma ex. Answer1,Answer2,Answer3. Capitalization is automatically ignored.)</label>";
+                        questionHtml += "<input type=\"text\" id=\"answer-"+questionNumber+"\" name=\"answer-"+questionNumber+"\" placeholder=\"ANSWER\" value='"+question.answer+"' required>";
+                    }else{
+                        questionHtml = "Invalid question type.";
+                    }
+                    questionHtml += "</div>";
+                    $("#editAssessmentForm fieldset").append(questionHtml);
+                });
+
+                $(".button").button();
+                $("select").selectmenu();
+                $("#viewAssessments").fadeOut(100, function(){
+                    $("select").selectmenu();
+                    $("#editTotalItems").spinner({
+                        min: 0
+                    });
+                    $("#editAssessmentForm").fadeIn(100);
+                });
+            }
+        });
+    });
+
+        // ADD QUESTION IN EDIT ASSESSMENT FORM
+        var deleteIndexBuffer = [];
+        var getDelIndex = false;
+        $("#addNewEditQuestionBtn").click(function () {
+            if(deleteIndexBuffer.length > 0){
+                questionNumber = deleteIndexBuffer.shift();
+                getDelIndex = true;
+            }else{
+                questionNumber++;
+            }
+            var questionHtml = "<div class=\"question\" id='"+questionNumber+"'><button type=\"button\" class='deleteQuestionBtn button' title=\"delete\">DELETE</button>";
+            if($("#editQuestionType").val() == "Multiple Choice"){
+                questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"multiple\">";
+                questionHtml += "<h3>Multiple Choice</h3>";
+
+                questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+                questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\">";
+                
+                questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+                questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+                
+                questionHtml += "<label for=\"choice-1-"+questionNumber+"\">Choice 1: </label>";
+                questionHtml += "<input type=\"text\" id=\"choice-1-"+questionNumber+"\" name=\"choice-1-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+                
+                questionHtml += "<label for=\"choice-2-"+questionNumber+"\">Choice 2: </label>";
+                questionHtml += "<input type=\"text\" id=\"choice-2-"+questionNumber+"\" name=\"choice-2-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+                
+                questionHtml += "<label for=\"choice-3-"+questionNumber+"\">Choice 3: </label>";
+                questionHtml += "<input type=\"text\" id=\"choice-3-"+questionNumber+"\" name=\"choice-3-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+                
+                questionHtml += "<label for=\"choice-4-"+questionNumber+"\">Choice 4: </label>";
+                questionHtml += "<input type=\"text\" id=\"choice-4-"+questionNumber+"\" name=\"choice-4-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+                
+                questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer: </label>";
+                questionHtml += "<select name=\"answer-"+questionNumber+"\" id=\"answer-"+questionNumber+"\">";
+                questionHtml += "<option selected=\"selected\" value=\"1\">Choice 1</option>";
+                questionHtml += "<option value=\"2\">Choice 2</option>";
+                questionHtml += "<option value=\"3\">Choice 3</option>";
+                questionHtml += "<option value=\"4\">Choice 4</option>";
+                questionHtml += "</select>";
+            }else if($("#editQuestionType").val() == "True/False"){
+                questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"truefalse\">";
+                questionHtml += "<h3>True/False</h3>";
+                
+                questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+                questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\">";
+                
+                questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+                questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+                
+                questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer: </label>";
+                questionHtml += "<select name=\"answer-"+questionNumber+"\" id=\"answer-"+questionNumber+"\">";
+                questionHtml += "<option selected=\"selected\">True</option>";
+                questionHtml += "<option>False</option>";
+                questionHtml += "</select>";
+            }else if($("#editQuestionType").val() == "Identification"){
+                questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"identify\">";
+                questionHtml += "<h3>Identification</h3>";
+                
+                questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+                questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\">";
+                
+                questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+                questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+                
+                questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer/s: (Separate all possible answers with a comma ex. Answer1,Answer2,Answer3. Capitalization is automatically ignored.)</label>";
+                questionHtml += "<input type=\"text\" id=\"answer-"+questionNumber+"\" name=\"answer-"+questionNumber+"\" placeholder=\"ANSWER\" required>";
+            }else{
+                questionHtml = "Invalid question type.";
+            }
+            questionHtml += "</div>";
+            $("#editAssessmentForm fieldset").append(questionHtml);
+            $(".button").button();
+            $("select").selectmenu();
+            totalQuestions++;
+            if(getDelIndex){
+                questionNumber = totalQuestions;
+            }
+            $("#editQuestionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+        });
+
+    // EDIT ASSESSMENT
+    $("#editAssessmentForm").on("submit", function(e){
+        e.preventDefault();
+        var isValid = true;
+
+        var hasQuestion = true;
+        for(var x=1;x<=totalQuestions;x++){
+            while($.inArray(x.toString(),deleteIndexBuffer) !== -1){
+                x++;
+                totalQuestions++;
+            }
+            if(!$("#question-"+x+"").val().trim() && !$("#image-"+x+"").val()){
+                hasQuestion = false;
+            }
+        }
+
+        if(!$.isNumeric($("#editTotalItems").val().trim()) || $("#editTotalItems").val().trim() < 0){
+            isValid = false;
+            $("#errorDialog p").append("Total Items must be a positive number.");
+        }else if($("#editTotalItems").val()>totalQuestions){
+            isValid = false;
+            $("#errorDialog p").append("Not enough questions for total items.");
+        }else if(!hasQuestion){
+            isValid = false;
+            $("#errorDialog p").append("Question or Image is required.");
+        }
+        
+        if(isValid){
+            var formData = new FormData($("#editAssessmentForm")[0]);
+            formData.append("totalQuestions",totalQuestions);
+            formData.append("oldTitle",assessmentToEdit);
+            $.ajax({
+                type: "post",
+                url: "./php/editAssessment.php",
+                data: formData,
+                processData: false,
+                contentType: false, 
+                success: function (response) {
+                    if(response == "Assessment Already Exists!"){
+                        $("#errorDialog p").append(response);
+                        $("#errorDialog").dialog("open");
+                    }else{
+                        questionNumber = 0;
+                        totalQuestions = 0;
+                        deleteIndexBuffer = [];
+                        getDelIndex = false;
+                        $("#editQuestionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+                        $("#editAssessmentForm")[0].reset();
+                        $(".question").remove();
+                        $("#successDialog p").append(response);
+                        $("#successDialog").dialog("open");
+                        $("#editAssessmentForm").fadeOut(100, function(){
+                            refreshAssessments();
+                            $("#viewAssessments").fadeIn(100);
+                        });
+                    }
+                }
+            });
+        }else{
+            $("#errorDialog").dialog("open");
+        }
+    });
+
+    // CANCEL EDIT ASSESSMENT
+    $("#cancelEditAssessmentBtn").click(function () { 
+        questionNumber = 0;
+        totalQuestions = 0;
+        deleteIndexBuffer = [];
+        getDelIndex = false;
+        $("#editQuestionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+        $("#editAssessmentForm")[0].reset();
+        $(".question").remove();
+        $("#editAssessmentForm").fadeOut(100, function(){
+            $("#viewAssessments").fadeIn(100);
+        });
+    });
+
+// SETTINGS PAGE
+    //Populate admin details in profile page
+    $("#settingsBtn").click(function () { 
+        if(activeWindow != "#settingsPage"){
+            //Get profile data via getUserProfile.php AJAX
+            $.ajax({
+                url: "./php/getUserProfile.php",
+                success: function (response) {
+
+                    //Parse JSON response from PHP AJAX
+                    const obj = JSON.parse(response);
+                    //Display profile data
+                    $("#student_profile h2").html(obj.firstName + " " + obj.middleName + " " + obj.lastName);
+                    $("#username").html("Username: " + obj.username);
+                    $("#email").html("Email: " + obj.email);
+                    $(".profile_icon").attr("src", "php/"+obj.image);
+                    $("#address").html("Address: " + obj.address);
+                    $("#school").html("School: " + obj.school);
+                    $("#birthday").html("Birthday: " + obj.birthday);
+                    $("#gender").html("Gender: " + obj.gender);
+                }
+            });
+
+            if(activeWindow == ""){
+                //Transition to profile page.
+                activeWindow = "#settingsPage";
+                $("#settingsPage").fadeIn(100);
+            }else{
+                $(activeWindow).fadeOut(100, function(){
+                    //Transition to profile page.
+                    activeWindow = "#settingsPage";
+                    $("#settingsPage").fadeIn(100);
+                });
+            }
+        }
+    });
+
+// EDIT ADMIN PROFILE
+    //Transition from Admin Profile to Edit Admin Profile
+    $("#toEditProfile").click(function(){
+        $("#editBday").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            minDate: "-150Y",
+            maxDate: "+0M +0D +0Y"
+        });
+        $( ".checkRadio" ).checkboxradio({
+            icon: false
+        });
+        $("#admin_profile").fadeOut(250, function(){
+            $.ajax({
+                url: "./php/getUserProfile.php",
+                success: function (response) {
+
+                    //Parse JSON response from getUserProfile.php AJAX
+                    const obj = JSON.parse(response);
+
+                    //Populate fields in student_profile_edit form
+                    $("#editFname").val(obj.firstName);
+                    $("#editMname").val(obj.middleName);
+                    $("#editLname").val(obj.lastName);
+                    $("#editUname").val(obj.username);
+                    $("#editEmail").val(obj.email);
+                    $("#editAddress").val(obj.address);
+                    $("#editSchool").val(obj.school);
+                    $("#editBday").val(obj.birthday);
+                    if(obj.gender == "Male"){
+                        $("#editMale").prop("checked", true);
+                        $("#editFemale").prop("checked", false);
+                    }else{
+                        $("#editFemale").prop("checked", true);
+                        $("#editMale").prop("checked", false);
+                    }
+                    $(".checkRadio").checkboxradio("refresh");
+                }
+            });
+            $("#admin_profile_edit").fadeIn(250);
+        });
+    });
+
+     //Transition from Edit Profile to Student's Profile
+     $("#cancelBtn").click(function () { 
+        $("#admin_profile_edit").fadeOut(250, function(){
+            $("#admin_profile").fadeIn(250);
+        });
+    });
+
+    //Update image on edit profile page to show new uploaded image
+    $("#file").change(function (e) {
+        $("#editImg").attr("src", URL.createObjectURL(e.target.files[0]));
+    });
+
+    //Regex for email validation from https://emailregex.com/
+    var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+    //Update profile
+    var updateValid = false;
+    $("#admin_profile_edit").on('submit', function (e) { 
+        e.preventDefault();
+        
+        //Input Validation
+        var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif|\.avif|\.webp)$/i;
+        var filePath = $("#file").val();
+        if(!allowedExtensions.exec(filePath) && filePath != ""){
+            $("#errorDialog p").append("Invalid file type.");
+            $("#file").val("");
+            updateValid = false;
+        }else if(!$("#editFname").val().trim()){
+            $("#errorDialog p").append("First Name is required.");
+            updateValid = false;
+        }else if(!$("#editLname").val().trim()){
+            $("#errorDialog p").append("Last Name is required.");
+            updateValid = false;
+        }else if(!$("#editUname").val().trim()){
+            $("#errorDialog p").append("Username is required.");
+            updateValid = false;
+        }else if(!$("#editEmail").val().trim()){
+            $("#errorDialog p").append("Email Address is required.");
+            updateValid = false;
+        }else if(!regex.test($("#editEmail").val().trim())){
+            $("#errorDialog p").append("Invalid Email Address.");
+            updateValid = false;
+        }else if(!$("#editBday").val()){
+            $("#errorDialog p").append("Birthday is required.");
+            updateValid = false;
+        }else if(!$("#admin_profile_edit input[name='gender']:checked").val()){
+            $("#errorDialog p").append("Gender is required.");
+            updateValid = false;
+        }else{
+            updateValid = true;
+        }
+        //Display error message if form data are not valid.
+        if(!updateValid){
+            $("#errorDialog").dialog("open");
+        }else{
+            //Get Form details
+            var updateformData = new FormData(this);
+
+            //Send ajax request to updateUserProfile.php
+            $.ajax({
+                type: "post",
+                url: "./php/updateUserProfile.php",
+                data: updateformData,
+                contentType: false,
+                cache: false,
+                processData: false,  
+                success: function (updateResponse) {
+                    
+                    //Parse JSON response from PHP AJAX
+                    const updateObj = JSON.parse(updateResponse);
+                    
+                    //Updating profile text values.
+                    $("#admin_profile h2").html(updateObj.fname+" "+updateObj.mname+" "+updateObj.lname);
+                    $("#username").html("Username: " + updateObj.uname);
+                    $("#email").html("Email: " + updateObj.email);
+                    $("#address").html("Address: " + updateObj.home);
+                    $("#school").html("School: " + updateObj.school);
+                    $("#birthday").html("Birthday: " + updateObj.bday);
+                    $("#gender").html("Gender: " + updateObj.gender);
+                    $(".profile_icon").attr("src", "php/"+updateObj.image);
+
+                    //Display update success message
+                    $("#successDialog p").append(updateObj.message);
+                    $("#successDialog").dialog("open");
+
+                    //Transition to student profile
+                    $("#admin_profile_edit").fadeOut(250, function(){
+                        $(".profile_icon").attr("src", "php/"+updateObj.image);
+                        $("#admin_profile").fadeIn(250);
+                    });
+                }
+            });
+        }
+    });
+
+    //CHANGE PASSWORD
+
+    function changePassword() {
+        var valid = true;
+        allFields.removeClass( "ui-state-error" );
+        
+        if(!checkLength( $("#oldPassword"), "Old Password", 5 )) valid = false;
+        else if(!checkLength( $("#newPassword"), "New Password", 5 )) valid = false;
+        else if($("#newPassword").val().trim() != $("#confPassword").val().trim()){
+            errorResponse("New Password and Confirm Password does not match.");
+            valid = false;
+        }else{
+            valid = true;
+        }
+        
+        if ( valid ) {
+
+            var changePassformData = changePasswordForm.serializeArray();
+            //Send ajax request to updateUserProfile.php
+            $.ajax({
+                type: "post",
+                url: "./php/updateUserProfile.php",
+                data: $.param(changePassformData),
+                success: function (changePassResponse) {
+                    
+                    //Parse JSON response from PHP AJAX
+                    const changePassObj = JSON.parse(changePassResponse);
+
+                    //If old password is incorrect
+                    if(changePassObj.message == "Wrong Password"){
+                        errorResponse(changePassObj.message);
+
+                    //If user data is corrupted, go back to login page to refresh user data
+                    }else if(changePassObj.message == "Account Not Found!"){
+                        window.location.href="./";
+                    
+                    //Changed Password Successfully
+                    }else{
+                        successMessage.text(changePassObj.message);
+                        successMessage.slideDown(200).delay(5000).slideUp(200);
+                        changePasswordDialog.dialog( "close" );
+                    }
+                }
+            });
+        }
+        return valid;
+    }
+
+    var oldPasswordField = $("#oldPassword"),
+    newPasswordField = $("#newPassword"),
+    confPasswordField = $("#confPassword"),
+    changePasswordDialog = $("#pass-dialog-form"),
+    changePasswordForm = $("#pass-dialog-form form"),
+    allFields = $( [] ).add( oldPasswordField ).add( newPasswordField ).add( confPasswordField ),
+    errorMessage = $( "#passErrorMsg" ),
+    successMessage = $("#updateSuccessMsg");
+
+    changePasswordDialog.dialog({
+        autoOpen: false,
+        height: "auto",
+        width: 400,
+        modal: true,
+        closeOnEscape: true,
+        buttons: {
+        "Change Password": changePassword,
+        Cancel: function() {
+            $(this).dialog( "close" );
+        }
+        },
+        close: function() {
+            changePasswordForm[0].reset();
+            $(this).dialog( "close" );
+            allFields.removeClass( "ui-state-error" );
+        }
+    });
+
+    $( "#toChangePass" ).click(function() {
+        errorMessage.text("All fields required.");
+        changePasswordDialog.dialog("open");
+    });
+
+    changePasswordForm.on( "submit", function( event ) {
+        event.preventDefault();
+        changePassword();
+    });
+
+    function errorResponse( message ) {
+        errorMessage.text( message ).addClass( "ui-state-highlight" );
+        errorMessage.delay(1500).removeClass("ui-state-highlight", 1500);
+    }
+
+    function checkLength( field, fieldName, min) {
+        if ( field.val().length < min ) {
+            field.addClass("ui-state-error");
+            errorResponse(fieldName + " must be at least " + min + " characters.");
+            return false;
+        } else {
+            return true;
+        }
+    }
 
 //LOGOUT
     $( "#logout-dialog-confirm" ).dialog({
@@ -992,7 +1838,7 @@ $(document).ready(function(){
     });
 
     //TEMPORARY!! TO HOME PAGE
-    $("#settingsBtn").click(function () { 
+    $("#homeBtn").click(function () { 
         window.location.href="home_page.html";
     });
 

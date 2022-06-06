@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    background-color: #eae8e1;
 }
 
 /* FOR THE SIDEBAR */
@@ -48,6 +49,22 @@ body {
     background-color: #da5055;
 }
 
+.banner{
+    min-width: 100%;
+    height: 20%;
+    background-image: url(images/banner.avif);
+    background-size: cover;
+}
+
+.banner_text{
+    font-family: 'Dosis', sans-serif;
+    font-size: 2.5vw;
+    color: #ffffff;
+    display: block;
+    padding: 50px 0 100px 0px;
+    margin: 0 0 0 5vw;
+    text-align: left;
+}
 
 /* BODY */
 
@@ -105,25 +122,6 @@ body {
     text-shadow: 3px 3px 8px #000000;
 }
 
-form {
-    margin: 50px 7% 0 7%;
-    padding: 0 0 50px 0;
-}
-
-form input[type="text"], input[type="email"], input[type="date"], input[type="file"]{
-    font-family: 'Inter', sans-serif;
-    outline: 0;
-    background: #cfcfcf;
-    width: 100%;
-    border: 0;
-    padding: 15px 0px 15px 30px;
-    margin: 7px 0 12px 0;
-    box-sizing: border-box;
-    border-radius: 20px;
-    font-size: 15px;
-    font-weight: 500;
-}
-
 /* LESSONS PAGE */
 #lessonsPage {
     display: none;
@@ -131,6 +129,7 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
 
     /* LESSONS SIDEBAR */
     #sidebar {
+        font-family: 'Inter', sans-serif;
         height: 100%;
         width: calc(170px + 3vw);
         position: fixed;
@@ -138,7 +137,7 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
         z-index: 1;
         top: 0;
         left: 0;
-        background-color: #f1787c;
+        background-color: #7ea5a4;
         overflow-x: hidden;
         transition: 0.5s;
     }
@@ -150,7 +149,7 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     #sidebar p {
         cursor: pointer;
         padding: 8px 0px 8px calc(15px + 1vw);
-        font-size: 25px;
+        font-size: 20px;
         display: block;
         transition: 0.3s;
         flex: 3;
@@ -160,12 +159,11 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     }
     
     #sidebar p:hover {
-        background-color:#7A8B99;
-        color: white;
+        background-color:#bfe2e1;
     }
 
     .active {
-        background-color: #493843;
+        background-color: #1d6968;
         color:white;
     }
 
@@ -177,6 +175,7 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     #viewLessons{
         display: none;
         flex: 5;
+        transition: 0.5s;
     }
     
     .ui-tabs-vertical .ui-tabs-nav { 
@@ -212,6 +211,11 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
         width: fit-content;
     }
     
+    .ui-widget-header .ui-state-active {
+        background:#1d6968;
+        border: 1px solid black;
+    }
+    
     #toEditTopicBtn, #toDeleteTopicBtn{
         float: right;
     }
@@ -231,12 +235,22 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     }
 
     .lessonDeleteBtn:hover{
-        background-color:#F2D0A4;
+        background-color:#FF0000;
     }
 
     /* ADD LESSON */
     #lessonAddBtn{
         width: -webkit-fill-available;
+        background: #eae8e1;
+        color: #000000;
+        text-transform: uppercase;
+        border-radius: 15px;
+        border: 2px solid #1d6968; 
+        margin: 20px 10% 0 10%;  
+    }
+
+    #lessonAddBtn:hover{
+        background: #e0ded1;
     }
 
     .dialogForm {
@@ -283,6 +297,21 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
         display: none;
     }
 
+    #toAddTopicBtn { 
+        background: #ffffff;
+        color: #000000;
+        text-transform: uppercase;
+        border-radius: 15px;
+        border: 2px solid #f1787c; 
+        margin: 12px 0 12px 7px;
+        padding: 10px;
+        font-size: 17px;
+    }
+
+    #toAddTopicBtn:hover{
+        background: #d2cec0;
+    }
+
     #addTopicForm input[type="text"]{
         width: 50%;
         padding: 10px 0 10px 20px;
@@ -297,6 +326,37 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
         display: none;
     }
 
+    #toEditTopicBtn { 
+        background: #ffffff;
+        color: #000000;
+        text-transform: uppercase;
+        border-radius: 15px;
+        border: 2px solid #f1787c; 
+        margin: 12px 5px 12px 10px;
+        padding: 10px;
+        font-size: 17px;
+    }
+
+    #toEditTopicBtn:hover{
+        background: #d2cec0;
+    }
+
+    /* DELETE TOPIC */
+
+    #toDeleteTopicBtn { 
+        background: #ff0000;
+        color: #ffffff;
+        text-transform: uppercase;
+        border-radius: 15px;
+        margin: 12px 10px 12px 10px;
+        padding: 10px;
+        font-size: 17px;
+    }
+
+    #toDeleteTopicBtn:hover{
+        background: #aa0606;
+    }
+
 /* DICTIONARY PAGE */
 #dictionaryPage {
     display: none;
@@ -305,6 +365,7 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     .pane {
         margin: 1vw 1vw 1vw 2vw;
         width: -webkit-fill-available;
+        font-family: 'Inter', sans-serif;
     }
 
     .pane h2{
@@ -348,7 +409,7 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     }
 
     tr:nth-child(even){
-        background-color: rgb(211, 200, 200);
+        background-color: #f0e3d7;
     }
 
     tr td:last-child form{
@@ -356,23 +417,27 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     }
 
     /* DELETE AND EDIT BUTTONS */
-    .editWordBtn, .deleteWordBtn{
+    .tableEditButton, .tableDeleteButton{
         border: none;
         width: 32px;
         height: 32px;
         padding: 5px;
     }
 
-    .editWordBtn{
+    .tableEditButton{
         background: url("images/edit.avif") no-repeat center;
         
     }
-    .deleteWordBtn{
+    .tableDeleteButton{
         background: url("images/delete.avif") no-repeat center;
     }
 
-    .editWordBtn:hover, .deleteWordBtn:hover{
+    .tableEditButton:hover{
         background-color:#f1787c;
+    }
+
+    .tableDeleteButton:hover{
+        background-color:#ff0000;
     }
 
     /* ADD WORD DIALOG */
@@ -383,6 +448,192 @@ form input[type="text"], input[type="email"], input[type="date"], input[type="fi
     .dialogForm fieldset {        
         border: none;
     }
+
+    #toAddWordBtn{
+        background: #ffffff;
+        color: #000000;
+        text-transform: uppercase;
+        border-radius: 15px;
+        border: 2px solid #f1787c; 
+        margin: 12px 0 20px 7px;
+        padding: 10px;
+        font-size: 17px;
+    }
+
+    #toAddWordBtn:hover{
+        background: #d2cec0;
+    }
+
+
+/* ASSESSMENT PAGE */
+#assessmentPage, #addAssessmentForm, #editAssessmentForm{
+    display: none;
+}
+
+#addAssessmentForm fieldset, #editAssessmentForm fieldset{
+    border: none;
+}
+
+.question {
+    background-color: #7ea5a4;
+    border-radius: 10px;
+    padding: calc(5px + 1vw);
+    margin: calc(5px + 1vw);
+}
+
+.group {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.btnGroup {
+    display: flex;
+    justify-content: space-between;
+}
+
+.deleteQuestionBtn {
+    float: right;
+}
+
+.ui-spinner-button{
+    margin: 0;
+}
+
+/* SETTINGS PAGE -------------------------------------------------------------------------------------*/
+#settingsPage, #admin_profile_edit{
+    display: none;
+}
+#admin_profile{
+    margin: 50px 7% 0 7%;
+}
+
+.adminPane {
+    margin: 50px 7% 0 7%;
+    padding: 0 0 50px 0;
+}
+
+#toEditProfile, #toChangePass{
+    background: #eae8e1;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 15vw;  
+    border-radius: 20px;
+    border: 2px solid #f1787c;
+    padding: 12px 0 12px 0;
+    margin-right: 1vw;
+}
+
+#toEditProfile:hover, #toChangePass:hover{
+background: #d2cec0;
+}
+
+.bday_category{
+    width:300px;
+}
+
+form {
+    margin: 50px 7% 0 7%;
+    padding: 0 0 50px 0;
+}
+
+form input[type="text"], input[type="email"], input[type="date"], input[type="file"]{
+    font-family: 'Inter', sans-serif;
+    outline: 0;
+    background: #cfcfcf;
+    width: 100%;
+    border: 0;
+    padding: 15px 0px 15px 30px;
+    margin: 7px 0 12px 0;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+form label{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.profile_icon{
+    width: 150px;
+    height: 150px;
+    margin: 0 0 15px 0;
+}
+
+#buttonGroup {
+    margin: auto;
+    width: -moz-fit-content;  
+    width: fit-content;
+    margin-top: 20px;
+}
+
+#saveBtn, #changePassBtn{
+    background: #f1787c;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 15px;
+    width: 30vw;  
+    border-radius: 20px;
+    border: none;
+    padding: 12px 0 12px 0;
+    margin-left: 1vw;
+}
+
+#saveBtn:hover, #changePassBtn:hover{
+    background: #da5055;
+}
+
+#cancelBtn, #cancelPassBtn{
+    background: #eae8e1;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 15px;
+    width: 30vw;  
+    border-radius: 20px;
+    border: 2px solid #f1787c;
+    padding: 12px 0 12px 0;
+    margin-right: 1vw;
+}
+
+#cancelBtn:hover, #cancelPassBtn:hover{
+    background: #d2cec0;
+}
+
+/* CHANGE PASSWORD AND DELETE ACCOUNT MODAL */
+#pass-dialog-form #passErrorMsg
+{ 
+    border: 1px solid transparent;
+    padding: 0.3em;
+    font-size: medium;
+}
+
+#pass-dialog-form label, #pass-dialog-form input { 
+    display:block; 
+}
+#pass-dialog-form input.text { 
+    margin-bottom:12px; width:95%; padding: .4em; 
+}
+#pass-dialog-form fieldset { 
+    padding:0; border:0; margin-top:25px; 
+}
+#pass-dialog-form h1 { 
+    font-size: 1.2em; margin: .6em 0; 
+}
+.ui-dialog .ui-state-error {
+     padding: .3em; 
+}
+.ui-dialog .ui-dialog-titlebar{
+    background-color: #f08080;
+}
+
+
+/* Prevent jquery ui radio button from making the page go up */
+input[type="radio"]{
+    display:none;
+}
 
 /* LOADING MODAL */
 .modal {

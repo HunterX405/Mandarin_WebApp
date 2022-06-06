@@ -37,6 +37,15 @@ $(document).ready(function(){
 
                     //Redirect to home page.
                     window.location.href="home_page.html";
+                }else if(result == "Admin"){
+                    //Reset input values.
+                    $("#formLogin")[0].reset();
+
+                    //Hide Login page html to avoid loading login page via link access when already logged in
+                    $("html").css("visibility", "hidden");
+
+                    //Redirect to admin page.
+                    window.location.href="admin.html";
                 }else{
                     //Display error response
                     $("#loginErrorMsg").text(result);

@@ -1,12 +1,16 @@
 <?php
     session_start();
-    //Redirect to Login Page when accessed via link.
-    if (!isset($_SESSION['user'])) {
+    // Redirect to Login Page if not user or admin.
+    if (!isset($_SESSION['user']) && !isset($_SESSION['admin'])) {
+        echo "Unauthorized!";
         header('location: ../');
         exit;
     }
-
-    $logUser = $_SESSION['user'];
+    if(isset($_SESSION['admin'])){
+        $logUser = $_SESSION['admin'];
+    }else{
+        $logUser = $_SESSION['user'];
+    }
 
     //Open XML Document
     $xml = simplexml_load_file("userAccounts.xml");

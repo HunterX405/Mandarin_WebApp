@@ -1,7 +1,9 @@
 <?php
-    // Redirect to Login Page when accessed via link.
-    if (!isset($_POST['lessonList']) && (!isset($_POST['lesson']) && !isset($_POST['topic']) && !isset($_POST['content']))) {
-        header('location: ../admin.html');
+    session_start();
+    // Redirect to Login Page if not admin.
+    if (!isset($_SESSION['admin'])) {
+        echo "Unauthorized!";
+        header('location: ../');
         exit;
     }
     

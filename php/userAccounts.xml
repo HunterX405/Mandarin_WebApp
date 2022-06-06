@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <users>
-  <user username="hunterxhenrick" email="johnhenrick.espiritu.sc@bulsu.edu.ph">
+  <user username="hunterxhenrick" email="johnhenrick.espiritu.sc@bulsu.edu.ph" access="student">
     <name>
       <firstName>John</firstName>
       <middleName/>
@@ -13,13 +13,13 @@
     <birthday>12/16/2000</birthday>
     <gender>Male</gender>
   </user>
-  <user username="user" email="email@gmail.com">
+  <user username="user" email="email@gmail.com" access="admin">
     <name>
       <firstName>First</firstName>
       <middleName>Middle</middleName>
       <lastName>Last</lastName>
     </name>
-    <profileImage>images/1.png</profileImage>
+    <profileImage>images/1.jpg</profileImage>
     <password>$2y$10$GLXaGHBvuYUdLedxT257KeDVZw5VVrkmdvnioSoWR6qyMjmsrh.iK</password>
     <homeAddress>Address</homeAddress>
     <school>School</school>

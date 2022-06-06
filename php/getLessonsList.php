@@ -1,4 +1,11 @@
 <?php
+    session_start();
+    // Redirect to Login Page if not user or admin.
+    if (!isset($_SESSION['user']) && !isset($_SESSION['admin'])) {
+        echo "Unauthorized!";
+        header('location: ../');
+        exit;
+    }
 
     //Load XML
     $xml = simplexml_load_file("lessons.xml");

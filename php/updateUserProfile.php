@@ -1,19 +1,23 @@
 <?php
     session_start();
-    // Redirect to Login Page when accessed via link.
-    if (!isset($_SESSION['user'])) {
+    // Redirect to Login Page if not user or admin.
+    if (!isset($_SESSION['user']) && !isset($_SESSION['admin'])) {
+        echo "Unauthorized!";
         header('location: ../');
         exit;
     }
-
 
     $response = array("message"=> "Transaction Failed!");
 
     //AJAX PHP JSON Response
     $response = array("message"=> "Transaction Failed!");
 
-    //Get logged user
-    $loggedUser = $_SESSION['user'];
+    //Get logged user/admin
+    if(isset($_SESSION['admin'])){
+        $loggedUser = $_SESSION['admin'];
+    }else{
+        $loggedUser = $_SESSION['user'];
+    }
 
     //For image url
     $targetFilePath = "";
@@ -129,6 +133,13 @@
                 $user = $xml->createElement("user");
                 $user->setAttribute("username", $editUname);
                 $user->setAttribute("email", $editEmail);
+                if(isset($_SESSION['admin'])){
+                    $user->setAttribute("access","admin");
+                    $_SESSION['admin'] = $editUname;
+                }else{
+                    $user->setAttribute("access","student");
+                    $_SESSION['user'] = $editUname;
+                }
 
                 $firstName = $xml->createElement("firstName", $editFname);
                 $middleName = $xml->createElement("middleName", $editMname);

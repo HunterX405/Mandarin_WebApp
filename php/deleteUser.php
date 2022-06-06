@@ -1,7 +1,8 @@
 <?php
     session_start();
-    // Redirect to Login Page when accessed via link.
-    if (!isset($_SESSION['user'])) {
+    // Redirect to Login Page if not admin.
+    if (!isset($_SESSION['admin'])) {
+        echo "Unauthorized!";
         header('location: ../');
         exit;
     }

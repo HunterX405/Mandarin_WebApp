@@ -48,6 +48,7 @@
         <!-- SIDEBAR ICONS -->
         <div class="container_left">
             <div class="menu">
+                <div class="menu_categories" id="homeBtn"><img class="menu_categories_icons" src="css/images/menu_home.avif" alt="Settings"></div>
                 <div class="menu_categories" id="lessonBtn"><img class="menu_categories_icons" src="css/images/menu_lesson.avif" alt="Lessons"></div>
                 <div class="menu_categories" id="assessmentBtn"><img class="menu_categories_icons" src="css/images/menu_assessment.avif" alt="Assessment"></div>
                 <div class="menu_categories" id="dictionaryBtn"><img class="menu_categories_icons" src="css/images/menu_dictionary.avif" alt="Dictionary"></div>
@@ -70,7 +71,7 @@
         <!-- VIEW LESSON PAGE -->
         <div class="container_right" id="lessonsPage">
             <div id="sidebar"></div>
-            <div id="viewLessons">
+            <div id="viewLessons" class="lessonPane">
                 <div id="tabs"><ul></ul></div>
             </div>
 
@@ -125,8 +126,11 @@
         <!-- DICTIONARY PAGE -->
         <div class="container_right" id="dictionaryPage">
             <!-- VIEW WORDS -->
+            <div class="banner">
+                <h1 class="banner_text"> DICTIONARY</h1>                                    
+            </div>
+
             <div class="pane">
-                <h2>DICTIONARY</h2>
                 <button type="button" class='button' id="toAddWordBtn">ADD WORD</button>
                 <table id="dictionaryTable">
                     <tr>
@@ -213,6 +217,170 @@
             <!-- DELETE WORD DIALOG -->
             <div class="dialog" id="deleteWordDialog" title="Delete Word"></div>
 
+        </div>
+
+        <!-- ASSESSMENT PAGE -->
+        <div class="container_right" id="assessmentPage">
+            <!-- VIEW ASSESSMENTS -->
+            <div class="pane" id="viewAssessments">
+                <h2>ASSESSMENTS</h2>
+                <button type="button" class='button' id="toAddAssessmentBtn">ADD ASSESSMENT</button>
+                <table id="assessmentTable">
+                    <tr>
+                        <th>Assessment Title</th>
+                        <th>No. of Items</th>
+                        <th>No. of Questions</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- ADD ASSESSMENT FORM -->
+            <form class="form" id="addAssessmentForm">
+                <h2 class="homeHeader2" id="addAssessmentHeader">ADD ASSESSMENT</h2>
+                <fieldset>
+                    <label for="assessmentTitle">Title: </label>
+                    <input type="text" id="assessmentTitle" name="assessmentTitle" placeholder="TITLE" required>
+                    <label for="totalItems">Total Items: </label>
+                    <input id="totalItems" name="totalItems" required>
+                    <hr>
+                    <h4 class="homeHeader2" id="questionDatabank">Question Databank: 0 Questions</h4>
+                </fieldset>
+                    <div class="group">
+                        <label for="questionType">Question Type: </label>
+                        <select name="questionType" id="questionType">
+                            <option selected="selected">Multiple Choice</option>
+                            <option>True/False</option>
+                            <option>Identification</option>
+                        </select>
+                        <button type="button" class="button" id="addNewQuestionBtn">ADD QUESTION</button><br>
+                    </div>
+                    <hr>
+                    <div class="btnGroup">
+                        <button type="button" class="button" id="cancelAddAssessmentBtn">CANCEL</button>
+                        <button type="submit" class="button" id="addAssessmentBtn">ADD ASSESSMENT</button>
+                    </div>                    
+            </form>
+
+            <!-- EDIT ASSESSMENT FORM -->
+            <form class="form" id="editAssessmentForm">
+                <h2 class="homeHeader2" id="editAssessmentHeader">EDIT ASSESSMENT</h2>
+                <fieldset>
+                    <label for="editAssessmentTitle">Title: </label>
+                    <input type="text" id="editAssessmentTitle" name="editAssessmentTitle" placeholder="TITLE" required>
+                    <label for="editTotalItems">Total Items: </label>
+                    <input id="editTotalItems" name="editTotalItems" required>
+                    <hr>
+                    <h4 class="homeHeader2" id="editQuestionDatabank">Question Databank: 0 Questions</h4>
+                </fieldset>
+                    <div class="group">
+                        <label for="editQuestionType">Question Type: </label>
+                        <select name="editQuestionType" id="editQuestionType">
+                            <option selected="selected">Multiple Choice</option>
+                            <option>True/False</option>
+                            <option>Identification</option>
+                        </select>
+                        <button type="button" class="button" id="addNewEditQuestionBtn">ADD QUESTION</button><br>
+                    </div>
+                    <hr>
+                    <div class="btnGroup">
+                        <button type="button" class="button" id="cancelEditAssessmentBtn">CANCEL</button>
+                        <button type="submit" class="button" id="editAssessmentBtn">EDIT ASSESSMENT</button>
+                    </div>                    
+            </form>
+
+            <!-- DELETE ASSESSMENT DIALOG -->
+            <div class="dialog" id="deleteAssessmentDialog" title="Delete Assessment"></div>
+
+        </div>
+
+        <!-- SETTINGS PAGE -->
+        <div class="container_right" id="settingsPage">
+           
+            <!-- ADMIN PROFILE -->
+            <div class="banner">
+                <h1 class="banner_text"> ADMIN PROFILE</h1>                                    
+            </div>
+
+            <div class="adminPane" id="admin_profile">
+
+                <div> <img class="profile_icon" src="" alt="profile_icon"></div>
+
+                <div class="pane_margin">    
+                    <h2 class="homeHeader2">Name: </h2>
+                    <h3 class="homeHeader3" id="username">Username: </h3>
+                    <h3 class="homeHeader3" id="email">Email Address: </h3>
+                    <h3 class="homeHeader3" id="address">Address: </h3>
+                    <h3 class="homeHeader3" id="school">School: </h3>
+                    <h3 class="homeHeader3" id="birthday">Birthday: </h3>
+                    <h3 class="homeHeader3" id="gender">Gender: </h3>
+                    
+                    <button class="button" id="toEditProfile">Edit Profile</button>
+                    <button class="button" id="toChangePass">Change Password</button>     
+
+                </div>
+
+            </div>
+            
+            <!-- EDIT PROFILE -->
+            <form class="form" id="admin_profile_edit" enctype="multipart/form-data">
+                <h2 class="homeHeader2"> EDIT ADMIN PROFILE </h2>
+                <div> <img class="profile_icon" id="editImg" src="" alt="profile_icon"></div>
+                <label for="file">Upload New Profile Picture:</label>
+                <input type="file" id="file" name="file" accept="image/*">              
+                    <label for="editFname">First Name:</label>
+                    <input type="text" id="editFname" name="fname" placeholder="Edit First Name"/>
+                        
+                    <label for="editMname">Middle Name:</label>
+                    <input type="text" id="editMname" name="mname" placeholder="Edit Middle Name(Optional)"/>
+
+                    <label for="editLname">Last Name:</label>
+                    <input type="text" id="editLname" name="lname" placeholder="Edit Last Name"/>
+
+                    <label for="editUname">Username:</label>
+                    <input type="text" id="editUname" name="uname" placeholder="Edit Username"/>
+
+                    <label for="editEmail">Email Address:</label>
+                    <input type="email" id="editEmail" name="email" placeholder="Edit Email Address"/>
+
+                    <label>Gender: </label><br>
+                    <label for="editMale">Male</label>
+                    <input type="radio" name="gender" id="editMale" class="checkRadio" value="Male">
+                    <label for="editFemale">Female</label>
+                    <input type="radio" name="gender" id="editFemale" class="checkRadio" value="Female">
+                    
+                    <br>
+                    <label for="editBday">Birthday:</label>
+                    <input class="bday_category" id="editBday" type="text" name="bday" readonly="readonly"/>
+
+                    <label for="editAddress">Home Address:</label>
+                    <input type="text" id="editAddress" name="home" placeholder="Edit Home Address (Optional)"/>
+
+                    <label for="editSchool">School:</label>
+                    <input type="text" id="editSchool" name="school" placeholder="Edit School (Optional)"/>
+                   
+
+                    <div id="buttonGroup">
+                        <button id="cancelBtn" type="button">Cancel Changes</button>
+                        <input id="saveBtn" type="submit" name="submit" value="Save Changes">
+                    </div>
+            </form>      
+
+            <!-- CHANGE PASSWORD MODAL -->
+            <div id="pass-dialog-form" title="Change Password">
+                <h4 id="passErrorMsg">All form fields are required.</h4>
+                <form class="dialogForm">
+                    <fieldset>
+                        <label for="oldPassword">Old Password: </label>
+                        <input type="password" name="oldPass" id="oldPassword" class="text ui-widget-content ui-corner-all" autocomplete="off" required>
+                        <label for="newPassword">New Password: </label>
+                        <input type="password" name="newPass" id="newPassword" class="text ui-widget-content ui-corner-all" autocomplete="off" required>
+                        <label for="confPassword">Confirm New Password: </label>
+                        <input type="password" name="confPass" id="confPassword" class="text ui-widget-content ui-corner-all" autocomplete="off" required>
+                    </fieldset>
+                </form>
+            </div>
+                
         </div>
 
         <!-- LOGOUT MODAL -->

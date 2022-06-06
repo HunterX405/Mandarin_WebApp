@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<scores>
+  <score test="LESSON 1" id="user" date="6/7/2022">10</score>
+  <score test="TEST" user="hunterxhenrick" date="2022/06/06">5</score>
+  <score test="LESSON 3" user="hunterxhenrick" date="2022/06/06">0</score>
+  <score test="LESSON 1" user="hunterxhenrick" date="2022/06/06">2</score>
+  <score test="LESSON 1" user="" date="2022/06/06">0</score>
+  <score test="LESSON 1" user="usera" date="2022/06/06">0</score>
+  <score test="LESSON 2" user="usera" date="2022/06/06">1</score>
+  <score test="LESSON 3" user="usera" date="2022/06/06">2</score>
+</scores>

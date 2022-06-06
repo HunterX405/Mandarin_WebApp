@@ -1,7 +1,9 @@
 <?php
-    // Redirect to Login Page when accessed via link.
-    if (!isset($_POST['editPinyin']) && (!isset($_POST['editHanzi']) && !isset($_POST['editDefinition']) && !isset($_POST['editSentence']) && !isset($_POST['oldPinyin']))) {
-        header('location: ../admin.html');
+    session_start();
+    // Redirect to Login Page if not admin.
+    if (!isset($_SESSION['admin'])) {
+        echo "Unauthorized!";
+        header('location: ../');
         exit;
     }
     

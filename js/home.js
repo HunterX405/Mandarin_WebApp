@@ -4,12 +4,21 @@ $(document).ready(function(){
     $.ajax({
         url: "./php/checkuser.php",
         success: function (checkResponse) {
-            if(checkResponse == "Already Logged In"){
-                console.log(checkResponse);
+            if(checkResponse == "Logged In" || checkResponse == "Admin"){
+                if(checkResponse == "Admin"){
+                    // To prevent access to edit user page.
+                    $("#profileBtn").hide();
+                    $("#profilePage").remove();
+                    // Add button back to admin page
+                    $("#adminBtn").show();
+                }else{
+                    $("#profileBtn").show();
+                    $("#adminBtn").hide();
+                }
                 $("html").css("visibility", "visible");
             }else{
+                alert("Unauthorized!");
                 window.location.href="./";
-                console.log(checkResponse);
             }
         }
     });
@@ -52,6 +61,54 @@ $(document).ready(function(){
     //Transform buttons to jQuery UI button and radio button.
     $(".btn").button();
 
+//DIALOG MESSAGES
+    $("#successDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        buttons: {
+            "Close": function(){
+                $( this ).dialog( "close" );
+                $("#successDialog p").html("<span class=\"ui-icon ui-icon-circle-check\" style=\"float:left; margin:0 7px 0 0;\"></span>");
+            }
+        }
+    });
+
+// VIEW PROFILE PAGE
+    //Populate user details in profile page
+    $("#profileBtn").click(function () { 
+        if(activeWindow != "#profilePage"){
+            $(activeWindow).fadeOut(100, function(){
+
+                //Get profile data via getUserProfile.php AJAX
+                $.ajax({
+                    url: "./php/getUserProfile.php",
+                    success: function (response) {
+
+                        //Parse JSON response from PHP AJAX
+                        const obj = JSON.parse(response);
+                        //Display profile data
+                        $("#student_profile h2").html(obj.firstName + " " + obj.middleName + " " + obj.lastName);
+                        $("#username").html("Username: " + obj.username);
+                        $("#email").html("Email: " + obj.email);
+                        $(".profile_icon").attr("src", "php/"+obj.image);
+                        $("#address").html("Address: " + obj.address);
+                        $("#school").html("School: " + obj.school);
+                        $("#birthday").html("Birthday: " + obj.birthday);
+                        $("#gender").html("Gender: " + obj.gender);
+                    }
+                });
+
+                //Transition to profile page.
+                activeWindow = "#profilePage";
+                $("#profilePage").fadeIn(100);
+            });
+        }
+    });
+
+// EDIT PROFILE
     //Transition of Student's Profile to Edit Profile
     $("#toEditProfile").click(function(){
         $("#editBday").datepicker({
@@ -100,37 +157,6 @@ $(document).ready(function(){
         $("#student_profile_edit").fadeOut(250, function(){
             $("#student_profile").fadeIn(250);
         });
-    });
-
-    //Populate user details in profile page
-    $("#profileBtn").click(function () { 
-        if(activeWindow != "#profilePage"){
-            $(activeWindow).fadeOut(500, function(){
-
-                //Get profile data via getUserProfile.php AJAX
-                $.ajax({
-                    url: "./php/getUserProfile.php",
-                    success: function (response) {
-
-                        //Parse JSON response from PHP AJAX
-                        const obj = JSON.parse(response);
-                        //Display profile data
-                        $("#student_profile h2").html(obj.firstName + " " + obj.middleName + " " + obj.lastName);
-                        $("#username").html("Username: " + obj.username);
-                        $("#email").html("Email: " + obj.email);
-                        $(".profile_icon").attr("src", "php/"+obj.image);
-                        $("#address").html("Address: " + obj.address);
-                        $("#school").html("School: " + obj.school);
-                        $("#birthday").html("Birthday: " + obj.birthday);
-                        $("#gender").html("Gender: " + obj.gender);
-                    }
-                });
-
-                //Transition to profile page.
-                activeWindow = "#profilePage";
-                $("#profilePage").fadeIn(500);
-            });
-        }
     });
 
     //Update image on edit profile page to show new uploaded image
@@ -227,9 +253,9 @@ $(document).ready(function(){
     //Transition back to home page.
     $("#homeBtn").click(function () {
         if(activeWindow != "#homePage"){
-            $(activeWindow).fadeOut(500, function(){
+            $(activeWindow).fadeOut(100, function(){
                 activeWindow = "#homePage";
-                $("#homePage").fadeIn(500);
+                $("#homePage").fadeIn(100);
             });
         } 
     });
@@ -374,7 +400,7 @@ $(document).ready(function(){
             $.ajax({
                 type: "POST",
                 url: "./php/getLessons.php",
-                data: "data=title",
+                data: "data=hometitle",
                 success: function (response) {
                     responseObj = JSON.parse(response);
                     $("#sidebar").append("<h1>LESSONS</h1>");
@@ -386,7 +412,7 @@ $(document).ready(function(){
             });
         }
         if(activeWindow != "#lessonsPage"){
-            $(activeWindow).fadeOut(500, function(){
+            $(activeWindow).fadeOut(100, function(){
                 activeWindow = "#lessonsPage";
                 $("#lessonsPage").show(100);
                 $("#sidebar").css("margin-left", "100px");
@@ -445,14 +471,17 @@ $(document).ready(function(){
                     }
                 },
                 success: function (response) {
-                    responseObj = JSON.parse(response);
+                    const responseObj = JSON.parse(response);
                     if(responseObj.topicTitle != ""){
+                        console.log(responseObj.topicTitle);
                         responseObj.topicTitle.forEach(function (item) {
                             var topic = toId(item);
                             $("#tabs ul").append("<li><a href=\"#"+topic+"\">"+item+"</a></li>");
                             $("#tabs").append("<div id='"+topic+"'></div>");
                         });
                         $("#"+toId(responseObj.topicTitle[0])).html(responseObj.content);
+                    }else{
+                        
                     }
                 },
                 complete: function() {
@@ -514,19 +543,157 @@ $(document).ready(function(){
             if(activeWindow == ""){
                 activeWindow = "#dictionaryPage";
                 $("#dictionaryPage").show(100);
-                $("#sidebar").css("margin-left", "100px");
-                $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
-                sidebarState = true; 
             }else{
-                $(activeWindow).fadeOut(500, function(){
+                $(activeWindow).fadeOut(100, function(){
                     activeWindow = "#dictionaryPage";
                     $("#dictionaryPage").show(100);
-                    $("#sidebar").css("margin-left", "100px");
-                    $("#viewLessons").css("margin-left", "calc(170px + 3vw)");
-                    sidebarState = true; 
                 });
             }
         }
+    });
+
+// ASSESSMENT PAGE
+
+    function refreshAssessments(){
+        $("#assessmentPendingTable").html("<caption>PENDING</caption><tr><th>Assessment Title</th><th>No. of Items</th><th>Action</th></tr>");
+        $("#assessmentCompleteTable").html("<caption>COMPLETED</caption><tr><th>Assessment Title</th><th>Score</th><th>No. of Items</th></tr>");
+        $.ajax({
+            type: "post",
+            url: "./php/getAssessments.php",
+            data: "data=user",
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                if(responseObj.pending.length==0){
+                    $("#assessmentPendingTable").html("<h2>NO PENDING ASSESSMENTS</h2>")
+                }else{
+                    responseObj.pending.forEach(element => {
+                        var rowHtml = "<tr>";
+                        rowHtml += "<td>"+element.title+"</td>";
+                        rowHtml += "<td>"+element.items+"</td>";
+                        rowHtml += "<td><button type=\"button\" class='startAssessmentBtn btn'>START ASSESSMENT</button></td>";  
+                        rowHtml += "</tr>";
+                        $("#assessmentPendingTable").append(rowHtml);
+                        $(".btn").button();
+                    });
+                }
+                console.log(responseObj.completed.length);
+                if(responseObj.completed.length==0){
+                    $("#assessmentCompleteTable").html("");
+                    $("#assessmentCompleteTable").hide();
+                }else{
+                    responseObj.completed.forEach(element => {
+                        var rowHtml = "<tr>";
+                        rowHtml += "<td>"+element.title+"</td>";
+                        rowHtml += "<td>"+element.score+"</td>";
+                        rowHtml += "<td>"+element.items+"</td>";  
+                        rowHtml += "</tr>";
+                        $("#assessmentCompleteTable").append(rowHtml);
+                        $(".btn").button();
+                    });
+                }
+            }
+        });
+    }
+
+    // VIEW ASSESSMENTS
+    $(".assessmentBtn").click(function () { 
+        if(activeWindow != "#assessmentPage"){
+            refreshAssessments();
+            if(activeWindow == ""){
+                activeWindow = "#assessmentPage";
+                $("#assessmentPage").show(100);
+            }else{
+                $(activeWindow).fadeOut(100, function(){
+                    activeWindow = "#assessmentPage";
+                    $("#assessmentPage").show(100);
+                });
+            }
+        }
+    });
+
+    // TO ASSESSMENT FORM
+    var assessmentTitle = "";
+    $("#assessmentPendingTable").on("click",".startAssessmentBtn", function(e){
+        e.preventDefault();
+        var row = $(this).closest("tr");
+        assessmentTitle = row.find("td:first-child").text();
+        $("#assessmentForm fieldset").html("");
+        $.ajax({
+            type: "post",
+            url: "./php/generateAssessment.php",
+            data: "title="+assessmentTitle,
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                responseObj.questions.forEach(question => {
+                    qIndex = question.id;
+                    var questionHtml = "<div class=\"question\" id='"+qIndex+"'>";
+                    questionHtml += "<input type=\"hidden\" id=\"qid-"+qIndex+"\" name=\"qid-"+qIndex+"\" value='"+qIndex+"'>";
+                    if(question.image != ""){
+                        questionHtml += "<img src='/php/"+question.image+"' alt='Question Image'>";
+                    }
+                    questionHtml += "<p>Question: "+question.text+"</p>";
+                    if(question.type == "multiple"){
+                        questionHtml += "<label for='answer1-"+qIndex+"'>"+question.choices[0]+"</label>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer1-"+qIndex+"' value='"+question.choices[0]+"' required>";
+                        questionHtml += "<label for='answer2-"+qIndex+"'>"+question.choices[1]+"</label>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer2-"+qIndex+"' value='"+question.choices[1]+"'>";
+                        questionHtml += "<label for='answer3-"+qIndex+"'>"+question.choices[2]+"</label>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer3-"+qIndex+"' value='"+question.choices[2]+"'>";
+                        questionHtml += "<label for='answer4-"+qIndex+"'>"+question.choices[3]+"</label>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer4-"+qIndex+"' value='"+question.choices[3]+"'>";
+                    }else if(question.type == "truefalse"){
+                        questionHtml += "<label for='answerT-"+qIndex+"'>True</label>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answerT-"+qIndex+"' value='True' required>";
+                        questionHtml += "<label for='answerF-"+qIndex+"'>False</label>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answerF-"+qIndex+"' value='False'>";
+                    }else if(question.type == "identify"){
+                        questionHtml += "<label for='answer-"+qIndex+"'>Answer: </label>";
+                        questionHtml += "<input type='text' name='answer-"+qIndex+"' id='answer-"+qIndex+"' required>";
+                    }
+                    $("#assessmentForm fieldset").append(questionHtml);
+                    $("input[type='radio']").checkboxradio();
+                });
+
+            }
+        });
+        $("#viewAssessments").fadeOut(100, function(){
+            $("#assessmentHeader").text(assessmentTitle + " ASSESSMENT");
+            $("#assessmentForm").fadeIn(100);
+        });
+    });
+
+    // SUBMIT ASSESSMENT
+    $("#assessmentForm").on("submit",function(e){
+        e.preventDefault();
+        var formData = new FormData(this);
+        formData.append("title",assessmentTitle);
+        $.ajax({
+            type: "post",
+            url: "./php/checkAssessment.php",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                refreshAssessments();
+                $("#successDialog p").append(response);
+                $("#successDialog").dialog("open");
+
+                $("#assessmentForm")[0].reset();
+                $("#assessmentForm fieldset").html("");
+                $("#assessmentForm").fadeOut(100, function(){
+                    $("#viewAssessments").fadeIn(100);
+                });
+            }
+        });
+    });
+
+    // CANCEL ASSESSMENT
+    $("#cancelAssessmentBtn").click(function () {
+        $("#assessmentForm")[0].reset();
+        $("#assessmentForm fieldset").html("");
+        $("#assessmentForm").fadeOut(100, function(){
+            $("#viewAssessments").fadeIn(100);
+        });
     });
 
 //LOGOUT
@@ -565,7 +732,7 @@ $(document).ready(function(){
     });
 
     //TEMPORARY!! TO ADMIN PAGE
-    $("#settingsBtn").click(function () { 
+    $("#adminBtn").click(function () { 
         window.location.replace("admin.html");
     });
 

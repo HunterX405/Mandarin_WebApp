@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<assessments>
+  <assessment title="LESSON 1" items="2">
+    <question type="multiple" id="1">
+      <text>What is mandarin?</text>
+      <image>images/TEST NINJA.png</image>
+      <choice>One</choice>
+      <choice>Two</choice>
+      <choice>Three</choice>
+      <choice>Four</choice>
+      <answer>One</answer>
+    </question>
+    <question type="truefalse" id="2">
+      <text>IS IT TRUE?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+  </assessment>
+  <assessment title="LESSON 2" items="2">
+    <question type="multiple" id="1">
+      <text>AAA</text>
+      <image/>
+      <choice>A</choice>
+      <choice>W</choice>
+      <choice>WE</choice>
+      <choice>R</choice>
+      <answer>WE</answer>
+    </question>
+    <question type="truefalse" id="2">
+      <text>AAA</text>
+      <image>images/1.jpg</image>
+      <answer>True</answer>
+    </question>
+  </assessment>
+  <assessment title="LESSON 3" items="3">
+    <question type="multiple" id="1">
+      <text>MULTIPLE 1a</text>
+      <image>images/1.png</image>
+      <choice>1a</choice>
+      <choice>2a</choice>
+      <choice>3a</choice>
+      <choice>4a</choice>
+      <answer>3a</answer>
+    </question>
+    <question type="truefalse" id="2">
+      <text>ISFALSE</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="identify" id="3">
+      <text>IDENTIFYALL</text>
+      <image/>
+      <answer>AAAA</answer>
+      <answer>BBBB</answer>
+      <answer>CCCCC</answer>
+      <answer>ddddddd</answer>
+    </question>
+    <question type="truefalse" id="4">
+      <text>test</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="5">
+      <text>test2</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+  </assessment>
+  <assessment title="TEST" items="10">
+    <question type="truefalse" id="1">
+      <text>1</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="2">
+      <text>2</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="3">
+      <text>3</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="4">
+      <text>4</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="5">
+      <text>5</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="6">
+      <text>6</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="7">
+      <text>7</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="8">
+      <text>8</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="9">
+      <text>9</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="10">
+      <text>10</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="11">
+      <text>11</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="12">
+      <text>12</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="13">
+      <text>13</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="14">
+      <text>14</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="15">
+      <text>15</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="16">
+      <text>16</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="17">
+      <text>17</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="18">
+      <text>18</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="19">
+      <text>19</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="20">
+      <text>20</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="21">
+      <text>21</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="22">
+      <text>22</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="23">
+      <text>23</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="24">
+      <text>24</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="25">
+      <text>25</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="26">
+      <text>26</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="27">
+      <text>27</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="28">
+      <text>28</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="29">
+      <text>29</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="30">
+      <text>30</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="31">
+      <text>31</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="32">
+      <text>32</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="33">
+      <text>33</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="34">
+      <text>34</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="35">
+      <text>35</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="36">
+      <text>36</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="37">
+      <text>37</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="38">
+      <text>38</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="39">
+      <text>39</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="40">
+      <text>40</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="41">
+      <text>41</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="42">
+      <text>42</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="43">
+      <text>43</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="44">
+      <text>44</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="45">
+      <text>45</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="46">
+      <text>46</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="47">
+      <text>47</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="48">
+      <text>48</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="49">
+      <text>49</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="50">
+      <text>50</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+  </assessment>
+</assessments>

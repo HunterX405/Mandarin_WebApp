@@ -32,15 +32,22 @@
         <!-- SIDEBAR ICONS -->
         <div class="container_left">
             <div class="menu">
+                <div class="menu_categories" id="logo"><img class="menu_categories_icons" src="css/images/logo_variation222.avif" alt="Profile"></div>
+
+                <div class="menu_categories" id="adminBtn"><img class="menu_categories_icons" src="" alt="Admin"></div>
                 <div class="menu_categories" id="profileBtn"><img class="menu_categories_icons" src="css/images/menu_profile.avif" alt="Profile"></div>
                 <div class="menu_categories" id="homeBtn"><img class="menu_categories_icons" src="css/images/menu_home.avif" alt="Home"></div>
                 <div class="menu_categories lessonBtn"><img class="menu_categories_icons" src="css/images/menu_lesson.avif" alt="Lessons"></div>
-                <div class="menu_categories" id="assessmentBtn"><img class="menu_categories_icons" src="css/images/menu_assessment.avif" alt="Assessment"></div>
+                <div class="menu_categories assessmentBtn"><img class="menu_categories_icons" src="css/images/menu_assessment.avif" alt="Assessment"></div>
                 <div class="menu_categories dictionaryBtn"><img class="menu_categories_icons" src="css/images/menu_dictionary.avif" alt="Dictionary"></div>
                 <div class="menu_categories" id="testsBtn"><img class="menu_categories_icons" src="css/images/menu_test.avif" alt="Tests"></div>
-                <div class="menu_categories" id="settingsBtn"><img class="menu_categories_icons" src="css/images/menu_settings.avif" alt="Settings"></div>
                 <div class="menu_categories" id="logoutBtn"><img class="menu_categories_icons" src="css/images/menu_logout.avif" alt="Logout"></div>                                 
             </div>                
+        </div>
+
+        <!-- SUCCESS DIALOG -->
+        <div class="dialog" id="successDialog" title="Success!">
+            <p><span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 0 0;"></span></p>
         </div>
       
         <!-- HOME PAGE -->
@@ -48,7 +55,7 @@
 
             <!-- WELCOME BANNER-->  
             <div class="home_image1">
-                <h1 class="homeHeader1"> WELCOME TO *TITLE</h1>
+                <h1 class="homeHeader1"> WELCOME TO SUI ACADEMIA</h1>
             </div>
 
             <!-- INTRODUCTION/BACKGROUND OF THE WEBSITE -->
@@ -100,7 +107,7 @@
                         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
                         voluptate velit esse cillum dolore eu.
                     </p>
-                    <button class="home_button" type="button">GO TO ASSESSMENTS</button>
+                    <button class="home_button assessmentBtn" type="button">GO TO ASSESSMENTS</button>
                 </div>
                 <div class="home_content_right right_image">
                 <img class="home_icons" src="css/images/home_icon2.avif" alt="">
@@ -145,25 +152,36 @@
                 </div>
             </div>
         </div>
+
         <!-- PROFILE PAGE -->
         <div class="container_right" id="profilePage">
            
             <!-- STUDENT PROFILE -->
+            <div class="banner">
+                <h1 class="banner_text"> PROFILE</h1>                                    
+            </div>
+
             <div class="pane" id="student_profile">
+
                 <div id="updateSuccessMsg">Success!</div>
                 <div class="updateErrorMsg" id="profileError">Error!</div>
                 <div> <img class="profile_icon" src="" alt="profile_icon"></div>
-                <h2 class="homeHeader2">Name: </h2>
-                <h3 class="homeHeader3" id="username">Username: </h3>
-                <h3 class="homeHeader3" id="email">Email Address: </h3>
-                <h3 class="homeHeader3" id="address">Address: </h3>
-                <h3 class="homeHeader3" id="school">School: </h3>
-                <h3 class="homeHeader3" id="birthday">Birthday: </h3>
-                <h3 class="homeHeader3" id="gender">Gender: </h3>
+
+                <div class="pane_margin">    
+                    <h2 class="homeHeader2">Name: </h2>
+                    <h3 class="homeHeader3" id="username">Username: </h3>
+                    <h3 class="homeHeader3" id="email">Email Address: </h3>
+                    <h3 class="homeHeader3" id="address">Address: </h3>
+                    <h3 class="homeHeader3" id="school">School: </h3>
+                    <h3 class="homeHeader3" id="birthday">Birthday: </h3>
+                    <h3 class="homeHeader3" id="gender">Gender: </h3>
                     
-                <button class="btn" id="toEditProfile">Edit Profile</button>
-                <button class="btn" id="toChangePass">Change Password</button>
-                <button class="btn" id="toDeleteAccount">Delete Account</button>        
+                    <button class="btn" id="toEditProfile">Edit Profile</button>
+                    <button class="btn" id="toChangePass">Change Password</button>
+                    <button class="btn" id="toDeleteAccount">Delete Account</button>     
+
+                </div>
+
             </div>
             
             <!-- EDIT PROFILE -->
@@ -249,8 +267,11 @@
         <!-- DICTIONARY PAGE -->
         <div class="container_right" id="dictionaryPage">
             <!-- VIEW WORDS -->
+            <div class="banner">
+                <h1 class="banner_text"> DICTIONARY</h1>                                    
+            </div>
+
             <div class="pane">
-                <h2>DICTIONARY</h2>
                 <table id="dictionaryTable">
                     <tr>
                         <th>Pinyin</th>
@@ -261,6 +282,42 @@
                     </tr>
                 </table>
             </div>
+        </div>
+
+        <!-- ASSESSMENT PAGE -->
+        <div class="container_right" id="assessmentPage">
+            <!-- VIEW ASSESSMENTS -->
+            <div class="pane" id="viewAssessments">
+                <h2>ASSESSMENTS</h2>
+                <table id="assessmentPendingTable">
+                    <caption>PENDING</caption>
+                    <tr>
+                        <th>Assessment Title</th>
+                        <th>No. of Items</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+                <table id="assessmentCompleteTable">
+                    <caption>COMPLETED</caption>
+                    <tr>
+                        <th>Assessment Title</th>
+                        <th>Score</th>
+                        <th>No. of Items</th>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- ASSESSMENT FORM -->
+            <form class="form" id="assessmentForm" novalidate>
+                <h2 class="homeHeader2" id="assessmentHeader">ASSESSMENT</h2>
+                <fieldset>
+                </fieldset>
+                <div class="btnGroup">
+                    <button type="button" class="btn" id="cancelAssessmentBtn">CANCEL</button>
+                    <button type="submit" class="btn" id="submitAssessmentBtn">SUBMIT ASSESSMENT</button>
+                </div>                    
+            </form>
+
         </div>
 
         <!-- LOGOUT MODAL -->

@@ -1,5 +1,11 @@
 <?php 
-
+    session_start();
+    // Redirect to Login Page if not user or admin.
+    if (!isset($_SESSION['admin'])) {
+        echo "Unauthorized!";
+        header('location: ../');
+        exit;
+    }
     $file_global = $_FILES['image'];
                             
     $file_tmp_name = $file_global['tmp_name'];

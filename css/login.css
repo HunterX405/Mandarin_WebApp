@@ -1,5 +1,7 @@
-html{
+html {
     height: 100%;
+    visibility: hidden;
+    overflow: hidden;
 }
 body {
     min-height: 100%;
@@ -16,10 +18,18 @@ body {
     background-color: #ffffff;  
 }
 
+#logo_home{
+    display: block;
+    margin: 15% auto 0 auto;
+    width: 90px;
+    height: 90px;
+    
+}
+
 form{
     width: 75%;
     margin: auto;
-    padding-top: 20%;
+    padding-top: 8%;
 }
 
 form input {

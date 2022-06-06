@@ -4,6 +4,8 @@
     if (!isset($_POST['username']) && !isset($_POST['password'])) {
         header('location: ../');
         exit;
+    }else{
+        
     }
 
     $loginUserEmail = $_POST['username'];
@@ -29,8 +31,13 @@
             $isUser = true;
 
             if(password_verify($loginPassword,$compPassword)){
-                $_SESSION['user'] = $compUname;
-                echo "Login Success!";
+                if($user->getAttribute("access") == "admin"){
+                    $_SESSION['admin'] = $compUname;
+                    echo "Admin";
+                }else{
+                    $_SESSION['user'] = $compUname;
+                    echo "Login Success!";
+                }
                 break;
             }else{
                 //Username or email is found but password does not match.
