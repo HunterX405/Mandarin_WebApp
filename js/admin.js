@@ -8,16 +8,19 @@ $(document).ready(function(){
         data: "",
         success: function (checkResponse) {
             if(checkResponse == "Admin"){
-                $("html").css("visibility", "visible");
+                $("html").css("visibility", "visible").fadeIn(300);
             }else{
-                alert("Unauthorized");
-                window.location.href="./";
+                alert("Unauthorized!");
+                $("html").fadeOut(200, function(){
+                    $("html").css("visibility", "hidden");
+                    window.location.href="./";
+                });
             }
         }
     });
 
 
-//LOADING MODAL
+// LOADING MODAL
     $body = $("body");
     $(document).on({
         ajaxStart: function() { $body.addClass("loading");},
@@ -25,15 +28,15 @@ $(document).ready(function(){
     });
     
 
-//SET ACTIVE WINDOW
+    // SET ACTIVE WINDOW
     var activeWindow = "";
 
 
-//USE JQUERY UI BUTTONS
+    // USE JQUERY UI BUTTONS
     $(".button").button();
 
 
-//DIALOG MESSAGES
+// DIALOG MESSAGES
     $("#successDialog").dialog({
         autoOpen: false,
         resizable: false,
@@ -62,8 +65,225 @@ $(document).ready(function(){
         }
     });
 
+// USERS PAGE 
+    function refreshUsers(data){
+        var tableHtml = "<tr><th>Name</th><th>Email</th><th>Address</th><th>School</th><th>Birthday</th><th>Gender</th><th>Action</th></tr>";
+        $.ajax({
+            type: "post",
+            url: "./php/getAllUsers.php",
+            data: "data="+data,
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                responseObj.forEach(user => {
+                    tableHtml += "<tr><td>"+user.name+"</td>";
+                    tableHtml += "<td>"+user.email+"</td>";
+                    tableHtml += "<td>"+user.address+"</td>";
+                    tableHtml += "<td>"+user.school+"</td>";
+                    tableHtml += "<td>"+user.birthday+"</td>";
+                    tableHtml += "<td>"+user.gender+"</td>";
+                    if(data=="ACTIVE"){
+                        tableHtml += "<td><button type=\"button\" class='archiveUserBtn' title=\"Archive\">ARCHIVE</button><button type=\"button\" class='deleteUserBtn' title=\"delete\">DELETE</button></td></tr>";
+                    }else{
+                        tableHtml += "<td><button type=\"button\" class='restoreUserBtn' title=\"Restore\">RESTORE</button><button type=\"button\" class='deleteUserBtn' title=\"delete\">DELETE</button></td></tr>";
+                    }
+                });
+                $("#usersTable").html(tableHtml);
+            }
+        });
+    };
 
-//LESSONS PAGE
+    // VIEW USERS
+    $("#usersBtn").click(function () { 
+        if(activeWindow != "#usersPage"){
+            refreshUsers("ACTIVE");
+            $( ".checkRadio" ).checkboxradio({
+                icon: false
+            });
+            if(activeWindow == ""){
+                $("#usersPage").fadeIn(100);
+            }else{
+                $(activeWindow).fadeOut(100, function(){
+                    $("#usersPage").fadeIn(100);
+                });
+            }
+            activeWindow = "#usersPage";
+        }
+    });
+
+    // UPDATE USERS TABLE
+    $('input[type=radio][name=userData]').change(function() {
+        refreshUsers(this.value);
+    });
+
+    // ARCHIVE USER
+    var userToArchive = "";
+    $("#usersPage").on("click",".archiveUserBtn", function(){
+        //Get row details
+        row = $(this).closest("tr");
+        userToArchive = row.find("td:nth-child(2)").text();
+        $("#archiveUserDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to archive "+userToArchive+" Account?</p>");
+        $("#archiveUserDialog").dialog("open");
+    });
+
+    //ARCHIVE USER MODAL
+    $("#archiveUserDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        buttons: {
+            Confirm: function(){
+                $.ajax({
+                    type: "POST",
+                    url: "./php/archiveUser.php",
+                    data: {
+                        action: "archive",
+                        user: userToArchive,
+                    },
+                    beforeSend: function (){
+                        //Get row details
+                        userToArchive = row.find("td:nth-child(2)").text();
+                        //Hide Dictionary Table
+                        $("#usersTable").fadeOut(100);
+                    },
+                    success: function (response) {
+                        if(response != "User Account Archived Successfully!"){
+                            $("#usersTable").fadeIn(100);
+                            $("#errorDialog p").append(response);
+                            $("#errorDialog").dialog("open");
+                        }else{
+                            //Update Dictionary Table
+                            refreshUsers("ACTIVE");
+                            $("#successDialog p").append(response);
+                            $("#successDialog").dialog("open");
+                            $("#usersTable").fadeIn(100);
+                        }
+                        userToArchive = "";
+                    }
+                });
+                $( this ).dialog( "close" );
+            },
+            Cancel: function() {
+                userToArchive = "";
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+
+    // RESTORE USER
+    var userToRestore = "";
+    $("#usersPage").on("click",".restoreUserBtn", function(){
+        //Get row details
+        row = $(this).closest("tr");
+        userToRestore = row.find("td:nth-child(2)").text();
+        $("#restoreUserDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to restore "+userToRestore+" Account?</p>");
+        $("#restoreUserDialog").dialog("open");
+    });
+
+    //RESTORE USER MODAL
+    $("#restoreUserDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        buttons: {
+            Confirm: function(){
+                $.ajax({
+                    type: "POST",
+                    url: "./php/archiveUser.php",
+                    data: {
+                        action: "restore",
+                        user: userToRestore,
+                    },
+                    beforeSend: function (){
+                        //Get row details
+                        userToRestore = row.find("td:nth-child(2)").text();
+                        //Hide Dictionary Table
+                        $("#usersTable").fadeOut(100);
+                    },
+                    success: function (response) {
+                        if(response != "User Account Restored Successfully!"){
+                            $("#usersTable").fadeIn(100);
+                            $("#errorDialog p").append(response);
+                            $("#errorDialog").dialog("open");
+                        }else{
+                            //Update Dictionary Table
+                            refreshUsers("ARCHIVED");
+                            $("#successDialog p").append(response);
+                            $("#successDialog").dialog("open");
+                            $("#usersTable").fadeIn(100);
+                        }
+                        userToRestore = "";
+                    }
+                });
+                $( this ).dialog( "close" );
+            },
+            Cancel: function() {
+                userToRestore = "";
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+
+    // DELETE USER
+    var userToDelete = "";
+    $("#usersPage").on("click",".deleteUserBtn", function(){
+        //Get row details
+        row = $(this).closest("tr");
+        userToDelete = row.find("td:nth-child(2)").text();
+        $("#deleteUserDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+userToRestore+" Account?</p>");
+        $("#deleteUserDialog").dialog("open");
+    });
+
+    // DELETE USER MODAL
+    $("#deleteUserDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        buttons: {
+            Confirm: function(){
+                $.ajax({
+                    type: "POST",
+                    url: "./php/deleteUser.php",
+                    data: {
+                        user: userToDelete,
+                        table: $('input[name=userData]:checked').val(),
+                    },
+                    beforeSend: function (){
+                        //Get row details
+                        userToDelete = row.find("td:nth-child(2)").text();
+                        //Hide Dictionary Table
+                        $("#usersTable").fadeOut(100);
+                    },
+                    success: function (response) {
+                        if(response != "Account Deleted Successfully!"){
+                            $("#usersTable").fadeIn(100);
+                            $("#errorDialog p").append(response);
+                            $("#errorDialog").dialog("open");
+                        }else{
+                            //Update Dictionary Table
+                            refreshUsers($('input[name=userData]:checked').val());
+                            $("#successDialog p").append(response);
+                            $("#successDialog").dialog("open");
+                            $("#usersTable").fadeIn(100);
+                        }
+                        userToRestore = "";
+                    }
+                });
+                $( this ).dialog( "close" );
+            },
+            Cancel: function() {
+                userToRestore = "";
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+
+// LESSONS PAGE
     var activeLesson = "";
 
     function refreshSidebar(){
@@ -101,20 +321,16 @@ $(document).ready(function(){
         }
         if(activeWindow != "#lessonsPage"){
             if(activeWindow == ""){
-                activeWindow = "#lessonsPage";
                 $("#lessonsPage").show(100);
-                $("#sidebar").css("margin-left", "100px");
-                $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
-                sidebarState = true; 
             }else{
                 $(activeWindow).fadeOut(100, function(){
-                    activeWindow = "#lessonsPage";
-                    $("#lessonsPage").show(100);
-                    $("#sidebar").css("margin-left", "100px");
-                    $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
-                    sidebarState = true; 
+                    $("#lessonsPage").show(100); 
                 });
             }
+            activeWindow = "#lessonsPage";
+            $("#sidebar").css("margin-left", "100px");
+            $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
+            sidebarState = true;
         }else{
             if(!sidebarState && sidebarEnabled){
                 $("#sidebar").css("margin-left", "100px");
@@ -129,7 +345,7 @@ $(document).ready(function(){
     });
 
 
-    //VIEW LESSON
+    // VIEW LESSON
     $("#sidebar").on("click","p.lessonView",function () {
         $("#viewLessons").fadeIn(100);
         var lessonTitle = $(this).text();
@@ -215,6 +431,7 @@ $(document).ready(function(){
 
     function addLesson(){
         if(!$("#lessonTitle").val().trim()){
+            $("#lessonErrorMsg").show();
             errorResponse("Lesson Title is Required!");
         }else{
             //Send ajax request to addLesson.php
@@ -234,6 +451,7 @@ $(document).ready(function(){
                 success: function (response) {
 
                     if(response == "Lesson Already Exists!"){
+                        $("#lessonErrorMsg").show();
                         errorResponse(response);
                     }else{
                         //Update Lessons List in Sidebar
@@ -290,6 +508,7 @@ $(document).ready(function(){
     });
 
     $("#sidebar").on("click","#lessonAddBtn",function () {
+        errorMessage = $("#lessonErrorMsg");
         $("#addLessonDialog").dialog("open");        
     });
 
@@ -430,7 +649,7 @@ $(document).ready(function(){
     });
 
 
-//EDIT TOPIC
+//EDIT TOPIC PAGE
     //TO EDIT TOPIC
     $("#viewLessons").on("click","#toEditTopicBtn", function(){
 
@@ -500,7 +719,7 @@ $(document).ready(function(){
     })
 
 
-    //EDIT TOPIC
+    // EDIT TOPIC
     $("#editTopicForm").submit(function (e) { 
         e.preventDefault();
 
@@ -512,7 +731,7 @@ $(document).ready(function(){
         var editTopicFormData = new FormData(this);
         editTopicFormData.append("oldTopicTitle",oldTopicTitle);
 
-        //Send ajax request to addLesson.php
+        //Send ajax request
         $.ajax({
             type: "post",
             url: "./php/editTopic.php",
@@ -520,25 +739,30 @@ $(document).ready(function(){
             processData: false,
             contentType: false, 
             success: function (response) {
-                
-                //Update Lessons List in Sidebar
-                refreshSidebar();
-                $("#successDialog p").append(response);
-                $("#successDialog").dialog("open");
 
-                $("#editTopicForm").fadeOut(100, function(){
-                    // Enable Sidebar
-                    sidebarEnabled = true;
-                    //Display Sidebar
-                    $("#sidebar").css("margin-left", "100px");
-                    $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
-                    sidebarState = true; 
-                    //Reset form values
-                    $("#editTopicHeader").html("EDIT");
-                    $("#lessonsPage form")[0].reset();
-                    $("#editTopicContent").val("");
-                    $(".trumbowyg-editor").html("");
-                });
+                if(response != "Topic Edited Successfully!"){
+                    $("#errorDialog p").append(response);
+                    $("#errorDialog").dialog("open");
+                }else{
+                    //Update Lessons List in Sidebar
+                    refreshSidebar();
+                    $("#successDialog p").append(response);
+                    $("#successDialog").dialog("open");
+
+                    $("#editTopicForm").fadeOut(100, function(){
+                        // Enable Sidebar
+                        sidebarEnabled = true;
+                        //Display Sidebar
+                        $("#sidebar").css("margin-left", "100px");
+                        $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
+                        sidebarState = true; 
+                        //Reset form values
+                        $("#editTopicHeader").html("EDIT");
+                        $("#lessonsPage form")[0].reset();
+                        $("#editTopicContent").val("");
+                        $(".trumbowyg-editor").html("");
+                    });
+                }
             }
         });
     });
@@ -919,7 +1143,7 @@ $(document).ready(function(){
     var row = "";
     $("#dictionaryTable").on("click",".deleteWordBtn",function () {
         //Get row details
-        row = $(this).closest("tr"),
+        row = $(this).closest("tr");
         wordToDelete = row.find("td:first-child").text();
         var hanziToDelete = row.find("td:nth-child(2)").text();
         $("#deleteWordDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+wordToDelete+"("+hanziToDelete+") in dictionary?</p>");
@@ -973,7 +1197,7 @@ $(document).ready(function(){
         }
     });
 
-// ASSESSMENT PAGE
+// ASSESSMENT PAGE ====================================================================================================================================================================
 
     function refreshAssessments(){
         $("#assessmentTable").html("<tr><th>Assessment Title</th><th>No. of Items</th><th>No. of Questions</th><th>Action</th></tr>");
@@ -1016,7 +1240,7 @@ $(document).ready(function(){
         $("#viewAssessments").fadeOut(100, function(){
             $("select").selectmenu();
             $("#totalItems").spinner({
-                min: 0
+                min: 1
             });
             $("#addAssessmentForm").fadeIn(100);
         });
@@ -1130,7 +1354,7 @@ $(document).ready(function(){
             }
         }
 
-        if(!$.isNumeric($("#totalItems").val().trim()) || $("#totalItems").val().trim() < 0){
+        if(!$.isNumeric($("#totalItems").val().trim()) || $("#totalItems").val().trim() < 1){
             isValid = false;
             $("#errorDialog p").append("Total Items must be a positive number.");
         }else if($("#totalItems").val()>totalQuestions){
@@ -1140,7 +1364,7 @@ $(document).ready(function(){
             isValid = false;
             $("#errorDialog p").append("Question or Image is required.");
         }
-        
+
         if(isValid){
             var formData = new FormData($("#addAssessmentForm")[0]);
             formData.append("totalQuestions",totalQuestions);
@@ -1151,7 +1375,7 @@ $(document).ready(function(){
                 processData: false,
                 contentType: false, 
                 success: function (response) {
-                    if(response == "Assessment Already Exists!"){
+                    if(response.trim() == "Assessment Already Exists!"){
                         $("#errorDialog p").append(response);
                         $("#errorDialog").dialog("open");
                     }else{
@@ -1194,7 +1418,7 @@ $(document).ready(function(){
     var assessmentToDelete = "";
     $("#assessmentTable").on("click",".deleteAssessmentBtn",function () {
         //Get row details
-        row = $(this).closest("tr"),
+        row = $(this).closest("tr");
         assessmentToDelete = row.find("td:first-child").text();
         $("#deleteAssessmentDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+assessmentToDelete+" Assessment?</p>");
         $("#deleteAssessmentDialog").dialog("open");
@@ -1361,7 +1585,7 @@ $(document).ready(function(){
                 $("#viewAssessments").fadeOut(100, function(){
                     $("select").selectmenu();
                     $("#editTotalItems").spinner({
-                        min: 0
+                        min: 1
                     });
                     $("#editAssessmentForm").fadeIn(100);
                 });
@@ -1466,7 +1690,7 @@ $(document).ready(function(){
             }
         }
 
-        if(!$.isNumeric($("#editTotalItems").val().trim()) || $("#editTotalItems").val().trim() < 0){
+        if(!$.isNumeric($("#editTotalItems").val().trim()) || $("#editTotalItems").val().trim() < 1){
             isValid = false;
             $("#errorDialog p").append("Total Items must be a positive number.");
         }else if($("#editTotalItems").val()>totalQuestions){
@@ -1488,7 +1712,7 @@ $(document).ready(function(){
                 processData: false,
                 contentType: false, 
                 success: function (response) {
-                    if(response == "Assessment Already Exists!"){
+                    if(response.trim() == "Assessment Already Exists!"){
                         $("#errorDialog p").append(response);
                         $("#errorDialog").dialog("open");
                     }else{
@@ -1527,7 +1751,578 @@ $(document).ready(function(){
         });
     });
 
-// SETTINGS PAGE
+// MOCK TEST PAGE ======================================================================================================================================================================
+
+    function refreshMockTest(){
+        $("#mockTestTable").html("<tr><th>HSK Level</th><th>No. of Items</th><th>No. of Questions</th><th>Action</th></tr>");
+        $.ajax({
+            type: "post",
+            url: "./php/getMockTest.php",
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                responseObj.forEach(element => {
+                    var rowHtml = "<tr>";
+                    rowHtml += "<td>"+element.title+"</td>";
+                    rowHtml += "<td>"+element.items+"</td>";
+                    rowHtml += "<td>"+element.questionsCount+"</td>";
+                    rowHtml += "<td><button type=\"button\" class='editMockTestBtn tableEditButton' title=\"edit\"></button><button type=\"button\" class='deleteMockTestBtn tableDeleteButton' title=\"delete\"></button></td>";  
+                    rowHtml += "</tr>";
+                    $("#mockTestTable").append(rowHtml);
+                });
+            }
+        });
+    }
+
+    $("#mockTestBtn").click(function () { 
+    // VIEW MOCK TEST
+            if(activeWindow != "#mockTestPage"){
+                refreshMockTest();
+                if(activeWindow == ""){
+                    activeWindow = "#mockTestPage";
+                    $("#mockTestPage").show(100);
+                }else{
+                    $(activeWindow).fadeOut(100, function(){
+                        activeWindow = "#mockTestPage";
+                        $("#mockTestPage").show(100);
+                    });
+                }
+            }
+    });
+
+    // TO ADD MOCK TEST FORM
+    $("#toAddMockTestBtn").click(function () { 
+        $("#viewMockTest").fadeOut(100, function(){
+            $("select").selectmenu();
+            $("#testTotalItems").spinner({
+                min: 1
+            });
+            $("#addMockTestForm").fadeIn(100);
+        });
+        
+    });
+
+    // ADD QUESTION IN ADD MOCK TEST FORM
+    var questionNumber = 0;
+    var totalQuestions = 0;
+    var deleteIndexBuffer = [];
+    var getDelIndex = false;
+    $("#addNewTestQuestionBtn").click(function () {
+        if(deleteIndexBuffer.length > 0){
+            questionNumber = deleteIndexBuffer.shift();
+            getDelIndex = true;
+        }else{
+            questionNumber++;
+        }
+        var questionHtml = "<div class=\"question\" id='"+questionNumber+"'><button type=\"button\" class='deleteQuestionBtn button' title=\"delete\">DELETE</button>";
+        if($("#testQuestionType").val() == "Multiple Choice"){
+            questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"multiple\">";
+            questionHtml += "<h3>Multiple Choice</h3>";
+
+            questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+            questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\">";
+            
+            questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+            questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+            
+            questionHtml += "<label for=\"choice-1-"+questionNumber+"\">Choice 1: </label>";
+            questionHtml += "<input type=\"text\" id=\"choice-1-"+questionNumber+"\" name=\"choice-1-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+            
+            questionHtml += "<label for=\"choice-2-"+questionNumber+"\">Choice 2: </label>";
+            questionHtml += "<input type=\"text\" id=\"choice-2-"+questionNumber+"\" name=\"choice-2-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+            
+            questionHtml += "<label for=\"choice-3-"+questionNumber+"\">Choice 3: </label>";
+            questionHtml += "<input type=\"text\" id=\"choice-3-"+questionNumber+"\" name=\"choice-3-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+            
+            questionHtml += "<label for=\"choice-4-"+questionNumber+"\">Choice 4: </label>";
+            questionHtml += "<input type=\"text\" id=\"choice-4-"+questionNumber+"\" name=\"choice-4-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+            
+            questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer: </label>";
+            questionHtml += "<select name=\"answer-"+questionNumber+"\" id=\"answer-"+questionNumber+"\">";
+            questionHtml += "<option selected=\"selected\" value=\"1\">Choice 1</option>";
+            questionHtml += "<option value=\"2\">Choice 2</option>";
+            questionHtml += "<option value=\"3\">Choice 3</option>";
+            questionHtml += "<option value=\"4\">Choice 4</option>";
+            questionHtml += "</select>";
+        }else if($("#testQuestionType").val() == "True/False"){
+            questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"truefalse\">";
+            questionHtml += "<h3>True/False</h3>";
+            
+            questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+            questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\">";
+            
+            questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+            questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+            
+            questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer: </label>";
+            questionHtml += "<select name=\"answer-"+questionNumber+"\" id=\"answer-"+questionNumber+"\">";
+            questionHtml += "<option selected=\"selected\">True</option>";
+            questionHtml += "<option>False</option>";
+            questionHtml += "</select>";
+        }else if($("#testQuestionTypee").val() == "Identification"){
+            questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"identify\">";
+            questionHtml += "<h3>Identification</h3>";
+            
+            questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+            questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\">";
+            
+            questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+            questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+            
+            questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer/s: (Separate all possible answers with a comma ex. Answer1,Answer2,Answer3. Capitalization is automatically ignored.)</label>";
+            questionHtml += "<input type=\"text\" id=\"answer-"+questionNumber+"\" name=\"answer-"+questionNumber+"\" placeholder=\"ANSWER\" required>";
+        }else{
+            questionHtml = "Invalid question type.";
+        }
+        questionHtml += "</div>";
+        $("#addMockTestForm fieldset").append(questionHtml);
+        $(".button").button();
+        $("select").selectmenu();
+        totalQuestions++;
+        if(getDelIndex){
+            questionNumber = totalQuestions;
+        }
+        $("#testQuestionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+    });
+
+    // DELETE QUESTION
+    $("#addMockTestForm, #editMockTestForm").on("click",".deleteQuestionBtn", function(){
+        deleteIndexBuffer.push($(this).closest(".question").attr("id"));
+        $(this).closest(".question").remove();
+        totalQuestions--;
+        $("#testQuestionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+    });
+
+    // ADD MOCK TEST
+    $("#addMockTestForm").on("submit", function(e){
+        e.preventDefault();
+        var isValid = true;
+
+        var hasQuestion = true;
+        for(var x=1;x<=totalQuestions;x++){
+            while($.inArray(x.toString(),deleteIndexBuffer) !== -1){
+                x++;
+                totalQuestions++;
+            }
+            if(!$("#question-"+x+"").val().trim() && !$("#image-"+x+"").val()){
+                hasQuestion = false;
+            }
+        }
+
+        if(!$.isNumeric($("#testTotalItems").val().trim()) || $("#testTotalItems").val().trim() < 1){
+            isValid = false;
+            $("#errorDialog p").append("Total Items must be a positive number.");
+        }else if($("#testTotalItems").val()>totalQuestions){
+            isValid = false;
+            $("#errorDialog p").append("Not enough questions for total items.");
+        }else if(!hasQuestion){
+            isValid = false;
+            $("#errorDialog p").append("Question or Image is required.");
+        }
+
+        if(isValid){
+            var formData = new FormData($("#addMockTestForm")[0]);
+            formData.append("testTotalQuestions",totalQuestions);
+            $.ajax({
+                type: "post",
+                url: "./php/addMockTest.php",
+                data: formData,
+                processData: false,
+                contentType: false, 
+                success: function (response) {
+                    if(response.trim() == "Mock Test Already Exists!"){
+                        $("#errorDialog p").append(response);
+                        $("#errorDialog").dialog("open");
+                    }else{
+                        questionNumber = 0;
+                        totalQuestions = 0;
+                        deleteIndexBuffer = [];
+                        getDelIndex = false;
+                        $("#testQuestionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+                        $("#addMockTestForm")[0].reset();
+                        $(".question").remove();
+                        $("#successDialog p").append(response);
+                        $("#successDialog").dialog("open");
+                        $("#addMockTestForm").fadeOut(100, function(){
+                            refreshMockTest();
+                            $("#viewMockTest").fadeIn(100);
+                        });
+                    }
+                }
+            });
+        }else{
+            $("#errorDialog").dialog("open");
+        }
+    });
+
+    // BACK TO VIEW MOCK TEST
+    $("#cancelAddMockTestBtn").click(function () { 
+        questionNumber = 0;
+        totalQuestions = 0;
+        deleteIndexBuffer = [];
+        getDelIndex = false;
+        $("#testQuestionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+        $("#addMockTestForm")[0].reset();
+        $(".question").remove();
+        $("#addMockTestForm").fadeOut(100, function(){
+            $("#viewMockTest").fadeIn(100);
+        });
+    });
+
+    // DELETE MOCK TEST
+    var mockTestToDelete = "";
+    $("#mockTestTable").on("click",".deleteMockTestBtn",function () {
+        //Get row details
+        row = $(this).closest("tr");
+        mockTestToDelete = row.find("td:first-child").text();
+        $("#deleteMockTestDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+mockTestToDelete+" Mock Test?</p>");
+        $("#deleteMockTestDialog").dialog("open");
+    });
+
+    // DELETE MOCK TEST MODAL
+    $("#deleteMockTestDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        buttons: {
+            Confirm: function(){
+                //Get row details
+                mockTestToDelete = row.find("td:first-child").text();
+
+                $.ajax({
+                    type: "POST",
+                    url: "./php/deleteMockTest.php",
+                    data: "mockTestDelete="+mockTestToDelete,
+                    beforeSend: function (){
+                        //Hide Mock Test Table
+                        $("#mockTestTable").fadeOut(100);
+                    },
+                    success: function (response) {
+                        if(response.trim() != "Mock Test Deleted Successfully!"){
+                            $("#mockTestTable").fadeIn(100);
+                            $("#errorDialog p").append(response);
+                            $("#errorDialog").dialog("open");
+                        }else{
+                            //Update Mock Test Table
+                            refreshMockTest();
+                            $("#successDialog p").append(response);
+                            $("#successDialog").dialog("open");
+                            $("#mockTestTable").fadeIn(100);
+                            mockTestToDelete = "";
+                        }
+                    }
+                });
+                $( this ).dialog( "close" );
+            },
+            Cancel: function() {
+                mockTestToDelete = "";
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+
+    // EDIT MOCK TEST
+    var mockTestToEdit = "";
+    $("#mockTestTable").on("click",".editMockTestBtn",function () {
+        $(".button").button();
+        $("select").selectmenu();
+        //Get row details
+        row = $(this).closest("tr"),
+        mockTestToEdit = row.find("td:first-child").text();
+        $.ajax({
+            type: "post",
+            url: "./php/getMockTest.php",
+            data: "title="+mockTestToEdit,
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                $("#editMockTestTitle").val(responseObj.title);
+                $("#editTestTotalItems").val(responseObj.items);
+                $("#editTestQuestionDatabank").text("Question Databank: "+responseObj.questionsCount+" Questions");
+                totalQuestions = responseObj.questionsCount;
+                questionNumber = responseObj.questionsCount;
+                responseObj.questions.forEach(question => {
+                    questionNumber = question.id;
+                    var questionHtml = "<div class=\"question\" id='"+questionNumber+"'><button type=\"button\" class='deleteQuestionBtn button' title=\"delete\">DELETE</button>";
+                    if(question.type == "multiple"){
+                        questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"multiple\">";
+                        questionHtml += "<h3>Multiple Choice</h3>";
+
+                        questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+                        questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\" value='"+question.text+"'>";
+                        
+                        questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+                        questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+                        
+                        questionHtml += "<label for=\"choice-1-"+questionNumber+"\">Choice 1: </label>";
+                        questionHtml += "<input type=\"text\" id=\"choice-1-"+questionNumber+"\" name=\"choice-1-"+questionNumber+"\" placeholder=\"CHOICE\" value='"+question.choices[0]+"' required>";
+                        
+                        questionHtml += "<label for=\"choice-2-"+questionNumber+"\">Choice 2: </label>";
+                        questionHtml += "<input type=\"text\" id=\"choice-2-"+questionNumber+"\" name=\"choice-2-"+questionNumber+"\" placeholder=\"CHOICE\" value='"+question.choices[1]+"' required>";
+                        
+                        questionHtml += "<label for=\"choice-3-"+questionNumber+"\">Choice 3: </label>";
+                        questionHtml += "<input type=\"text\" id=\"choice-3-"+questionNumber+"\" name=\"choice-3-"+questionNumber+"\" placeholder=\"CHOICE\" value='"+question.choices[2]+"' required>";
+                        
+                        questionHtml += "<label for=\"choice-4-"+questionNumber+"\">Choice 4: </label>";
+                        questionHtml += "<input type=\"text\" id=\"choice-4-"+questionNumber+"\" name=\"choice-4-"+questionNumber+"\" placeholder=\"CHOICE\" value='"+question.choices[3]+"' required>";
+                        
+                        questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer: </label>";
+                        questionHtml += "<select name=\"answer-"+questionNumber+"\" id=\"answer-"+questionNumber+"\">";
+
+                        if(question.answer == question.choices[0]){
+                            questionHtml += "<option selected=\"selected\" value=\"1\">Choice 1</option>";
+                            questionHtml += "<option value=\"2\">Choice 2</option>";
+                            questionHtml += "<option value=\"3\">Choice 3</option>";
+                            questionHtml += "<option value=\"4\">Choice 4</option>";
+                        }else if(question.answer == question.choices[1]){
+                            questionHtml += "<option value=\"1\">Choice 1</option>";
+                            questionHtml += "<option selected=\"selected\" value=\"2\">Choice 2</option>";
+                            questionHtml += "<option value=\"3\">Choice 3</option>";
+                            questionHtml += "<option value=\"4\">Choice 4</option>";
+                        }else if(question.answer == question.choices[2]){
+                            questionHtml += "<option value=\"1\">Choice 1</option>";
+                            questionHtml += "<option value=\"2\">Choice 2</option>";
+                            questionHtml += "<option selected=\"selected\" value=\"3\">Choice 3</option>";
+                            questionHtml += "<option value=\"4\">Choice 4</option>";
+                        }else{
+                            questionHtml += "<option value=\"1\">Choice 1</option>";
+                            questionHtml += "<option value=\"2\">Choice 2</option>";
+                            questionHtml += "<option value=\"3\">Choice 3</option>";
+                            questionHtml += "<option selected=\"selected\" value=\"4\">Choice 4</option>";
+                        }
+                        questionHtml += "</select>";
+                    }else if(question.type == "truefalse"){
+                        questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"truefalse\">";
+                        questionHtml += "<h3>True/False</h3>";
+                        
+                        questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+                        questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\" value='"+question.text+"'>";
+                        
+                        questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+                        questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+                        
+                        questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer: </label>";
+                        questionHtml += "<select name=\"answer-"+questionNumber+"\" id=\"answer-"+questionNumber+"\">";
+                        if(question.answer == "True"){
+                            questionHtml += "<option selected=\"selected\">True</option>";
+                            questionHtml += "<option>False</option>";
+                        }else{
+                            questionHtml += "<option>True</option>";
+                            questionHtml += "<option selected=\"selected\">False</option>";
+                        }
+                        questionHtml += "</select>";
+                    }else if(question.type == "identify"){
+                        questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"identify\">";
+                        questionHtml += "<h3>Identification</h3>";
+                        
+                        questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+                        questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\" value='"+question.text+"'>";
+                        
+                        questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+                        questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+                        
+                        questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer/s: (Separate all possible answers with a comma ex. Answer1,Answer2,Answer3. Capitalization is automatically ignored.)</label>";
+                        questionHtml += "<input type=\"text\" id=\"answer-"+questionNumber+"\" name=\"answer-"+questionNumber+"\" placeholder=\"ANSWER\" value='"+question.answer+"' required>";
+                    }else{
+                        questionHtml = "Invalid question type.";
+                    }
+                    questionHtml += "</div>";
+                    $("#editMockTestForm fieldset").append(questionHtml);
+                });
+
+                $(".button").button();
+                $("select").selectmenu();
+                $("#viewMockTest").fadeOut(100, function(){
+                    $("select").selectmenu();
+                    $("#editTestTotalItems").spinner({
+                        min: 1
+                    });
+                    $("#editMockTestForm").fadeIn(100);
+                });
+            }
+        });
+    });
+
+    // ADD QUESTION IN EDIT MOCK TEST FORM
+    var deleteIndexBuffer = [];
+    var getDelIndex = false;
+    $("#addNewEditTestQuestionBtn").click(function () {
+        if(deleteIndexBuffer.length > 0){
+            questionNumber = deleteIndexBuffer.shift();
+            getDelIndex = true;
+        }else{
+            questionNumber++;
+        }
+        var questionHtml = "<div class=\"question\" id='"+questionNumber+"'><button type=\"button\" class='deleteQuestionBtn button' title=\"delete\">DELETE</button>";
+        if($("#editTestQuestionType").val() == "Multiple Choice"){
+            questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"multiple\">";
+            questionHtml += "<h3>Multiple Choice</h3>";
+
+            questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+            questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\">";
+            
+            questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+            questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+            
+            questionHtml += "<label for=\"choice-1-"+questionNumber+"\">Choice 1: </label>";
+            questionHtml += "<input type=\"text\" id=\"choice-1-"+questionNumber+"\" name=\"choice-1-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+            
+            questionHtml += "<label for=\"choice-2-"+questionNumber+"\">Choice 2: </label>";
+            questionHtml += "<input type=\"text\" id=\"choice-2-"+questionNumber+"\" name=\"choice-2-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+            
+            questionHtml += "<label for=\"choice-3-"+questionNumber+"\">Choice 3: </label>";
+            questionHtml += "<input type=\"text\" id=\"choice-3-"+questionNumber+"\" name=\"choice-3-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+            
+            questionHtml += "<label for=\"choice-4-"+questionNumber+"\">Choice 4: </label>";
+            questionHtml += "<input type=\"text\" id=\"choice-4-"+questionNumber+"\" name=\"choice-4-"+questionNumber+"\" placeholder=\"CHOICE\" required>";
+            
+            questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer: </label>";
+            questionHtml += "<select name=\"answer-"+questionNumber+"\" id=\"answer-"+questionNumber+"\">";
+            questionHtml += "<option selected=\"selected\" value=\"1\">Choice 1</option>";
+            questionHtml += "<option value=\"2\">Choice 2</option>";
+            questionHtml += "<option value=\"3\">Choice 3</option>";
+            questionHtml += "<option value=\"4\">Choice 4</option>";
+            questionHtml += "</select>";
+        }else if($("#editTestQuestionType").val() == "True/False"){
+            questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"truefalse\">";
+            questionHtml += "<h3>True/False</h3>";
+            
+            questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+            questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\">";
+            
+            questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+            questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+            
+            questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer: </label>";
+            questionHtml += "<select name=\"answer-"+questionNumber+"\" id=\"answer-"+questionNumber+"\">";
+            questionHtml += "<option selected=\"selected\">True</option>";
+            questionHtml += "<option>False</option>";
+            questionHtml += "</select>";
+        }else if($("#editTestQuestionType").val() == "Identification"){
+            questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"identify\">";
+            questionHtml += "<h3>Identification</h3>";
+            
+            questionHtml += "<label for=\"question-"+questionNumber+"\">Question: </label>";
+            questionHtml += "<input type=\"text\" id=\"question-"+questionNumber+"\" name=\"question-"+questionNumber+"\" placeholder=\"QUESTION\">";
+            
+            questionHtml += "<label for=\"image-"+questionNumber+"\">Image: </label>";
+            questionHtml += "<input type=\"file\" id=\"image-"+questionNumber+"\" name=\"image-"+questionNumber+"\" accept=\"image/*\">";
+            
+            questionHtml += "<label for=\"answer-"+questionNumber+"\">Answer/s: (Separate all possible answers with a comma ex. Answer1,Answer2,Answer3. Capitalization is automatically ignored.)</label>";
+            questionHtml += "<input type=\"text\" id=\"answer-"+questionNumber+"\" name=\"answer-"+questionNumber+"\" placeholder=\"ANSWER\" required>";
+        }else{
+            questionHtml = "Invalid question type.";
+        }
+        questionHtml += "</div>";
+        $("#editMockTestForm fieldset").append(questionHtml);
+        $(".button").button();
+        $("select").selectmenu();
+        totalQuestions++;
+        if(getDelIndex){
+            questionNumber = totalQuestions;
+        }
+        $("#editTestQuestionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+    });
+
+    // EDIT MOCK TEST
+    $("#editMockTestForm").on("submit", function(e){
+        e.preventDefault();
+        var isValid = true;
+
+        var hasQuestion = true;
+        for(var x=1;x<=totalQuestions;x++){
+            while($.inArray(x.toString(),deleteIndexBuffer) !== -1){
+                x++;
+                totalQuestions++;
+            }
+            if(!$("#question-"+x+"").val().trim() && !$("#image-"+x+"").val()){
+                hasQuestion = false;
+            }
+        }
+
+        if(!$.isNumeric($("#editTestTotalItems").val().trim()) || $("#editTestTotalItems").val().trim() < 1){
+            isValid = false;
+            $("#errorDialog p").append("Total Items must be a positive number.");
+        }else if($("#editTestTotalItems").val()>totalQuestions){
+            isValid = false;
+            $("#errorDialog p").append("Not enough questions for total items.");
+        }else if(!hasQuestion){
+            isValid = false;
+            $("#errorDialog p").append("Question or Image is required.");
+        }
+        
+        if(isValid){
+            var formData = new FormData($("#editMockTestForm")[0]);
+            formData.append("totalQuestions",totalQuestions);
+            formData.append("oldTitle",mockTestToEdit); //----------------------------------------------------------------REMEMBER
+            $.ajax({
+                type: "post",
+                url: "./php/editMockTest.php",
+                data: formData,
+                processData: false,
+                contentType: false, 
+                success: function (response) {
+                    if(response.trim() == "Mock Test Already Exists!"){
+                        $("#errorDialog p").append(response);
+                        $("#errorDialog").dialog("open");
+                    }else{
+                        questionNumber = 0;
+                        totalQuestions = 0;
+                        deleteIndexBuffer = [];
+                        getDelIndex = false;
+                        $("#editTestQuestionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+                        $("#editMockTestForm")[0].reset();
+                        $(".question").remove();
+                        $("#successDialog p").append(response);
+                        $("#successDialog").dialog("open");
+                        $("#editMockTestForm").fadeOut(100, function(){
+                            refreshMockTest();
+                            $("#viewMockTest").fadeIn(100);
+                        });
+                    }
+                }
+            });
+        }else{
+            $("#errorDialog").dialog("open");
+        }
+    });
+
+    // CANCEL EDIT MOCK TEST
+    $("#cancelEditMockTestBtn").click(function () { 
+        questionNumber = 0;
+        totalQuestions = 0;
+        deleteIndexBuffer = [];
+        getDelIndex = false;
+        $("#editTestQuestionDatabank").text("Question Databank: "+totalQuestions+" Questions");
+        $("#editMockTestForm")[0].reset();
+        $(".question").remove();
+        $("#editMockTestForm").fadeOut(100, function(){
+            $("#viewMockTest").fadeIn(100);
+        });
+    });
+
+// REPORTS PAGE ==================================================================================================================================================================
+
+    $("#reportsBtn").click(function () { 
+        if(activeWindow != "#reportsPage"){
+            $( ".checkRadio" ).checkboxradio({
+                icon: false
+            });
+            $("select").selectmenu();
+            if(activeWindow == ""){
+                activeWindow = "#reportsPage";
+                $("#reportsPage").fadeIn(100);
+            }else{
+                $(activeWindow).fadeOut(100, function(){
+                    activeWindow = "#reportsPage";
+                    $("#reportsPage").fadeIn(100);
+                });
+            }
+        }
+        
+    });
+
+// SETTINGS PAGE ==================================================================================================================================================================
     //Populate admin details in profile page
     $("#settingsBtn").click(function () { 
         if(activeWindow != "#settingsPage"){
@@ -1551,12 +2346,10 @@ $(document).ready(function(){
             });
 
             if(activeWindow == ""){
-                //Transition to profile page.
                 activeWindow = "#settingsPage";
                 $("#settingsPage").fadeIn(100);
             }else{
                 $(activeWindow).fadeOut(100, function(){
-                    //Transition to profile page.
                     activeWindow = "#settingsPage";
                     $("#settingsPage").fadeIn(100);
                 });
@@ -1564,7 +2357,7 @@ $(document).ready(function(){
         }
     });
 
-// EDIT ADMIN PROFILE
+    // EDIT ADMIN PROFILE
     //Transition from Admin Profile to Edit Admin Profile
     $("#toEditProfile").click(function(){
         $("#editBday").datepicker({
@@ -1740,8 +2533,8 @@ $(document).ready(function(){
                     
                     //Changed Password Successfully
                     }else{
-                        successMessage.text(changePassObj.message);
-                        successMessage.slideDown(200).delay(5000).slideUp(200);
+                        $("#successDialog p").append(changePassObj.message);
+                        $("#successDialog").dialog("open");
                         changePasswordDialog.dialog( "close" );
                     }
                 }
@@ -1756,7 +2549,6 @@ $(document).ready(function(){
     changePasswordDialog = $("#pass-dialog-form"),
     changePasswordForm = $("#pass-dialog-form form"),
     allFields = $( [] ).add( oldPasswordField ).add( newPasswordField ).add( confPasswordField ),
-    errorMessage = $( "#passErrorMsg" ),
     successMessage = $("#updateSuccessMsg");
 
     changePasswordDialog.dialog({
@@ -1779,6 +2571,7 @@ $(document).ready(function(){
     });
 
     $( "#toChangePass" ).click(function() {
+        errorMessage = $( "#passErrorMsg" );
         errorMessage.text("All fields required.");
         changePasswordDialog.dialog("open");
     });
@@ -1839,8 +2632,10 @@ $(document).ready(function(){
 
     //TEMPORARY!! TO HOME PAGE
     $("#homeBtn").click(function () { 
-        window.location.href="home_page.html";
+        $("html").fadeOut(200, function(){
+            $("html").css("visibility", "hidden");
+            window.location.href="home_page.html";
+        });
     });
 
 });
-

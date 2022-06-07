@@ -31,6 +31,25 @@
                     if(isset($_POST['topic'])){
                         if($_POST['topic'] == $topicTitle){
                             $response['content'] = (string) $topic->content;
+
+                            // Add to Activity Log
+                            $xmlLog = new DOMDocument();
+                            $xmlLog->preserveWhiteSpace = false;
+                            $xmlLog->formatOutput = true;
+                            $xmlLog->load("activity.xml"); 
+
+                            if(isset($_SESSION['admin'])){
+                                $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." viewed a topic titled ".$topicTitle." in ".$lessonTitle);
+                            }else{
+                                $log = $xmlLog->createElement("log","User ".$_SESSION['user']." viewed a topic titled ".$topicTitle." in ".$lessonTitle);
+                            }
+
+                            $log->setAttribute("type","VIEW TOPIC");
+                            $log->setAttribute("date",date("m/d/Y"));
+                            
+                            $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
+                            $xmlLog->save("activity.xml");
+
                             break;
                         }
                     }

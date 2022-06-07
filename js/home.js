@@ -15,10 +15,13 @@ $(document).ready(function(){
                     $("#profileBtn").show();
                     $("#adminBtn").hide();
                 }
-                $("html").css("visibility", "visible");
+                $("html").css("visibility", "visible").fadeIn(300);
             }else{
                 alert("Unauthorized!");
-                window.location.href="./";
+                $("html").fadeOut(200, function(){
+                    $("html").css("visibility", "hidden");
+                    window.location.href="./";
+                });
             }
         }
     });
@@ -72,6 +75,20 @@ $(document).ready(function(){
             "Close": function(){
                 $( this ).dialog( "close" );
                 $("#successDialog p").html("<span class=\"ui-icon ui-icon-circle-check\" style=\"float:left; margin:0 7px 0 0;\"></span>");
+            }
+        }
+    });
+
+    $("#errorDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: "auto",
+        width: "auto",
+        modal: true,
+        buttons: {
+            "Close": function(){
+                $( this ).dialog( "close" );
+                $("#errorDialog p").html("<span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span>");
             }
         }
     });
@@ -225,26 +242,30 @@ $(document).ready(function(){
                     
                     //Parse JSON response from PHP AJAX
                     const updateObj = JSON.parse(updateResponse);
-                    
-                    //Updating profile text values.
-                    $("#student_profile h2").html(updateObj.fname+" "+updateObj.mname+" "+updateObj.lname);
-                    $("#username").html("Username: " + updateObj.uname);
-                    $("#email").html("Email: " + updateObj.email);
-                    $("#address").html("Address: " + updateObj.home);
-                    $("#school").html("School: " + updateObj.school);
-                    $("#birthday").html("Birthday: " + updateObj.bday);
-                    $("#gender").html("Gender: " + updateObj.gender);
-                    $(".profile_icon").attr("src", "php/"+updateObj.image);
-
-                    //Display update success message
-                    $("#updateSuccessMsg").html(updateObj.message);
-                    $("#updateSuccessMsg").show(100).delay(5000).slideUp(200);
-
-                    //Transition to student profile
-                    $("#student_profile_edit").fadeOut(250, function(){
+                    if(updateObj.message == "Account Updated!"){
+                        //Updating profile text values.
+                        $("#student_profile h2").html(updateObj.fname+" "+updateObj.mname+" "+updateObj.lname);
+                        $("#username").html("Username: " + updateObj.uname);
+                        $("#email").html("Email: " + updateObj.email);
+                        $("#address").html("Address: " + updateObj.home);
+                        $("#school").html("School: " + updateObj.school);
+                        $("#birthday").html("Birthday: " + updateObj.bday);
+                        $("#gender").html("Gender: " + updateObj.gender);
                         $(".profile_icon").attr("src", "php/"+updateObj.image);
-                        $("#student_profile").fadeIn(250);
-                    });
+
+                        //Display update success message
+                        $("#successDialog p").append(updateObj.message);
+                        $("#successDialog").dialog("open");
+
+                        //Transition to student profile
+                        $("#student_profile_edit").fadeOut(250, function(){
+                            $(".profile_icon").attr("src", "php/"+updateObj.image);
+                            $("#student_profile").fadeIn(250);
+                        });
+                    }else{
+                        $("#errorDialog p").append(updateObj.message);
+                        $("#errorDialog").dialog("open");
+                    }
                 }
             });
         }
@@ -266,10 +287,12 @@ $(document).ready(function(){
         var valid = true;
         allFields.removeClass( "ui-state-error" );
         
-        if(!checkLength( $("#oldPassword"), "Old Password", 5 )) valid = false;
-        else if(!checkLength( $("#newPassword"), "New Password", 5 )) valid = false;
+        if(!checkLength( $("#newPassword"), "New Password", 5 )) valid = false;
         else if($("#newPassword").val().trim() != $("#confPassword").val().trim()){
             errorResponse("New Password and Confirm Password does not match.");
+            valid = false;
+        }else if($("#newPassword").val().trim() == $("#oldPassword").val().trim()){
+            errorResponse("Old Password and New Password is the same.");
             valid = false;
         }else{
             valid = true;
@@ -298,8 +321,8 @@ $(document).ready(function(){
                     
                     //Changed Password Successfully
                     }else{
-                        successMessage.text(changePassObj.message);
-                        successMessage.slideDown(200).delay(5000).slideUp(200);
+                        $("#successDialog p").append(changePassObj.message);
+                        $("#successDialog").dialog("open");
                         changePasswordDialog.dialog( "close" );
                     }
                 }
@@ -366,7 +389,7 @@ $(document).ready(function(){
         $.ajax({
             url: "./php/deleteUser.php",
             success: function (deleteAccountResponse) {
-                if(deleteAccountResponse == "Success!"){
+                if(deleteAccountResponse == "Account Deleted Successfully!"){
                     window.location.href="./";
                 }else{
                     $("#profileError").text(deleteAccountResponse).show(200);
@@ -554,43 +577,44 @@ $(document).ready(function(){
 
 // ASSESSMENT PAGE
 
-    function refreshAssessments(){
-        $("#assessmentPendingTable").html("<caption>PENDING</caption><tr><th>Assessment Title</th><th>No. of Items</th><th>Action</th></tr>");
-        $("#assessmentCompleteTable").html("<caption>COMPLETED</caption><tr><th>Assessment Title</th><th>Score</th><th>No. of Items</th></tr>");
+    function refreshAssessments(data){
+        $("#assessmentTable").html("");
+        var rowHtml = "";
         $.ajax({
             type: "post",
             url: "./php/getAssessments.php",
             data: "data=user",
             success: function (response) {
                 const responseObj = JSON.parse(response);
-                if(responseObj.pending.length==0){
-                    $("#assessmentPendingTable").html("<h2>NO PENDING ASSESSMENTS</h2>")
+                if(data.trim() == "PENDING"){
+                    if(responseObj.pending.length==0){
+                        rowHtml = "<h2>NO PENDING ASSESSMENTS</h2>";
+                    }else{
+                        rowHtml += "<tr><th>Assessment Title</th><th>No. of Items</th><th>Action</th></tr>";
+                        responseObj.pending.forEach(element => {
+                            rowHtml += "<tr>";
+                            rowHtml += "<td>"+element.title+"</td>";
+                            rowHtml += "<td>"+element.items+"</td>";
+                            rowHtml += "<td><button type=\"button\" class='startAssessmentBtn btn'>START ASSESSMENT</button></td>";  
+                            rowHtml += "</tr>";
+                        });
+                    }
                 }else{
-                    responseObj.pending.forEach(element => {
-                        var rowHtml = "<tr>";
-                        rowHtml += "<td>"+element.title+"</td>";
-                        rowHtml += "<td>"+element.items+"</td>";
-                        rowHtml += "<td><button type=\"button\" class='startAssessmentBtn btn'>START ASSESSMENT</button></td>";  
-                        rowHtml += "</tr>";
-                        $("#assessmentPendingTable").append(rowHtml);
-                        $(".btn").button();
-                    });
+                    if(responseObj.completed.length==0){
+                        rowHtml = "<h2>NO COMPLETED ASSESSMENTS</h2>";
+                    }else{
+                        rowHtml += "<tr><th>Assessment Title</th><th>No. of Items</th><th>Action</th></tr>";
+                        responseObj.completed.forEach(element => {
+                            rowHtml += "<tr>";
+                            rowHtml += "<td>"+element.title+"</td>";
+                            rowHtml += "<td>"+element.score+"</td>";
+                            rowHtml += "<td>"+element.items+"</td>";  
+                            rowHtml += "</tr>";
+                        });
+                    }
                 }
-                console.log(responseObj.completed.length);
-                if(responseObj.completed.length==0){
-                    $("#assessmentCompleteTable").html("");
-                    $("#assessmentCompleteTable").hide();
-                }else{
-                    responseObj.completed.forEach(element => {
-                        var rowHtml = "<tr>";
-                        rowHtml += "<td>"+element.title+"</td>";
-                        rowHtml += "<td>"+element.score+"</td>";
-                        rowHtml += "<td>"+element.items+"</td>";  
-                        rowHtml += "</tr>";
-                        $("#assessmentCompleteTable").append(rowHtml);
-                        $(".btn").button();
-                    });
-                }
+                $("#assessmentTable").html(rowHtml);
+                $(".btn").button();
             }
         });
     }
@@ -598,7 +622,10 @@ $(document).ready(function(){
     // VIEW ASSESSMENTS
     $(".assessmentBtn").click(function () { 
         if(activeWindow != "#assessmentPage"){
-            refreshAssessments();
+            refreshAssessments("PENDING");
+            $( ".checkRadio" ).checkboxradio({
+                icon: false
+            });
             if(activeWindow == ""){
                 activeWindow = "#assessmentPage";
                 $("#assessmentPage").show(100);
@@ -611,9 +638,14 @@ $(document).ready(function(){
         }
     });
 
+    // UPDATE ASSESSMENT TABLE
+    $('input[type=radio][name=assessmentData]').change(function() {
+        refreshAssessments(this.value);
+    });
+
     // TO ASSESSMENT FORM
     var assessmentTitle = "";
-    $("#assessmentPendingTable").on("click",".startAssessmentBtn", function(e){
+    $("#assessmentTable").on("click",".startAssessmentBtn", function(e){
         e.preventDefault();
         var row = $(this).closest("tr");
         assessmentTitle = row.find("td:first-child").text();
@@ -674,7 +706,7 @@ $(document).ready(function(){
             processData: false,
             contentType: false,
             success: function (response) {
-                refreshAssessments();
+                refreshAssessments("PENDING");
                 $("#successDialog p").append(response);
                 $("#successDialog").dialog("open");
 
@@ -696,7 +728,169 @@ $(document).ready(function(){
         });
     });
 
-//LOGOUT
+
+// MOCK TEST PAGE ==================================================================================================================================================================
+
+    function refreshMockTest(data){
+        $("#mockTestTable").html("");
+        var rowHtml = "";
+        $.ajax({
+            type: "post",
+            url: "./php/getMockTest.php",
+            data: "data=user",
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                if(data.trim() == "PENDING"){
+                    if(responseObj.pending.length==0){
+                        rowHtml = "<h2>NO PENDING MOCK TEST</h2>";
+                    }else{
+                        rowHtml += "<tr><th>HSK Level</th><th>No. of Items</th><th>Action</th></tr>";
+                        responseObj.pending.forEach(element => {
+                            rowHtml += "<tr>";
+                            rowHtml += "<td>"+element.title+"</td>";
+                            rowHtml += "<td>"+element.items+"</td>";
+                            rowHtml += "<td><button type=\"button\" class='startMockTestBtn btn'>START MOCK TEST</button></td>";  
+                            rowHtml += "</tr>";
+                        });
+                    }
+                }else{
+                    if(responseObj.completed.length==0){
+                        rowHtml = "<h2>NO COMPLETED MOCK TEST</h2>";
+                    }else{
+                        rowHtml += "<tr><th>HSK Level</th><th>No. of Items</th><th>Action</th></tr>";
+                        responseObj.completed.forEach(element => {
+                            rowHtml += "<tr>";
+                            rowHtml += "<td>"+element.title+"</td>";
+                            rowHtml += "<td>"+element.score+"</td>";
+                            rowHtml += "<td>"+element.items+"</td>";  
+                            rowHtml += "</tr>";
+                        });
+                    }
+                }
+                $("#mockTestTable").html(rowHtml);
+                $(".btn").button();
+            }
+        });
+    }
+
+    // VIEW MOCK TEST
+    $(".mockTestBtn").click(function () { 
+        if(activeWindow != "#mockTestPage"){
+            refreshMockTest("PENDING");
+            $( ".checkRadio" ).checkboxradio({
+                icon: false
+            });
+            if(activeWindow == ""){
+                activeWindow = "#mockTestPage";
+                $("#mockTestPage").show(100);
+            }else{
+                $(activeWindow).fadeOut(100, function(){
+                    activeWindow = "#mockTestPage";
+                    $("#mockTestPage").show(100);
+                });
+            }
+        }
+    });
+
+    // UPDATE ASSESSMENT TABLE
+    $('input[type=radio][name=mockTestData]').change(function() {
+        refreshMockTest(this.value);
+    });
+
+    // TO MOCK TEST FORM
+    var mockTestTitle = "";
+    $("#mockTestTable").on("click",".startMockTestBtn", function(e){
+        e.preventDefault();
+        var row = $(this).closest("tr");
+        mockTestTitle = row.find("td:first-child").text();
+        $("#mockTestForm fieldset").html("");
+        $.ajax({
+            type: "post",
+            url: "./php/generateMockTest.php",
+            data: "title="+mockTestTitle,
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                responseObj.questions.forEach(question => {
+                    qIndex = question.id;
+                    var questionHtml = "<div class=\"question\" id='"+qIndex+"'>";
+                    questionHtml += "<input type=\"hidden\" id=\"qid-"+qIndex+"\" name=\"qid-"+qIndex+"\" value='"+qIndex+"'>";
+                    if(question.image != ""){
+                        questionHtml += "<img src='/php/"+question.image+"' alt='Question Image'>";
+                    }
+                    questionHtml += "<p>Question: "+question.text+"</p>";
+                    if(question.type == "multiple"){
+                        questionHtml += "<label for='answer1-"+qIndex+"'>"+question.choices[0]+"</label>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer1-"+qIndex+"' value='"+question.choices[0]+"' required>";
+                        questionHtml += "<label for='answer2-"+qIndex+"'>"+question.choices[1]+"</label>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer2-"+qIndex+"' value='"+question.choices[1]+"'>";
+                        questionHtml += "<label for='answer3-"+qIndex+"'>"+question.choices[2]+"</label>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer3-"+qIndex+"' value='"+question.choices[2]+"'>";
+                        questionHtml += "<label for='answer4-"+qIndex+"'>"+question.choices[3]+"</label>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer4-"+qIndex+"' value='"+question.choices[3]+"'>";
+                    }else if(question.type == "truefalse"){
+                        questionHtml += "<label for='answerT-"+qIndex+"'>True</label>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answerT-"+qIndex+"' value='True' required>";
+                        questionHtml += "<label for='answerF-"+qIndex+"'>False</label>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answerF-"+qIndex+"' value='False'>";
+                    }else if(question.type == "identify"){
+                        questionHtml += "<label for='answer-"+qIndex+"'>Answer: </label>";
+                        questionHtml += "<input type='text' name='answer-"+qIndex+"' id='answer-"+qIndex+"' required>";
+                    }
+                    $("#mockTestForm fieldset").append(questionHtml);
+                    $("input[type='radio']").checkboxradio();
+                });
+
+            }
+        });
+        $("#viewMockTest").fadeOut(100, function(){
+            $("#mockTestHeader").text(mockTestTitle + " MOCK TEST");
+            $("#mockTestForm").fadeIn(100);
+        });
+    });
+
+    // SUBMIT ASSESSMENT
+    $("#mockTestForm").on("submit",function(e){
+        e.preventDefault();
+        var formData = new FormData(this);
+        formData.append("title",mockTestTitle);
+        $.ajax({
+            type: "post",
+            url: "./php/checkMockTest.php",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                refreshMockTest("PENDING");
+                $("#successDialog p").append(response);
+                $("#successDialog").dialog("open");
+
+                $("#mockTestForm")[0].reset();
+                $("#mockTestForm fieldset").html("");
+                $("#mockTestForm").fadeOut(100, function(){
+                    $("#viewMockTest").fadeIn(100);
+                });
+            }
+        });
+    });
+
+    // CANCEL ASSESSMENT
+    $("#cancelMockTestBtn").click(function () {
+        $("#mockTestForm")[0].reset();
+        $("#mockTestForm fieldset").html("");
+        $("#mockTestForm").fadeOut(100, function(){
+            $("#viewMockTest").fadeIn(100);
+        });
+    });
+
+// TO ADMIN PAGE
+$("#adminBtn").click(function () { 
+    $("html").fadeOut(200, function(){
+        $("html").css("visibility", "hidden");
+        window.location.href="admin.html";
+    });
+});
+
+//LOGOUT ===================================================================================================================================================================
     $( "#logout-dialog-confirm" ).dialog({
         autoOpen: false,
         resizable: false,
@@ -730,11 +924,5 @@ $(document).ready(function(){
     $("#logoutBtn").click(function () { 
         $( "#logout-dialog-confirm" ).dialog("open");
     });
-
-    //TEMPORARY!! TO ADMIN PAGE
-    $("#adminBtn").click(function () { 
-        window.location.replace("admin.html");
-    });
-
 });
 

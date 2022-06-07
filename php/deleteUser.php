@@ -1,7 +1,7 @@
 <?php
     session_start();
     // Redirect to Login Page if not admin.
-    if (!isset($_SESSION['admin'])) {
+    if (!isset($_SESSION['admin']) && !isset($_SESSION['user'])) {
         echo "Unauthorized!";
         header('location: ../');
         exit;
@@ -10,9 +10,19 @@
     $xml = new DOMDocument();
     $xml->preserveWhiteSpace = false;
     $xml->formatOutput = true;
-    $xml->load("userAccounts.xml");
+    
 
-    $accountToDelete = $_POST['loggedUser'];
+    if(isset($_POST['user'])){
+        $accountToDelete = $_POST['user'];
+        if($_POST['table'] == "ACTIVE"){
+            $xml->load("userAccounts.xml");
+        }else{
+            $xml->load("archivedUsers.xml");
+        }
+    }else{
+        $accountToDelete = $_SESSION['user'];
+        $xml->load("userAccounts.xml");
+    }
 
     $users = $xml->getElementsByTagName("user");
     foreach($users as $user){
@@ -24,10 +34,34 @@
             //Delete user
             $xml->getElementsByTagName("users")[0]->removeChild($user);
 
-            //Save XML file
-            $xml->save("userAccounts.xml");
 
-            echo "Success!";
+            //Save XML file
+            
+
+            if($_POST['table'] == "ACTIVE"){
+                $xml->save("userAccounts.xml");
+            }else{
+                $xml->save("archivedUsers.xml");
+            }
+            
+            // Add to Activity Log
+            $xmlLog = new DOMDocument();
+            $xmlLog->preserveWhiteSpace = false;
+            $xmlLog->formatOutput = true;
+            $xmlLog->load("activity.xml"); 
+
+            $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." deleted user ".$accountToDelete." Account");
+            $log->setAttribute("type","DELETE USER");
+            $log->setAttribute("date",date("m/d/Y"));
+            
+            $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
+            $xmlLog->save("activity.xml");
+
+            echo "Account Deleted Successfully!";
+            if(!isset($_POST['user'])){
+                unset($_SESSION['user']);
+                session_destroy();
+            }
             break;
         }
     }

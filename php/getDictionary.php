@@ -23,6 +23,25 @@
         $wordRow['sentence'] = (string) $word->sentence;
         array_push($response,$wordRow);
     }
+
+    // Add to Activity Log
+    $xmlLog = new DOMDocument();
+    $xmlLog->preserveWhiteSpace = false;
+    $xmlLog->formatOutput = true;
+    $xmlLog->load("activity.xml"); 
+
+    if(isset($_SESSION['admin'])){
+        $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." viewed the dictionary");
+    }else{
+        $log = $xmlLog->createElement("log","User ".$_SESSION['user']." viewed the dictionary");
+    }
+
+    $log->setAttribute("type","VIEW DICTIONARY");
+    $log->setAttribute("date",date("m/d/Y"));
+    
+    $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
+    $xmlLog->save("activity.xml");
+
     echo json_encode($response);
     
 ?>

@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mandarin E-Learning Website Login Page">
     <title>Learn Mandarin</title>
+
+    <!-- For JQuery UI 1.12.1 Base Theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" integrity="sha512-okE4owXD0kfXzgVXBzCDIiSSlpXn3tJbNodngsTnIYPJWjuYhtJ+qMoc0+WUwLHeOwns0wm57Ka903FqQKM1sA==" crossorigin="anonymous" media="screen"/>
+    
     <link rel="stylesheet" href="css/login.css" type="text/css" media="screen"><meta http-equiv="Cache-control" content="public">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +18,8 @@
     <!-- For JQuery 3.6.0 -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous" defer></script>
     <script src="js/login.js" defer></script>
+    <!-- For JQuery UI 1.13.1 -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous" defer></script>
   </head>
 
   <body>
@@ -49,7 +55,7 @@
         <table>
             <tr>
               <td> <label for="bday">Birthday:</label> </td>
-              <td> <input class="bday_category" id="bday" type="date" name="bday" required/> </td>
+              <td> <input class="bday_category" id="bday" type="text" name="bday" readonly="readonly" placeholder="mm/dd/yyyy" required/> </td>
             </tr>
             <tr> 
               <td> <label>Gender:</label> </td>						

@@ -8,26 +8,26 @@
     }
 
     //Load XML
-    $xml = simplexml_load_file("assessments.xml");
+    $xml = simplexml_load_file("mockTest.xml");
 
     $response = "";
 
     $title = $_POST['title'];
 
-//Find Assessment
-    foreach($xml->children() as $assessment){
-        $compTitle = $assessment['title'];
+//Find Mock Test
+    foreach($xml->children() as $mocktest){
+        $compTitle = $mocktest['title'];
         if($title == $compTitle){
-            // Assessment Found
-            $totalItems = (int) $assessment['items'];
-            $totalQuestions = (string) $assessment->count();
+            // Mock Test Found
+            $totalItems = (int) $mocktest['items'];
+            $totalQuestions = (string) $mocktest->count();
 
-            // Check Assessment
+            // Check Mock Test
             $i = 1; $score = 0; $valid = array();
             while (count($valid) != $totalItems) {
                 if(isset($_POST["qid-".$i])){
                     // Find Question
-                    foreach($assessment->children() as $question){
+                    foreach($mocktest->children() as $question){
                         $questionID = $question['id'];
                         if($questionID == $i){
                             // Question Found
@@ -56,7 +56,7 @@
     $xml2 = new DOMDocument();
     $xml2->preserveWhiteSpace = false;
     $xml2->formatOutput = true;
-    $xml2->load("userScores.xml");
+    $xml2->load("mockTestScores.xml");
 
     $scoreElement = $xml2->createElement("score",$score);
     $scoreElement->setAttribute("test",$title);
@@ -70,9 +70,9 @@
     $xml2->getElementsByTagName("scores")->item(0)->appendChild($scoreElement);
 
     //Save XML file
-    $xml2->save("userScores.xml");
+    $xml2->save("mockTestScores.xml");
 
-    $response = "Assessment Complete!<p>Score: ".$score."/".$totalItems."</p>";
+    $response = "Mock Test Complete!<p>Score: ".$score."/".$totalItems."</p>";
 
     if(isset($_SESSION['admin'])){
         $user = $_SESSION['admin'];
@@ -86,8 +86,8 @@
     $xmlLog->formatOutput = true;
     $xmlLog->load("activity.xml"); 
 
-    $log = $xmlLog->createElement("log","User ".$user." completed an assessment titled ".$title." and got a score of ".$score."/".$totalItems);
-    $log->setAttribute("type","ASSESSMENT COMPLETE");
+    $log = $xmlLog->createElement("log","User ".$user." completed an mock test titled ".$title." and got a score of ".$score."/".$totalItems);
+    $log->setAttribute("type","MOCK TEST COMPLETE");
     $log->setAttribute("date",date("m/d/Y"));
     
     $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);

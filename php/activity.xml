@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<logs>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word zh&#xE8; ( zh&#xE8;r) in the dictionary</log>
+  <log type="ADD ASSESSMENT" date="06/07/2022">Admin user added an assessment titled aaa</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word n&#xE0; (n&#xE0;r) in the dictionary</log>
+  <log type="DELETE ASSESSMENT" date="06/07/2022">Admin user deleted an assessment titled aaa</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word n&#x1CE; (n&#x1CE;r) in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word sh&#xE9;i/shui in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word sh&#x11B;nme in the dictionary</log>
+  <log type="DELETE USER" date="06/07/2022">Admin user deleted user reg@gmail.com Account</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word du&#x14D;sh&#x1CE;o in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word j&#x1D0; in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word z&#x11B;nme in the dictionary</log>
+  <log date="06/07/2022">Admin user Logged In</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word z&#x11B;nmey&#xE0;ng in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word y&#x12B; in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word &#xE8;r in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word s&#x101;n in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word s&#xEC; in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word w&#x1D4; in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word li&#xF9; in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word q&#x12B; in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word b&#x101; in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word ji&#x1D4; in the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word sh&#xED; in the dictionary</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin user viewed a topic titled  in </log>
+  <log type="LOGOUT" date="06/07/2022">Admin user Logged Out</log>
+  <log type="LOGIN" date="06/07/2022">Admin user Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD ASSESSMENT" date="06/07/2022">Admin user added an assessment titled LOGTEST</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word l&#xED;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD ASSESSMENT" date="06/07/2022">Admin user added an assessment titled LOGTEST2</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin user edited an assessment titled LOGTEST2</log>
+  <log type="DELETE ASSESSMENT" date="06/07/2022">Admin user deleted an assessment titled LOGTEST</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word g&#xE8; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="DELETE ASSESSMENT" date="06/07/2022">Admin user deleted an assessment titled LOGTEST</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word su&#xEC; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word b&#x11B;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD LESSON" date="06/07/2022">Admin user added a new lesson titled TEST</log>
+  <log type="ADD TOPIC" date="06/07/2022">Admin user added a topic titled TOPIC 1 in TEST</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word xi&#x113; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word ku&#xE0;i in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="EDIT TOPIC" date="06/07/2022">Admin user edited a topic titled TOPIC 1 in TEST</log>
+  <log type="EDIT TOPIC" date="06/07/2022">Admin user edited a topic titled TOPIC 1 in TEST</log>
+  <log type="ADD TOPIC" date="06/07/2022">Admin user added a topic titled TOPIC 123 in TEST</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin user viewed a topic titled TOPIC 123 in TEST</log>
+  <log type="DELETE LESSON" date="06/07/2022">Admin user deleted a lesson titled TEST</log>
+  <log type="ADD LESSON" date="06/07/2022">Admin user added a new lesson titled LESSON 7</log>
+  <log type="DELETE LESSON" date="06/07/2022">Admin user deleted a lesson titled LESSON 7</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word b&#xF9; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word h&#x11B;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word t&#xE0;i in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin user viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin user viewed a topic titled GREETINGS in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin user viewed a topic titled PINYIN AND TONES in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin user viewed a topic titled WORDS IN SCHOOL in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin user viewed a topic titled BASIC CONVERSATION in LESSON 1</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word d&#x14D;u in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word h&#xE9; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word z&#xE0;i in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word de in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word le in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word ma in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word ne in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word w&#xE8;i in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word ji&#x101; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word xu&#xE9;xi&#xE0;o in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word fanguan/f&#xE0;ndi&#xE0;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word sh&#x101;ngdi&#xE0;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word y&#x12B;yu&#xE0;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word hu&#x1D2;ch&#x113;zh&#xE0;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word Zh&#x14D;nggu&#xF2; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word B&#x11B;ij&#x12B;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word sh&#xE0;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD WORD" date="06/07/2022">Admin user added the word xi&#xE0; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin user started an assessment titled MOCK TEST</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin user started an assessment titled MOCK TEST</log>
+  <log type="ASSESSMENT COMPLETE" date="06/07/2022">User user completed an assessment titled MOCK TEST and got a score of 3/20</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD MOCK TEST" date="06/07/2022">Admin user added a mock test titled testadd</log>
+  <log type="LOGIN" date="06/07/2022">Admin user Logged In</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin user viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin user viewed a topic titled BASIC CONVERSATION in LESSON 1</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD ASSESSMENT" date="06/07/2022">Admin user added an assessment titled TEST</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin user started an assessment titled TEST</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin user edited an assessment titled TEST</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin user started an assessment titled TEST</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin user started an assessment titled TEST</log>
+  <log type="DELETE ASSESSMENT" date="06/07/2022">Admin user deleted an assessment titled TEST</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD ASSESSMENT" date="06/07/2022">Admin user added an assessment titled test</log>
+  <log type="ADD ASSESSMENT" date="06/07/2022">Admin user added an assessment titled test2</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin user edited an assessment titled test2</log>
+  <log type="DELETE ASSESSMENT" date="06/07/2022">Admin user deleted an assessment titled test</log>
+  <log type="ADD ASSESSMENT" date="06/07/2022">Admin user added an assessment titled test1</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin user edited an assessment titled test1</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin user edited an assessment titled test1a</log>
+  <log type="DELETE ASSESSMENT" date="06/07/2022">Admin user deleted an assessment titled teste</log>
+  <log type="DELETE ASSESSMENT" date="06/07/2022">Admin user deleted an assessment titled test</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled testadd</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled testadda</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled testadda</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled testadda2</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD MOCK TEST" date="06/07/2022">Admin user added a mock test titled test</log>
+  <log type="ADD ASSESSMENT" date="06/07/2022">Admin user added an assessment titled test</log>
+  <log type="DELETE ASSESSMENT" date="06/07/2022">Admin user deleted an assessment titled test</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="ADD MOCK TEST" date="06/07/2022">Admin user added a mock test titled test2</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled test2</log>
+  <log type="ADD ASSESSMENT" date="06/07/2022">Admin user added an assessment titled test</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin user edited an assessment titled test</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin user started an assessment titled test4</log>
+  <log type="ASSESSMENT COMPLETE" date="06/07/2022">User user completed an assessment titled test4 and got a score of 1/1</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin user edited an assessment titled test4</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin user started an assessment titled test5</log>
+  <log type="ASSESSMENT COMPLETE" date="06/07/2022">User user completed an assessment titled test5 and got a score of 0/1</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin user started an assessment titled test5</log>
+  <log type="ASSESSMENT COMPLETE" date="06/07/2022">User user completed an assessment titled test5 and got a score of 0/1</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin user started an assessment titled test5</log>
+  <log type="ASSESSMENT COMPLETE" date="06/07/2022">User user completed an assessment titled test5 and got a score of 1/1</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin user edited an assessment titled test5</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin user started an assessment titled test5</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin user edited an assessment titled test5</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin user started an assessment titled test5</log>
+  <log type="ASSESSMENT COMPLETE" date="06/07/2022">User user completed an assessment titled test5 and got a score of 3/3</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin user started an assessment titled test5</log>
+  <log type="ASSESSMENT COMPLETE" date="06/07/2022">User user completed an assessment titled test5 and got a score of 2/3</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled testaa</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled testaaa</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled testaaa</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled test</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled test</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin user edited an assessment titled test5</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="UPDATE PROFILE" date="06/07/2022">Admin user updated his/her account</log>
+  <log type="UPDATE PROFILE" date="06/07/2022">Admin user updated his/her account</log>
+  <log type="DELETE MOCK TEST" date="06/07/2022">Admin user deleted a mock test titled testaaa</log>
+  <log type="DELETE MOCK TEST" date="06/07/2022">Admin user deleted a mock test titled test</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled testadda2</log>
+  <log type="ADD MOCK TEST" date="06/07/2022">Admin user added a mock test titled A</log>
+  <log type="DELETE MOCK TEST" date="06/07/2022">Admin user deleted a mock test titled A</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="START MOCK TEST" date="06/07/2022">Admin user started a mock test titled testadda2</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="START MOCK TEST" date="06/07/2022">Admin user started a mock test titled testadda2</log>
+  <log type="MOCK TEST COMPLETE" date="06/07/2022">User user completed an mock test titled testadda2 and got a score of 0/1</log>
+  <log type="LOGOUT" date="06/07/2022">Admin user Logged Out</log>
+  <log type="LOGIN" date="06/07/2022">Admin user Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled testadda2</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled testadda2</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="START MOCK TEST" date="06/07/2022">Admin user started a mock test titled testadda2</log>
+  <log type="MOCK TEST COMPLETE" date="06/07/2022">User user completed an mock test titled testadda2 and got a score of 2/2</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin user viewed the dictionary</log>
+  <log type="DELETE MOCK TEST" date="06/07/2022">Admin user deleted a mock test titled testadda2</log>
+  <log type="DELETE ASSESSMENT" date="06/07/2022">Admin user deleted an assessment titled test5</log>
+  <log type="EDIT MOCK TEST" date="06/07/2022">Admin user edited a mock test titled MOCK TEST</log>
+  <log type="START MOCK TEST" date="06/07/2022">Admin user started a mock test titled LEVEL 1</log>
+  <log type="LOGOUT" date="06/07/2022">Admin user Logged Out</log>
+  <log type="LOGIN" date="06/07/2022">User hunterxhenrick Logged In</log>
+  <log type="UPDATE PROFILE" date="06/07/2022">User hunterxhenricka updated his/her account</log>
+  <log type="UPDATE PROFILE" date="06/07/2022">User hunterxhenrick updated his/her account</log>
+  <log type="LOGOUT" date="06/07/2022">User hunterxhenrick Logged Out</log>
+  <log type="LOGIN" date="06/07/2022">Admin user Logged In</log>
+  <log type="ARCHIVE USER" date="06/07/2022">Admin user archived test@gmail.com Account.</log>
+  <log type="RESTORE USER" date="06/07/2022">Admin user restored test@gmail.com Account.</log>
+  <log type="RESTORE USER" date="06/07/2022">Admin user restored archivetest5@gmail.com Account.</log>
+  <log type="DELETE USER" date="06/07/2022">Admin user deleted user archivetest5@gmail.com Account</log>
+</logs>

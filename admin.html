@@ -49,10 +49,12 @@
         <div class="container_left">
             <div class="menu">
                 <div class="menu_categories" id="homeBtn"><img class="menu_categories_icons" src="css/images/menu_home.avif" alt="Settings"></div>
+                <div class="menu_categories" id="usersBtn"><img class="menu_categories_icons" src="" alt="Users"></div>
                 <div class="menu_categories" id="lessonBtn"><img class="menu_categories_icons" src="css/images/menu_lesson.avif" alt="Lessons"></div>
                 <div class="menu_categories" id="assessmentBtn"><img class="menu_categories_icons" src="css/images/menu_assessment.avif" alt="Assessment"></div>
                 <div class="menu_categories" id="dictionaryBtn"><img class="menu_categories_icons" src="css/images/menu_dictionary.avif" alt="Dictionary"></div>
-                <div class="menu_categories" id="testsBtn"><img class="menu_categories_icons" src="css/images/menu_test.avif" alt="Tests"></div>
+                <div class="menu_categories" id="mockTestBtn"><img class="menu_categories_icons" src="css/images/menu_test.avif" alt="Tests"></div>
+                <div class="menu_categories" id="reportsBtn"><img class="menu_categories_icons" src="" alt="Reports"></div>
                 <div class="menu_categories" id="settingsBtn"><img class="menu_categories_icons" src="css/images/menu_settings.avif" alt="Settings"></div>
                 <div class="menu_categories" id="logoutBtn"><img class="menu_categories_icons" src="css/images/menu_logout.avif" alt="Logout"></div>                                 
             </div>                
@@ -67,8 +69,43 @@
         <div id="errorDialog" title="Error!">
             <p><span class="ui-icon ui-icon-alert" style="margin:12px 12px 15px 0"></span></p>
         </div>
+
+        <!-- USERS PAGE -->
+        <div class="container_right" id="usersPage">
+            <div class="banner">
+                <h1 class="banner_text"> USERS</h1>                                    
+            </div>
+
+            <div class="pane">
+                <label for="activeUsers">ACTIVE USERS</label>
+                <input type="radio" name="userData" id="activeUsers" class="checkRadio" value="ACTIVE" checked>
+                <label for="archivedUsers">ARCHIVED USERS</label>
+                <input type="radio" name="userData" id="archivedUsers" class="checkRadio" value="ARCHIVED">
+
+                <table id="usersTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>School</th>
+                        <th>Birthday</th>
+                        <th>Gender</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- ARCHIVE USER DIALOG -->
+        <div class="dialog" id="archiveUserDialog" title="Archive User"></div>
+
+        <!-- RESTORE USER DIALOG -->
+        <div class="dialog" id="restoreUserDialog" title="Restore User"></div>
+
+        <!-- DELETE USER DIALOG -->
+        <div class="dialog" id="deleteUserDialog" title="Delete User"></div>
         
-        <!-- VIEW LESSON PAGE -->
+    <!-- LESSONS PAGE -->
         <div class="container_right" id="lessonsPage">
             <div id="sidebar"></div>
             <div id="viewLessons" class="lessonPane">
@@ -123,7 +160,7 @@
 
         </div>
 
-        <!-- DICTIONARY PAGE -->
+    <!-- DICTIONARY PAGE -->
         <div class="container_right" id="dictionaryPage">
             <!-- VIEW WORDS -->
             <div class="banner">
@@ -219,11 +256,13 @@
 
         </div>
 
-        <!-- ASSESSMENT PAGE -->
+    <!-- ASSESSMENT PAGE -->
         <div class="container_right" id="assessmentPage">
+            <div class="banner">
+                <h1 class="banner_text"> ASSESSMENTS</h1>                                    
+            </div>
             <!-- VIEW ASSESSMENTS -->
             <div class="pane" id="viewAssessments">
-                <h2>ASSESSMENTS</h2>
                 <button type="button" class='button' id="toAddAssessmentBtn">ADD ASSESSMENT</button>
                 <table id="assessmentTable">
                     <tr>
@@ -294,7 +333,122 @@
 
         </div>
 
-        <!-- SETTINGS PAGE -->
+    <!-- MOCK TEST PAGE -->
+        <div class="container_right" id="mockTestPage">
+            <div class="banner">
+                <h1 class="banner_text"> MOCK TESTS</h1>                                    
+            </div>
+            <!-- VIEW ASSESSMENTS -->
+            <div class="pane" id="viewMockTest">
+                <button type="button" class='button' id="toAddMockTestBtn">ADD MOCK TEST</button>
+                <table id="mockTestTable">
+                    <tr>
+                        <th>HSK Level</th>
+                        <th>No. of Items</th>
+                        <th>No. of Questions</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- ADD MOCK TEST FORM -->
+            <form class="form" id="addMockTestForm">
+                <h2 class="homeHeader2" id="addMockTestHeader">ADD MOCK TEST</h2>
+                <fieldset>
+                    <label for="mockTestTitle">Title: </label>
+                    <input type="text" id="mockTestTitle" name="mockTestTitle" placeholder="TITLE" required>
+                    <label for="testTotalItems">Total Items: </label>
+                    <input id="testTotalItems" name="testTotalItems" required>
+                    <hr>
+                    <h4 class="homeHeader2" id="testQuestionDatabank">Question Databank: 0 Questions</h4>
+                </fieldset>
+                    <div class="group">
+                        <label for="testQuestionType">Question Type: </label>
+                        <select name="testQuestionType" id="testQuestionType">
+                            <option selected="selected">Multiple Choice</option>
+                            <option>True/False</option>
+                            <option>Identification</option>
+                        </select>
+                        <button type="button" class="button" id="addNewTestQuestionBtn">ADD QUESTION</button><br>
+                    </div>
+                    <hr>
+                    <div class="btnGroup">
+                        <button type="button" class="button" id="cancelAddMocktestBtn">CANCEL</button>
+                        <button type="submit" class="button" id="addMockTestBtn">ADD MOCK TEST</button>
+                    </div>                    
+            </form>
+
+            <!-- EDIT MOCK TEST FORM -->
+            <form class="form" id="editMockTestForm">
+                <h2 class="homeHeader2" id="editMockTestHeader">EDIT MOCK TEST</h2>
+                <fieldset>
+                    <label for="editMockTestTitle">Title: </label>
+                    <input type="text" id="editMockTestTitle" name="editMockTestTitle" placeholder="TITLE" required>
+                    <label for="editTestTotalItems">Total Items: </label>
+                    <input id="editTestTotalItems" name="editTestTotalItems" required>
+                    <hr>
+                    <h4 class="homeHeader2" id="editTestQuestionDatabank">Question Databank: 0 Questions</h4>
+                </fieldset>
+                    <div class="group">
+                        <label for="editTestQuestionType">Question Type: </label>
+                        <select name="editTestQuestionType" id="editTestQuestionType">
+                            <option selected="selected">Multiple Choice</option>
+                            <option>True/False</option>
+                            <option>Identification</option>
+                        </select>
+                        <button type="button" class="button" id="addNewEditTestQuestionBtn">ADD QUESTION</button><br>
+                    </div>
+                    <hr>
+                    <div class="btnGroup">
+                        <button type="button" class="button" id="cancelEditMockTestBtn">CANCEL</button>
+                        <button type="submit" class="button" id="editMockTestBtn">EDIT MOCK TEST</button>
+                    </div>                    
+            </form>
+
+            <!-- DELETE MOCK TEST DIALOG -->
+            <div class="dialog" id="deleteMockTestDialog" title="Delete Mock Test"></div>
+
+        </div>
+
+    <!-- REPORTS PAGE -->
+        <div class="container_right" id="reportsPage">
+            <div class="banner">
+                <h1 class="banner_text"> REPORTS</h1>                                    
+            </div>
+            <!-- VIEW REPORTS -->
+            <div class="pane" id="viewReports">
+                <div class="group">
+                    <label for="reportData">Data: </label>
+                    <select name="reportData" id="reportData">
+                        <option selected="selected">Activity Log</option>
+                        <option>Users</option>
+                        <option>Assessments</option>
+                        <option>Mock Test</option>
+                    </select>
+
+                    <label for="dayFilter">DAY</label>
+                    <input type="radio" name="reportFilter" id="dayFilter" class="checkRadio" value="DAY" checked>
+                    <label for="weekFilter">WEEK</label>
+                    <input type="radio" name="reportFilter" id="weekFilter" class="checkRadio" value="WEEK">
+                    <label for="monthFilter">MONTH</label>
+                    <input type="radio" name="reportFilter" id="monthFilter" class="checkRadio" value="MONTH">
+                    <label for="customFilter">CUSTOM</label>
+                    <input type="radio" name="reportFilter" id="customFilter" class="checkRadio" value="CUSTOM">
+
+                    <button type="button" class="button" id="generateReport">GENERATE REPORT</button><br>
+                </div>
+                <table id="reportsTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Log</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    <!-- SETTINGS PAGE -->
         <div class="container_right" id="settingsPage">
            
             <!-- ADMIN PROFILE -->

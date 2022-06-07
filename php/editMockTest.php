@@ -14,22 +14,22 @@
     $xml = new DOMDocument();
     $xml->preserveWhiteSpace = false;
     $xml->formatOutput = true;
-    $xml->load("assessments.xml");
+    $xml->load("mockTest.xml");
 
     // Get POST variables
     $oldTitle = $_POST['oldTitle'];
-    $title = $_POST['editAssessmentTitle'];
-    $items = $_POST['editTotalItems'];
+    $title = $_POST['editMockTestTitle'];
+    $items = $_POST['editTestTotalItems'];
 
     // Create new assessment element
-    $assessment = $xml->createElement("assessment");
-    $assessment->setAttribute("title",$title);
-    $assessment->setAttribute("items",$items);
+    $mocktest = $xml->createElement("mocktest");
+    $mocktest->setAttribute("title",$title);
+    $mocktest->setAttribute("items",$items);
 
     // Find assessment to edit
-    $assessments = $xml->getElementsByTagName("assessment");
-    foreach ($assessments as $compAssessment) {
-        $compTitle = $compAssessment->getAttribute("title");
+    $mocktests = $xml->getElementsByTagName("mocktest");
+    foreach ($mocktests as $compMockTest) {
+        $compTitle = $compMockTest->getAttribute("title");
         if($oldTitle == $compTitle){
             for($x = 1; $x<=$_POST['totalQuestions']; $x++){
 
@@ -74,7 +74,7 @@
                         $response = "Success.";
                     }
                 }else{
-                    foreach($compAssessment->getElementsByTagName("question") as $comp){
+                    foreach($compMockTest->getElementsByTagName("question") as $comp){
                         $id = $comp->getAttribute("id");
                         if($id == $x){
                             $targetFilePath = $comp->getElementsByTagName("image")[0]->nodeValue;
@@ -109,25 +109,25 @@
                         $question->appendChild($answer);
                     }
                 }
-                $assessment->appendChild($question);
+                $mocktest->appendChild($question);
             }
 
             if($oldTitle != $title){
-                foreach ($assessments as $compTitleAssessment) {
-                    $compAssessmentTitle = $compTitleAssessment->getAttribute("title");
-                    if($title == $compAssessmentTitle){
+                foreach ($mocktests as $compTitleMockTest) {
+                    $compMockTestTitle = $compTitleMockTest->getAttribute("title");
+                    if($title == $compMockTestTitle){
                         $isUnique = false;
-                        $response = "Assessment Already Exists!";
+                        $response = "Mock Test Already Exists!";
                         break;
                     }
                 }
             }
             
             if($isUnique){
-                $xml->getElementsByTagName("assessments")->item(0)->replaceChild($assessment,$compAssessment);
+                $xml->getElementsByTagName("mocktests")->item(0)->replaceChild($mocktest,$compMockTest);
         
                 //Save XML file
-                $xml->save("assessments.xml");
+                $xml->save("mockTest.xml");
 
                 // Add to Activity Log
                 $xmlLog = new DOMDocument();
@@ -135,14 +135,14 @@
                 $xmlLog->formatOutput = true;
                 $xmlLog->load("activity.xml"); 
 
-                $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." edited an assessment titled ".$oldTitle);
-                $log->setAttribute("type","EDIT ASSESSMENT");
+                $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." edited a mock test titled ".$oldTitle);
+                $log->setAttribute("type","EDIT MOCK TEST");
                 $log->setAttribute("date",date("m/d/Y"));
                 
                 $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
                 $xmlLog->save("activity.xml");
         
-                $response = "Assessment Successfully Edited!";
+                $response = "Mock Test Successfully Edited!";
                 break;
             }
         }

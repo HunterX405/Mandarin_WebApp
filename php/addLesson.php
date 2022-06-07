@@ -13,6 +13,12 @@
     $xml->formatOutput = true;
     $xml->load("lessons.xml");
 
+    // Add to Activity Log
+    $xmlLog = new DOMDocument();
+    $xmlLog->preserveWhiteSpace = false;
+    $xmlLog->formatOutput = true;
+    $xmlLog->load("activity.xml");
+
     //Create New Lesson Element
     $lesson = $xml->createElement("lesson");
 
@@ -36,6 +42,11 @@
             //Add lesson to xml
             $xml->getElementsByTagName("lessons")->item(0)->appendChild($lesson);
 
+            $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." added a new lesson titled ".$newLessonTitle);
+            $log->setAttribute("type","ADD LESSON");
+            $log->setAttribute("date",date("m/d/Y"));
+            $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
+            $xmlLog->save("activity.xml");
             $response = "Lesson Added Successfully!";
         }else{
             $response = "Lesson Already Exists!";
@@ -90,6 +101,11 @@
 
                     //Replace old lesson node($compLesson) to new lesson node($lesson)
                     $xml->getElementsByTagName("lessons")->item(0)->replaceChild($lesson,$compLesson);
+                    $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." added a topic titled ".$topicTitle." in ".$lessonTitle);
+                    $log->setAttribute("type","ADD TOPIC");
+                    $log->setAttribute("date",date("m/d/Y"));
+                    $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
+                    $xmlLog->save("activity.xml");
                     $response = "Topic Added Successfully!";
                 }else{
                     $response = "Topic Title Already Exists!";

@@ -22,10 +22,11 @@
     //For image url
     $targetFilePath = "";
 
-    //For password validation
+    //For password and user validation
     $isAuthenticated = true;
+    $isValid = true;
 
-    //Open XML Document
+    //Open User Accounts XML Document
     $xml = new DOMDocument();
     $xml->preserveWhiteSpace = false;
     $xml->formatOutput = true;
@@ -48,7 +49,6 @@
                     //Get and hash new password
                     $editPass = password_hash($_POST['newPass'], PASSWORD_BCRYPT);
 
-
                     //Get current user values from xml
                     $editFname = $compUser->getElementsByTagName("firstName")[0]->nodeValue;
                     $editLname = $compUser->getElementsByTagName("lastName")[0]->nodeValue;
@@ -69,6 +69,58 @@
                 }
             }else{
             //Edit Profile Update
+
+                //Get data from AJAX POST
+                $editFname = $_POST['fname'];
+                $editMname = $_POST['mname'];
+                $editLname = $_POST['lname'];
+                $editUname = $_POST['uname'];
+                $editEmail = $_POST['email'];
+                $editHome = $_POST['home'];
+                $editSchool = $_POST['school'];
+                $editBday = $_POST['bday'];
+                $editGender = $_POST['gender'];
+
+            //Open Archived Users XML Document for checking if new username or email exists
+            $xml2 = new DOMDocument();
+            $xml2->preserveWhiteSpace = false;
+            $xml2->formatOutput = true;
+            $xml2->load("archivedUsers.xml");
+
+            if($editUname != $compUname || $editEmail != $compEmail){
+                // Checking userAccounts.xml
+                $checkUsers = $xml->getElementsByTagName("user");
+                foreach ($checkUsers as $checkUser) {
+                    $checkUname = $checkUser->getAttribute("username");
+                    $checkEmail = $checkUser->getAttribute("email");
+                    if($checkUname == $editUname && $editUname != $compUname){
+                        $isValid = false;
+                        $response["message"] = "Username Already Exists!";
+                    }else if($checkEmail == $editEmail && $editEmail != $compEmail){
+                        $isValid = false;
+                        $response["message"] = "Email Already Exists!";
+                    }
+                }
+
+                // Checking archived users
+                $archivedUsers = $xml2->getElementsByTagName("user");
+                foreach ($archivedUsers as $checkArchived) {
+                    $archivedUname = $checkArchived->getAttribute("username");
+                    $archivedEmail = $checkArchived->getAttribute("email");
+                    if($archivedUname == $editUname && $editUname != $compUname){
+                        $isValid = false;
+                        $response["message"] = "Username Already Exists!";
+                    }else if($archivedEmail == $editEmail && $editEmail != $compEmail){
+                        $isValid = false;
+                        $response["message"] = "Email Already Exists!";
+                    }
+                }
+            }else if($editEmail != $compEmail){
+
+            }
+                
+                
+
 
                 //Check for uploaded image
                 if(!empty($_FILES["file"]["name"])){
@@ -100,17 +152,6 @@
                     $targetFilePath = $compUser->getElementsByTagName("profileImage")[0]->nodeValue;
                 }
 
-                //Get data from AJAX POST
-                $editFname = $_POST['fname'];
-                $editMname = $_POST['mname'];
-                $editLname = $_POST['lname'];
-                $editUname = $_POST['uname'];
-                $editEmail = $_POST['email'];
-                $editHome = $_POST['home'];
-                $editSchool = $_POST['school'];
-                $editBday = $_POST['bday'];
-                $editGender = $_POST['gender'];
-
                 //Get password
                 $editPass = $compUser->getElementsByTagName("password")[0]->nodeValue;
 
@@ -128,7 +169,7 @@
             }
 
             //Change password: if old password is correct.
-            if($isAuthenticated){
+            if($isAuthenticated && $isValid){
                 //Create new node to replace old node
                 $user = $xml->createElement("user");
                 $user->setAttribute("username", $editUname);
@@ -170,16 +211,42 @@
                 //Save XML file
                 $xml->save("userAccounts.xml");
 
+                // Add to Activity Log
+                $xmlLog = new DOMDocument();
+                $xmlLog->preserveWhiteSpace = false;
+                $xmlLog->formatOutput = true;
+                $xmlLog->load("activity.xml"); 
+
                 //Response for successful transaction.
                 if( isset($_POST['newPass']) ){
                     //Change Password Response
                     $response["message"] = "Password Changed Successfully!";
+
+                    if(isset($_SESSION['admin'])){
+                        $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." changed his/her password");
+                    }else{
+                        $log = $xmlLog->createElement("log","User ".$_SESSION['user']." changed his/her password");
+                    }
+                    $log->setAttribute("type","CHANGE PASSWORD");
                 }else{
                     //Edit Profile Response
                     $response["message"] = "Account Updated!";
+
+                    if(isset($_SESSION['admin'])){
+                        $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." updated his/her account");
+                    }else{
+                        $log = $xmlLog->createElement("log","User ".$_SESSION['user']." updated his/her account");
+                    }
+                    $log->setAttribute("type","UPDATE PROFILE");
                 }
+
+                $log->setAttribute("date",date("m/d/Y"));
+                $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
+                $xmlLog->save("activity.xml");
             }else{
-                $response["message"] = "Wrong Password";
+                if(!$isAuthenticated){
+                    $response["message"] = "Wrong Password";
+                }
             }
             break;
         }else{

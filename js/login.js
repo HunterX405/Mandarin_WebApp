@@ -28,7 +28,9 @@ $(document).ready(function(){
             cache: false,
             processData: false,  
             success: function (result){
-                if(result == "Login Success!"){
+                console.log(result);
+                console.log(result == "Admin");
+                if(result.trim() == "Login Success!"){
                     //Reset input values.
                     $("#formLogin")[0].reset();
 
@@ -37,7 +39,7 @@ $(document).ready(function(){
 
                     //Redirect to home page.
                     window.location.href="home_page.html";
-                }else if(result == "Admin"){
+                }else if(result.trim() == "Admin"){
                     //Reset input values.
                     $("#formLogin")[0].reset();
 
@@ -58,6 +60,12 @@ $(document).ready(function(){
     //Transition to Register Form.
     $("#toRegister").click(function () { 
         $("#formLogin").fadeOut(500, function(){
+            $("#bday").datepicker({
+                changeMonth: true,
+                changeYear: true,
+                minDate: "-150Y",
+                maxDate: "+0M +0D +0Y"
+            });
             $("#formRegister").fadeIn(500);
         });
     });
@@ -73,20 +81,25 @@ $(document).ready(function(){
     var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     
     //Check if Registration details are valid.
-    var registerValid = false;
     $("#formRegister").on("submit", function(e){
         e.preventDefault();
-        
+        var registerValid = true;
+
         if(!regex.test($("#email").val().trim())){
             $("#registerErrorMsg").text("Invalid Email Address.");
+            registerValid = false;
+        }else if($("#pass").val().trim().length < 5){
+            $("#registerErrorMsg").text("Password must be at least 5 characters.");
             registerValid = false;
         }else if($("#passConf").val().trim() != $("#pass").val().trim()){
             $("#registerErrorMsg").text("Password is not the same.");
             registerValid = false;
+        }else if(!$("#bday").val()){
+            $("#registerErrorMsg").text("Birthday is required.");
+            registerValid = false;
         }else{
             registerValid = true;
         }
-
         if(registerValid == false){
             $("#registerErrorMsg").slideDown(100);
         }else{

@@ -54,6 +54,19 @@
         //Save XML file
         $xml->save("dictionary.xml");
 
+        // Add to Activity Log
+        $xmlLog = new DOMDocument();
+        $xmlLog->preserveWhiteSpace = false;
+        $xmlLog->formatOutput = true;
+        $xmlLog->load("activity.xml"); 
+
+        $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." added the word ".$pinyin." in the dictionary");
+        $log->setAttribute("type","ADD WORD");
+        $log->setAttribute("date",date("m/d/Y"));
+        
+        $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
+        $xmlLog->save("activity.xml");
+
         echo "Word Added Successfully!";
     }
 ?>

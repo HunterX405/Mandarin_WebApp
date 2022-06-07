@@ -40,7 +40,7 @@
                 <div class="menu_categories lessonBtn"><img class="menu_categories_icons" src="css/images/menu_lesson.avif" alt="Lessons"></div>
                 <div class="menu_categories assessmentBtn"><img class="menu_categories_icons" src="css/images/menu_assessment.avif" alt="Assessment"></div>
                 <div class="menu_categories dictionaryBtn"><img class="menu_categories_icons" src="css/images/menu_dictionary.avif" alt="Dictionary"></div>
-                <div class="menu_categories" id="testsBtn"><img class="menu_categories_icons" src="css/images/menu_test.avif" alt="Tests"></div>
+                <div class="menu_categories mockTestBtn"><img class="menu_categories_icons" src="css/images/menu_test.avif" alt="Tests"></div>
                 <div class="menu_categories" id="logoutBtn"><img class="menu_categories_icons" src="css/images/menu_logout.avif" alt="Logout"></div>                                 
             </div>                
         </div>
@@ -49,8 +49,13 @@
         <div class="dialog" id="successDialog" title="Success!">
             <p><span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 0 0;"></span></p>
         </div>
+
+        <!-- ERROR DIALOG -->
+        <div id="errorDialog" title="Error!">
+            <p><span class="ui-icon ui-icon-alert" style="margin:12px 12px 15px 0"></span></p>
+        </div>
       
-        <!-- HOME PAGE -->
+    <!-- HOME PAGE -->
         <div class="container_right" id="homePage">
 
             <!-- WELCOME BANNER-->  
@@ -144,7 +149,7 @@
                             laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
                             voluptate velit esse cillum dolore eu.
                         </p>
-                        <button class="home_button" type="button">GO TO MOCK TESTS</button>
+                        <button class="home_button mockTestBtn" type="button">GO TO MOCK TESTS</button>
                     </div>
                     <div class="home_content_right right_image">
                     <img class="home_icons" src="css/images/home_icon3.avif" alt="">
@@ -153,7 +158,7 @@
             </div>
         </div>
 
-        <!-- PROFILE PAGE -->
+    <!-- PROFILE PAGE -->
         <div class="container_right" id="profilePage">
            
             <!-- STUDENT PROFILE -->
@@ -255,7 +260,7 @@
                 
         </div>
         
-        <!-- LESSONS PAGE -->
+    <!-- LESSONS PAGE -->
         <div class="container_right" id="lessonsPage">
             <div id="sidebar"></div>
             <div id="tabs"><ul></ul></div>
@@ -264,7 +269,7 @@
             <div class="modal"></div>
         </div>
 
-        <!-- DICTIONARY PAGE -->
+    <!-- DICTIONARY PAGE -->
         <div class="container_right" id="dictionaryPage">
             <!-- VIEW WORDS -->
             <div class="banner">
@@ -284,25 +289,24 @@
             </div>
         </div>
 
-        <!-- ASSESSMENT PAGE -->
+    <!-- ASSESSMENT PAGE -->
         <div class="container_right" id="assessmentPage">
+            <div class="banner">
+                <h1 class="banner_text"> ASSESSMENTS</h1>                                    
+            </div>
             <!-- VIEW ASSESSMENTS -->
             <div class="pane" id="viewAssessments">
-                <h2>ASSESSMENTS</h2>
-                <table id="assessmentPendingTable">
-                    <caption>PENDING</caption>
+
+                <label for="pendingTable">PENDING</label>
+                <input type="radio" name="assessmentData" id="pendingTable" class="checkRadio" value="PENDING" checked>
+                <label for="completedTable">COMPLETED</label>
+                <input type="radio" name="assessmentData" id="completedTable" class="checkRadio" value="COMPLETED">
+
+                <table id="assessmentTable">
                     <tr>
                         <th>Assessment Title</th>
                         <th>No. of Items</th>
                         <th>Action</th>
-                    </tr>
-                </table>
-                <table id="assessmentCompleteTable">
-                    <caption>COMPLETED</caption>
-                    <tr>
-                        <th>Assessment Title</th>
-                        <th>Score</th>
-                        <th>No. of Items</th>
                     </tr>
                 </table>
             </div>
@@ -315,6 +319,41 @@
                 <div class="btnGroup">
                     <button type="button" class="btn" id="cancelAssessmentBtn">CANCEL</button>
                     <button type="submit" class="btn" id="submitAssessmentBtn">SUBMIT ASSESSMENT</button>
+                </div>                    
+            </form>
+
+        </div>
+
+    <!-- MOCK TEST PAGE -->
+        <div class="container_right" id="mockTestPage">
+            <div class="banner">
+                <h1 class="banner_text"> MOCK TESTS</h1>                                    
+            </div>
+            <!-- VIEW MOCK TEST -->
+            <div class="pane" id="viewMockTest">
+
+                <label for="pendingTestTable">PENDING</label>
+                <input type="radio" name="mockTestData" id="pendingTestTable" class="checkRadio" value="PENDING" checked>
+                <label for="completedTestTable">COMPLETED</label>
+                <input type="radio" name="mockTestData" id="completedTestTable" class="checkRadio" value="COMPLETED">
+
+                <table id="mockTestTable">
+                    <tr>
+                        <th>HSK Level</th>
+                        <th>No. of Items</th>
+                        <th>Action</th>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- MOCK TEST FORM -->
+            <form class="form" id="mockTestForm" novalidate>
+                <h2 class="homeHeader2" id="mockTestHeader">MOCK TEST</h2>
+                <fieldset>
+                </fieldset>
+                <div class="btnGroup">
+                    <button type="button" class="btn" id="cancelMockTestBtn">CANCEL</button>
+                    <button type="submit" class="btn" id="submitMockTestBtn">SUBMIT MOCK TEST</button>
                 </div>                    
             </form>
 

@@ -19,11 +19,13 @@
     $regBday = $_POST['bday'];
     $regGender = $_POST['gender'];
 
-    //Open XML Document
+    //Open User Accounts XML Document
     $xml = new DOMDocument();
     $xml->preserveWhiteSpace = false;
     $xml->formatOutput = true;
     $xml->load("userAccounts.xml");
+
+    $response = "";
 
     //Check if username or email is already registered.
     $isRegistered = false;
@@ -33,14 +35,34 @@
         $compEmail = $compUser->getAttribute("email");
         if($compUname == $regUname){
             $isRegistered = true;
-            echo "Username already exists.";
+            $response = "Username already exists.";
             break;
         }else if($compEmail == $regEmail){
-            echo "Email already exists.";
+            $response = "Email already exists.";
             $isRegistered = true;
             break;
-        }else{
-            $isRegistered = false;
+        }
+    }
+
+    //Open Archived Users XML Document
+    $xml2 = new DOMDocument();
+    $xml2->preserveWhiteSpace = false;
+    $xml2->formatOutput = true;
+    $xml2->load("archivedUsers.xml");
+
+    // Check if username or email is in archive.
+    $archived = $xml2->getElementsByTagName("user");
+    foreach($archived as $archivedUser){
+        $archivedUname = $archivedUser->getAttribute("username");
+        $archivedEmail = $archivedUser->getAttribute("email");
+        if($archivedUname == $regUname){
+            $isRegistered = true;
+            $response = "Username already exists.";;
+            break;
+        }else if($archivedEmail == $regEmail){
+            $response = "Email already exists.";
+            $isRegistered = true;
+            break;
         }
     }
 
@@ -49,6 +71,7 @@
         $user = $xml->createElement("user");
         $user->setAttribute("username", $regUname);
         $user->setAttribute("email", $regEmail);
+        $user->setAttribute("access", "student");
 
         $firstName = $xml->createElement("firstName", $regFname);
         $middleName = $xml->createElement("middleName", $regMname);
@@ -79,6 +102,21 @@
         //Save XML file
         $xml->save("userAccounts.xml");
 
-        echo "Registration Successfull!";
+        // Add to Activity Log
+        $xmlLog = new DOMDocument();
+        $xmlLog->preserveWhiteSpace = false;
+        $xmlLog->formatOutput = true;
+        $xmlLog->load("activity.xml"); 
+
+        $log = $xmlLog->createElement("log","New User-".$regUname." signed up");
+        $log->setAttribute("type","NEW USER");
+        $log->setAttribute("date",date("m/d/Y"));
+        
+        $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
+        $xmlLog->save("activity.xml");
+
+        $response = "Registration Successfull!";
     }
+
+    echo $response;
 ?>

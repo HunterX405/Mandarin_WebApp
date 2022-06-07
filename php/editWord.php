@@ -36,18 +36,39 @@
     $word->appendChild($newSpeech);
     $word->appendChild($newSentence);
 
+    $isUnique = true;
+
     //Replace word node with new one
     $words = $xml->getElementsByTagName("word");
     foreach($words as $compWord){
         $compPinyin = $compWord->getAttribute("pinyin");
-        if($compPinyin == $_POST['oldPinyin']){
+        if($compPinyin == $pinyin){
+            $isUnique = false;
+        }else if($compPinyin == $_POST['oldPinyin']){
             $xml->getElementsByTagName("words")->item(0)->replaceChild($word,$compWord);
             break;
         }
     }
 
-    //Save XML file
-    $xml->save("dictionary.xml");
+    if($isUnique){
+        //Save XML file
+        $xml->save("dictionary.xml");
 
-    echo "Word Edited Successfully!";
+        // Add to Activity Log
+        $xmlLog = new DOMDocument();
+        $xmlLog->preserveWhiteSpace = false;
+        $xmlLog->formatOutput = true;
+        $xmlLog->load("activity.xml"); 
+
+        $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." edited the word ".$pinyin." in the dictionary");
+        $log->setAttribute("type","EDIT WORD");
+        $log->setAttribute("date",date("m/d/Y"));
+        
+        $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
+        $xmlLog->save("activity.xml");
+
+        echo "Word Edited Successfully!";
+    }else{
+        echo "Word(Pinyin) Already Exists!";
+    }
 ?>

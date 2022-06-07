@@ -14,30 +14,30 @@
     $xml = new DOMDocument();
     $xml->preserveWhiteSpace = false;
     $xml->formatOutput = true;
-    $xml->load("assessments.xml");
+    $xml->load("mockTest.xml");
 
     // Get POST variables
-    $title = $_POST['assessmentTitle'];
-    $items = $_POST['totalItems'];
+    $title = $_POST['mockTestTitle'];
+    $items = $_POST['testTotalItems'];
 
     // Create new assessment element
-    $assessment = $xml->createElement("assessment");
-    $assessment->setAttribute("title",$title);
-    $assessment->setAttribute("items",$items);
+    $mocktest = $xml->createElement("mocktest");
+    $mocktest->setAttribute("title",$title);
+    $mocktest->setAttribute("items",$items);
 
     // Check if assessment already exists
     $isUnique = true;
-    $assessments = $xml->getElementsByTagName("assessment");
-    foreach ($assessments as $compAssessment) {
-        $compTitle = $compAssessment->getAttribute("title");
+    $mocktests = $xml->getElementsByTagName("mocktest");
+    foreach ($mocktests as $compMockTest) {
+        $compTitle = $compMockTest->getAttribute("title");
         if($title == $compTitle){
             $isUnique = false;
-            $response = "Assessment Already Exists!";
+            $response = "Mock Test Already Exists!";
             break;
         }
     }
 
-    $totalQuestions = $_POST['totalQuestions'];
+    $totalQuestions = $_POST['testTotalQuestions'];
     if($isUnique){
         for($x = 1; $x<=$totalQuestions; $x++){
 
@@ -110,13 +110,13 @@
                     $question->appendChild($answer);
                 }
             }
-            $assessment->appendChild($question);
+            $mocktest->appendChild($question);
         }
     
-        $xml->getElementsByTagName("assessments")->item(0)->appendChild($assessment);
+        $xml->getElementsByTagName("mocktests")->item(0)->appendChild($mocktest);
     
         //Save XML file
-        $xml->save("assessments.xml");
+        $xml->save("mockTest.xml");
 
         // Add to Activity Log
         $xmlLog = new DOMDocument();
@@ -124,14 +124,14 @@
         $xmlLog->formatOutput = true;
         $xmlLog->load("activity.xml");
 
-        $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." added an assessment titled ".$title);
-        $log->setAttribute("type","ADD ASSESSMENT");
+        $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." added a mock test titled ".$title);
+        $log->setAttribute("type","ADD MOCK TEST");
         $log->setAttribute("date",date("m/d/Y"));
 
         $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
         $xmlLog->save("activity.xml");
 
-        $response = "Assessment Successfully Added!";
+        $response = "Mock Test Successfully Added!";
     }
 
     //JSON Response

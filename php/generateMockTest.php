@@ -8,7 +8,7 @@
     }
 
     //Load XML
-    $xml = simplexml_load_file("assessments.xml");
+    $xml = simplexml_load_file("mockTest.xml");
 
     //Storage for response
     $response = array();
@@ -17,19 +17,19 @@
     $title = $_POST['title'];
 
     //Get Assessment
-    foreach($xml->children() as $assessment){
-        $compTitle = $assessment['title'];
+    foreach($xml->children() as $mocktest){
+        $compTitle = $mocktest['title'];
         if($title == $compTitle){
             $response['title'] = $title;
-            $response['items'] = (string) $assessment['items'];
-            $response['questionsCount'] = (string) $assessment->count();
+            $response['items'] = (string) $mocktest['items'];
+            $response['questionsCount'] = (string) $mocktest->count();
             $response['questions'] = array();
             $added = array();
-            while (count($added) != (int) $assessment['items']) {
-                $randomIndex = rand(0,$assessment->count()-1);
+            while (count($added) != (int) $mocktest['items']) {
+                $randomIndex = rand(0,$mocktest->count()-1);
                 if(!in_array($randomIndex,$added)){
                     array_push($added,$randomIndex);
-                    $question = $assessment->question[$randomIndex];
+                    $question = $mocktest->question[$randomIndex];
 
                     $questionRow = array();
                     $questionRow['type'] = (string) $question['type'];
@@ -69,12 +69,12 @@
     $xmlLog->load("activity.xml"); 
 
     if(isset($_SESSION['admin'])){
-        $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." started an assessment titled ".$title);
+        $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." started a mock test titled ".$title);
     }else{
-        $log = $xmlLog->createElement("log","User ".$_SESSION['user']." started an assessment titled ".$title);
+        $log = $xmlLog->createElement("log","User ".$_SESSION['user']." started a mock test titled ".$title);
     }
     
-    $log->setAttribute("type","START ASSESSMENT");
+    $log->setAttribute("type","START MOCK TEST");
     $log->setAttribute("date",date("m/d/Y"));
     
     $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);

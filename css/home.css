@@ -2,6 +2,7 @@ html {
     height: 100%;
     visibility: hidden;
     overflow: hidden;
+    display: none;
 }
 
 body {
@@ -119,6 +120,14 @@ p{
 
 #toEditProfile:hover, #toChangePass:hover{
 background: #d2cec0;
+}
+
+.ui-datepicker th {
+    font-size: medium;
+}
+
+.ui-datepicker td {
+    font-size: small;
 }
 
 #toDeleteAccount{
@@ -297,7 +306,7 @@ form label{
     background: #da5055;
 }
 
-profile_edit#cancelBtn, #cancelPassBtn{
+#cancelBtn, #cancelPassBtn{
     background: #eae8e1;
     color: #000000;
     text-transform: uppercase;
@@ -522,6 +531,15 @@ profile_edit#cancelBtn, #cancelPassBtn{
 /* Prevent jquery ui radio button from making the page go up */
 input[type="radio"]{
     display:none;
+}
+
+/* MOCK TEST PAGE */
+#mockTestPage, #mockTestForm{
+    display: none;
+}
+
+#mockTestForm fieldset{
+    border: none;
 }
 
 

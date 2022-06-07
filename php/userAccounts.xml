@@ -6,12 +6,12 @@
       <middleName/>
       <lastName>Espiritu</lastName>
     </name>
-    <profileImage>images/1.png</profileImage>
-    <password>$2y$10$bXyr8JLVDk6wMBC.lk/9SOsgRoalPqwIYyOpSSWz7A1HYjcuhKmU.</password>
+    <profileImage>images/1.jpg</profileImage>
+    <password>$2y$10$awQ0HsRAzVriE.y/MMXbz.vPBrS0KeveGPV6s2zLan40cMF6py1xO</password>
     <homeAddress>Malolos City</homeAddress>
     <school>Bulacan State University</school>
-    <birthday>12/16/2000</birthday>
-    <gender>Male</gender>
+    <birthday>12/04/2000</birthday>
+    <gender>Female</gender>
   </user>
   <user username="user" email="email@gmail.com" access="admin">
     <name>
@@ -20,10 +20,23 @@
       <lastName>Last</lastName>
     </name>
     <profileImage>images/1.jpg</profileImage>
-    <password>$2y$10$GLXaGHBvuYUdLedxT257KeDVZw5VVrkmdvnioSoWR6qyMjmsrh.iK</password>
+    <password>$2y$10$OQfN1sk3DvZPHgvRNvwBguhEBGLTOtZcvXpGtcVzrySNgI0eKi/ju</password>
     <homeAddress>Address</homeAddress>
     <school>School</school>
-    <birthday>2022-05-25</birthday>
+    <birthday>06/02/2022</birthday>
+    <gender>Male</gender>
+  </user>
+  <user username="test" email="test@gmail.com" access="student">
+    <name>
+      <firstName>test</firstName>
+      <middleName/>
+      <lastName>test</lastName>
+    </name>
+    <profileImage>images/1.jpg</profileImage>
+    <password>$2y$10$hVh9JcDkqalj2lifeUipROA2hOKhayb0ioi9LzukndGBpDEZ8fm1e</password>
+    <homeAddress/>
+    <school/>
+    <birthday>06/01/2022</birthday>
     <gender>Male</gender>
   </user>
 </users>

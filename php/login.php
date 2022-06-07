@@ -31,13 +31,26 @@
             $isUser = true;
 
             if(password_verify($loginPassword,$compPassword)){
+                // Add to Activity Log
+                $xmlLog = new DOMDocument();
+                $xmlLog->preserveWhiteSpace = false;
+                $xmlLog->formatOutput = true;
+                $xmlLog->load("activity.xml"); 
+
                 if($user->getAttribute("access") == "admin"){
                     $_SESSION['admin'] = $compUname;
+                    $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." Logged In");
                     echo "Admin";
                 }else{
                     $_SESSION['user'] = $compUname;
+                    $log = $xmlLog->createElement("log","User ".$_SESSION['user']." Logged In");
                     echo "Login Success!";
                 }
+                
+                $log->setAttribute("type","LOGIN");
+                $log->setAttribute("date",date("m/d/Y"));
+                $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
+                $xmlLog->save("activity.xml");
                 break;
             }else{
                 //Username or email is found but password does not match.
@@ -51,3 +64,4 @@
         echo "Account not found.";
     }
 ?>
+

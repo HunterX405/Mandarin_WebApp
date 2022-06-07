@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<users>
+  <user username="johndoe" email="johndoe@gmail.com" access="student">
+    <name>
+      <firstName>john</firstName>
+      <middleName/>
+      <lastName>doe</lastName>
+    </name>
+    <profileImage/>
+    <password>$2y$10$96pvatmpGA30mMWKtBTPmeXd4TxLaskTKOx7gejo5AVa25RXl6x4O</password>
+    <homeAddress/>
+    <school/>
+    <birthday>2022/06/06</birthday>
+    <gender>Male</gender>
+  </user>
+</users>

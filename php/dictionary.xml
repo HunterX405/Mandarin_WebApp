@@ -1,15 +1,303 @@
 <?xml version="1.0"?>
 <words>
-  <word pinyin="w&#x1D2;">
-    <hanzi>&#x6211;</hanzi>
-    <definition>I/me</definition>
-    <speech>Personal Pronoun</speech>
-    <sentence>W&#x1D2; ji&#xE0;o Rose. (My name is Rose.)</sentence>
-  </word>
   <word pinyin="w&#x1D2;men">
     <hanzi>&#x6211;&#x4EEC;</hanzi>
     <definition>we, us</definition>
     <speech>Personal Pronoun</speech>
     <sentence>W&#x1D2;men hu&#xED;l&#xE1;ile. (We are back.)</sentence>
+  </word>
+  <word pinyin="w&#x1D2;">
+    <hanzi>a</hanzi>
+    <definition>a</definition>
+    <speech>Noun</speech>
+    <sentence>a</sentence>
+  </word>
+  <word pinyin="t&#x101;">
+    <hanzi>&#x4ED6;</hanzi>
+    <definition>he, him</definition>
+    <speech>Personal Pronoun</speech>
+    <sentence>He is beautiful</sentence>
+  </word>
+  <word pinyin="n&#x1D0;">
+    <hanzi>&#x4F60;</hanzi>
+    <definition>you</definition>
+    <speech>Personal Pronoun</speech>
+    <sentence>I know what you mean.</sentence>
+  </word>
+  <word pinyin="zh&#xE8; ( zh&#xE8;r)">
+    <hanzi>&#x8FD9;(&#x8FD9;&#x513F;)</hanzi>
+    <definition>this, here</definition>
+    <speech>Adjective</speech>
+    <sentence>This is my ballpen</sentence>
+  </word>
+  <word pinyin="n&#xE0; (n&#xE0;r)">
+    <hanzi>&#x90A3;(&#x90A3;&#x513F;)</hanzi>
+    <definition>that, there,</definition>
+    <speech>Adjective</speech>
+    <sentence>That is my notebook</sentence>
+  </word>
+  <word pinyin="n&#x1CE; (n&#x1CE;r)">
+    <hanzi>&#x54EA;&#xFF08;&#x54EA;&#x513F;&#xFF09;</hanzi>
+    <definition>where</definition>
+    <speech>Interrogative Pronoun</speech>
+    <sentence>Where is my wallet?</sentence>
+  </word>
+  <word pinyin="sh&#xE9;i/shui">
+    <hanzi>&#x8C01;</hanzi>
+    <definition>who</definition>
+    <speech>Interrogative Pronoun</speech>
+    <sentence>Who is your teacher</sentence>
+  </word>
+  <word pinyin="sh&#x11B;nme">
+    <hanzi>&#x4EC0;&#x4E48;</hanzi>
+    <definition>what, why</definition>
+    <speech>Interrogative Pronoun</speech>
+    <sentence>What is you favorite food?</sentence>
+  </word>
+  <word pinyin="du&#x14D;sh&#x1CE;o">
+    <hanzi>&#x591A;&#x5C11;</hanzi>
+    <definition>how many, how much</definition>
+    <speech>Interrogative Pronoun</speech>
+    <sentence>How many are you in the class?</sentence>
+  </word>
+  <word pinyin="j&#x1D0;">
+    <hanzi>&#x51E0;</hanzi>
+    <definition>a few, how many</definition>
+    <speech>Interrogative Pronoun</speech>
+    <sentence>She has a few books </sentence>
+  </word>
+  <word pinyin="z&#x11B;nme">
+    <hanzi>&#x600E;&#x4E48;</hanzi>
+    <definition>how</definition>
+    <speech>Interrogative Pronoun</speech>
+    <sentence>How old are you?</sentence>
+  </word>
+  <word pinyin="z&#x11B;nmey&#xE0;ng">
+    <hanzi>&#x600E;&#x4E48;&#x6837;</hanzi>
+    <definition>how about</definition>
+    <speech>Interrogative Pronoun</speech>
+    <sentence>how about meeting for a coffee</sentence>
+  </word>
+  <word pinyin="y&#x12B;">
+    <hanzi>&#x4E00;</hanzi>
+    <definition>one</definition>
+    <speech>Numeral</speech>
+    <sentence>I have one apple</sentence>
+  </word>
+  <word pinyin="&#xE8;r">
+    <hanzi>&#x4E8C;</hanzi>
+    <definition>two</definition>
+    <speech>Numeral</speech>
+    <sentence>Two dogs are wild </sentence>
+  </word>
+  <word pinyin="s&#x101;n">
+    <hanzi>&#x4E09;</hanzi>
+    <definition>three</definition>
+    <speech>Numeral</speech>
+    <sentence>Three apples are green in color.</sentence>
+  </word>
+  <word pinyin="s&#xEC;">
+    <hanzi>&#x56DB;</hanzi>
+    <definition>four</definition>
+    <speech>Numeral</speech>
+    <sentence>I have four children</sentence>
+  </word>
+  <word pinyin="w&#x1D4;">
+    <hanzi>&#x4E94;</hanzi>
+    <definition>five</definition>
+    <speech>Numeral</speech>
+    <sentence>I caught five fish</sentence>
+  </word>
+  <word pinyin="li&#xF9;">
+    <hanzi>&#x516D;</hanzi>
+    <definition>six</definition>
+    <speech>Numeral</speech>
+    <sentence>Be ready at six O'clock.</sentence>
+  </word>
+  <word pinyin="q&#x12B;">
+    <hanzi>&#x4E03;</hanzi>
+    <definition>seven</definition>
+    <speech>Numeral</speech>
+    <sentence>Wake me up at seven tomorrow.</sentence>
+  </word>
+  <word pinyin="b&#x101;">
+    <hanzi>&#x516B;</hanzi>
+    <definition>eight</definition>
+    <speech>Numeral</speech>
+    <sentence>I work eight hours a day.</sentence>
+  </word>
+  <word pinyin="ji&#x1D4;">
+    <hanzi>&#x4E5D;</hanzi>
+    <definition>nine</definition>
+    <speech>Numeral</speech>
+    <sentence>She wears a size nine.</sentence>
+  </word>
+  <word pinyin="sh&#xED;">
+    <hanzi>&#x5341;</hanzi>
+    <definition>ten</definition>
+    <speech>Numeral</speech>
+    <sentence>She bought a handkerchief for ten dollars.</sentence>
+  </word>
+  <word pinyin="l&#xED;ng">
+    <hanzi>&#x96F6;</hanzi>
+    <definition>zero</definition>
+    <speech>Numeral</speech>
+    <sentence>Zero is a cardinal number.</sentence>
+  </word>
+  <word pinyin="g&#xE8;">
+    <hanzi>&#x4E2A;</hanzi>
+    <definition>piece</definition>
+    <speech>Quantifier</speech>
+    <sentence>Cut me a piece of that pie. </sentence>
+  </word>
+  <word pinyin="su&#xEC;">
+    <hanzi>&#x5C81;</hanzi>
+    <definition>years old</definition>
+    <speech>Quantifier</speech>
+    <sentence>Her dad turned sixty years old today.</sentence>
+  </word>
+  <word pinyin="b&#x11B;n">
+    <hanzi>&#x672C;</hanzi>
+    <definition>quantifier for books</definition>
+    <speech>Quantifier</speech>
+    <sentence>Few books are in the book shelves.</sentence>
+  </word>
+  <word pinyin="xi&#x113;">
+    <hanzi>&#x4E9B;</hanzi>
+    <definition>some</definition>
+    <speech>Quantifier</speech>
+    <sentence>I have some work to do.</sentence>
+  </word>
+  <word pinyin="ku&#xE0;i">
+    <hanzi>&#x5757;</hanzi>
+    <definition>money (chinese)</definition>
+    <speech>Quantifier</speech>
+    <sentence>He said I could spend his money.</sentence>
+  </word>
+  <word pinyin="b&#xF9;">
+    <hanzi>&#x4E0D;</hanzi>
+    <definition>no</definition>
+    <speech>Adverb</speech>
+    <sentence>I have no choice but to eat.</sentence>
+  </word>
+  <word pinyin="h&#x11B;n">
+    <hanzi>&#x5F88;</hanzi>
+    <definition>quite, very</definition>
+    <speech>Adverb</speech>
+    <sentence>The book is very interesting</sentence>
+  </word>
+  <word pinyin="t&#xE0;i">
+    <hanzi>&#x592A;</hanzi>
+    <definition>too</definition>
+    <speech>Adverb</speech>
+    <sentence>The soup is too hot.</sentence>
+  </word>
+  <word pinyin="d&#x14D;u">
+    <hanzi>&#x90FD;</hanzi>
+    <definition>all/both</definition>
+    <speech>Adverb</speech>
+    <sentence>The judge sent them all to jail.</sentence>
+  </word>
+  <word pinyin="h&#xE9;">
+    <hanzi>&#x548C;</hanzi>
+    <definition>and</definition>
+    <speech>Conjunction</speech>
+    <sentence>I love basketball and football</sentence>
+  </word>
+  <word pinyin="z&#xE0;i">
+    <hanzi>&#x5728;</hanzi>
+    <definition>in, at</definition>
+    <speech>Preposition</speech>
+    <sentence>Let's meet at 11:45.</sentence>
+  </word>
+  <word pinyin="de">
+    <hanzi>&#x7684;</hanzi>
+    <definition>possession</definition>
+    <speech>Auxiliary</speech>
+    <sentence>She came into possession of a rare silver coin.</sentence>
+  </word>
+  <word pinyin="le">
+    <hanzi>&#x4E86;</hanzi>
+    <definition>past tense</definition>
+    <speech>Auxiliary</speech>
+    <sentence>Sam cooked a tasty dinner yesterday.</sentence>
+  </word>
+  <word pinyin="ma">
+    <hanzi>&#x5417;</hanzi>
+    <definition>do? (Question)</definition>
+    <speech>Auxiliary</speech>
+    <sentence>I have a lot of work to do. </sentence>
+  </word>
+  <word pinyin="ne">
+    <hanzi>&#x5462;</hanzi>
+    <definition>how about</definition>
+    <speech>Auxiliary</speech>
+    <sentence>How about spend the day in the city?</sentence>
+  </word>
+  <word pinyin="w&#xE8;i">
+    <hanzi>&#x5582;</hanzi>
+    <definition>hello (telephone)</definition>
+    <speech>Interjection</speech>
+    <sentence>Hello it's nice to see you.</sentence>
+  </word>
+  <word pinyin="ji&#x101;">
+    <hanzi>&#x5BB6;</hanzi>
+    <definition>home/house</definition>
+    <speech>Noun</speech>
+    <sentence>Daddy went home to sleep.</sentence>
+  </word>
+  <word pinyin="xu&#xE9;xi&#xE0;o">
+    <hanzi>&#x5B66;&#x6821;</hanzi>
+    <definition>school</definition>
+    <speech>Noun</speech>
+    <sentence>He goes to school by bicycle. </sentence>
+  </word>
+  <word pinyin="fanguan/f&#xE0;ndi&#xE0;n">
+    <hanzi>&#x996D;&#x9986;</hanzi>
+    <definition>restaurant/hotel</definition>
+    <speech>Noun</speech>
+    <sentence>we'll just get a room at a hotel.</sentence>
+  </word>
+  <word pinyin="sh&#x101;ngdi&#xE0;n">
+    <hanzi>&#x5546;&#x5E97;</hanzi>
+    <definition>store</definition>
+    <speech>Noun</speech>
+    <sentence>I'm surprised the clothing store was open.</sentence>
+  </word>
+  <word pinyin="y&#x12B;yu&#xE0;n">
+    <hanzi>&#x533B;&#x9662;</hanzi>
+    <definition>hospital</definition>
+    <speech>Noun</speech>
+    <sentence>I went to the hospital yesterday.</sentence>
+  </word>
+  <word pinyin="hu&#x1D2;ch&#x113;zh&#xE0;n">
+    <hanzi>&#x706B;&#x8F66;&#x7AD9;</hanzi>
+    <definition>train station</definition>
+    <speech>Noun</speech>
+    <sentence>I'll meet you at the train station. </sentence>
+  </word>
+  <word pinyin="Zh&#x14D;nggu&#xF2;">
+    <hanzi>&#x4E2D;&#x56FD;</hanzi>
+    <definition>China</definition>
+    <speech>Noun</speech>
+    <sentence>China has a long history of civilisation.</sentence>
+  </word>
+  <word pinyin="B&#x11B;ij&#x12B;ng">
+    <hanzi>&#x5317;&#x4EAC;</hanzi>
+    <definition>Beijing</definition>
+    <speech>Noun</speech>
+    <sentence> He is the mayor of Beijing.</sentence>
+  </word>
+  <word pinyin="sh&#xE0;ng">
+    <hanzi>&#x4E0A;</hanzi>
+    <definition>up</definition>
+    <speech>Noun</speech>
+    <sentence>I will pick him up at the station.</sentence>
+  </word>
+  <word pinyin="xi&#xE0;">
+    <hanzi>&#x4E0B;</hanzi>
+    <definition>down</definition>
+    <speech>Noun</speech>
+    <sentence>The land slopes down to the sea.</sentence>
   </word>
 </words>

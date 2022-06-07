@@ -17,6 +17,8 @@
     $xml->formatOutput = true;
     $xml->load("lessons.xml");
 
+    $isUnique = true;
+
     //Find Lesson
     $lessonFound = false;
     $lessons = $xml->getElementsByTagName("lesson");
@@ -44,15 +46,27 @@
                         $topicContent = $_POST['editTopicContent'];
                         $topicTitle = $_POST['editTopicTitle'];
 
-                        //Create New Topic Element
-                        $newTopic = $xml->createElement("topic");
-                        $newTopic->setAttribute("topicTitle", $topicTitle);
-                        $newContent = $xml->createElement("content");
-                        $newContent->appendChild($xml->createCDATASection($topicContent));
-                        $newTopic->appendChild($newContent);
+                        if($oldTopicTitle != $topicTitle){
+                            // Check if new topic title is unique
+                            foreach($topics as $compTopic){
+                                $compTitle = $compTopic->getAttribute("topicTitle");
+                                if($compTitle == $topicTitle){
+                                    $isUnique = false;
+                                }
+                            }
+                        }
 
-                        //Append new topic to new lesson
-                        $newLesson->appendChild($newTopic);
+                        if($isUnique){
+                            //Create New Topic Element
+                            $newTopic = $xml->createElement("topic");
+                            $newTopic->setAttribute("topicTitle", $topicTitle);
+                            $newContent = $xml->createElement("content");
+                            $newContent->appendChild($xml->createCDATASection($topicContent));
+                            $newTopic->appendChild($newContent);
+
+                            //Append new topic to new lesson
+                            $newLesson->appendChild($newTopic);
+                        }
                     }else{
                         //DELETE TOPIC
                         $topicDeleted = true;
@@ -76,17 +90,35 @@
         $response = "Topic Not Found.";
     }else if(!$lessonFound){
         $response = "Lesson Not Found.";
+    }else if(!$isUnique){
+        $response = "Topic Title already exists!";
     }else{
 
         //Save XML file
         $xml->save("lessons.xml");
 
+        // Add to Activity Log
+        $xmlLog = new DOMDocument();
+        $xmlLog->preserveWhiteSpace = false;
+        $xmlLog->formatOutput = true;
+        $xmlLog->load("activity.xml"); 
+
         //Success Response
         if($topicDeleted){
+            $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." deleted a topic titled ".$oldTopicTitle." in ".$lessonTitle);
+            $log->setAttribute("type","DELETE TOPIC");
+
             $response = "Topic Deleted Successfully!";
         }else{
+            $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." edited a topic titled ".$oldTopicTitle." in ".$lessonTitle);
+            $log->setAttribute("type","EDIT TOPIC");
+
             $response = "Topic Edited Successfully!";
         }  
+
+        $log->setAttribute("date",date("m/d/Y"));
+        $xmlLog->getElementsByTagName("logs")->item(0)->appendChild($log);
+        $xmlLog->save("activity.xml");
     }
 
     //PHP Response
