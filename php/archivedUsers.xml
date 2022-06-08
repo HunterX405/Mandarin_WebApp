@@ -1,16 +1,29 @@
 <?xml version="1.0"?>
 <users>
-  <user username="johndoe" email="johndoe@gmail.com" access="student">
+  <user username="webadmin" email="email@gmail.com" access="admin" regDate="05/18/2022">
     <name>
-      <firstName>john</firstName>
+      <firstName>Web</firstName>
       <middleName/>
-      <lastName>doe</lastName>
+      <lastName>Administrator</lastName>
     </name>
-    <profileImage/>
-    <password>$2y$10$96pvatmpGA30mMWKtBTPmeXd4TxLaskTKOx7gejo5AVa25RXl6x4O</password>
+    <profileImage>images/1.jpg</profileImage>
+    <password>$2y$10$QS7W5Uxe.ytfchy714ecJ.vrWSRrHsH3TX3Zeubxh2c5VvMxMl1vi</password>
     <homeAddress/>
-    <school/>
-    <birthday>2022/06/06</birthday>
+    <school>Bulacan State University</school>
+    <birthday>06/02/2022</birthday>
     <gender>Male</gender>
+  </user>
+  <user username="hunterxhenrick" email="johnhenrick.espiritu.sc@bulsu.edu.ph" access="student" regDate="05/28/2022">
+    <name>
+      <firstName>John</firstName>
+      <middleName/>
+      <lastName>Espiritu</lastName>
+    </name>
+    <profileImage>images/1.jpg</profileImage>
+    <password>$2y$10$awQ0HsRAzVriE.y/MMXbz.vPBrS0KeveGPV6s2zLan40cMF6py1xO</password>
+    <homeAddress>Malolos City</homeAddress>
+    <school>Bulacan State University</school>
+    <birthday>12/04/2000</birthday>
+    <gender>Female</gender>
   </user>
 </users>

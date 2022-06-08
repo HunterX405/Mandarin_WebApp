@@ -115,13 +115,11 @@
                         $response["message"] = "Email Already Exists!";
                     }
                 }
-            }else if($editEmail != $compEmail){
-
             }
-                
-                
+            // else if($editEmail != $compEmail){
 
-
+            // }
+                
                 //Check for uploaded image
                 if(!empty($_FILES["file"]["name"])){
                     $uploadDir = 'images/';
@@ -174,6 +172,7 @@
                 $user = $xml->createElement("user");
                 $user->setAttribute("username", $editUname);
                 $user->setAttribute("email", $editEmail);
+                
                 if(isset($_SESSION['admin'])){
                     $user->setAttribute("access","admin");
                     $_SESSION['admin'] = $editUname;
@@ -181,6 +180,7 @@
                     $user->setAttribute("access","student");
                     $_SESSION['user'] = $editUname;
                 }
+                $user->setAttribute("regDate", $compUser->getAttribute("regDate"));
 
                 $firstName = $xml->createElement("firstName", $editFname);
                 $middleName = $xml->createElement("middleName", $editMname);

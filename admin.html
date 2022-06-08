@@ -48,13 +48,15 @@
         <!-- SIDEBAR ICONS -->
         <div class="container_left">
             <div class="menu">
-                <div class="menu_categories" id="homeBtn"><img class="menu_categories_icons" src="css/images/menu_home.avif" alt="Settings"></div>
-                <div class="menu_categories" id="usersBtn"><img class="menu_categories_icons" src="" alt="Users"></div>
+                <div class="menu_categories" id="logo"><img class="menu_categories_icons" src="css/images/logo_variation222.avif" alt="Profile"></div>
+               
+                <div class="menu_categories" id="homeBtn"><img class="menu_categories_icons" src="css/images/menu_studpage.png" alt="Settings"></div>
+                <div class="menu_categories" id="usersBtn"><img class="menu_categories_icons" src="css/images/menu_users.png" alt="Users"></div>
                 <div class="menu_categories" id="lessonBtn"><img class="menu_categories_icons" src="css/images/menu_lesson.avif" alt="Lessons"></div>
                 <div class="menu_categories" id="assessmentBtn"><img class="menu_categories_icons" src="css/images/menu_assessment.avif" alt="Assessment"></div>
                 <div class="menu_categories" id="dictionaryBtn"><img class="menu_categories_icons" src="css/images/menu_dictionary.avif" alt="Dictionary"></div>
                 <div class="menu_categories" id="mockTestBtn"><img class="menu_categories_icons" src="css/images/menu_test.avif" alt="Tests"></div>
-                <div class="menu_categories" id="reportsBtn"><img class="menu_categories_icons" src="" alt="Reports"></div>
+                <div class="menu_categories" id="reportsBtn"><img class="menu_categories_icons" src="css/images/menu_reports.png" alt="Reports"></div>
                 <div class="menu_categories" id="settingsBtn"><img class="menu_categories_icons" src="css/images/menu_settings.avif" alt="Settings"></div>
                 <div class="menu_categories" id="logoutBtn"><img class="menu_categories_icons" src="css/images/menu_logout.avif" alt="Logout"></div>                                 
             </div>                
@@ -285,7 +287,7 @@
                     <hr>
                     <h4 class="homeHeader2" id="questionDatabank">Question Databank: 0 Questions</h4>
                 </fieldset>
-                    <div class="group">
+                    <div class="group groupAddQuestion">
                         <label for="questionType">Question Type: </label>
                         <select name="questionType" id="questionType">
                             <option selected="selected">Multiple Choice</option>
@@ -312,7 +314,7 @@
                     <hr>
                     <h4 class="homeHeader2" id="editQuestionDatabank">Question Databank: 0 Questions</h4>
                 </fieldset>
-                    <div class="group">
+                    <div class="group groupAddQuestion">
                         <label for="editQuestionType">Question Type: </label>
                         <select name="editQuestionType" id="editQuestionType">
                             <option selected="selected">Multiple Choice</option>
@@ -362,7 +364,7 @@
                     <hr>
                     <h4 class="homeHeader2" id="testQuestionDatabank">Question Databank: 0 Questions</h4>
                 </fieldset>
-                    <div class="group">
+                    <div class="group groupAddQuestion">
                         <label for="testQuestionType">Question Type: </label>
                         <select name="testQuestionType" id="testQuestionType">
                             <option selected="selected">Multiple Choice</option>
@@ -373,7 +375,7 @@
                     </div>
                     <hr>
                     <div class="btnGroup">
-                        <button type="button" class="button" id="cancelAddMocktestBtn">CANCEL</button>
+                        <button type="button" class="button" id="cancelAddMockTestBtn">CANCEL</button>
                         <button type="submit" class="button" id="addMockTestBtn">ADD MOCK TEST</button>
                     </div>                    
             </form>
@@ -389,7 +391,7 @@
                     <hr>
                     <h4 class="homeHeader2" id="editTestQuestionDatabank">Question Databank: 0 Questions</h4>
                 </fieldset>
-                    <div class="group">
+                    <div class="group groupAddQuestion">
                         <label for="editTestQuestionType">Question Type: </label>
                         <select name="editTestQuestionType" id="editTestQuestionType">
                             <option selected="selected">Multiple Choice</option>
@@ -427,13 +429,17 @@
                     </select>
 
                     <label for="dayFilter">DAY</label>
-                    <input type="radio" name="reportFilter" id="dayFilter" class="checkRadio" value="DAY" checked>
+                    <input type="radio" name="reportFilter" id="dayFilter" class="checkRadio reportFilter" value="DAY" checked>
                     <label for="weekFilter">WEEK</label>
-                    <input type="radio" name="reportFilter" id="weekFilter" class="checkRadio" value="WEEK">
+                    <input type="radio" name="reportFilter" id="weekFilter" class="checkRadio reportFilter" value="WEEK">
                     <label for="monthFilter">MONTH</label>
-                    <input type="radio" name="reportFilter" id="monthFilter" class="checkRadio" value="MONTH">
+                    <input type="radio" name="reportFilter" id="monthFilter" class="checkRadio reportFilter" value="MONTH">
                     <label for="customFilter">CUSTOM</label>
-                    <input type="radio" name="reportFilter" id="customFilter" class="checkRadio" value="CUSTOM">
+                    <input type="radio" name="reportFilter" id="customFilter" class="checkRadio reportFilter" value="CUSTOM">
+                    <label for="startDate">From:</label> </td>
+                    <input class="dateRange" id="startDate" type="text" name="startDate" readonly="readonly" placeholder="mm/dd/yyyy" required/>
+                    <label for="endDate">To:</label> </td>
+                    <input class="dateRange" id="endDate" type="text" name="endDate" readonly="readonly" placeholder="mm/dd/yyyy" required/>
 
                     <button type="button" class="button" id="generateReport">GENERATE REPORT</button><br>
                 </div>

@@ -300,4 +300,592 @@
     <speech>Noun</speech>
     <sentence>The land slopes down to the sea.</sentence>
   </word>
+  <word pinyin="qi&#xE1;nmi&#xE0;n/bian">
+    <hanzi>&#x524D;&#x9762;</hanzi>
+    <definition>front</definition>
+    <speech>Noun</speech>
+    <sentence>He parked the truck in front of the house.</sentence>
+  </word>
+  <word pinyin="h&#xF2;umi&#xE0;n/bian">
+    <hanzi>&#x540E;&#x9762;</hanzi>
+    <definition>behind</definition>
+    <speech>Noun</speech>
+    <sentence>The warehouse is behind the store.</sentence>
+  </word>
+  <word pinyin="l&#x1D0;mi&#xE0;n/bian">
+    <hanzi>&#x91CC;</hanzi>
+    <definition>inside</definition>
+    <speech>Noun</speech>
+    <sentence> There was not a sound inside of the cave. </sentence>
+  </word>
+  <word pinyin="j&#x12B;nti&#x101;n">
+    <hanzi>&#x4ECA;&#x5929;</hanzi>
+    <definition>today</definition>
+    <speech>Noun</speech>
+    <sentence> I forgot to call him today.</sentence>
+  </word>
+  <word pinyin="m&#xED;ngti&#x101;n">
+    <hanzi>&#x660E;&#x5929;</hanzi>
+    <definition>tomorrow</definition>
+    <speech>Noun</speech>
+    <sentence>He said that he would come back tomorrow.</sentence>
+  </word>
+  <word pinyin="zu&#xF2;ti&#x101;n">
+    <hanzi>&#x6628;&#x5929;</hanzi>
+    <definition>yesterday</definition>
+    <speech>Noun</speech>
+    <sentence>It rained heavily yesterday afternoon.</sentence>
+  </word>
+  <word pinyin="sh&#xE0;ngw&#x1D4;">
+    <hanzi>&#x4E0A;&#x5348;</hanzi>
+    <definition>morning</definition>
+    <speech>Noun</speech>
+    <sentence>I saw him this morning.</sentence>
+  </word>
+  <word pinyin="zh&#x14D;ngw&#x1D4;">
+    <hanzi>&#x4E2D;&#x5348;</hanzi>
+    <definition>noon</definition>
+    <speech>Noun</speech>
+    <sentence>A little after noon he emerged from his room.</sentence>
+  </word>
+  <word pinyin="xi&#xE0;w&#x1D4;">
+    <hanzi>&#x4E0B;&#x5348;</hanzi>
+    <definition>afternoon</definition>
+    <speech>Noun</speech>
+    <sentence>I'll see you again tomorrow afternoon.</sentence>
+  </word>
+  <word pinyin="ni&#xE1;n">
+    <hanzi>&#x5E74;</hanzi>
+    <definition>year</definition>
+    <speech>Noun</speech>
+    <sentence>I haven't seen her in a year.</sentence>
+  </word>
+  <word pinyin="yu&#xE8;">
+    <hanzi>&#x6708;</hanzi>
+    <definition>month</definition>
+    <speech>Noun</speech>
+    <sentence>He was gone for a month.</sentence>
+  </word>
+  <word pinyin="r&#xEC;/hao">
+    <hanzi>&#x65E5;</hanzi>
+    <definition>day</definition>
+    <speech>Noun</speech>
+    <sentence>It was a beautiful sunny day.</sentence>
+  </word>
+  <word pinyin="x&#x12B;ngq&#x12B;">
+    <hanzi>&#x661F;&#x671F;</hanzi>
+    <definition>week</definition>
+    <speech>Noun</speech>
+    <sentence>The menu changes from week to week.</sentence>
+  </word>
+  <word pinyin="di&#x1CE;n">
+    <hanzi>&#x70B9;</hanzi>
+    <definition>o'clock</definition>
+    <speech>Noun</speech>
+    <sentence>The storm broke at five o'clock.</sentence>
+  </word>
+  <word pinyin="f&#x113;nzh&#x14D;ng">
+    <hanzi>&#x5206;&#x949F;</hanzi>
+    <definition>minute</definition>
+    <speech>Noun</speech>
+    <sentence>We waited for several minutes.</sentence>
+  </word>
+  <word pinyin="xi&#xE0;nz&#xE0;i">
+    <hanzi>&#x73B0;&#x5728;</hanzi>
+    <definition>now</definition>
+    <speech>Noun</speech>
+    <sentence>He should have arrived by now.</sentence>
+  </word>
+  <word pinyin="sh&#xED;h&#xF3;u/shijian">
+    <hanzi>&#x65F6;&#x5019;</hanzi>
+    <definition>time</definition>
+    <speech>Noun</speech>
+    <sentence>She spent some time in Boston.</sentence>
+  </word>
+  <word pinyin="b&#xE0;ba">
+    <hanzi>&#x7238;&#x7238;</hanzi>
+    <definition>father</definition>
+    <speech>Noun</speech>
+    <sentence>He became a father when he was 30.</sentence>
+  </word>
+  <word pinyin="m&#x101;ma">
+    <hanzi>&#x5988;&#x5988;</hanzi>
+    <definition>mother</definition>
+    <speech>Noun</speech>
+    <sentence> I live with my mother and daughter.</sentence>
+  </word>
+  <word pinyin="&#xE9;rzi">
+    <hanzi>&#x513F;&#x5B50;</hanzi>
+    <definition>son</definition>
+    <speech>Noun</speech>
+    <sentence>Her son was missing.</sentence>
+  </word>
+  <word pinyin="n&#x1DA;&#xE9;r">
+    <hanzi>&#x5973;&#x513F;</hanzi>
+    <definition>daughter</definition>
+    <speech>Noun</speech>
+    <sentence>She has a six-year-old daughter.</sentence>
+  </word>
+  <word pinyin="l&#x1CE;osh&#x12B;">
+    <hanzi>&#x8001;&#x5E08;</hanzi>
+    <definition>teacher</definition>
+    <speech>Noun</speech>
+    <sentence>A teacher doesn't have to be smart.</sentence>
+  </word>
+  <word pinyin="xu&#xE9;sh&#x113;ng">
+    <hanzi>&#x5B66;&#x751F;</hanzi>
+    <definition>student</definition>
+    <speech>Noun</speech>
+    <sentence>He works as hard as any other student. </sentence>
+  </word>
+  <word pinyin="t&#xF3;ngxu&#xE9;">
+    <hanzi>&#x540C;&#x5B66;</hanzi>
+    <definition>shoolmate/classmate</definition>
+    <speech>Noun</speech>
+    <sentence>My classmates are intelligent.</sentence>
+  </word>
+  <word pinyin="p&#xE9;ngy&#x1D2;u">
+    <hanzi>&#x670B;&#x53CB;</hanzi>
+    <definition>friend</definition>
+    <speech>Noun</speech>
+    <sentence>I visited my friend Tom yesterday. </sentence>
+  </word>
+  <word pinyin="y&#x12B;sh&#x113;ng">
+    <hanzi>&#x533B;&#x751F;</hanzi>
+    <definition>doctor</definition>
+    <speech>Noun</speech>
+    <sentence>The doctor seemed tired and in a hurry.</sentence>
+  </word>
+  <word pinyin="xi&#x101;nsh&#x113;ng">
+    <hanzi>&#x5148;&#x751F;</hanzi>
+    <definition>sir</definition>
+    <speech>Noun</speech>
+    <sentence>Sir, is it time to begin?</sentence>
+  </word>
+  <word pinyin="xi&#x1CE;oji&#x11B;">
+    <hanzi>&#x5C0F;&#x59D0;</hanzi>
+    <definition>Miss</definition>
+    <speech>Noun</speech>
+    <sentence>I would hate to miss this opportunity.</sentence>
+  </word>
+  <word pinyin="y&#x12B;fu">
+    <hanzi>&#x8863;&#x670D;</hanzi>
+    <definition>cloth</definition>
+    <speech>Noun</speech>
+    <sentence>He has great respect for the cloth.</sentence>
+  </word>
+  <word pinyin="shu&#x1D0;">
+    <hanzi>&#x6C34;</hanzi>
+    <definition>water</definition>
+    <speech>Noun</speech>
+    <sentence>I poured water into the bucket.</sentence>
+  </word>
+  <word pinyin="c&#xE0;i">
+    <hanzi>&#x83DC;</hanzi>
+    <definition>vegetable/dish</definition>
+    <speech>Noun</speech>
+    <sentence> They railed in their vegetable garden. </sentence>
+  </word>
+  <word pinyin="m&#x1D0;f&#xE0;n">
+    <hanzi>&#x7C73;&#x996D;</hanzi>
+    <definition>rice</definition>
+    <speech>Noun</speech>
+    <sentence>The rice and beans were bland until mixed together.</sentence>
+  </word>
+  <word pinyin="shu&#x1D0;gu&#x1D2;">
+    <hanzi>&#x6C34;&#x679C;</hanzi>
+    <definition>fruit</definition>
+    <speech>Noun</speech>
+    <sentence>Fruits are varied and delicious.</sentence>
+  </word>
+  <word pinyin="p&#xED;nggu&#x1D2;">
+    <hanzi>&#x82F9;&#x679C;</hanzi>
+    <definition>apple</definition>
+    <speech>Noun</speech>
+    <sentence>The rotten apple injures its neighbours.</sentence>
+  </word>
+  <word pinyin="ch&#xE1;">
+    <hanzi>&#x8336;</hanzi>
+    <definition>tea</definition>
+    <speech>Noun</speech>
+    <sentence>He drank hot tea from a glass.</sentence>
+  </word>
+  <word pinyin="b&#x113;izi">
+    <hanzi>&#x676F;&#x5B50;</hanzi>
+    <definition>cup</definition>
+    <speech>Noun</speech>
+    <sentence> I always drink a cup of coffee.</sentence>
+  </word>
+  <word pinyin="qi&#xE1;n">
+    <hanzi>&#x94B1;</hanzi>
+    <definition>money</definition>
+    <speech>Noun</speech>
+    <sentence>She lost her money.</sentence>
+  </word>
+  <word pinyin="f&#x113;ij&#x12B;">
+    <hanzi>&#x98DE;&#x673A;</hanzi>
+    <definition>airplane</definition>
+    <speech>Noun</speech>
+    <sentence> It would be the first time in an airplane</sentence>
+  </word>
+  <word pinyin="ch&#x16B;z&#x16B;ch&#x113;">
+    <hanzi>&#x51FA;&#x79DF;&#x8F66;</hanzi>
+    <definition>taxi</definition>
+    <speech>Noun</speech>
+    <sentence>John whistled for a taxi. </sentence>
+  </word>
+  <word pinyin="di&#xE0;nsh&#xEC;">
+    <hanzi>&#x7535;&#x89C6;</hanzi>
+    <definition>television</definition>
+    <speech>Noun</speech>
+    <sentence>spending too much time with my television.</sentence>
+  </word>
+  <word pinyin="di&#xE0;nn&#x1CE;o">
+    <hanzi>&#x7535;&#x8111;</hanzi>
+    <definition>computer</definition>
+    <speech>Noun</speech>
+    <sentence> Her phone and computer are monitored.</sentence>
+  </word>
+  <word pinyin="di&#xE0;ny&#x1D0;ng">
+    <hanzi>&#x7535;&#x5F71;</hanzi>
+    <definition>movie/cinema</definition>
+    <speech>Noun</speech>
+    <sentence>The movie bombed out at the box office. </sentence>
+  </word>
+  <word pinyin="ti&#x101;nq&#xEC;">
+    <hanzi>&#x5929;&#x6C14;</hanzi>
+    <definition>weather</definition>
+    <speech>Noun</speech>
+    <sentence>The weather today will be hot and dry.</sentence>
+  </word>
+  <word pinyin="m&#x101;o">
+    <hanzi>&#x732B;</hanzi>
+    <definition>cat</definition>
+    <speech>Noun</speech>
+    <sentence>I think the cat wants dessert!</sentence>
+  </word>
+  <word pinyin="g&#x1D2;u">
+    <hanzi>&#x72D7;</hanzi>
+    <definition>dog</definition>
+    <speech>Noun</speech>
+    <sentence>The dog kept barking all night.</sentence>
+  </word>
+  <word pinyin="d&#x14D;ngx&#x12B;">
+    <hanzi>&#x4E1C;&#x897F;</hanzi>
+    <definition>thing</definition>
+    <speech>Noun</speech>
+    <sentence> I'll call him first thing in the morning.</sentence>
+  </word>
+  <word pinyin="r&#xE9;n">
+    <hanzi>&#x4EBA;</hanzi>
+    <definition>person</definition>
+    <speech>Noun</speech>
+    <sentence>A person couldn't be in control all the time.</sentence>
+  </word>
+  <word pinyin="m&#xED;ngzi">
+    <hanzi>&#x540D;&#x5B57;</hanzi>
+    <definition>name</definition>
+    <speech>Noun</speech>
+    <sentence> He wrote down her name in the notebook.</sentence>
+  </word>
+  <word pinyin="sh&#x16B;">
+    <hanzi>&#x4E66;</hanzi>
+    <definition>book</definition>
+    <speech>Noun</speech>
+    <sentence>She gave me a book for Christmas.</sentence>
+  </word>
+  <word pinyin="H&#xE0;ny&#x1D4;">
+    <hanzi>&#x6C49;&#x8BED;</hanzi>
+    <definition>mandarin Chinese</definition>
+    <speech>Noun</speech>
+    <sentence>Chinese vases are disposed around the gallery. </sentence>
+  </word>
+  <word pinyin="z&#xEC;">
+    <hanzi>&#x5B57;</hanzi>
+    <definition>character</definition>
+    <speech>Noun</speech>
+    <sentence> It was totally out of character for her.</sentence>
+  </word>
+  <word pinyin="zhu&#x14D;zi">
+    <hanzi>&#x684C;&#x5B50;</hanzi>
+    <definition>desk/table</definition>
+    <speech>Noun</speech>
+    <sentence>They were sitting at the dining table.</sentence>
+  </word>
+  <word pinyin="y&#x1D0;zi">
+    <hanzi>&#x6905;&#x5B50;</hanzi>
+    <definition>chair</definition>
+    <speech>Noun</speech>
+    <sentence> He leaned forward in his chair.</sentence>
+  </word>
+  <word pinyin="xi&#xE8;xie">
+    <hanzi>&#x8C22;&#x8C22;</hanzi>
+    <definition>thank you</definition>
+    <speech>Verb</speech>
+    <sentence>Thank you very much for your support.</sentence>
+  </word>
+  <word pinyin="z&#xE0;iji&#xE0;n">
+    <hanzi>&#x518D;&#x89C1;</hanzi>
+    <definition>good-bye</definition>
+    <speech>Verb</speech>
+    <sentence>I will never say goodbye to her.</sentence>
+  </word>
+  <word pinyin="b&#xFA;k&#xE8;q&#xEC;">
+    <hanzi>&#x4E0D;&#x5BA2;&#x6C14;</hanzi>
+    <definition>you are welcome</definition>
+    <speech>Verb</speech>
+    <sentence>you are welcome to join us.</sentence>
+  </word>
+  <word pinyin="q&#x1D0;ng">
+    <hanzi>&#x8BF7;</hanzi>
+    <definition>please</definition>
+    <speech>Verb</speech>
+    <sentence>He joined the football team to please his father. </sentence>
+  </word>
+  <word pinyin="du&#xEC;b&#xF9;q&#x1D0;">
+    <hanzi>&#x5BF9;&#x4E0D;&#x8D77;</hanzi>
+    <definition>sorry</definition>
+    <speech>Verb</speech>
+    <sentence>She was sorry to hear about their divorce.</sentence>
+  </word>
+  <word pinyin="m&#xE9;igu&#x101;nx&#xEC;">
+    <hanzi>&#x6CA1;&#x5173;&#x7CFB;</hanzi>
+    <definition>It doesn&#x2019;t matter</definition>
+    <speech>Verb</speech>
+    <sentence>. I don't know that, but it doesn't matter. </sentence>
+  </word>
+  <word pinyin="sh&#xEC;">
+    <hanzi>&#x662F;</hanzi>
+    <definition>be (am, is, are)</definition>
+    <speech>Verb</speech>
+    <sentence>He assumed that the train would be on time.</sentence>
+  </word>
+  <word pinyin="y&#x1D2;u">
+    <hanzi>&#x6709;</hanzi>
+    <definition>have</definition>
+    <speech>Noun</speech>
+    <sentence> I have three dogs.</sentence>
+  </word>
+  <word pinyin="k&#xE0;n">
+    <hanzi>&#x770B;</hanzi>
+    <definition>look</definition>
+    <speech>Verb</speech>
+    <sentence> I promise you I'll look after you. </sentence>
+  </word>
+  <word pinyin="t&#x12B;ng">
+    <hanzi>&#x542C;</hanzi>
+    <definition>listen</definition>
+    <speech>Verb</speech>
+    <sentence>I tried to listen to him carefully. </sentence>
+  </word>
+  <word pinyin="shu&#x14D;hu&#xE0;">
+    <hanzi>&#x8BF4;&#x8BDD;</hanzi>
+    <definition>speak</definition>
+    <speech>Verb</speech>
+    <sentence>I started to speak but she shushed me.</sentence>
+  </word>
+  <word pinyin="xi&#x11B;">
+    <hanzi>&#x5199;</hanzi>
+    <definition>write</definition>
+    <speech>Verb</speech>
+    <sentence>I'll write something every day.</sentence>
+  </word>
+  <word pinyin="k&#xE0;nji&#xE0;n">
+    <hanzi>&#x770B;&#x89C1;</hanzi>
+    <definition>see</definition>
+    <speech>Verb</speech>
+    <sentence>I could see nobody there. </sentence>
+  </word>
+  <word pinyin="&#x53EB;">
+    <hanzi>ji&#xE0;o</hanzi>
+    <definition>call</definition>
+    <speech>Verb</speech>
+    <sentence> She asked him to call her later</sentence>
+  </word>
+  <word pinyin="d&#xFA;">
+    <hanzi>&#x8BFB;</hanzi>
+    <definition>read</definition>
+    <speech>Verb</speech>
+    <sentence> He can read English easily. </sentence>
+  </word>
+  <word pinyin="l&#xE1;i">
+    <hanzi>&#x6765;</hanzi>
+    <definition>come</definition>
+    <speech>Verb</speech>
+    <sentence>Come and visit us in Paris sometime soon.</sentence>
+  </word>
+  <word pinyin="hu&#xED;">
+    <hanzi>&#x56DE;</hanzi>
+    <definition>return</definition>
+    <speech>Verb</speech>
+    <sentence>I have something to return to you.</sentence>
+  </word>
+  <word pinyin="q&#xF9;">
+    <hanzi>&#x53BB;</hanzi>
+    <definition>go</definition>
+    <speech>Verb</speech>
+    <sentence> I didn't go to school yesterday.</sentence>
+  </word>
+  <word pinyin="ch&#x12B;">
+    <hanzi>&#x5403;</hanzi>
+    <definition>eat</definition>
+    <speech>Verb</speech>
+    <sentence>Let's go out and eat dinner together</sentence>
+  </word>
+  <word pinyin="h&#x113;">
+    <hanzi>&#x559D;</hanzi>
+    <definition>drink</definition>
+    <speech>Verb</speech>
+    <sentence>She drink from a tall glass.</sentence>
+  </word>
+  <word pinyin="shu&#xEC;ji&#xE0;o">
+    <hanzi>&#x7761;&#x89C9;</hanzi>
+    <definition>sleep</definition>
+    <speech>Verb</speech>
+    <sentence>I just need to get some sleep.</sentence>
+  </word>
+  <word pinyin="d&#x1CE; di&#xE0;nhu&#xE0;">
+    <hanzi>&#x6253;&#x7535;&#x8BDD;</hanzi>
+    <definition>call up</definition>
+    <speech>Verb</speech>
+    <sentence>OK, I'll call up again later.</sentence>
+  </word>
+  <word pinyin="zu&#xF2;">
+    <hanzi>&#x505A;</hanzi>
+    <definition>do</definition>
+    <speech>Verb</speech>
+    <sentence> I have a lot of work to do.</sentence>
+  </word>
+  <word pinyin="m&#x1CE;i/m&#xE0;i">
+    <hanzi>&#x4E70;/&#x5356;</hanzi>
+    <definition>buy/sell</definition>
+    <speech>Verb</speech>
+    <sentence>She wants to buy a car.</sentence>
+  </word>
+  <word pinyin="k&#x101;i">
+    <hanzi>&#x5F00;</hanzi>
+    <definition>open</definition>
+    <speech>Verb</speech>
+    <sentence>It was open, so I came in. </sentence>
+  </word>
+  <word pinyin="&#x5750;">
+    <hanzi>zuo</hanzi>
+    <definition>sit</definition>
+    <speech>Verb</speech>
+    <sentence>Are you going to sit there?</sentence>
+  </word>
+  <word pinyin="zh&#xF9;">
+    <hanzi>&#x4F4F;</hanzi>
+    <definition>live</definition>
+    <speech>Verb</speech>
+    <sentence> I live in this house by myself. </sentence>
+  </word>
+  <word pinyin="xu&#xE9;x&#xED;">
+    <hanzi>&#x5B66;&#x4E60;</hanzi>
+    <definition>study</definition>
+    <speech>Verb</speech>
+    <sentence>He devoted his life to his study.</sentence>
+  </word>
+  <word pinyin="g&#x14D;ngzu&#xF2;">
+    <hanzi>&#x5DE5;&#x4F5C;</hanzi>
+    <definition>work</definition>
+    <speech>Verb</speech>
+    <sentence>I'll have to work overtime.</sentence>
+  </word>
+  <word pinyin="xi&#xE0;y&#x1D4;">
+    <hanzi>&#x4E0B;&#x96E8;</hanzi>
+    <definition>rain</definition>
+    <speech>Verb</speech>
+    <sentence>The rain on the roof was soothing.</sentence>
+  </word>
+  <word pinyin="&#xE0;i">
+    <hanzi>&#x7231;</hanzi>
+    <definition>love</definition>
+    <speech>Verb</speech>
+    <sentence>She fell in love with him the first time she met him.</sentence>
+  </word>
+  <word pinyin="x&#x1D0;hu&#x101;n">
+    <hanzi>&#x559C;&#x6B22;</hanzi>
+    <definition>love, like</definition>
+    <speech>Verb</speech>
+    <sentence> I'd like to see your sister.</sentence>
+  </word>
+  <word pinyin="xi&#x1CE;ng">
+    <hanzi>&#x60F3;</hanzi>
+    <definition>want</definition>
+    <speech>Verb</speech>
+    <sentence> I want to spend more time doing things that matter.</sentence>
+  </word>
+  <word pinyin="r&#xE8;nshi">
+    <hanzi>&#x8BA4;&#x8BC6;</hanzi>
+    <definition>know</definition>
+    <speech>Verb</speech>
+    <sentence>I don't know much about art.</sentence>
+  </word>
+  <word pinyin="hu&#xEC;">
+    <hanzi>&#x4F1A;</hanzi>
+    <definition>can</definition>
+    <speech>Verb</speech>
+    <sentence>I can take care of myself. </sentence>
+  </word>
+  <word pinyin="n&#xE9;ng">
+    <hanzi>&#x80FD;</hanzi>
+    <definition>can, be able to</definition>
+    <speech>Verb</speech>
+    <sentence>The older child should be able to prepare a simple meal.</sentence>
+  </word>
+  <word pinyin="h&#x1CE;o">
+    <hanzi>&#x597D;</hanzi>
+    <definition>good</definition>
+    <speech>Adjective</speech>
+    <sentence> She's as good a cook as her mother. </sentence>
+  </word>
+  <word pinyin="d&#xE0;">
+    <hanzi>&#x5927;</hanzi>
+    <definition>big</definition>
+    <speech>Adjective</speech>
+    <sentence>Your dog is very big.</sentence>
+  </word>
+  <word pinyin="xi&#x1CE;o">
+    <hanzi>&#x5C0F;</hanzi>
+    <definition>small</definition>
+    <speech>Adjective</speech>
+    <sentence> The desk is too small for Meg.</sentence>
+  </word>
+  <word pinyin="du&#x14D;">
+    <hanzi>&#x591A;</hanzi>
+    <definition>many, much</definition>
+    <speech>Adjective</speech>
+    <sentence>You may talk as much as you like.</sentence>
+  </word>
+  <word pinyin="sh&#x1CE;o">
+    <hanzi>&#x5C11;</hanzi>
+    <definition>few, little</definition>
+    <speech>Adjective</speech>
+    <sentence> I went to bed a little later than usual.</sentence>
+  </word>
+  <word pinyin="l&#x11B;ng">
+    <hanzi>&#x51B7;</hanzi>
+    <definition>cold</definition>
+    <speech>Adjective</speech>
+    <sentence>Let's get in out of this cold wind. </sentence>
+  </word>
+  <word pinyin="r&#xE8;">
+    <hanzi>&#x70ED;</hanzi>
+    <definition>hot</definition>
+    <speech>Adjective</speech>
+    <sentence> Her face felt hot again.</sentence>
+  </word>
+  <word pinyin="g&#x101;ox&#xEC;ng">
+    <hanzi>&#x9AD8;&#x5174;</hanzi>
+    <definition>happy</definition>
+    <speech>Adjective</speech>
+    <sentence>She had a very happy childhood.</sentence>
+  </word>
+  <word pinyin="pi&#xE0;oli&#xE0;ng">
+    <hanzi>&#x6F02;&#x4EAE;</hanzi>
+    <definition>beautiful</definition>
+    <speech>Adjective</speech>
+    <sentence>It's such a beautiful day. </sentence>
+  </word>
 </words>

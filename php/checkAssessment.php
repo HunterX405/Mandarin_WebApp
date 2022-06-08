@@ -65,7 +65,7 @@
     }else{
         $scoreElement->setAttribute("user",$_SESSION['user']);
     }
-    $scoreElement->setAttribute("date",date("Y/m/d"));
+    $scoreElement->setAttribute("date",date("m/d/Y"));
 
     $xml2->getElementsByTagName("scores")->item(0)->appendChild($scoreElement);
 

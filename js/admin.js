@@ -75,7 +75,7 @@ $(document).ready(function(){
             success: function (response) {
                 const responseObj = JSON.parse(response);
                 responseObj.forEach(user => {
-                    tableHtml += "<tr><td>"+user.name+"</td>";
+                    tableHtml += "<tr class='trHover'><td>"+user.name+"</td>";
                     tableHtml += "<td>"+user.email+"</td>";
                     tableHtml += "<td>"+user.address+"</td>";
                     tableHtml += "<td>"+user.school+"</td>";
@@ -324,13 +324,18 @@ $(document).ready(function(){
                 $("#lessonsPage").show(100);
             }else{
                 $(activeWindow).fadeOut(100, function(){
+                    if(!sidebarEnabled){
+                        $("#addTopicForm, #editTopicForm").hide();
+                        $("#viewLessons").show();
+                        sidebarEnabled = true;
+                    }
                     $("#lessonsPage").show(100); 
                 });
             }
-            activeWindow = "#lessonsPage";
             $("#sidebar").css("margin-left", "100px");
             $(".lessonPane").css("margin-left", "calc(170px + 3vw)");
             sidebarState = true;
+            activeWindow = "#lessonsPage";
         }else{
             if(!sidebarState && sidebarEnabled){
                 $("#sidebar").css("margin-left", "100px");
@@ -1207,7 +1212,7 @@ $(document).ready(function(){
             success: function (response) {
                 const responseObj = JSON.parse(response);
                 responseObj.forEach(element => {
-                    var rowHtml = "<tr>";
+                    var rowHtml = "<tr class='trHover'>";
                     rowHtml += "<td>"+element.title+"</td>";
                     rowHtml += "<td>"+element.items+"</td>";
                     rowHtml += "<td>"+element.questionsCount+"</td>";
@@ -1228,6 +1233,8 @@ $(document).ready(function(){
                     $("#assessmentPage").show(100);
                 }else{
                     $(activeWindow).fadeOut(100, function(){
+                        $("#addAssessmentForm, #editAssessmentForm").hide();
+                        $("#viewAssessments").show();
                         activeWindow = "#assessmentPage";
                         $("#assessmentPage").show(100);
                     });
@@ -1761,7 +1768,7 @@ $(document).ready(function(){
             success: function (response) {
                 const responseObj = JSON.parse(response);
                 responseObj.forEach(element => {
-                    var rowHtml = "<tr>";
+                    var rowHtml = "<tr class='trHover'>";
                     rowHtml += "<td>"+element.title+"</td>";
                     rowHtml += "<td>"+element.items+"</td>";
                     rowHtml += "<td>"+element.questionsCount+"</td>";
@@ -1782,6 +1789,8 @@ $(document).ready(function(){
                     $("#mockTestPage").show(100);
                 }else{
                     $(activeWindow).fadeOut(100, function(){
+                        $("#addMockTestForm, #editMockTestForm").hide();
+                        $("#viewMockTest").show();
                         activeWindow = "#mockTestPage";
                         $("#mockTestPage").show(100);
                     });
@@ -2304,6 +2313,12 @@ $(document).ready(function(){
 // REPORTS PAGE ==================================================================================================================================================================
 
     $("#reportsBtn").click(function () { 
+        $(".dateRange").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            minDate: "-150Y",
+            maxDate: "+0M +0D +0Y"
+        });
         if(activeWindow != "#reportsPage"){
             $( ".checkRadio" ).checkboxradio({
                 icon: false
@@ -2321,6 +2336,55 @@ $(document).ready(function(){
         }
         
     });
+
+    $("#generateReport").click(function () { 
+        var reportData = $("#reportData").val(),
+        reportFilter = $(".reportFilter:checked").val(),
+        startDate = "", endDate="";
+        var date = new Date();
+        if(reportFilter == "DAY"){
+            startDate = $.datepicker.formatDate('mm/dd/yy',date);
+            endDate = startDate;
+        }else if(reportFilter == "WEEK"){
+            startDate = $.datepicker.formatDate('mm/dd/yy',new Date(date.getFullYear(), date.getMonth(), date.getDate() - 3));
+            endDate = $.datepicker.formatDate('mm/dd/yy',new Date(date.getFullYear(), date.getMonth(), date.getDate() + 3));
+        }else if(reportFilter == "MONTH"){
+            startDate = $.datepicker.formatDate('mm/dd/yy',new Date(date.getFullYear(), date.getMonth(), 1));
+            endDate = $.datepicker.formatDate('mm/dd/yy',new Date(date.getFullYear(), date.getMonth() + 1, 0));
+        }else{
+            if($("#startDate").val() == ""){
+                $("#errorDialog p").append("Start Date is required.");
+                $("#errorDialog").dialog("open");   
+            }else if($("#endDate").val() == ""){
+                $("#errorDialog p").append("End Date is required.");
+                $("#errorDialog").dialog("open");
+            }else if($("#startDate").val() > $("#endDate").val()){
+                $("#errorDialog p").append("Start Date cannot be greater than End Date.");
+                $("#errorDialog").dialog("open");
+            }else{
+                startDate = $("#startDate").val();
+                endDate = $("#endDate").val();
+            }
+        }
+
+        $.ajax({
+            type: "post",
+            url: "./php/generateReport.php",
+            data: {
+                info: reportData,
+                start: startDate,
+                end: endDate
+            },
+            beforeSend: function(){
+                $("#reportsTable").fadeOut(100);
+            },
+            success: function (response) {
+                $("#reportsTable").html(response);
+                $("#reportsTable").fadeIn(100);
+            }
+        });
+    });
+
 
 // SETTINGS PAGE ==================================================================================================================================================================
     //Populate admin details in profile page

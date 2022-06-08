@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<assessment title="MOCK TEST" items="20">
+    <question type="truefalse" id="1">
+      <text>TRUE IF THE WORD DESCRIBE THE PICTURE, FALSE IF ITS NOT</text>
+      <image>images/H1_21.jpg</image>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="2">
+      <text>TRUE IF THE WORD DESCRIBE THE PICTURE, FALSE IF ITS NOT</text>
+      <image>images/H1_22.jpg</image>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="3">
+      <text>TRUE IF THE WORD DESCRIBE THE PICTURE, FALSE IF ITS NOT</text>
+      <image>images/H1_23.jpg</image>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="4">
+      <text>TRUE IF THE WORD DESCRIBE THE PICTURE, FALSE IF ITS NOT</text>
+      <image>images/H1_24.jpg</image>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="5">
+      <text>TRUE IF THE WORD DESCRIBE THE PICTURE, FALSE IF ITS NOT</text>
+      <image>images/H1_25.jpg</image>
+      <answer>True</answer>
+    </question>
+    <question type="identify" id="6">
+      <text>Translate the picture into mandarin sentence</text>
+      <image>images/H1-26.JPG</image>
+      <answer>&#x4F60;&#x597D;&#x6211;&#x80FD;&#x5403;&#x4E00;&#x5757;&#x513F;&#x5417;</answer>
+      <answer>N&#x1D0; h&#x1CE;o w&#x1D2; n&#xE9;ng ch&#x12B; y&#xED; ku&#xE0;ir  ma&#xFF1F;</answer>
+    </question>
+    <question type="identify" id="7">
+      <text>Translate the picture into mandarin sentence</text>
+      <image>images/H1-27.JPG</image>
+      <answer>&#x4ED6;&#x4EEC;&#x5728;&#x4E70;&#x8863;&#x670D;&#x5462;</answer>
+      <answer>T&#x101;men z&#xE0;i  m&#x1CE;i  y&#x12B;fu ne.</answer>
+    </question>
+    <question type="identify" id="8">
+      <text>Translate the picture into mandarin sentence</text>
+      <image>images/H1-28.JPG</image>
+      <answer>&#x5929;&#x6C14;&#x592A;&#x70ED;&#x4E86; &#x591A;&#x5403;&#x4E9B;&#x6C34;&#x679C;</answer>
+      <answer> Ti&#x101;nq&#xEC; t&#xE0;i  r&#xE8; le du&#x14D;  ch&#x12B; xi&#x113; shu&#x1D0;gu&#x1D2;</answer>
+    </question>
+    <question type="identify" id="9">
+      <text>Translate the picture into mandarin sentence</text>
+      <image>images/H1-29.JPG</image>
+      <answer>&#x6765; &#x6211;&#x4EEC;&#x770B;&#x91CC;&#x9762;&#x662F;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;</answer>
+      <answer> L&#xE1;i w&#x1D2;men k&#xE0;nkan l&#x1D0;mi&#xE0;n sh&#xEC; sh&#xE9;nme d&#x14D;ngxi</answer>
+    </question>
+    <question type="identify" id="10">
+      <text>Translate the picture into mandarin sentence</text>
+      <image>images/H1-30.JPG</image>
+      <answer>&#x5582; &#x4F60;&#x7761;&#x89C9;&#x4E86;&#x5417;</answer>
+      <answer> W&#xE9;i n&#x1D0;  shu&#xEC;ji&#xE0;o  le  ma</answer>
+    </question>
+    <question type="multiple" id="11">
+      <text>&#x90A3;&#x4E2A;&#x4EBA;&#x662F;&#x8C01;&#xFF1F;(  N&#xE0;ge  r&#xE9;n sh&#xEC; sh&#xE9;i&#xFF1F;)</text>
+      <image/>
+      <choice>&#x533B;&#x9662;( Y&#x12B;yu&#xE0;n)</choice>
+      <choice>&#x4E0B;&#x96E8;&#x4E86;(Xi&#xE0; y&#x1D4; le)</choice>
+      <choice>&#x6211;&#x4E0D;&#x8BA4;&#x8BC6;&#x5979;( W&#x1D2; b&#xFA; r&#xE8;nshi t&#x101;&#xFF0E;)</choice>
+      <choice>7&#x5C81;(su&#xEC;)</choice>
+      <answer>&#x6211;&#x4E0D;&#x8BA4;&#x8BC6;&#x5979;( W&#x1D2; b&#xFA; r&#xE8;nshi t&#x101;&#xFF0E;)</answer>
+    </question>
+    <question type="multiple" id="12">
+      <text>&#x4ED6;&#x5973;&#x513F;&#x591A;&#x5927;&#x4E86;( T&#x101;  n&#x1DA;'&#xE9;r du&#x14D; d&#xE0;  le&#xFF1F;)</text>
+      <image/>
+      <choice>7&#x5C81;(su&#xEC;)</choice>
+      <choice>&#x533B;&#x9662;( Y&#x12B;yu&#xE0;n)</choice>
+      <choice>&#x4E0B;&#x96E8;&#x4E86;(Xi&#xE0; y&#x1D4; le)</choice>
+      <choice>&#x597D;&#x7684;&#xFF0C;&#x8C22;&#x8C22;( H&#x1CE;o de&#xFF0C; xi&#xE8;xie!)</choice>
+      <answer>7&#x5C81;(su&#xEC;)</answer>
+    </question>
+    <question type="multiple" id="13">
+      <text>&#x4F60;&#x7684;&#x540C;&#x5B66;&#x5728;&#x54EA;&#x513F;&#x5DE5;&#x4F5C;?( N&#x1D0; de t&#xF3;ngxu&#xE9; z&#xE0;i n&#x1CE;r g&#x14D;ngzu&#xF2;&#xFF1F;)</text>
+      <image/>
+      <choice>&#x4E0B;&#x4E2A;&#x6708;( Xi&#xE0; ge yu&#xE8; )</choice>
+      <choice>&#x6211;&#x4E0D;&#x8BA4;&#x8BC6;&#x5979;( W&#x1D2; b&#xFA; r&#xE8;nshi t&#x101;&#xFF0E;)</choice>
+      <choice>&#x4E0B;&#x96E8;&#x4E86;(Xi&#xE0; y&#x1D4; le)</choice>
+      <choice>&#x533B;&#x9662;( Y&#x12B;yu&#xE0;n)</choice>
+      <answer>&#x533B;&#x9662;( Y&#x12B;yu&#xE0;n)</answer>
+    </question>
+    <question type="multiple" id="14">
+      <text>&#x6628;&#x5929;&#x4E0A;&#x5348;&#x5929;&#x6C14;&#x600E;&#x4E48;&#x6837;&#xFF1F;(Zu&#xF3;ti&#x101;n sh&#xE0;ngw&#x1D4; ti&#x101;nq&#xEC; z&#x11B;nmey&#xE0;ng&#xFF1F;)</text>
+      <image/>
+      <choice>7&#x5C81;(su&#xEC;)</choice>
+      <choice>&#x4E0B;&#x96E8;&#x4E86;(Xi&#xE0; y&#x1D4; le)</choice>
+      <choice>&#x4E0B;&#x4E2A;&#x6708;( Xi&#xE0; ge yu&#xE8; )</choice>
+      <choice>&#x597D;&#x7684;&#xFF0C;&#x8C22;&#x8C22;( H&#x1CE;o de&#xFF0C; xi&#xE8;xie!)</choice>
+      <answer>&#x4E0B;&#x96E8;&#x4E86;(Xi&#xE0; y&#x1D4; le)</answer>
+    </question>
+    <question type="multiple" id="15">
+      <text>&#x7238;&#x7238;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x6765;&#x5317;&#x4EAC;&#x5462;&#xFF1F;(B&#xE0;ba sh&#xE9;nme sh&#xED;hou l&#xE1;i B&#x11B;ij&#x12B;ng  ne&#xFF1F;)</text>
+      <image/>
+      <choice>&#x597D;&#x7684;&#xFF0C;&#x8C22;&#x8C22;( H&#x1CE;o de&#xFF0C; xi&#xE8;xie!)</choice>
+      <choice>7&#x5C81;(su&#xEC;)</choice>
+      <choice>&#x4E0B;&#x4E2A;&#x6708;( Xi&#xE0; ge yu&#xE8; )</choice>
+      <choice>&#x4E0B;&#x96E8;&#x4E86;(Xi&#xE0; y&#x1D4; le)</choice>
+      <answer>&#x4E0B;&#x4E2A;&#x6708;( Xi&#xE0; ge yu&#xE8; )</answer>
+    </question>
+    <question type="multiple" id="16">
+      <text>Complete the sentence. &#x6628;&#x5929;&#x662F; 8 ( )19&#x65E5;( Zu&#xF3;ti&#x101;n sh&#xEC; ()   r&#xEC;)</text>
+      <image/>
+      <choice>&#x5750;zu&#xF2;</choice>
+      <choice>&#x524D;&#x9762;qi&#xE1;nmi&#xE0;n</choice>
+      <choice> &#x6CA1; &#x5173;&#x7CFB;m&#xE9;i gu&#x101;nxi</choice>
+      <choice>&#x6708;yu&#xE8;</choice>
+      <answer>&#x6708;yu&#xE8;</answer>
+    </question>
+    <question type="multiple" id="17">
+      <text>Complete the sentence. &#x90A3;&#x4E2A;&#x996D;&#x9986;&#x513F;&#x5728;&#x706B;&#x8F66;&#x7AD9;( ) (  N&#xE0;ge  f&#xE0;ngu&#x1CE;nr z&#xE0;i hu&#x1D2;ch&#x113;zh&#xE0;n)</text>
+      <image/>
+      <choice>&#x524D;&#x9762;qi&#xE1;nmi&#xE0;n</choice>
+      <choice>&#x6CA1; &#x5173;&#x7CFB;m&#xE9;i gu&#x101;nxi</choice>
+      <choice>&#x540D;&#x5B57;m&#xED;ngzi</choice>
+      <choice>&#x6C49;&#x8BED;H&#xE0;ny&#x1D4;</choice>
+      <answer>&#x524D;&#x9762;qi&#xE1;nmi&#xE0;n</answer>
+    </question>
+    <question type="multiple" id="18">
+      <text>Complete the sentence. &#x4F60;&#x4F1A;&#x8BF4;( )&#x5417;? ( N&#x1D0; hu&#xEC; shu&#x14D; () ma&#xFF1F;)</text>
+      <image/>
+      <choice>&#x5750;zu&#xF2;</choice>
+      <choice>&#x524D;&#x9762;qi&#xE1;nmi&#xE0;n</choice>
+      <choice>&#x6CA1; &#x5173;&#x7CFB;m&#xE9;i gu&#x101;nxi</choice>
+      <choice>&#x6C49;&#x8BED;H&#xE0;ny&#x1D4;</choice>
+      <answer>&#x6C49;&#x8BED;H&#xE0;ny&#x1D4;</answer>
+    </question>
+    <question type="multiple" id="19">
+      <text>&#x7537;: &#x4F60;&#x597D;&#xFF0C;&#x738B;&#x5148;&#x751F;&#x5728;&#x5417;? ( N&#x1D0;  h&#x1CE;o! W&#xE1;ng xi&#x101;nsheng z&#xE0;i ma&#xFF1F;)</text>
+      <image/>
+      <choice>&#x5750;zu&#xF2;</choice>
+      <choice>&#x6708;yu&#xE8;</choice>
+      <choice>&#x6C49;&#x8BED;H&#xE0;ny&#x1D4;</choice>
+      <choice>&#x540D;&#x5B57;m&#xED;ngzi</choice>
+      <answer>&#x5750;zu&#xF2;</answer>
+    </question>
+    <question type="multiple" id="20">
+      <text>&#x5973;: &#x5BF9;&#x4E0D;&#x8D77;, &#x6211;&#x4E0D;&#x4F1A;&#x505A;&#x996D;( Du&#xEC;buq&#x1D0;&#xFF0C;  w&#x1D2;    b&#xFA;    hu&#xEC;   zu&#xF2; f&#xE0;n)</text>
+      <image/>
+      <choice>&#x540D;&#x5B57;m&#xED;ngzi</choice>
+      <choice>&#x6C49;&#x8BED;H&#xE0;ny&#x1D4;</choice>
+      <choice>&#x524D;&#x9762;qi&#xE1;nmi&#xE0;n</choice>
+      <choice>&#x6708;yu&#xE8;</choice>
+      <answer>&#x524D;&#x9762;qi&#xE1;nmi&#xE0;n</answer>
+    </question>
+  </assessment>

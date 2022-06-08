@@ -80,10 +80,9 @@
     
     <div class="container_right">
       <h1> WELCOME TO SUI ACADEMIA </h1>
-      <h2> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <h2 id="caption_sub"> Inspired by the Sui Dynasty in China, we provide quality and superior education for everyone. 
+        In Sui Academia, you can learn Mandarin with accuracy and precision. We offer bite-sized lessons, detailed assessments, 
+        a basic mandarin dictionary, and mock tests based on HSK 1 and 2.
       </h2>
     </div>
   </body>

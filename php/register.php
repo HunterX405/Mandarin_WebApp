@@ -72,6 +72,7 @@
         $user->setAttribute("username", $regUname);
         $user->setAttribute("email", $regEmail);
         $user->setAttribute("access", "student");
+        $user->setAttribute("regDate", date("m/d/Y"));
 
         $firstName = $xml->createElement("firstName", $regFname);
         $middleName = $xml->createElement("middleName", $regMname);
@@ -108,7 +109,7 @@
         $xmlLog->formatOutput = true;
         $xmlLog->load("activity.xml"); 
 
-        $log = $xmlLog->createElement("log","New User-".$regUname." signed up");
+        $log = $xmlLog->createElement("log","New User ".$regUname." signed up");
         $log->setAttribute("type","NEW USER");
         $log->setAttribute("date",date("m/d/Y"));
         

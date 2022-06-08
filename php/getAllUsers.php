@@ -22,8 +22,8 @@
 
     //Find User Account
     foreach($xml->children() as $user){
-        // Filter out admin account/s
-        if($user['access'] == "student"){
+        // Filter out current admin account
+        if($user['username'] != $_SESSION['admin'] && $user['email'] != $_SESSION['admin']){
             $userRow = array();
 
             $fname = (string) $user->name->firstName;

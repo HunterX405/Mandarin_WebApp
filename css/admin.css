@@ -30,7 +30,7 @@ body {
     height: 100%; 
     flex: 1;
     width: 100px; 
-    background-color:#f1787c;
+    background-color:#1d6968;
     overflow-x: hidden;
     overflow-y: scroll;
     position: fixed;
@@ -46,7 +46,7 @@ body {
 }
 
 .menu_categories:hover{
-    background-color: #da5055;
+    background-color: #125756;
 }
 
 
@@ -107,8 +107,9 @@ body {
     font-family: 'Dosis', sans-serif;
     font-size: calc(10px + 1vw);
     color: #000000;
-    padding: 0;
-    margin: 0;
+    padding: 0 0 0 0;
+    line-height: 2;
+    margin: 0 0 15px 0;
 }
 
 
@@ -120,6 +121,10 @@ body {
 /* USERS PAGE ---------------------------------------------------------------------------- */
 #usersPage {
     display: none;
+}
+
+#usersTable td:nth-child(6) {
+    width: 5%;
 }
 
 
@@ -138,7 +143,7 @@ body {
         z-index: 1;
         top: 0;
         left: 0;
-        background-color: #7ea5a4;
+        background-color: #f1787c;
         overflow-x: hidden;
         transition: 0.5s;
     }
@@ -160,11 +165,11 @@ body {
     }
     
     #sidebar p:hover {
-        background-color:#bfe2e1;
+        background-color:#f5a7aa;
     }
 
     .active {
-        background-color: #1d6968;
+        background-color: #c05357;
         color:white;
     }
 
@@ -226,6 +231,11 @@ body {
         border: 1px solid black;
     }
 
+    .ui-state-active, .ui-widget-content .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+        background: #c05357;
+        border: 1px solid #c05357;
+    }
+
     /* DELETE LESSON -------------------------------------------*/
     .lessonDeleteBtn {
         background: url("images/delete.avif") no-repeat center;
@@ -247,7 +257,7 @@ body {
         color: #000000;
         text-transform: uppercase;
         border-radius: 15px;
-        border: 2px solid #1d6968; 
+        border: 2px solid #c05357; 
         margin: 20px 10% 0 10%;  
     }
 
@@ -410,6 +420,10 @@ body {
         width: 20%;
     }
 
+    .trHover:hover{
+        background-color: #f1787c56 !important;
+    }
+
     tr:nth-child(even){
         background-color: #f0e3d7;
     }
@@ -485,7 +499,12 @@ body {
 
 .group {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
+    justify-content: flex-start;
+}
+
+.groupAddQuestion {
     justify-content: center;
 }
 
@@ -502,6 +521,34 @@ body {
     margin: 0;
 }
 
+#toAddAssessmentBtn, #cancelAddAssessmentBtn, 
+#toAddMockTestBtn, #toAddWordBtn, 
+#cancelAddMocktestBtn{
+    background: #eae8e1;
+    color: #000000;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: 2px solid #f1787c;
+}
+
+#toAddAssessmentBtn:hover, #cancelAddAssessmentBtn:hover, 
+#toAddMockTestBtn:hover, #toAddWordBtn:hover,
+#cancelAddMocktestBtn:hover{ 
+    background: #d2cec0;
+}
+
+#addAssessmentBtn, #addMockTestBtn{
+    background: #f1787c;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: none;
+}
+
+#addAssessmentBtn:hover, #addMockTestBtn:hover{
+    background: #da5055;
+}
+
 
 /* MOCK TEST PAGE -----------------------------------------------------------------------*/
 #mockTestPage, #addMockTestForm, #editMockTestForm{
@@ -515,6 +562,22 @@ body {
 /* REPORTS PAGE -----------------------------------------------------------------------*/
 #reportsPage {
     display: none;
+}
+
+#generateReport{
+    background: #7ea5a4;
+    color: #ffffff;
+    text-transform: uppercase;
+    border: 2px solid #000000;
+
+}
+
+#generateReport:hover{
+    background: #1d6968;
+    color: #ffffff;
+    text-transform: uppercase;
+    border: 2px solid #000000;
+
 }
 
 

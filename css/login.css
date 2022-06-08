@@ -1,7 +1,7 @@
 html {
     height: 100%;
     visibility: hidden;
-    overflow: hidden;
+    overflow-y: scroll;
 }
 body {
     min-height: 100%;
@@ -89,6 +89,7 @@ h2{
     font-size: 1.2vw;
     font-weight: 600;
     color: #ffffff;
+    line-height: 1.6;
 }
 
 .login_option{

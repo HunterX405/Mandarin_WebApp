@@ -234,4 +234,507 @@
   <log type="RESTORE USER" date="06/07/2022">Admin user restored test@gmail.com Account.</log>
   <log type="RESTORE USER" date="06/07/2022">Admin user restored archivetest5@gmail.com Account.</log>
   <log type="DELETE USER" date="06/07/2022">Admin user deleted user archivetest5@gmail.com Account</log>
+  <log type="UPDATE PROFILE" date="06/07/2022">Admin webadmin updated his/her account</log>
+  <log type="CHANGE PASSWORD" date="06/07/2022">Admin webadmin changed his/her password</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/07/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/07/2022">Admin webadmin Logged In</log>
+  <log type="LOGOUT" date="06/07/2022">Admin webadmin Logged Out</log>
+  <log type="NEW USER" date="06/07/2022">New User testadmin signed up</log>
+  <log type="LOGIN" date="06/07/2022">Admin testadmin Logged In</log>
+  <log type="NEW USER" date="06/07/2022">New User Vio signed up</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin testadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/07/2022">Admin testadmin Logged Out</log>
+  <log type="LOGIN" date="06/07/2022">Admin Vio Logged In</log>
+  <log type="LOGOUT" date="06/07/2022">Admin Vio Logged Out</log>
+  <log type="LOGIN" date="06/07/2022">Admin Vio Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin Vio viewed the dictionary</log>
+  <log type="ADD TOPIC" date="06/07/2022">Admin Vio added a topic titled HOW OLD ARE YOU in LESSON 3</log>
+  <log type="EDIT TOPIC" date="06/07/2022">Admin Vio edited a topic titled HOW OLD ARE YOU in LESSON 3</log>
+  <log type="EDIT TOPIC" date="06/07/2022">Admin Vio edited a topic titled HOW OLD ARE YOU in LESSON 3</log>
+  <log type="ADD TOPIC" date="06/07/2022">Admin Vio added a topic titled PETS in LESSON 3</log>
+  <log type="ADD TOPIC" date="06/07/2022">Admin Vio added a topic titled WELCOMING FOREIGNER in LESSON 3</log>
+  <log type="ADD TOPIC" date="06/07/2022">Admin Vio added a topic titled ORDERING IN STORES in LESSON 3</log>
+  <log type="ADD TOPIC" date="06/07/2022">Admin Vio added a topic titled FAMILY MEMBERS in LESSON 3</log>
+  <log type="ADD TOPIC" date="06/07/2022">Admin Vio added a topic titled WEATHER in LESSON 4</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin Vio viewed a topic titled OCCASSIONS in LESSON 4</log>
+  <log type="ADD TOPIC" date="06/07/2022">Admin Vio added a topic titled SEASONS in LESSON 4</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin Vio viewed the dictionary</log>
+  <log type="ADD ASSESSMENT" date="06/07/2022">Admin Vio added an assessment titled Lesson 4</log>
+  <log type="LOGIN" date="06/07/2022">Admin webadmin Logged In</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled PETS in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled WELCOMING FOREIGNER in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled ORDERING IN STORES in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled FAMILY MEMBERS in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled HOW OLD ARE YOU in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled PETS in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled WELCOMING FOREIGNER in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled ORDERING IN STORES in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled FAMILY MEMBERS in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled GREETINGS in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled PINYIN AND TONES in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/07/2022">Admin webadmin viewed a topic titled WORDS IN SCHOOL in LESSON 1</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/07/2022">Admin webadmin viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin webadmin started an assessment titled Lesson 4</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin webadmin started an assessment titled LESSON 1</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin webadmin edited an assessment titled LESSON 1</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin webadmin started an assessment titled LESSON 1</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin webadmin edited an assessment titled LESSON 1</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin webadmin started an assessment titled LESSON 1</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin webadmin started an assessment titled LESSON 2</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin webadmin edited an assessment titled LESSON 2</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin webadmin started an assessment titled LESSON 2</log>
+  <log type="EDIT ASSESSMENT" date="06/07/2022">Admin webadmin edited an assessment titled LESSON 2</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin webadmin started an assessment titled LESSON 2</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin webadmin started an assessment titled Lesson 4</log>
+  <log type="START ASSESSMENT" date="06/07/2022">Admin webadmin started an assessment titled Lesson 4</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="UPDATE PROFILE" date="06/08/2022">Admin webadmin updated his/her account</log>
+  <log type="LOGIN" date="06/08/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGIN" date="06/08/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/08/2022">Admin webadmin Logged Out</log>
+  <log type="NEW USER" date="06/08/2022">New User henrick405 signed up</log>
+  <log type="LOGIN" date="06/08/2022">User henrick405 Logged In</log>
+  <log type="LOGOUT" date="06/08/2022">User henrick405 Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">Admin webadmin Logged In</log>
+  <log type="START ASSESSMENT" date="06/08/2022">Admin webadmin started an assessment titled Lesson 4</log>
+  <log type="ASSESSMENT COMPLETE" date="06/08/2022">User webadmin completed an assessment titled Lesson 4 and got a score of 8/10</log>
+  <log type="START MOCK TEST" date="06/08/2022">Admin webadmin started a mock test titled LEVEL 1</log>
+  <log type="MOCK TEST COMPLETE" date="06/08/2022">User webadmin completed an mock test titled LEVEL 1 and got a score of 6/20</log>
+  <log type="NEW USER" date="06/08/2022">New User Drew signed up</log>
+  <log type="LOGIN" date="06/08/2022">User Drew Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">User Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">User Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">User Drew viewed the dictionary</log>
+  <log type="LOGOUT" date="06/08/2022">User Drew Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word qi&#xE1;nmi&#xE0;n/bian in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word h&#xF2;umi&#xE0;n/bian in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word l&#x1D0;mi&#xE0;n/bian in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word j&#x12B;nti&#x101;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word m&#xED;ngti&#x101;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word zu&#xF2;ti&#x101;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word sh&#xE0;ngw&#x1D4; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word zh&#x14D;ngw&#x1D4; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word xi&#xE0;w&#x1D4; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word ni&#xE1;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word yu&#xE8; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word r&#xEC;/hao in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word x&#x12B;ngq&#x12B; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word di&#x1CE;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word f&#x113;nzh&#x14D;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word xi&#xE0;nz&#xE0;i in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word sh&#xED;h&#xF3;u/shijian in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word b&#xE0;ba in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word m&#x101;ma in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word &#xE9;rzi in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word n&#x1DA;&#xE9;r in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word l&#x1CE;osh&#x12B; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word xu&#xE9;sh&#x113;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word t&#xF3;ngxu&#xE9; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word p&#xE9;ngy&#x1D2;u in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word y&#x12B;sh&#x113;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word xi&#x101;nsh&#x113;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word xi&#x1CE;oji&#x11B; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word y&#x12B;fu in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word shu&#x1D0; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word c&#xE0;i in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word m&#x1D0;f&#xE0;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word shu&#x1D0;gu&#x1D2; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word p&#xED;nggu&#x1D2; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word ch&#xE1; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word b&#x113;izi in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word qi&#xE1;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word f&#x113;ij&#x12B; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word ch&#x16B;z&#x16B;ch&#x113; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word di&#xE0;nsh&#xEC; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word di&#xE0;nn&#x1CE;o in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word di&#xE0;ny&#x1D0;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word ti&#x101;nq&#xEC; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word m&#x101;o in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word g&#x1D2;u in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word d&#x14D;ngx&#x12B; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word r&#xE9;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word m&#xED;ngzi in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word sh&#x16B; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word H&#xE0;ny&#x1D4; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word z&#xEC; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word zhu&#x14D;zi in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word y&#x1D0;zi in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word xi&#xE8;xie in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word b&#xFA;k&#xE8;q&#xEC; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word z&#xE0;iji&#xE0;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word q&#x1D0;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="DELETE WORD" date="06/08/2022">Admin webadmin deleted the word q&#x1D0;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="DELETE WORD" date="06/08/2022">Admin webadmin deleted the word b&#xFA;k&#xE8;q&#xEC; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word b&#xFA;k&#xE8;q&#xEC; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word q&#x1D0;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word du&#xEC;b&#xF9;q&#x1D0; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word m&#xE9;igu&#x101;nx&#xEC; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word sh&#xEC; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word y&#x1D2;u in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word k&#xE0;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word t&#x12B;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word shu&#x14D;hu&#xE0; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="DELETE WORD" date="06/08/2022">Admin webadmin deleted the word shu&#x14D;hu&#xE0; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word shu&#x14D;hu&#xE0; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word d&#xFA; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word xi&#x11B; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word k&#xE0;nji&#xE0;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word ji&#xE0;o in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="DELETE WORD" date="06/08/2022">Admin webadmin deleted the word ji&#xE0;o in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word &#x53EB; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="DELETE WORD" date="06/08/2022">Admin webadmin deleted the word d&#xFA; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word d&#xFA; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word l&#xE1;i in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word hu&#xED; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word q&#xF9; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word ch&#x12B; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="DELETE WORD" date="06/08/2022">Admin webadmin deleted the word ch&#x12B; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word ch&#x12B; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word h&#x113; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word shu&#xEC;ji&#xE0;o in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word d&#x1CE; di&#xE0;nhu&#xE0; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word zu&#xF2; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word m&#x1CE;i/m&#xE0;i in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word k&#x101;i in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word &#x5750; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word zh&#xF9; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word xu&#xE9;x&#xED; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word g&#x14D;ngzu&#xF2; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word xi&#xE0;y&#x1D4; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word &#xE0;i in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word x&#x1D0;hu&#x101;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word xi&#x1CE;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word r&#xE8;nshi in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word hu&#xEC; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word n&#xE9;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word h&#x1CE;o in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word d&#xE0; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word xi&#x1CE;o in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word du&#x14D; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word sh&#x1CE;o in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word l&#x11B;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word r&#xE8; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word g&#x101;ox&#xEC;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/08/2022">Admin webadmin added the word pi&#xE0;oli&#xE0;ng in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/08/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGIN" date="06/08/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="NEW USER" date="06/08/2022">New User irvan123 signed up</log>
+  <log type="LOGIN" date="06/08/2022">User irvan123 Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">User irvan123 viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">User irvan123 viewed the dictionary</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled GREETINGS in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled PINYIN AND TONES in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled WORDS IN SCHOOL in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled PINYIN AND TONES in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled PETS in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled WELCOMING FOREIGNER in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled ORDERING IN STORES in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled FAMILY MEMBERS in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled HOW OLD ARE YOU in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled OCCASSIONS in LESSON 4</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled DAYS OF THE WEEK in LESSON 4</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled WEATHER in LESSON 4</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled SEASONS in LESSON 4</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">User irvan123 viewed the dictionary</log>
+  <log type="LOGOUT" date="06/08/2022">User irvan123 Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">User irvan123 Logged In</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled GREETINGS in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled OTHER LANGUAGE IN MANDARIN in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled WORDS USED IN SPORTS in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled OTHER LANGUAGE IN MANDARIN in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User irvan123 viewed a topic titled DAYS OF THE WEEK in LESSON 4</log>
+  <log type="LOGOUT" date="06/08/2022">User irvan123 Logged Out</log>
+  <log type="NEW USER" date="06/08/2022">New User Ampol signed up</log>
+  <log type="LOGIN" date="06/08/2022">User Ampol Logged In</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User Ampol viewed a topic titled OCCASSIONS in LESSON 4</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">User Ampol viewed the dictionary</log>
+  <log type="LOGOUT" date="06/08/2022">User Ampol Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">User Ampol Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/08/2022">User Ampol Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">User Ampol Logged In</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User Ampol viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="NEW USER" date="06/08/2022">New User User101 signed up</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User Ampol viewed a topic titled GREETINGS in LESSON 1</log>
+  <log type="LOGIN" date="06/08/2022">User User101 Logged In</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User Ampol viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User Ampol viewed a topic titled PINYIN AND TONES in LESSON 1</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">User Ampol viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">User User101 viewed the dictionary</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User Ampol viewed a topic titled FAMILY MEMBERS in LESSON 3</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">User User101 viewed the dictionary</log>
+  <log type="LOGOUT" date="06/08/2022">User Ampol Logged Out</log>
+  <log type="DELETE USER" date="06/08/2022">Admin  deleted user User101 Account</log>
+  <log type="LOGOUT" date="06/08/2022">User  Logged Out</log>
+  <log type="LOGOUT" date="06/08/2022">User  Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">Admin webadmin Logged In</log>
+  <log type="LOGIN" date="06/08/2022">User hunterxhenrick Logged In</log>
+  <log type="DELETE USER" date="06/08/2022">Admin webadmin deleted user sample@acc.ph Account</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/08/2022">User hunterxhenrick Logged Out</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGIN" date="06/08/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/08/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">User Ampol Logged In</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User Ampol viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User Ampol viewed a topic titled BASIC CONVERSATION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User Ampol viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">User Ampol viewed a topic titled BASIC CONVERSATION in LESSON 1</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGIN" date="06/08/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/08/2022">User Ampol Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">Admin webadmin Logged In</log>
+  <log type="ADD TOPIC" date="06/08/2022">Admin webadmin added a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="DELETE TOPIC" date="06/08/2022">Admin webadmin deleted a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="ADD TOPIC" date="06/08/2022">Admin webadmin added a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="EDIT TOPIC" date="06/08/2022">Admin webadmin edited a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="ADD TOPIC" date="06/08/2022">Admin webadmin added a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="ADD TOPIC" date="06/08/2022">Admin webadmin added a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD TOPIC" date="06/08/2022">Admin webadmin added a topic titled COLORS in LESSON 5</log>
+  <log type="ADD TOPIC" date="06/08/2022">Admin webadmin added a topic titled CLOTHING in LESSON 5</log>
+  <log type="LOGOUT" date="06/08/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">Admin Ampol Logged In</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="LOGOUT" date="06/08/2022">Admin Ampol Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">Admin Ampol Logged In</log>
+  <log type="LOGOUT" date="06/08/2022">Admin Ampol Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">Admin Ampol Logged In</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="LOGOUT" date="06/08/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/08/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled COLORS in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled CLOTHING in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled COLORS in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled CLOTHING in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled COLORS in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled CLOTHING in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled GREETINGS in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled PINYIN AND TONES in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin webadmin viewed a topic titled WORDS IN SCHOOL in LESSON 1</log>
+  <log type="EDIT TOPIC" date="06/08/2022">Admin Ampol edited a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="EDIT TOPIC" date="06/08/2022">Admin Ampol edited a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="EDIT TOPIC" date="06/08/2022">Admin Ampol edited a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="START ASSESSMENT" date="06/08/2022">Admin webadmin started an assessment titled LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="START ASSESSMENT" date="06/08/2022">Admin webadmin started an assessment titled LESSON 1</log>
+  <log type="START ASSESSMENT" date="06/08/2022">Admin webadmin started an assessment titled LESSON 1</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/08/2022">Admin webadmin started an assessment titled LESSON 1</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/08/2022">Admin webadmin started an assessment titled LESSON 1</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/08/2022">Admin webadmin started an assessment titled LESSON 2</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="EDIT TOPIC" date="06/08/2022">Admin Ampol edited a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="EDIT TOPIC" date="06/08/2022">Admin Ampol edited a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="EDIT TOPIC" date="06/08/2022">Admin Ampol edited a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="EDIT TOPIC" date="06/08/2022">Admin Ampol edited a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="EDIT TOPIC" date="06/08/2022">Admin Ampol edited a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="EDIT TOPIC" date="06/08/2022">Admin Ampol edited a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="EDIT TOPIC" date="06/08/2022">Admin Ampol edited a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="EDIT TOPIC" date="06/08/2022">Admin Ampol edited a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled COLORS in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled COLORS in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/08/2022">Admin Ampol viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/08/2022">Admin webadmin viewed the dictionary</log>
 </logs>

@@ -457,7 +457,7 @@ form label{
         background:#1d6968;
         border: 1px solid black;
     }
-
+    
 /* DICTIONARY PAGE */
 #dictionaryPage {
     display: none;
@@ -503,6 +503,7 @@ form label{
         background-color: #f0e3d7;
     }
 
+
 /* ASSESSMENT PAGE */
 #assessmentPage, #assessmentForm{
     display: none;
@@ -515,6 +516,7 @@ form label{
 .question {
     background-color: #7ea5a4;
     border-radius: 10px;
+    font-weight:700;
     padding: calc(5px + 1vw);
     margin: calc(5px + 1vw);
 }
@@ -526,6 +528,45 @@ form label{
 
 .question img{
     width: 300px;
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover {
+    background:#1d6968;
+    border: 1px solid black;
+}
+
+.ui-icon-background{
+    background-color: #ffffff;
+}
+
+.ui-state-active .ui-icon-background{ 
+    border: #f1787c;
+    background-color: #f1787c;
+}
+
+#cancelAssessmentBtn{
+    background: #eae8e1;
+    color: #000000;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: 2px solid #f1787c;
+}
+
+#cancelAssessmentBtn:hover{
+    background: #d2cec0;
+    }
+
+
+#submitAssessmentBtn{
+    background: #f1787c;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-radius: 20px;
+    border: none;
+}
+
+#submitAssessmentBtn:hover{
+    background: #da5055;
 }
 
 /* Prevent jquery ui radio button from making the page go up */
@@ -541,6 +582,7 @@ input[type="radio"]{
 #mockTestForm fieldset{
     border: none;
 }
+
 
 
 /* LOADING MODAL */

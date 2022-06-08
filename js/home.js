@@ -603,7 +603,7 @@ $(document).ready(function(){
                     if(responseObj.completed.length==0){
                         rowHtml = "<h2>NO COMPLETED ASSESSMENTS</h2>";
                     }else{
-                        rowHtml += "<tr><th>Assessment Title</th><th>No. of Items</th><th>Action</th></tr>";
+                        rowHtml += "<tr><th>Assessment Title</th><th>Score</th><th>No. of Items</th></tr>";
                         responseObj.completed.forEach(element => {
                             rowHtml += "<tr>";
                             rowHtml += "<td>"+element.title+"</td>";
@@ -620,6 +620,7 @@ $(document).ready(function(){
     }
 
     // VIEW ASSESSMENTS
+    var assessmentActive = false;
     $(".assessmentBtn").click(function () { 
         if(activeWindow != "#assessmentPage"){
             refreshAssessments("PENDING");
@@ -631,6 +632,10 @@ $(document).ready(function(){
                 $("#assessmentPage").show(100);
             }else{
                 $(activeWindow).fadeOut(100, function(){
+                    if(assessmentActive){
+                        $("#assessmentForm").hide();
+                        $("#viewAssessments").show();
+                    }
                     activeWindow = "#assessmentPage";
                     $("#assessmentPage").show(100);
                 });
@@ -688,6 +693,7 @@ $(document).ready(function(){
 
             }
         });
+        assessmentActive = true;
         $("#viewAssessments").fadeOut(100, function(){
             $("#assessmentHeader").text(assessmentTitle + " ASSESSMENT");
             $("#assessmentForm").fadeIn(100);
@@ -757,7 +763,7 @@ $(document).ready(function(){
                     if(responseObj.completed.length==0){
                         rowHtml = "<h2>NO COMPLETED MOCK TEST</h2>";
                     }else{
-                        rowHtml += "<tr><th>HSK Level</th><th>No. of Items</th><th>Action</th></tr>";
+                        rowHtml += "<tr><th>HSK Level</th><th>Score</th><th>No. of Items</th></tr>";
                         responseObj.completed.forEach(element => {
                             rowHtml += "<tr>";
                             rowHtml += "<td>"+element.title+"</td>";
@@ -774,6 +780,7 @@ $(document).ready(function(){
     }
 
     // VIEW MOCK TEST
+    var testActive = false;
     $(".mockTestBtn").click(function () { 
         if(activeWindow != "#mockTestPage"){
             refreshMockTest("PENDING");
@@ -785,6 +792,10 @@ $(document).ready(function(){
                 $("#mockTestPage").show(100);
             }else{
                 $(activeWindow).fadeOut(100, function(){
+                    if(testActive){
+                        $("#mockTestForm").hide();
+                        $("#viewMockTest").show();
+                    }
                     activeWindow = "#mockTestPage";
                     $("#mockTestPage").show(100);
                 });
@@ -842,6 +853,7 @@ $(document).ready(function(){
 
             }
         });
+        testActive = true;
         $("#viewMockTest").fadeOut(100, function(){
             $("#mockTestHeader").text(mockTestTitle + " MOCK TEST");
             $("#mockTestForm").fadeIn(100);
