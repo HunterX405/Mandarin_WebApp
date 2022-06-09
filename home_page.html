@@ -159,8 +159,6 @@
 
             <div class="pane" id="student_profile">
 
-                <div id="updateSuccessMsg">Success!</div>
-                <div class="updateErrorMsg" id="profileError">Error!</div>
                 <div> <img class="profile_icon" src="" alt="profile_icon"></div>
 
                 <div class="pane_margin">    
@@ -183,7 +181,6 @@
             <!-- EDIT PROFILE -->
             <form class="form" id="student_profile_edit" enctype="multipart/form-data">
                 <h2 class="homeHeader2"> EDIT PROFILE </h2>
-                <div class="updateErrorMsg">Error</div>
                 <div> <img class="profile_icon" id="editImg" src="" alt="profile_icon"></div>
                 <label for="file">Upload New Profile Picture:</label>
                 <input type="file" id="file" name="file" accept="image/*">              
@@ -268,6 +265,10 @@
             </div>
 
             <div class="pane">
+                <div class="search">
+                    <input type="text" id="searchText" placeholder="SEARCH..."/>
+                    <button type="button" class='button' id="searchDictionaryBtn">SEARCH</button>
+                </div>
                 <table id="dictionaryTable">
                     <tr>
                         <th>Pinyin</th>

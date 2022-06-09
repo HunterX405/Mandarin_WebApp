@@ -13,7 +13,7 @@
     <birthday>06/02/2022</birthday>
     <gender>Male</gender>
   </user>
-  <user username="hunterxhenrick" email="johnhenrick.espiritu.sc@bulsu.edu.ph" access="student" regDate="05/28/2022">
+  <user username="hunterxhenrick" email="johnhenrick.espiritu.sc@bulsu.edu.ph" access="student" regDate="06/01/2022">
     <name>
       <firstName>John</firstName>
       <middleName/>
@@ -25,5 +25,18 @@
     <school>Bulacan State University</school>
     <birthday>12/04/2000</birthday>
     <gender>Female</gender>
+  </user>
+  <user username="test" email="test" access="student" regDate="06/01/2022">
+    <name>
+      <firstName>test</firstName>
+      <middleName/>
+      <lastName>account</lastName>
+    </name>
+    <profileImage>images/1.jpg</profileImage>
+    <password>$2y$10$hVh9JcDkqalj2lifeUipROA2hOKhayb0ioi9LzukndGBpDEZ8fm1e</password>
+    <homeAddress/>
+    <school/>
+    <birthday>06/01/2022</birthday>
+    <gender>Male</gender>
   </user>
 </users>

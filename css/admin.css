@@ -370,9 +370,26 @@ body {
     }
 
 /* DICTIONARY PAGE ------------------------------------------------------------------------*/
-#dictionaryPage {
-    display: none;
-}
+    #dictionaryPage {
+        display: none;
+    }
+    
+
+    #searchText {
+        font-family: 'Inter', sans-serif;
+        outline: 0;
+        background: #cfcfcf;
+        border: 0;
+        padding: 15px 0px 15px 30px;
+        margin-top: 10px;
+        box-sizing: border-box;
+        border-radius: 20px;
+        font-size: calc(7px + 0.6vw);
+    }
+
+    #searchDictionaryBtn {
+        font-size: calc(10px + 0.7vw);
+    }
 
     .pane {
         margin: 1vw 1vw 1vw 2vw;
@@ -569,6 +586,7 @@ body {
     color: #ffffff;
     text-transform: uppercase;
     border: 2px solid #000000;
+    margin: 0 0 0 15px;
 
 }
 
@@ -580,6 +598,9 @@ body {
 
 }
 
+#endDate, #startDate{
+    margin: 0 15px 0 0;
+}
 
 /* SETTINGS PAGE ------------------------------------------------------------------------*/
 #settingsPage, #admin_profile_edit{
@@ -750,3 +771,9 @@ body.loading .modal {
 .dialog p{
     text-align: center;
 }
+
+/* #successDialog{
+    height: 450px;
+    max-height: 450px;
+    overflow-y: auto;
+} */

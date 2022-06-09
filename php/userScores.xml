@@ -1,6 +1,13 @@
 <?xml version="1.0"?>
 <scores>
   <score test="TEST" user="hunterxhenrick" date="06/06/2022">5</score>
-  <score test="LESSON 3" user="hunterxhenrick" date="06/06/2022">0</score>
+  <score test="Lesson 3" user="hunterxhenrick" date="06/06/2022">0</score>
   <score test="Lesson 4" user="webadmin" date="06/08/2022">8</score>
+  <score test="Lesson 1" user="JCadag" date="06/08/2022">7</score>
+  <score test="test" user="webadmin" date="06/09/2022">1</score>
+  <score test="Lesson 1" user="henrick405" date="06/09/2022">10</score>
+  <score test="Lesson 2" user="henrick405" date="06/09/2022">10</score>
+  <score test="Lesson 4" user="henrick405" date="06/09/2022">7</score>
+  <score test="Lesson 3" user="henrick405" date="06/09/2022">7</score>
+  <score test="Lesson 1" user="webadmin" date="06/09/2022">2</score>
 </scores>

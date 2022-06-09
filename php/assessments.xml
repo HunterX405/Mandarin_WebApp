@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <assessments>
-  <assessment title="LESSON 1" items="50">
+  <assessment title="Lesson 1" items="10">
     <question type="multiple" id="1">
       <text>1. Identify the given picture by choosing the right Pinyin.</text>
       <image>images/Dog.png</image>
@@ -8,7 +8,7 @@
       <choice>M&#x101;o</choice>
       <choice>G&#x1D2;u</choice>
       <choice>Ni&#xFA;</choice>
-      <answer>Ni&#x1CE;o</answer>
+      <answer>G&#x1D2;u</answer>
     </question>
     <question type="multiple" id="2">
       <text>2. Identify the given picture by choosing the right Pinyin.</text>
@@ -26,7 +26,7 @@
       <choice>&#x94B1;</choice>
       <choice>&#x5BF9;</choice>
       <choice>&#x591A;&#x5C11;</choice>
-      <answer>&#x94B1;&#x5305;</answer>
+      <answer>&#x94B1;</answer>
     </question>
     <question type="multiple" id="4">
       <text>4. Translation of "qi&#xE1;n" in English</text>
@@ -44,7 +44,7 @@
       <choice>How much</choice>
       <choice>Right</choice>
       <choice>Correct</choice>
-      <answer>Money</answer>
+      <answer>Right</answer>
     </question>
     <question type="multiple" id="6">
       <text>6. Translation of "du&#x14D;sh&#x1CE;o" in English</text>
@@ -62,7 +62,7 @@
       <choice>W&#xE0;ib&#xF9;</choice>
       <choice>L&#x1D0;mi&#xE0;n</choice>
       <choice>Sh&#xE0;ng</choice>
-      <answer>Bi&#x101;n</answer>
+      <answer>L&#x1D0;mi&#xE0;n</answer>
     </question>
     <question type="multiple" id="8">
       <text>8. Translation of " outside " in Mandarin.</text>
@@ -71,7 +71,7 @@
       <choice>Sh&#xE0;ng</choice>
       <choice>W&#xE0;ib&#xF9;</choice>
       <choice>Bi&#x101;n</choice>
-      <answer>L&#x1D0;mi&#xE0;n</answer>
+      <answer>W&#xE0;ib&#xF9;</answer>
     </question>
     <question type="multiple" id="9">
       <text>9. Fill in the blank, Zh&#xE8; zh&#x1D0; g&#x1D2;u zh&#x113;n _______ ?</text>
@@ -93,7 +93,7 @@
     </question>
     <question type="multiple" id="11">
       <text>11. Identify the given picture by choosing the right Pinyin.</text>
-      <image>images/Picture7.jpg</image>
+      <image>images/Friends.png</image>
       <choice>Ji&#x11B;m&#xE8;i</choice>
       <choice>W&#x1D2;men</choice>
       <choice>P&#xE9;ngy&#x1D2;umen</choice>
@@ -116,7 +116,7 @@
       <choice>N&#x1D0; ji&#xE0;o sh&#xE9;nme m&#xED;ngz&#xEC;</choice>
       <choice>ji&#xE0;o N&#x1D0; sh&#xE9;nme m&#xED;ngz&#xEC;</choice>
       <choice>m&#xED;ngz&#xEC; N&#x1D0; ji&#xE0;o sh&#xE9;nme</choice>
-      <answer>sh&#xE9;nme ji&#xE0;o N&#x1D0; m&#xED;ngz&#xEC;</answer>
+      <answer>N&#x1D0; ji&#xE0;o sh&#xE9;nme m&#xED;ngz&#xEC;</answer>
     </question>
     <question type="multiple" id="14">
       <text>14. Translation of " Mine " in Mandarin</text>
@@ -125,11 +125,11 @@
       <choice>N&#x1D0; ne</choice>
       <choice>W&#x1D2; de</choice>
       <choice>Sh&#xEC;</choice>
-      <answer>N&#xED;n de</answer>
+      <answer>W&#x1D2; de</answer>
     </question>
     <question type="multiple" id="15">
       <text>15. Identify the given picture by choosing the right Hanzi.</text>
-      <image>images/Picture8.jpg</image>
+      <image>images/Love.png</image>
       <choice>&#x7231;</choice>
       <choice>&#x662F;</choice>
       <choice>&#x6211;</choice>
@@ -143,7 +143,7 @@
       <choice>Age</choice>
       <choice>Name</choice>
       <choice>Month</choice>
-      <answer>Year</answer>
+      <answer>Name</answer>
     </question>
     <question type="multiple" id="17">
       <text>17. Arrange the Pinyin to form the correct Chinese sentence. &#x201C;N&#x1D0; ne, ji&#xE0;o n&#x1D0; sh&#xE9;nme m&#xED;ngz&#xEC;?&#x201D;</text>
@@ -152,7 +152,7 @@
       <choice>N&#x1D0; ne, n&#x1D0; ji&#xE0;o sh&#xE9;nme m&#xED;ngz&#xEC;?</choice>
       <choice>N&#x1D0; ne, sh&#xE9;nme n&#x1D0; ji&#xE0;o m&#xED;ngz&#xEC;?</choice>
       <choice>Sh&#xE9;nme n&#x1D0; ji&#xE0;o m&#xED;ngz&#xEC; N&#x1D0; ne?</choice>
-      <answer>N&#x1D0; ji&#xE0;o N&#x1D0; ne, sh&#xE9;nme m&#xED;ngz&#xEC;?</answer>
+      <answer>N&#x1D0; ne, n&#x1D0; ji&#xE0;o sh&#xE9;nme m&#xED;ngz&#xEC;?</answer>
     </question>
     <question type="multiple" id="18">
       <text>18. Translation of " age " in Mandarin</text>
@@ -161,7 +161,7 @@
       <choice>X&#xEC;ngm&#xED;ng</choice>
       <choice>Ni&#xE1;n</choice>
       <choice>Ni&#xE1;nl&#xED;ng</choice>
-      <answer>Su&#xEC;</answer>
+      <answer>Ni&#xE1;nl&#xED;ng</answer>
     </question>
     <question type="multiple" id="19">
       <text>19. Translation of "&#x4ECB;&#x7ECD;" in Pinyin</text>
@@ -179,11 +179,11 @@
       <choice>Is </choice>
       <choice>He </choice>
       <choice>Him</choice>
-      <answer>She</answer>
+      <answer>Is </answer>
     </question>
     <question type="multiple" id="21">
       <text>21. Identify the given picture by choosing the right Pinyin.</text>
-      <image>images/Picture1.png</image>
+      <image>images/Gift.png</image>
       <choice>N&#x1D0; h&#x1CE;o</choice>
       <choice>Xi&#xE8;xi&#xE8;</choice>
       <choice>Hu&#x101;ny&#xED;ng</choice>
@@ -197,7 +197,7 @@
       <choice>See you soon</choice>
       <choice>See you later</choice>
       <choice>See you, bye</choice>
-      <answer>See you, bye</answer>
+      <answer>See you later</answer>
     </question>
     <question type="multiple" id="23">
       <text>23. Arrange the Pinyin to form the correct Chinese sentence. &#x201C;de Y&#xF3;ux&#xEC; zh&#x14D;ng h&#x1CE;o y&#xF9;nq&#xEC;&#x201D;</text>
@@ -228,7 +228,7 @@
     </question>
     <question type="multiple" id="26">
       <text>26. Identify the given picture by choosing the right Hanzi.</text>
-      <image>images/Picture2.jpg</image>
+      <image>images/Bye.png</image>
       <choice>&#x518D;&#x89C1;</choice>
       <choice>&#x4F60;&#x597D;</choice>
       <choice>&#x8C22;&#x8C22;</choice>
@@ -292,11 +292,11 @@
     <question type="multiple" id="33">
       <text>33. Translation of "t&#xF3;ngxu&#xE9;men" in English</text>
       <image/>
-      <choice>Classmate</choice>
+      <choice>Classmates</choice>
       <choice>Class</choice>
       <choice>Teacher</choice>
       <choice>Again</choice>
-      <answer>Classmate</answer>
+      <answer>Classmates</answer>
     </question>
     <question type="multiple" id="34">
       <text>34. Translation of "&#x540C;&#x5B66;&#x4EEC;." in pinyin</text>
@@ -309,7 +309,7 @@
     </question>
     <question type="multiple" id="35">
       <text>35. Identify the given picture by choosing the right Pinyin.</text>
-      <image>images/Picture3.png</image>
+      <image>images/College.png</image>
       <choice>d&#xE0;xu&#xE9;sh&#x113;ng</choice>
       <choice>zh&#x14D;ngxu&#xE9;sh&#x113;ng</choice>
       <choice>xi&#x1CE;oxu&#xE9;sh&#x113;ng</choice>
@@ -318,12 +318,12 @@
     </question>
     <question type="multiple" id="36">
       <text>36. . Identify the given picture by choosing the right Pinyin.</text>
-      <image>images/Picture4.jpg</image>
+      <image>images/Principal.png</image>
       <choice>t&#xF3;ngxu&#xE9;</choice>
       <choice>Xi&#xE0;ozh&#x1CE;ng</choice>
       <choice>l&#x1CE;osh&#x12B;</choice>
       <choice>t&#xF3;ngxu&#xE9;men</choice>
-      <answer>t&#xF3;ngxu&#xE9;</answer>
+      <answer>Xi&#xE0;ozh&#x1CE;ng</answer>
     </question>
     <question type="multiple" id="37">
       <text>37. Translation of " Tomorrow " in Mandarin</text>
@@ -363,7 +363,7 @@
     </question>
     <question type="multiple" id="41">
       <text>41. Identify the given picture by choosing the right Pinyin.</text>
-      <image>images/Picture5.jpg</image>
+      <image>images/School.png</image>
       <choice>F&#xE1;ngw&#x16B;</choice>
       <choice>Xu&#xE9;xi&#xE0;o</choice>
       <choice>Y&#x12B;yu&#xE0;n</choice>
@@ -372,7 +372,7 @@
     </question>
     <question type="multiple" id="42">
       <text>42. Identify the given picture by choosing the right Pinyin.</text>
-      <image>images/Picture6.jpg</image>
+      <image>images/Read.png</image>
       <choice>Yu&#xE8;d&#xFA;</choice>
       <choice>Ti&#xE0;ow&#x1D4;</choice>
       <choice>Y&#xED;d&#xF2;ng</choice>
@@ -452,7 +452,7 @@
       <answer>N&#x1D0; z&#xE0;i zh&#x14D;nggu&#xF3; ma?</answer>
     </question>
   </assessment>
-  <assessment title="LESSON 2" items="50">
+  <assessment title="Lesson 2" items="10">
     <question type="multiple" id="1">
       <text>1. Identify the given picture by choosing the right Pinyin.</text>
       <image>images/badminton.png</image>
@@ -904,6 +904,366 @@
       <answer>N&#x1D0; Xi&#x1CE;ngsh&#xF2;u h&#x1CE;o de sh&#x113;ngr&#xEC; zu&#xEC;</answer>
     </question>
   </assessment>
+  <assessment title="Lesson 3" items="10">
+    <question type="multiple" id="1">
+      <text>n&#x1D0; ____ d&#xE0;?</text>
+      <image/>
+      <choice>Su&#xEC;</choice>
+      <choice>Du&#x14D; </choice>
+      <choice>Sh&#xED;q&#x12B;</choice>
+      <choice>Sh&#xEC;</choice>
+      <answer>Du&#x14D; </answer>
+    </question>
+    <question type="multiple" id="2">
+      <text>W&#x1D2; __________ su&#xEC;.</text>
+      <image/>
+      <choice>K&#x101;ich&#x113;</choice>
+      <choice>Sh&#xED;q&#x12B;</choice>
+      <choice>Sh&#xED;b&#x101;</choice>
+      <choice>Du&#x14D;</choice>
+      <answer>Sh&#xED;b&#x101;</answer>
+    </question>
+    <question type="multiple" id="3">
+      <text>N&#x1D0; xu&#xE9; b&#xF9; xu&#xE9; ____?</text>
+      <image/>
+      <choice>K&#x101;ich&#x113;</choice>
+      <choice>Sh&#xED;q&#x12B;</choice>
+      <choice>Sh&#xED;b&#x101;</choice>
+      <choice>Du&#x14D;</choice>
+      <answer>K&#x101;ich&#x113;</answer>
+    </question>
+    <question type="multiple" id="4">
+      <text>N&#x1D0; sh&#xEC; b&#xF9;sh&#xEC; sh&#xED;b&#x101;  ___?</text>
+      <image/>
+      <choice>Sh&#xED;q&#x12B;</choice>
+      <choice>Sh&#xEC; </choice>
+      <choice>Su&#xEC;</choice>
+      <choice>Du&#x14D;</choice>
+      <answer>Su&#xEC;</answer>
+    </question>
+    <question type="multiple" id="5">
+      <text>______, n&#x1D0; ne? </text>
+      <image/>
+      <choice>D&#x101;ng r&#xE1;n </choice>
+      <choice>Sh&#xED;q&#x12B;</choice>
+      <choice>Sh&#xEC;</choice>
+      <choice>Su&#xEC;</choice>
+      <answer>D&#x101;ng r&#xE1;n </answer>
+    </question>
+    <question type="truefalse" id="6">
+      <text>The meaning of &#x201C;du&#x14D; d&#xE0;&#x201D; is of Course in Enslish?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="7">
+      <text>The meaning of &#x201C;k&#x101;ich&#x113;&#x201D; is Drive in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="8">
+      <text>The meaning of &#x201C;su&#xEC;&#x201D; in Years old in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="9">
+      <text>The meaning of &#x201C;d&#x101;ng r&#xE1;n&#x201D; id How old in Enslish?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="10">
+      <text>The meaning of &#x201C;n&#x1D0; ne&#x201D;is  how about you in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="multiple" id="11">
+      <text>What is this?</text>
+      <image>images/q.png</image>
+      <choice>G&#x1D2;u</choice>
+      <choice>M&#x101;o</choice>
+      <choice>Ni&#x1CE;o </choice>
+      <choice>T&#xF9;z&#x1D0;</choice>
+      <answer>G&#x1D2;u</answer>
+    </question>
+    <question type="multiple" id="12">
+      <text>What is this?</text>
+      <image>images/q2.jpg</image>
+      <choice>G&#x1D2;u</choice>
+      <choice>M&#x101;o</choice>
+      <choice>Ni&#x1CE;o </choice>
+      <choice>T&#xF9;z&#x1D0;</choice>
+      <answer>M&#x101;o</answer>
+    </question>
+    <question type="multiple" id="13">
+      <text>What is this?</text>
+      <image>images/q3.jpg</image>
+      <choice>R&#xE9;n</choice>
+      <choice>D&#xE0;</choice>
+      <choice>Xi&#x1CE;o</choice>
+      <choice>H&#xE9;</choice>
+      <answer>R&#xE9;n</answer>
+    </question>
+    <question type="truefalse" id="14">
+      <text>The meaning of &#x201C;b&#xE0;ba&#x201D; is mother in Enslish?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="15">
+      <text>The meaning of &#x201C;m&#x101;m&#x101;&#x201D; is father in Enslish?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="16">
+      <text>The meaning of &#x201C;m&#xE8;imei&#x201D; is sister in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="multiple" id="17">
+      <text>N&#x1D0; y&#x1D2;u m&#xE9;iy&#x1D2;u____?</text>
+      <image/>
+      <choice>T&#xF9;z&#x1D0;</choice>
+      <choice>G&#x1D2;u</choice>
+      <choice>M&#x101;o</choice>
+      <choice>Ni&#x1CE;o</choice>
+      <answer>G&#x1D2;u</answer>
+    </question>
+    <question type="multiple" id="18">
+      <text>W&#x1D2; ji&#x101; y&#x1D2;u w&#x1D4; k&#x1D2;u ____ </text>
+      <image/>
+      <choice>H&#xE9;</choice>
+      <choice>R&#xE9;n</choice>
+      <choice>D&#xE0; </choice>
+      <choice>Xi&#x1CE;o</choice>
+      <answer>R&#xE9;n</answer>
+    </question>
+    <question type="multiple" id="19">
+      <text>W&#x1D2; y&#x1D2;uy&#x12B; zh&#x1D0; d&#xE0; g&#x1D2;u h&#xE9; y&#x12B; zh&#x1D0; ___ m&#x101;o</text>
+      <image/>
+      <choice>R&#xE9;n </choice>
+      <choice>D&#xE0;</choice>
+      <choice>Xi&#x1CE;o</choice>
+      <choice>H&#xE9;</choice>
+      <answer>Xi&#x1CE;o</answer>
+    </question>
+    <question type="truefalse" id="20">
+      <text>The meaning of &#x201C;Xi&#x1CE;o&#x201D; is small in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="multiple" id="21">
+      <text>What pet is this? </text>
+      <image>images/a.jpg</image>
+      <choice>y&#xFA;</choice>
+      <choice>m&#x101;o </choice>
+      <choice>ni&#x1CE;o </choice>
+      <choice>t&#xF9;z&#x1D0; </choice>
+      <answer>m&#x101;o </answer>
+    </question>
+    <question type="multiple" id="22">
+      <text>What pet is this? </text>
+      <image>images/a1.png</image>
+      <choice>y&#xFA; </choice>
+      <choice>m&#x101;o </choice>
+      <choice>ni&#x1CE;o </choice>
+      <choice>t&#xF9;z&#x1D0;</choice>
+      <answer>ni&#x1CE;o </answer>
+    </question>
+    <question type="multiple" id="23">
+      <text>What pet is this? </text>
+      <image>images/2a.jpg</image>
+      <choice>y&#xFA; </choice>
+      <choice>m&#x101;o </choice>
+      <choice>ni&#x1CE;o </choice>
+      <choice>t&#xF9;z&#x1D0;</choice>
+      <answer>y&#xFA; </answer>
+    </question>
+    <question type="multiple" id="24">
+      <text>What pet is this? </text>
+      <image/>
+      <choice>y&#xFA; </choice>
+      <choice>m&#x101;o </choice>
+      <choice>ni&#x1CE;o</choice>
+      <choice>t&#xF9;z&#x1D0;</choice>
+      <answer>t&#xF9;z&#x1D0;</answer>
+    </question>
+    <question type="truefalse" id="25">
+      <text>The meaning of &#x201C;pi&#xE0;oliang&#x201D; is pretty in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="26">
+      <text>The meaning of &#x201C;g&#x1D2;u&#x201D; is dog Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="27">
+      <text>The meaning of &#x201C;t&#x101;&#x201D; is "it" in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="multiple" id="28">
+      <text>T&#x101; ____ su&#xEC;</text>
+      <image/>
+      <choice>h&#x11B;n  </choice>
+      <choice>de  </choice>
+      <choice>li&#x1CE;ng  </choice>
+      <choice>ji&#xE0;o </choice>
+      <answer>li&#x1CE;ng  </answer>
+    </question>
+    <question type="multiple" id="29">
+      <text>T&#x101; __ pi&#xE0;oliang</text>
+      <image/>
+      <choice>h&#x11B;n  </choice>
+      <choice>de  </choice>
+      <choice>li&#x1CE;ng  </choice>
+      <choice>ji&#xE0;o </choice>
+      <answer>h&#x11B;n  </answer>
+    </question>
+    <question type="multiple" id="30">
+      <text>T&#x101; __ m&#xED;ngz&#xEC; sh&#xEC; faye</text>
+      <image/>
+      <choice>h&#x11B;n  </choice>
+      <choice>de  </choice>
+      <choice>li&#x1CE;ng  </choice>
+      <choice>ji&#xE0;o</choice>
+      <answer>de  </answer>
+    </question>
+    <question type="multiple" id="31">
+      <text>T&#x101; ___ sh&#xE9;nme m&#xED;ngz&#xEC;?</text>
+      <image/>
+      <choice>h&#x11B;n  </choice>
+      <choice>de </choice>
+      <choice> li&#x1CE;ng  </choice>
+      <choice>ji&#xE0;o </choice>
+      <answer>ji&#xE0;o </answer>
+    </question>
+    <question type="multiple" id="32">
+      <text>What is the meaning of the picture?</text>
+      <image>images/b1.png</image>
+      <choice>Hu&#x101;ny&#xED;ng l&#xE1;i d&#xE0;o w&#x1D2;men de ji&#x101;! </choice>
+      <choice>Hu&#x101;ny&#xED;ng n&#xED;n l&#xE1;i w&#x1D2;men xu&#xE9;xi&#xE0;o! </choice>
+      <choice>Hu&#x101;ny&#xED;ng n&#xED;n d&#xE0;o w&#x1D2;men de b&#xE0;ng&#x14D;ngsh&#xEC;! </choice>
+      <choice>hu&#x101;ny&#xED;ng l&#xE1;id&#xE0;o f&#x113;il&#xF9;b&#x12B;n!</choice>
+      <answer>Hu&#x101;ny&#xED;ng n&#xED;n l&#xE1;i w&#x1D2;men xu&#xE9;xi&#xE0;o! </answer>
+    </question>
+    <question type="multiple" id="33">
+      <text>What is the meaning of this picture?</text>
+      <image>images/b3.png</image>
+      <choice>Hu&#x101;ny&#xED;ng l&#xE1;i d&#xE0;o w&#x1D2;men de ji&#x101;! </choice>
+      <choice>Hu&#x101;ny&#xED;ng n&#xED;n l&#xE1;i w&#x1D2;men xu&#xE9;xi&#xE0;o! </choice>
+      <choice>Hu&#x101;ny&#xED;ng n&#xED;n d&#xE0;o w&#x1D2;men de b&#xE0;ng&#x14D;ngsh&#xEC;! </choice>
+      <choice> Hu&#x101;ny&#xED;ng l&#xE1;id&#xE0;o f&#x113;il&#xF9;b&#x12B;n!</choice>
+      <answer>Hu&#x101;ny&#xED;ng n&#xED;n d&#xE0;o w&#x1D2;men de b&#xE0;ng&#x14D;ngsh&#xEC;! </answer>
+    </question>
+    <question type="multiple" id="34">
+      <text>What is the meaning of this picture?</text>
+      <image>images/b2.png</image>
+      <choice>Hu&#x101;ny&#xED;ng l&#xE1;i d&#xE0;o w&#x1D2;men de ji&#x101;! </choice>
+      <choice>Hu&#x101;ny&#xED;ng n&#xED;n l&#xE1;i w&#x1D2;men xu&#xE9;xi&#xE0;o! </choice>
+      <choice>Hu&#x101;ny&#xED;ng n&#xED;n d&#xE0;o w&#x1D2;men de b&#xE0;ng&#x14D;ngsh&#xEC;!  </choice>
+      <choice>hu&#x101;ny&#xED;ng l&#xE1;id&#xE0;o f&#x113;il&#xF9;b&#x12B;n!</choice>
+      <answer>Hu&#x101;ny&#xED;ng l&#xE1;i d&#xE0;o w&#x1D2;men de ji&#x101;! </answer>
+    </question>
+    <question type="truefalse" id="35">
+      <text>The meaning of &#x201C;x&#xEC;ng&#x201D; is "from" in Enslish?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="36">
+      <text>The meaning of &#x201C;ji&#x101;&#x201D; is "home" in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="37">
+      <text>The meaning of &#x201C;d&#xE0;o&#x201D; is "arrive" in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="38">
+      <text>The meaning of &#x201C;c&#xF3;ng&#x201D; is "come" in Enslish?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="39">
+      <text>The meaning of &#x201C;l&#xE1;i&#x201D; is "surname" in Enslish?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="40">
+      <text>The meaning of &#x201C;hu&#x101;ny&#xED;ng&#x201D; is "welcome" in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="multiple" id="41">
+      <text>What is the meaning of the picture?</text>
+      <image>images/c2.png</image>
+      <choice>b&#x1D0;s&#xE0;b&#x1D0;ng </choice>
+      <choice>sh&#x101;ngdi&#xE0;n </choice>
+      <choice>di&#xE0;nyu&#xE1;n</choice>
+      <choice> m&#x1CE;sh&#xE0;ng</choice>
+      <answer>sh&#x101;ngdi&#xE0;n </answer>
+    </question>
+    <question type="multiple" id="42">
+      <text>What is the meaning pf the picture?</text>
+      <image>images/c3.png</image>
+      <choice>b&#x1D0;s&#xE0;b&#x1D0;ng </choice>
+      <choice>sh&#x101;ngdi&#xE0;n </choice>
+      <choice>di&#xE0;nyu&#xE1;n </choice>
+      <choice>m&#x1CE;sh&#xE0;ng</choice>
+      <answer>di&#xE0;nyu&#xE1;n </answer>
+    </question>
+    <question type="multiple" id="43">
+      <text>What is the meaning of the picture?</text>
+      <image>images/c1.jpeg</image>
+      <choice>b&#x1D0;s&#xE0;b&#x1D0;ng </choice>
+      <choice>sh&#x101;ngdi&#xE0;n </choice>
+      <choice>di&#xE0;nyu&#xE1;n </choice>
+      <choice>m&#x1CE;sh&#xE0;ng</choice>
+      <answer>b&#x1D0;s&#xE0;b&#x1D0;ng </answer>
+    </question>
+    <question type="multiple" id="44">
+      <text>N&#x1D0; ___ z&#xE0;i n&#x1CE;l&#x1D0;? </text>
+      <image/>
+      <choice>d&#xE0;o</choice>
+      <choice>m&#x1CE;sh&#xE0;ng </choice>
+      <choice>y&#xE0;o</choice>
+      <choice>zh&#xF9; </choice>
+      <answer>zh&#xF9; </answer>
+    </question>
+    <question type="multiple" id="45">
+      <text>H&#x1CE;o, ____ d&#xE0;o</text>
+      <image/>
+      <choice>d&#xE0;o</choice>
+      <choice>m&#x1CE;sh&#xE0;ng </choice>
+      <choice>y&#xE0;o</choice>
+      <choice>zh&#xF9; </choice>
+      <answer>m&#x1CE;sh&#xE0;ng </answer>
+    </question>
+    <question type="truefalse" id="46">
+      <text>The meaning of &#x201C;d&#xE0;o&#x201D; is "arrive" in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="47">
+      <text>The meaning of &#x201C;zh&#xF9;&#x201D; is "at" in Enslish?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="48">
+      <text>The meaning of &#x201C;z&#xE0;i&#x201D; is "live" in Enslish?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="49">
+      <text>The meaning of &#x201C;w&#xE9;i&#x201D; is "Hello " in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="50">
+      <text>The meaning of &#x201C;y&#xE0;o&#x201D; is "want" in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+  </assessment>
   <assessment title="Lesson 4" items="10">
     <question type="multiple" id="1">
       <text>What time is this?</text>
@@ -942,7 +1302,7 @@
       <answer>Z&#x1CE;oshang li&#xF9; di&#x1CE;n </answer>
     </question>
     <question type="truefalse" id="5">
-      <text>Is &#x201C;di&#x1CE;n&#x201D; meaning of "half" in English?</text>
+      <text>Is &#x201C;di&#x1CE;n&#x201D; translation of "half" in English?</text>
       <image/>
       <answer>False</answer>
     </question>
@@ -956,7 +1316,7 @@
       <answer>Now</answer>
     </question>
     <question type="truefalse" id="7">
-      <text>Is &#x201C;xi&#xE0;nz&#xE0;i&#x201D; meaning of "now" in English</text>
+      <text>Is &#x201C;xi&#xE0;nz&#xE0;i&#x201D; translation of "now" in English</text>
       <image/>
       <answer>True</answer>
     </question>
@@ -986,6 +1346,390 @@
       <choice> sh&#xEC; </choice>
       <choice>q&#xF9;</choice>
       <answer> sh&#xEC; </answer>
+    </question>
+    <question type="multiple" id="11">
+      <text>What occasion is this?</text>
+      <image>images/l2-1-1.png</image>
+      <choice>Sh&#xE8;ngd&#xE0;n ji&#xE9; </choice>
+      <choice>D&#xFA;l&#xEC; r&#xEC;</choice>
+      <choice>X&#x12B;nni&#xE1;n </choice>
+      <choice>Q&#xED;ngr&#xE9;n ji&#xE9;</choice>
+      <answer>Q&#xED;ngr&#xE9;n ji&#xE9;</answer>
+    </question>
+    <question type="multiple" id="12">
+      <text>What occasion is this?</text>
+      <image>images/l2-2.jpg</image>
+      <choice>Sh&#xE8;ngd&#xE0;n ji&#xE9;</choice>
+      <choice>D&#xFA;l&#xEC; r&#xEC;</choice>
+      <choice>X&#x12B;nni&#xE1;n</choice>
+      <choice>Q&#xED;ngr&#xE9;n ji&#xE9;</choice>
+      <answer>Sh&#xE8;ngd&#xE0;n ji&#xE9;</answer>
+    </question>
+    <question type="multiple" id="13">
+      <text>What occasion is this?</text>
+      <image>images/l2-3.png</image>
+      <choice>Sh&#xE8;ngd&#xE0;n ji&#xE9;</choice>
+      <choice>D&#xFA;l&#xEC; r&#xEC;</choice>
+      <choice>X&#x12B;nni&#xE1;n</choice>
+      <choice>Q&#xED;ngr&#xE9;n ji&#xE9;</choice>
+      <answer>X&#x12B;nni&#xE1;n</answer>
+    </question>
+    <question type="multiple" id="14">
+      <text>What occasion is this?</text>
+      <image>images/l2-4.jpg</image>
+      <choice>Sh&#xE8;ngd&#xE0;n ji&#xE9;</choice>
+      <choice>D&#xFA;l&#xEC; r&#xEC;</choice>
+      <choice>X&#x12B;nni&#xE1;n</choice>
+      <choice>Q&#xED;ngr&#xE9;n ji&#xE9;</choice>
+      <answer>D&#xFA;l&#xEC; r&#xEC;</answer>
+    </question>
+    <question type="truefalse" id="15">
+      <text>Is &#x201C;zu&#xF3;ti&#x101;n&#x201D; translation of yesterday in English?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="16">
+      <text>is "j&#x12B;nti&#x101;n" translation of tomorrow in English?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="17">
+      <text>Is "m&#xED;ngni&#xE1;n" translation of "this year" in English?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="18">
+      <text>Is "m&#xED;ngti&#x101;n" translation of tomorrow in English?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="multiple" id="19">
+      <text>Translation of &#x201C;j&#x12B;nni&#xE1;n&#x201D; in English</text>
+      <image/>
+      <choice>this year</choice>
+      <choice>last year</choice>
+      <choice>next year</choice>
+      <choice>tomorrow</choice>
+      <answer>this year</answer>
+    </question>
+    <question type="multiple" id="20">
+      <text>Translation of &#x201C;q&#xF9;ni&#xE1;n&#x201D; in English</text>
+      <image/>
+      <choice>this year</choice>
+      <choice>last year</choice>
+      <choice>next year</choice>
+      <choice>tomorrow</choice>
+      <answer>last year</answer>
+    </question>
+    <question type="multiple" id="21">
+      <text>N&#x1D0; ____ g&#xE0;n sh&#xE9;nme?</text>
+      <image/>
+      <choice>d&#x1CE;su&#xE0;n</choice>
+      <choice>di&#xE0;ny&#x1D0;ng</choice>
+      <choice>k&#x11B;y&#x1D0;</choice>
+      <choice>x&#x12B;ngq&#xED;</choice>
+      <answer>d&#x1CE;su&#xE0;n</answer>
+    </question>
+    <question type="multiple" id="22">
+      <text>W&#x1D2; d&#x1CE;su&#xE0;n k&#xE0;n _____</text>
+      <image/>
+      <choice>d&#x1CE;su&#xE0;n</choice>
+      <choice>di&#xE0;ny&#x1D0;ng</choice>
+      <choice>k&#x11B;y&#x1D0;</choice>
+      <choice>x&#x12B;ngq&#xED; </choice>
+      <answer>di&#xE0;ny&#x1D0;ng</answer>
+    </question>
+    <question type="multiple" id="23">
+      <text>D&#x101;ngr&#xE1;n ___</text>
+      <image/>
+      <choice>d&#x1CE;su&#xE0;n</choice>
+      <choice>di&#xE0;ny&#x1D0;ng</choice>
+      <choice>k&#x11B;y&#x1D0;</choice>
+      <choice>x&#x12B;ngq&#xED;</choice>
+      <answer>di&#xE0;ny&#x1D0;ng</answer>
+    </question>
+    <question type="truefalse" id="24">
+      <text>Is "x&#xED;ng" translation of "week" in Pinyin?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="25">
+      <text>Is "x&#x12B;ngq&#xED;" translation of "see" in Pinyin?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="26">
+      <text>Is "g&#xE0;n" translation of "do" in Pinyin?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="27">
+      <text>Is "k&#x11B;y&#x1D0;" translation of "can" in Pinyin?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="multiple" id="28">
+      <text>What day is this?</text>
+      <image>images/l3-1.png</image>
+      <choice>X&#x12B;ngq&#xED;li&#xF9;</choice>
+      <choice>X&#x12B;ngq&#xED;w&#x1D4;</choice>
+      <choice>X&#x12B;ngq&#xED;s&#xEC;</choice>
+      <choice>X&#x12B;ngq&#xED;ti&#x101;n</choice>
+      <answer>X&#x12B;ngq&#xED;w&#x1D4;</answer>
+    </question>
+    <question type="multiple" id="29">
+      <text>What day is this?</text>
+      <image>images/l3-2.png</image>
+      <choice>X&#x12B;ngq&#xED;li&#xF9;</choice>
+      <choice>X&#x12B;ngq&#xED;w&#x1D4;</choice>
+      <choice>X&#x12B;ngq&#xED;s&#xEC;</choice>
+      <choice>X&#x12B;ngq&#xED;ti&#x101;n</choice>
+      <answer>X&#x12B;ngq&#xED;ti&#x101;n</answer>
+    </question>
+    <question type="multiple" id="30">
+      <text>What weather is this?</text>
+      <image>images/l4-1.png</image>
+      <choice>xi&#xE0; y&#x1D4;</choice>
+      <choice>xi&#xE0; xu&#x11B;</choice>
+      <choice>q&#xED;ngti&#x101;n</choice>
+      <choice>gu&#x101; f&#x113;ng</choice>
+      <answer>q&#xED;ngti&#x101;n</answer>
+    </question>
+    <question type="multiple" id="31">
+      <text>What weather is this?</text>
+      <image>images/l4-2.png</image>
+      <choice>xi&#xE0; y&#x1D4;</choice>
+      <choice>xi&#xE0; xu&#x11B;</choice>
+      <choice>q&#xED;ngti&#x101;n</choice>
+      <choice>gu&#x101; f&#x113;ng</choice>
+      <answer>xi&#xE0; xu&#x11B;</answer>
+    </question>
+    <question type="multiple" id="32">
+      <text>What weather is this?</text>
+      <image>images/l4-3.jpg</image>
+      <choice>xi&#xE0; y&#x1D4;</choice>
+      <choice>xi&#xE0; xu&#x11B;</choice>
+      <choice>q&#xED;ngti&#x101;n </choice>
+      <choice>gu&#x101; f&#x113;ng</choice>
+      <answer>xi&#xE0; y&#x1D4;</answer>
+    </question>
+    <question type="multiple" id="33">
+      <text>What weather is this?</text>
+      <image>images/l5-4.jpg</image>
+      <choice>xi&#xE0; y&#x1D4;</choice>
+      <choice>xi&#xE0; xu&#x11B;</choice>
+      <choice>q&#xED;ngti&#x101;n</choice>
+      <choice>gu&#x101; f&#x113;ng</choice>
+      <answer>q&#xED;ngti&#x101;n</answer>
+    </question>
+    <question type="multiple" id="34">
+      <text>W&#x1D2; de ____ z&#xE0;i n&#x1CE;r?</text>
+      <image/>
+      <choice>gu&#x101;</choice>
+      <choice>n&#x1CE;r</choice>
+      <choice>y&#x1D4;s&#x1CE;n</choice>
+      <choice>y&#x1D4;y&#x12B;</choice>
+      <answer>y&#x1D4;s&#x1CE;n</answer>
+    </question>
+    <question type="truefalse" id="35">
+      <text>The umbrella is the transalation of &#x201C;y&#x1D4;s&#x1CE;n&#x201D; in Enslish?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="36">
+      <text>The meaning of of &#x201C;gu&#x101;&#x201D; is raincoat in English?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="37">
+      <text>The meaning of &#x201C;y&#x1D4;y&#x12B;&#x201D; is blow in English?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="38">
+      <text>The meaning of &#x201C;n&#x1CE;r&#x201D; is where in English?</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="multiple" id="39">
+      <text>What season is this? </text>
+      <image>images/l5-1.jpg</image>
+      <choice>Ch&#x16B;nti&#x101;n</choice>
+      <choice>Xi&#xE0;ti&#x101;n</choice>
+      <choice>Qi&#x16B;ti&#x101;n</choice>
+      <choice>D&#x14D;ngti&#x101;n</choice>
+      <answer>D&#x14D;ngti&#x101;n</answer>
+    </question>
+    <question type="multiple" id="40">
+      <text>What season is this? </text>
+      <image>images/l5-2.jpg</image>
+      <choice>Ch&#x16B;nti&#x101;n</choice>
+      <choice>Xi&#xE0;ti&#x101;n</choice>
+      <choice>Qi&#x16B;ti&#x101;n</choice>
+      <choice>D&#x14D;ngti&#x101;n</choice>
+      <answer>Xi&#xE0;ti&#x101;n</answer>
+    </question>
+    <question type="multiple" id="41">
+      <text>What season is this? </text>
+      <image>images/l5-3.jpg</image>
+      <choice>Ch&#x16B;nti&#x101;n</choice>
+      <choice>Xi&#xE0;ti&#x101;n</choice>
+      <choice>Qi&#x16B;ti&#x101;n</choice>
+      <choice>D&#x14D;ngti&#x101;n</choice>
+      <answer>Ch&#x16B;nti&#x101;n</answer>
+    </question>
+    <question type="multiple" id="42">
+      <text>What weather is this?</text>
+      <image>images/l5-4.jpg</image>
+      <choice>Ch&#x16B;nti&#x101;n</choice>
+      <choice>Xi&#xE0;ti&#x101;n</choice>
+      <choice>Qi&#x16B;ti&#x101;n</choice>
+      <choice>D&#x14D;ngti&#x101;n</choice>
+      <answer>Qi&#x16B;ti&#x101;n</answer>
+    </question>
+    <question type="truefalse" id="43">
+      <text>The meaning of &#x201C;extremely&#x201D; is "f&#x113;ich&#xE1;ng" in Pinyin</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="44">
+      <text>The meaning of &#x201C;lately&#x201D; is "zu&#xEC;j&#xEC;n" in Pinyin</text>
+      <image/>
+      <answer>True</answer>
+    </question>
+    <question type="truefalse" id="45">
+      <text>The meaning of &#x201C;hot&#x201D; is "l&#x11B;ng"  in Pinyin</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="truefalse" id="46">
+      <text>The meaning of &#x201C;cold&#x201D; is "r&#xE8;" in Pinyin</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+    <question type="multiple" id="47">
+      <text>What is the meaning of &#x201C;ju&#xE9;d&#xE9;&#x201D; in English?</text>
+      <image/>
+      <choice>lately</choice>
+      <choice>extremely</choice>
+      <choice>busy</choice>
+      <choice>think</choice>
+      <answer>think</answer>
+    </question>
+    <question type="multiple" id="48">
+      <text>What is the meaning of &#x201C;m&#xE1;ng&#x201D; in English?</text>
+      <image/>
+      <choice>lately</choice>
+      <choice>busy</choice>
+      <choice>think</choice>
+      <choice>extremely</choice>
+      <answer>busy</answer>
+    </question>
+    <question type="multiple" id="49">
+      <text>_______ ti&#x101;nq&#xEC; z&#x11B;nme y&#xE0;ng?</text>
+      <image/>
+      <choice>j&#x12B;nti&#x101;n</choice>
+      <choice>m&#xED;ngni&#xE1;n</choice>
+      <choice>j&#x12B;nni&#xE1;n</choice>
+      <choice>q&#xF9;ni&#xE1;n</choice>
+      <answer>j&#x12B;nti&#x101;n</answer>
+    </question>
+    <question type="truefalse" id="50">
+      <text>The meaning of &#x201C;okay&#x201D; is "x&#x12B;ngq&#xED;" in Pinyin?</text>
+      <image/>
+      <answer>False</answer>
+    </question>
+  </assessment>
+  <assessment title="Lesson 5" items="10">
+    <question type="multiple" id="1">
+      <text>1. Pinyin translation of Waiter</text>
+      <image/>
+      <choice>H&#xE0;nb&#x1CE;ob&#x101;o</choice>
+      <choice>Y&#xEC;d&#xE0;l&#xEC; x&#xEC;  </choice>
+      <choice>G&#xF9;k&#xE8;</choice>
+      <choice>F&#xFA;w&#xF9;yu&#xE1;n</choice>
+      <answer>F&#xFA;w&#xF9;yu&#xE1;n</answer>
+    </question>
+    <question type="multiple" id="2">
+      <text>2. Pinyin translation of Restaurant</text>
+      <image/>
+      <choice>C&#x101;nt&#x12B;ng</choice>
+      <choice>G&#xF9;k&#xE8; </choice>
+      <choice>Zh&#xE0;ngd&#x101;n</choice>
+      <choice>M&#xEC;ngl&#xEC;ng</choice>
+      <answer>C&#x101;nt&#x12B;ng</answer>
+    </question>
+    <question type="multiple" id="3">
+      <text>3. Pinyin translation of Customer</text>
+      <image/>
+      <choice>Z&#xE0;i y&#xF2;ngc&#x101;n </choice>
+      <choice>M&#xEC;ngl&#xEC;ng </choice>
+      <choice>G&#xF9;k&#xE8; </choice>
+      <choice>C&#x101;nt&#x12B;ng</choice>
+      <answer>G&#xF9;k&#xE8; </answer>
+    </question>
+    <question type="multiple" id="4">
+      <text>4. Pinyin translation of Food</text>
+      <image/>
+      <choice>Sh&#xED;w&#xF9;</choice>
+      <choice>Y&#x1D0;nli&#xE0;o</choice>
+      <choice>Q&#x1D4;ch&#x16B; </choice>
+      <choice>zh&#xE0;ngd&#x101;n</choice>
+      <answer>Sh&#xED;w&#xF9;</answer>
+    </question>
+    <question type="multiple" id="5">
+      <text>5. Pinyin translation of Drinks</text>
+      <image/>
+      <choice>Y&#x1D0;nli&#xE0;o</choice>
+      <choice>Q&#x1D4;ch&#x16B;</choice>
+      <choice>Zh&#xE0;ngd&#x101;n</choice>
+      <choice>C&#x101;nt&#x12B;ng</choice>
+      <answer>Y&#x1D0;nli&#xE0;o</answer>
+    </question>
+    <question type="multiple" id="6">
+      <text>6. English translation of H&#xE0;nb&#x1CE;ob&#x101;o</text>
+      <image/>
+      <choice>Ice Tea </choice>
+      <choice>Fries</choice>
+      <choice>Burger </choice>
+      <choice>Spaghetti</choice>
+      <answer>Burger </answer>
+    </question>
+    <question type="multiple" id="7">
+      <text>7. English translation of Y&#xEC;d&#xE0;l&#xEC; x&#xEC;</text>
+      <image/>
+      <choice>Spaghetti </choice>
+      <choice>Burger</choice>
+      <choice>Customer </choice>
+      <choice>Restaurant</choice>
+      <answer>Spaghetti </answer>
+    </question>
+    <question type="multiple" id="8">
+      <text>8. English translation of B&#x12B;ng ch&#xE1;</text>
+      <image/>
+      <choice>Ice Tea</choice>
+      <choice>Tea </choice>
+      <choice>Drink</choice>
+      <choice>Water</choice>
+      <answer>Ice Tea</answer>
+    </question>
+    <question type="multiple" id="9">
+      <text>9. English translation of Zh&#xE0;ngd&#x101;n</text>
+      <image/>
+      <choice>Bill</choice>
+      <choice>Payment </choice>
+      <choice>Change </choice>
+      <choice>Money</choice>
+      <answer>Bill</answer>
+    </question>
+    <question type="multiple" id="10">
+      <text>10. English translation of Zh&#x12B;f&#xF9;</text>
+      <image/>
+      <choice>Bill </choice>
+      <choice>Payment </choice>
+      <choice>Change</choice>
+      <choice>Money </choice>
+      <answer>Payment </answer>
     </question>
   </assessment>
 </assessments>

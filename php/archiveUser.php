@@ -18,10 +18,9 @@
     
 
     $accountToArchive = $_POST['user'];
-
     $users = $xml->getElementsByTagName("user");
     foreach($users as $user){
-        $email = $user->getAttribute("email");
+        $email = $user->getAttribute("username");
 
         if($email == $accountToArchive){
 
@@ -39,6 +38,7 @@
             $archiveUser->setAttribute("username",$user->getAttribute("username"));
             $archiveUser->setAttribute("email",$email);
             $archiveUser->setAttribute("access", "student");
+            $archiveUser->setAttribute("regDate", $user->getAttribute("regDate"));
 
             //Check optional values if they are empty and return empty string if true
             if(empty($user->getElementsByTagName("middleName")[0]->nodeValue)) $mName = "";

@@ -193,29 +193,29 @@ $(document).ready(function(){
         var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif|\.avif|\.webp)$/i;
         var filePath = $("#file").val();
         if(!allowedExtensions.exec(filePath) && filePath != ""){
-            $(".updateErrorMsg").text("Invalid file type.");
+            $("#errorDialog p").append("Invalid file type.");
             $("#file").val("");
             updateValid = false;
         }else if(!$("#editFname").val().trim()){
-            $(".updateErrorMsg").text("First Name is required.");
+            $("#errorDialog p").append("First Name is required.");
             updateValid = false;
         }else if(!$("#editLname").val().trim()){
-            $(".updateErrorMsg").text("Last Name is required.");
+            $("#errorDialog p").append("Last Name is required.");
             updateValid = false;
         }else if(!$("#editUname").val().trim()){
-            $(".updateErrorMsg").text("Username is required.");
+            $("#errorDialog p").append("Username is required.");
             updateValid = false;
         }else if(!$("#editEmail").val().trim()){
-            $(".updateErrorMsg").text("Email Address is required.");
+            $("#errorDialog p").append("Email Address is required.");
             updateValid = false;
         }else if(!regex.test($("#editEmail").val().trim())){
-            $(".updateErrorMsg").text("Email Address is invalid.");
+            $("#errorDialog p").append("Email Address is invalid.");
             updateValid = false;
         }else if(!$("#editBday").val()){
-            $(".updateErrorMsg").text("Birthday is required.");
+            $("#errorDialog p").append("Birthday is required.");
             updateValid = false;
         }else if(!$("#student_profile_edit input[name='gender']:checked").val()){
-            $(".updateErrorMsg").text("Gender is required.");
+            $("#errorDialog p").append("Gender is required.");
             updateValid = false;
         }else{
             updateValid = true;
@@ -223,9 +223,8 @@ $(document).ready(function(){
 
         //Display error message if form data are not valid.
         if(updateValid == false){
-            $(".updateErrorMsg").slideDown(100);
+            $("#errorDialog").dialog("open");
         }else{
-            $(".updateErrorMsg").slideUp(100);
 
             //Get Form details
             var updateformData = new FormData(this);
@@ -538,31 +537,49 @@ $(document).ready(function(){
     });
 
 // DICTIONARY PAGE
-    function refreshDictionary(){
+    function refreshDictionary(filter){
         $("#dictionaryTable").html("<tr><th>Pinyin</th><th>Hanzi</th><th>Definition</th><th>Part of Speech</th><th>Sentence</th></tr>");
         $.ajax({
             type: "post",
             url: "./php/getDictionary.php",
             success: function (response) {
+                var rowHtml = "";
                 const responseObj = JSON.parse(response);
                 responseObj.forEach(element => {
-                    var rowHtml = "<tr>";
-                    rowHtml += "<td>"+element.pinyin+"</td>";
-                    rowHtml += "<td>"+element.hanzi+"</td>";
-                    rowHtml += "<td>"+element.definition+"</td>";
-                    rowHtml += "<td>"+element.speech+"</td>";
-                    rowHtml += "<td>"+element.sentence+"</td>";
-                    rowHtml += "</tr>";
-                    $("#dictionaryTable").append(rowHtml);
+                    if(filter == ""){
+                        rowHtml += "<tr>";
+                        rowHtml += "<td>"+element.pinyin+"</td>";
+                        rowHtml += "<td>"+element.hanzi+"</td>";
+                        rowHtml += "<td>"+element.definition+"</td>";
+                        rowHtml += "<td>"+element.speech+"</td>";
+                        rowHtml += "<td>"+element.sentence+"</td>";
+                        rowHtml += "</tr>";
+                    }else{
+                        filter = filter.toLowerCase();
+                        var r = new RegExp("\\b" + filter + "\\b", 'i');
+                        word = element.definition.split(', ').join(" ");
+                        if(filter == element.pinyin.toLowerCase() || filter == element.hanzi.toLowerCase() || word.toLowerCase().search(r) >= 0 || filter == element.speech.toLowerCase() || element.sentence.toLowerCase().search(r) >= 0 ){
+                            rowHtml += "<tr>";
+                            rowHtml += "<td>"+element.pinyin+"</td>";
+                            rowHtml += "<td>"+element.hanzi+"</td>";
+                            rowHtml += "<td>"+element.definition+"</td>";
+                            rowHtml += "<td>"+element.speech+"</td>";
+                            rowHtml += "<td>"+element.sentence+"</td>";
+                            rowHtml += "</tr>";
+                        }
+                    }
                 });
+                $("#dictionaryTable").append(rowHtml);
             }
         });
     }
 
     $(".dictionaryBtn").click(function () { 
+        $("#searchText").val("");
+        $(".button").button();
     // VIEW WORDS
         if(activeWindow != "#dictionaryPage"){
-            refreshDictionary();
+            refreshDictionary("");
             if(activeWindow == ""){
                 activeWindow = "#dictionaryPage";
                 $("#dictionaryPage").show(100);
@@ -573,6 +590,11 @@ $(document).ready(function(){
                 });
             }
         }
+    });
+
+    $("#searchDictionaryBtn").click(function () { 
+        var input = $("#searchText").val().trim();
+        refreshDictionary(input);
     });
 
 // ASSESSMENT PAGE
@@ -712,15 +734,20 @@ $(document).ready(function(){
             processData: false,
             contentType: false,
             success: function (response) {
-                refreshAssessments("PENDING");
-                $("#successDialog p").append(response);
-                $("#successDialog").dialog("open");
+                if(response.trim() == "All fields required!"){
+                    $("#errorDialog p").append(response);
+                    $("#errorDialog").dialog("open");
+                }else{
+                    refreshAssessments("PENDING");
+                    $("#successDialog p").append(response);
+                    $("#successDialog").dialog("open");
 
-                $("#assessmentForm")[0].reset();
-                $("#assessmentForm fieldset").html("");
-                $("#assessmentForm").fadeOut(100, function(){
-                    $("#viewAssessments").fadeIn(100);
-                });
+                    $("#assessmentForm")[0].reset();
+                    $("#assessmentForm fieldset").html("");
+                    $("#assessmentForm").fadeOut(100, function(){
+                        $("#viewAssessments").fadeIn(100);
+                    });
+                }
             }
         });
     });
@@ -810,6 +837,7 @@ $(document).ready(function(){
 
     // TO MOCK TEST FORM
     var mockTestTitle = "";
+    var questionArr = [];
     $("#mockTestTable").on("click",".startMockTestBtn", function(e){
         e.preventDefault();
         var row = $(this).closest("tr");
@@ -823,6 +851,7 @@ $(document).ready(function(){
                 const responseObj = JSON.parse(response);
                 responseObj.questions.forEach(question => {
                     qIndex = question.id;
+                    questionArr.push(qIndex);
                     var questionHtml = "<div class=\"question\" id='"+qIndex+"'>";
                     questionHtml += "<input type=\"hidden\" id=\"qid-"+qIndex+"\" name=\"qid-"+qIndex+"\" value='"+qIndex+"'>";
                     if(question.image != ""){
@@ -831,26 +860,25 @@ $(document).ready(function(){
                     questionHtml += "<p>Question: "+question.text+"</p>";
                     if(question.type == "multiple"){
                         questionHtml += "<label for='answer1-"+qIndex+"'>"+question.choices[0]+"</label>";
-                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer1-"+qIndex+"' value='"+question.choices[0]+"' required>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer1-"+qIndex+"' value='"+question.choices[0]+"' required/>";
                         questionHtml += "<label for='answer2-"+qIndex+"'>"+question.choices[1]+"</label>";
-                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer2-"+qIndex+"' value='"+question.choices[1]+"'>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer2-"+qIndex+"' value='"+question.choices[1]+"'/>";
                         questionHtml += "<label for='answer3-"+qIndex+"'>"+question.choices[2]+"</label>";
-                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer3-"+qIndex+"' value='"+question.choices[2]+"'>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer3-"+qIndex+"' value='"+question.choices[2]+"'/>";
                         questionHtml += "<label for='answer4-"+qIndex+"'>"+question.choices[3]+"</label>";
-                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer4-"+qIndex+"' value='"+question.choices[3]+"'>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answer4-"+qIndex+"' value='"+question.choices[3]+"'/>";
                     }else if(question.type == "truefalse"){
                         questionHtml += "<label for='answerT-"+qIndex+"'>True</label>";
-                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answerT-"+qIndex+"' value='True' required>";
+                        questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answerT-"+qIndex+"' value='True' required/>";
                         questionHtml += "<label for='answerF-"+qIndex+"'>False</label>";
                         questionHtml += "<input type='radio' name='answer-"+qIndex+"' id='answerF-"+qIndex+"' value='False'>";
                     }else if(question.type == "identify"){
                         questionHtml += "<label for='answer-"+qIndex+"'>Answer: </label>";
-                        questionHtml += "<input type='text' name='answer-"+qIndex+"' id='answer-"+qIndex+"' required>";
+                        questionHtml += "<input type='text' name='answer-"+qIndex+"' id='answer-"+qIndex+"' required/>";
                     }
                     $("#mockTestForm fieldset").append(questionHtml);
                     $("input[type='radio']").checkboxradio();
                 });
-
             }
         });
         testActive = true;
@@ -863,6 +891,10 @@ $(document).ready(function(){
     // SUBMIT ASSESSMENT
     $("#mockTestForm").on("submit",function(e){
         e.preventDefault();
+        var questionLength = $(".question").length;
+        // for(var i=1;i<questionLength;i++){
+        //     if()
+        // }
         var formData = new FormData(this);
         formData.append("title",mockTestTitle);
         $.ajax({
@@ -872,15 +904,20 @@ $(document).ready(function(){
             processData: false,
             contentType: false,
             success: function (response) {
-                refreshMockTest("PENDING");
-                $("#successDialog p").append(response);
-                $("#successDialog").dialog("open");
+                if(response.trim() == "All fields required!"){
+                    $("#errorDialog p").append(response);
+                    $("#errorDialog").dialog("open");
+                }else{
+                    refreshMockTest("PENDING");
+                    $("#successDialog p").append(response);
+                    $("#successDialog").dialog("open");
 
-                $("#mockTestForm")[0].reset();
-                $("#mockTestForm fieldset").html("");
-                $("#mockTestForm").fadeOut(100, function(){
-                    $("#viewMockTest").fadeIn(100);
-                });
+                    $("#mockTestForm")[0].reset();
+                    $("#mockTestForm fieldset").html("");
+                    $("#mockTestForm").fadeOut(100, function(){
+                        $("#viewMockTest").fadeIn(100);
+                    });
+                }
             }
         });
     });

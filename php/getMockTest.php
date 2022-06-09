@@ -65,24 +65,19 @@
                 }else{
                     $user = $_SESSION['user'];
                 }
-                $hasScore = false;
+
                 foreach($xml2->children() as $mockTestScore){
-                    if((string) $mockTestScore['user'] == $user && (string) $mocktest['title'] == (string) $mockTestScore['test']){
-                        $hasScore = true;
-                        $mocktestDone = array();
-                        $mocktestDone['title'] = (string) $mocktest['title'];
-                        $mocktestDone['score'] = (string) $mockTestScore;
-                        $mocktestDone['items'] = (string) $mocktest['items'];
-                        array_push($response['completed'],$mocktestDone);
-                    }
-                }
-                if(!$hasScore){
                     $mocktestRow = array();
                     $mocktestRow['title'] = (string) $mocktest['title'];
+                    $mocktestRow['score'] = (string) $mockTestScore;
                     $mocktestRow['items'] = (string) $mocktest['items'];
-                    array_push($response['pending'],$mocktestRow);
-                }else{
+                    
+                    if((string) $mockTestScore['user'] == $user && (string) $mocktest['title'] == (string) $mockTestScore['test']){
+                        array_push($response['completed'],$mocktestRow);
+                    }
                 }
+                array_push($response['pending'],$mocktestRow);
+
             }else{
                 $mocktestRow = array();
                 $mocktestRow['title'] = (string) $mocktest['title'];

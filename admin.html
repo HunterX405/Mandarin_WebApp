@@ -98,6 +98,9 @@
             </div>
         </div>
 
+        <!-- USER SCORES DIALOG -->
+        <div class="dialog" id="userDialog" title="User Scores"></div>
+
         <!-- ARCHIVE USER DIALOG -->
         <div class="dialog" id="archiveUserDialog" title="Archive User"></div>
 
@@ -171,6 +174,10 @@
 
             <div class="pane">
                 <button type="button" class='button' id="toAddWordBtn">ADD WORD</button>
+                <div style="float:right">
+                    <input type="text" id="searchText" placeholder="SEARCH..."/>
+                    <button type="button" class='button' id="searchDictionaryBtn">SEARCH</button>
+                </div>
                 <table id="dictionaryTable">
                     <tr>
                         <th>Pinyin</th>
@@ -276,6 +283,9 @@
                 </table>
             </div>
 
+            <!-- ASSESSMENT SCORES DIALOG -->
+            <div class="dialog" id="assessmentDialog" title="Assessment Scores"></div>
+
             <!-- ADD ASSESSMENT FORM -->
             <form class="form" id="addAssessmentForm">
                 <h2 class="homeHeader2" id="addAssessmentHeader">ADD ASSESSMENT</h2>
@@ -340,7 +350,8 @@
             <div class="banner">
                 <h1 class="banner_text"> MOCK TESTS</h1>                                    
             </div>
-            <!-- VIEW ASSESSMENTS -->
+
+            <!-- VIEW MOCK TEST -->
             <div class="pane" id="viewMockTest">
                 <button type="button" class='button' id="toAddMockTestBtn">ADD MOCK TEST</button>
                 <table id="mockTestTable">
@@ -352,6 +363,9 @@
                     </tr>
                 </table>
             </div>
+
+            <!-- MOCK TEST SCORES DIALOG -->
+            <div class="dialog" id="mockTestDialog" title="Mock Test Scores"></div>
 
             <!-- ADD MOCK TEST FORM -->
             <form class="form" id="addMockTestForm">
@@ -467,7 +481,7 @@
                 <div> <img class="profile_icon" src="" alt="profile_icon"></div>
 
                 <div class="pane_margin">    
-                    <h2 class="homeHeader2">Name: </h2>
+                    <h2 class="homeHeader2" id="admin_profile h2">Name: </h2>
                     <h3 class="homeHeader3" id="username">Username: </h3>
                     <h3 class="homeHeader3" id="email">Email Address: </h3>
                     <h3 class="homeHeader3" id="address">Address: </h3>

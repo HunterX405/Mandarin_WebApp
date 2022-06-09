@@ -67,7 +67,7 @@ $(document).ready(function(){
 
 // USERS PAGE 
     function refreshUsers(data){
-        var tableHtml = "<tr><th>Name</th><th>Email</th><th>Address</th><th>School</th><th>Birthday</th><th>Gender</th><th>Action</th></tr>";
+        var tableHtml = "<tr><th>Name</th><th>Username</th><th>Email</th><th>Address</th><th>School</th><th>Birthday</th><th>Gender</th></tr>";
         $.ajax({
             type: "post",
             url: "./php/getAllUsers.php",
@@ -75,17 +75,13 @@ $(document).ready(function(){
             success: function (response) {
                 const responseObj = JSON.parse(response);
                 responseObj.forEach(user => {
-                    tableHtml += "<tr class='trHover'><td>"+user.name+"</td>";
+                    tableHtml += "<tr class='trHover userDetails'><td>"+user.name+"</td>";
+                    tableHtml += "<td>"+user.username+"</td>";
                     tableHtml += "<td>"+user.email+"</td>";
                     tableHtml += "<td>"+user.address+"</td>";
                     tableHtml += "<td>"+user.school+"</td>";
                     tableHtml += "<td>"+user.birthday+"</td>";
-                    tableHtml += "<td>"+user.gender+"</td>";
-                    if(data=="ACTIVE"){
-                        tableHtml += "<td><button type=\"button\" class='archiveUserBtn' title=\"Archive\">ARCHIVE</button><button type=\"button\" class='deleteUserBtn' title=\"delete\">DELETE</button></td></tr>";
-                    }else{
-                        tableHtml += "<td><button type=\"button\" class='restoreUserBtn' title=\"Restore\">RESTORE</button><button type=\"button\" class='deleteUserBtn' title=\"delete\">DELETE</button></td></tr>";
-                    }
+                    tableHtml += "<td>"+user.gender+"</td></tr>";
                 });
                 $("#usersTable").html(tableHtml);
             }
@@ -115,14 +111,73 @@ $(document).ready(function(){
         refreshUsers(this.value);
     });
 
-    // ARCHIVE USER
-    var userToArchive = "";
-    $("#usersPage").on("click",".archiveUserBtn", function(){
-        //Get row details
-        row = $(this).closest("tr");
-        userToArchive = row.find("td:nth-child(2)").text();
-        $("#archiveUserDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to archive "+userToArchive+" Account?</p>");
-        $("#archiveUserDialog").dialog("open");
+    var userSelected = "";
+
+    $("#userDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: 700,
+        width: "auto",
+        modal: true,
+        buttons: {
+            "ARCHIVE/RESTORE USER": function(){
+                if($('input[name="userData"]:checked').val()=="ACTIVE"){
+                    $("#archiveUserDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to archive "+userSelected+" Account?</p>");
+                    $("#archiveUserDialog").dialog("open");
+                }else{
+                    $("#restoreUserDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to restore "+userSelected+" Account?</p>");
+                    $("#restoreUserDialog").dialog("open");
+                }
+                
+            },
+            "DELETE USER": function(){
+                $("#deleteUserDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+userSelected+" Account?</p>");
+                $("#deleteUserDialog").dialog("open");
+            },
+            "CLOSE": function(){
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+
+    // VIEW USER SCORES
+    $("#usersTable").on("click",".userDetails", function(){
+        userSelected = $(this).find("td:nth-child(2)").text();
+        var userHtml = "";
+        userHtml += "<h2>USER: "+$(this).find("td:first-child").text()+"</h2>";
+        $.ajax({
+            type: "post",
+            url: "./php/getUserScores.php",
+            data: "user="+userSelected,
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                if(responseObj.assessment.length < 1){
+                    userHtml += "<h3>NO FINISHED ASSESSMENTS</h3>";
+                }else{
+                    userHtml += "<h3>ASSESSMENTS</h3><table><tr><th>Date</th><th>Assessment</th><th>Score</th></tr>";
+                    responseObj.assessment.forEach(assessmentScore => {
+                        userHtml += "<tr><td>"+assessmentScore.date+"</td>";
+                        userHtml += "<td>"+assessmentScore.title+"</td>";
+                        userHtml += "<td>"+assessmentScore.score+"</td></tr>";
+                    });
+                    userHtml += "</table>";
+                }
+                if(responseObj.mocktest.length < 1){
+                    userHtml += "<h3>NO FINISHED MOCK TEST</h3>";
+                }else{
+                    userHtml += "<h3>MOCK TESTS</h3><table><tr><th>Date</th><th>Assessment</th><th>Score</th></tr>";
+                    responseObj.mocktest.forEach(mockTestScore => {
+                        userHtml += "<tr><td>"+mockTestScore.date+"</td>";
+                        userHtml += "<td>"+mockTestScore.title+"</td>";
+                        userHtml += "<td>"+mockTestScore.score+"</td></tr>";
+                    });
+                    userHtml += "</table>";
+                }
+            
+                $("#userDialog").html(userHtml);
+                $("#userDialog").dialog("open");
+            }
+        });
     });
 
     //ARCHIVE USER MODAL
@@ -139,12 +194,9 @@ $(document).ready(function(){
                     url: "./php/archiveUser.php",
                     data: {
                         action: "archive",
-                        user: userToArchive,
+                        user: userSelected,
                     },
                     beforeSend: function (){
-                        //Get row details
-                        userToArchive = row.find("td:nth-child(2)").text();
-                        //Hide Dictionary Table
                         $("#usersTable").fadeOut(100);
                     },
                     success: function (response) {
@@ -155,6 +207,7 @@ $(document).ready(function(){
                         }else{
                             //Update Dictionary Table
                             refreshUsers("ACTIVE");
+                            $("#userDialog").dialog("close");
                             $("#successDialog p").append(response);
                             $("#successDialog").dialog("open");
                             $("#usersTable").fadeIn(100);
@@ -171,16 +224,6 @@ $(document).ready(function(){
         }
     });
 
-    // RESTORE USER
-    var userToRestore = "";
-    $("#usersPage").on("click",".restoreUserBtn", function(){
-        //Get row details
-        row = $(this).closest("tr");
-        userToRestore = row.find("td:nth-child(2)").text();
-        $("#restoreUserDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to restore "+userToRestore+" Account?</p>");
-        $("#restoreUserDialog").dialog("open");
-    });
-
     //RESTORE USER MODAL
     $("#restoreUserDialog").dialog({
         autoOpen: false,
@@ -195,12 +238,9 @@ $(document).ready(function(){
                     url: "./php/archiveUser.php",
                     data: {
                         action: "restore",
-                        user: userToRestore,
+                        user: userSelected,
                     },
                     beforeSend: function (){
-                        //Get row details
-                        userToRestore = row.find("td:nth-child(2)").text();
-                        //Hide Dictionary Table
                         $("#usersTable").fadeOut(100);
                     },
                     success: function (response) {
@@ -211,6 +251,7 @@ $(document).ready(function(){
                         }else{
                             //Update Dictionary Table
                             refreshUsers("ARCHIVED");
+                            $("#userDialog").dialog("close");
                             $("#successDialog p").append(response);
                             $("#successDialog").dialog("open");
                             $("#usersTable").fadeIn(100);
@@ -227,16 +268,6 @@ $(document).ready(function(){
         }
     });
 
-    // DELETE USER
-    var userToDelete = "";
-    $("#usersPage").on("click",".deleteUserBtn", function(){
-        //Get row details
-        row = $(this).closest("tr");
-        userToDelete = row.find("td:nth-child(2)").text();
-        $("#deleteUserDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+userToRestore+" Account?</p>");
-        $("#deleteUserDialog").dialog("open");
-    });
-
     // DELETE USER MODAL
     $("#deleteUserDialog").dialog({
         autoOpen: false,
@@ -250,12 +281,10 @@ $(document).ready(function(){
                     type: "POST",
                     url: "./php/deleteUser.php",
                     data: {
-                        user: userToDelete,
+                        user: userSelected,
                         table: $('input[name=userData]:checked').val(),
                     },
                     beforeSend: function (){
-                        //Get row details
-                        userToDelete = row.find("td:nth-child(2)").text();
                         //Hide Dictionary Table
                         $("#usersTable").fadeOut(100);
                     },
@@ -267,6 +296,7 @@ $(document).ready(function(){
                         }else{
                             //Update Dictionary Table
                             refreshUsers($('input[name=userData]:checked').val());
+                            $("#userDialog").dialog("close");
                             $("#successDialog p").append(response);
                             $("#successDialog").dialog("open");
                             $("#usersTable").fadeIn(100);
@@ -907,32 +937,51 @@ $(document).ready(function(){
     });
 
 //DICTIONARY PAGE
-    function refreshDictionary(){
+    function refreshDictionary(filter){
+        console.log(filter);
         $("#dictionaryTable").html("<tr><th>Pinyin</th><th>Hanzi</th><th>Definition</th><th>Part of Speech</th><th>Sentence</th><th>Action</th></tr>");
         $.ajax({
             type: "post",
             url: "./php/getDictionary.php",
             success: function (response) {
                 const responseObj = JSON.parse(response);
+                var rowHtml = "";
                 responseObj.forEach(element => {
-                    var rowHtml = "<tr>";
-                    rowHtml += "<td>"+element.pinyin+"</td>";
-                    rowHtml += "<td>"+element.hanzi+"</td>";
-                    rowHtml += "<td>"+element.definition+"</td>";
-                    rowHtml += "<td>"+element.speech+"</td>";
-                    rowHtml += "<td>"+element.sentence+"</td>";
-                    rowHtml += "<td><button type=\"button\" class='editWordBtn tableEditButton' title=\"edit\"></button><button type=\"button\" class='deleteWordBtn tableDeleteButton' title=\"delete\"></button></td>";  
-                    rowHtml += "</tr>";
-                    $("#dictionaryTable").append(rowHtml);
+                    if(filter == ""){
+                        rowHtml += "<tr>";
+                        rowHtml += "<td>"+element.pinyin+"</td>";
+                        rowHtml += "<td>"+element.hanzi+"</td>";
+                        rowHtml += "<td>"+element.definition+"</td>";
+                        rowHtml += "<td>"+element.speech+"</td>";
+                        rowHtml += "<td>"+element.sentence+"</td>";
+                        rowHtml += "<td><button type=\"button\" class='editWordBtn tableEditButton' title=\"edit\"></button><button type=\"button\" class='deleteWordBtn tableDeleteButton' title=\"delete\"></button></td>";  
+                        rowHtml += "</tr>";
+                    }else{
+                        filter = filter.toLowerCase();
+                        var r = new RegExp("\\b" + filter + "\\b", 'i');
+                        word = element.definition.split(', ').join(" ");
+                        if(filter == element.pinyin.toLowerCase() || filter == element.hanzi.toLowerCase() || word.toLowerCase().search(r) >= 0 || filter == element.speech.toLowerCase() || element.sentence.toLowerCase().search(r) >= 0 ){
+                            rowHtml += "<tr>";
+                            rowHtml += "<td>"+element.pinyin+"</td>";
+                            rowHtml += "<td>"+element.hanzi+"</td>";
+                            rowHtml += "<td>"+element.definition+"</td>";
+                            rowHtml += "<td>"+element.speech+"</td>";
+                            rowHtml += "<td>"+element.sentence+"</td>";
+                            rowHtml += "<td><button type=\"button\" class='editWordBtn tableEditButton' title=\"edit\"></button><button type=\"button\" class='deleteWordBtn tableDeleteButton' title=\"delete\"></button></td>";  
+                            rowHtml += "</tr>";
+                        }
+                    }
                 });
+                $("#dictionaryTable").append(rowHtml);
             }
         });
     }
 
     $("#dictionaryBtn").click(function () { 
     // VIEW WORDS
+        $("#searchText").val("");
         if(activeWindow != "#dictionaryPage"){
-            refreshDictionary();
+            refreshDictionary("");
             if(activeWindow == ""){
                 activeWindow = "#dictionaryPage";
                 $("#dictionaryPage").show(100);
@@ -949,6 +998,11 @@ $(document).ready(function(){
                 });
             }
         }
+    });
+
+    $("#searchDictionaryBtn").click(function () { 
+        var input = $("#searchText").val().trim();
+        refreshDictionary(input);
     });
 
     // ADD WORD
@@ -984,7 +1038,7 @@ $(document).ready(function(){
                         errorResponse(response);
                     }else{
                         //Update Dictionary Table
-                        refreshDictionary();
+                        refreshDictionary("");
                         $("#successDialog p").append(response);
                         $("#successDialog").dialog("open");
 
@@ -1072,7 +1126,7 @@ $(document).ready(function(){
                         errorResponse(response);
                     }else{
                         //Update Dictionary Table
-                        refreshDictionary();
+                        refreshDictionary("");
                         $("#successDialog p").append(response);
                         $("#successDialog").dialog("open");
 
@@ -1182,7 +1236,7 @@ $(document).ready(function(){
                             $("#errorDialog").dialog("open");
                         }else{
                             //Update Dictionary Table
-                            refreshDictionary();
+                            refreshDictionary("");
                             $("#successDialog p").append(response);
                             $("#successDialog").dialog("open");
                             $("#dictionaryTable").fadeIn(100);
@@ -1205,18 +1259,17 @@ $(document).ready(function(){
 // ASSESSMENT PAGE ====================================================================================================================================================================
 
     function refreshAssessments(){
-        $("#assessmentTable").html("<tr><th>Assessment Title</th><th>No. of Items</th><th>No. of Questions</th><th>Action</th></tr>");
+        $("#assessmentTable").html("<tr><th>Assessment Title</th><th>No. of Items</th><th>No. of Questions</th></tr>");
         $.ajax({
             type: "post",
             url: "./php/getAssessments.php",
             success: function (response) {
                 const responseObj = JSON.parse(response);
                 responseObj.forEach(element => {
-                    var rowHtml = "<tr class='trHover'>";
+                    var rowHtml = "<tr class='trHover assessmentDetails'>";
                     rowHtml += "<td>"+element.title+"</td>";
                     rowHtml += "<td>"+element.items+"</td>";
-                    rowHtml += "<td>"+element.questionsCount+"</td>";
-                    rowHtml += "<td><button type=\"button\" class='editAssessmentBtn tableEditButton' title=\"edit\"></button><button type=\"button\" class='deleteAssessmentBtn tableDeleteButton' title=\"delete\"></button></td>";  
+                    rowHtml += "<td>"+element.questionsCount+"</td>"; 
                     rowHtml += "</tr>";
                     $("#assessmentTable").append(rowHtml);
                 });
@@ -1240,6 +1293,59 @@ $(document).ready(function(){
                     });
                 }
             }
+    });
+
+    // ASSESSMENT SCORES DIALOG
+    $("#assessmentDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: 700,
+        width: "auto",
+        modal: true,
+        buttons: {
+            "EDIT ASSESSMENT": function(){
+                editAssessment(selectedAssessment);
+                $( this ).dialog( "close" );                
+            },
+            "DELETE ASSESSMENT": function(){
+                $("#deleteAssessmentDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+selectedAssessment+" Assessment?</p>");
+                $("#deleteAssessmentDialog").dialog("open");
+            },
+            "CLOSE": function(){
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+
+    $("#assessmentTable").on("click",".assessmentDetails", function(){
+        selectedAssessment = $(this).find("td:first-child").text();
+        var assessmentHtml = "";
+        assessmentHtml += "<h2>ASSESSMENT: "+selectedAssessment+"</h2>";
+        $.ajax({
+            type: "post",
+            url: "./php/getScores.php",
+            data: {
+                table: "ASSESSMENT",
+                title: selectedAssessment
+            },
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                if(responseObj.length < 1){
+                    assessmentHtml += "<h3>NO RESPONSES</h3>";
+                }else{
+                    assessmentHtml += "<table><tr><th>Date</th><th>User</th><th>Score</th></tr>";
+                    responseObj.forEach(assessmentScore => {
+                        assessmentHtml += "<tr><td>"+assessmentScore.date+"</td>";
+                        assessmentHtml += "<td>"+assessmentScore.user+"</td>";
+                        assessmentHtml += "<td>"+assessmentScore.score+"</td></tr>";
+                    });
+                    assessmentHtml += "</table>";
+                }
+            
+                $("#assessmentDialog").html(assessmentHtml);
+                $("#assessmentDialog").dialog("open");
+            }
+        });
     });
 
     // TO ADD ASSESSMENT FORM
@@ -1350,14 +1456,16 @@ $(document).ready(function(){
         e.preventDefault();
         var isValid = true;
 
+        totalQuestions = $(".question").length;
+
         var hasQuestion = true;
         for(var x=1;x<=totalQuestions;x++){
-            while($.inArray(x.toString(),deleteIndexBuffer) !== -1){
-                x++;
+            if($.inArray(x.toString(),deleteIndexBuffer) !== -1){
                 totalQuestions++;
-            }
-            if(!$("#question-"+x+"").val().trim() && !$("#image-"+x+"").val()){
-                hasQuestion = false;
+            }else{
+                if(!$("#question-"+x+"").val().trim() && !$("#image-"+x+"").val()){
+                    hasQuestion = false;
+                }
             }
         }
 
@@ -1421,16 +1529,6 @@ $(document).ready(function(){
         });
     });
     
-    // DELETE ASSESSMENT
-    var assessmentToDelete = "";
-    $("#assessmentTable").on("click",".deleteAssessmentBtn",function () {
-        //Get row details
-        row = $(this).closest("tr");
-        assessmentToDelete = row.find("td:first-child").text();
-        $("#deleteAssessmentDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+assessmentToDelete+" Assessment?</p>");
-        $("#deleteAssessmentDialog").dialog("open");
-    });
-
     //DELETE ASSESSMENT MODAL
     $("#deleteAssessmentDialog").dialog({
         autoOpen: false,
@@ -1440,13 +1538,10 @@ $(document).ready(function(){
         modal: true,
         buttons: {
             Confirm: function(){
-                //Get row details
-                assessmentToDelete = row.find("td:first-child").text();
-
                 $.ajax({
                     type: "POST",
                     url: "./php/deleteAssessment.php",
-                    data: "assessmentDelete="+assessmentToDelete,
+                    data: "assessmentDelete="+selectedAssessment,
                     beforeSend: function (){
                         //Hide Assessment Table
                         $("#assessmentTable").fadeOut(100);
@@ -1459,33 +1554,27 @@ $(document).ready(function(){
                         }else{
                             //Update Assessment Table
                             refreshAssessments();
+                            $("#assessmentDialog").dialog("close");
                             $("#successDialog p").append(response);
                             $("#successDialog").dialog("open");
                             $("#assessmentTable").fadeIn(100);
                         }
                     },
                     complete: function (){
-                        //Reset Variable
-                        assessmentToDelete = "";
                     }
                 });
                 $( this ).dialog( "close" );
             },
             Cancel: function() {
-                assessmentToDelete = "";
                 $( this ).dialog( "close" );
             }
         }
     });
 
     // EDIT ASSESSMENT
-    var assessmentToEdit = "";
-    $("#assessmentTable").on("click",".editAssessmentBtn",function () {
+    function editAssessment (assessmentToEdit) {
         $(".button").button();
         $("select").selectmenu();
-        //Get row details
-        row = $(this).closest("tr"),
-        assessmentToEdit = row.find("td:first-child").text();
         $.ajax({
             type: "post",
             url: "./php/getAssessments.php",
@@ -1598,7 +1687,7 @@ $(document).ready(function(){
                 });
             }
         });
-    });
+    };
 
         // ADD QUESTION IN EDIT ASSESSMENT FORM
         var deleteIndexBuffer = [];
@@ -1711,7 +1800,7 @@ $(document).ready(function(){
         if(isValid){
             var formData = new FormData($("#editAssessmentForm")[0]);
             formData.append("totalQuestions",totalQuestions);
-            formData.append("oldTitle",assessmentToEdit);
+            formData.append("oldTitle",selectedAssessment);
             $.ajax({
                 type: "post",
                 url: "./php/editAssessment.php",
@@ -1761,18 +1850,17 @@ $(document).ready(function(){
 // MOCK TEST PAGE ======================================================================================================================================================================
 
     function refreshMockTest(){
-        $("#mockTestTable").html("<tr><th>HSK Level</th><th>No. of Items</th><th>No. of Questions</th><th>Action</th></tr>");
+        $("#mockTestTable").html("<tr><th>HSK Level</th><th>No. of Items</th><th>No. of Questions</th></tr>");
         $.ajax({
             type: "post",
             url: "./php/getMockTest.php",
             success: function (response) {
                 const responseObj = JSON.parse(response);
                 responseObj.forEach(element => {
-                    var rowHtml = "<tr class='trHover'>";
+                    var rowHtml = "<tr class='trHover mockTestDetails'>";
                     rowHtml += "<td>"+element.title+"</td>";
                     rowHtml += "<td>"+element.items+"</td>";
-                    rowHtml += "<td>"+element.questionsCount+"</td>";
-                    rowHtml += "<td><button type=\"button\" class='editMockTestBtn tableEditButton' title=\"edit\"></button><button type=\"button\" class='deleteMockTestBtn tableDeleteButton' title=\"delete\"></button></td>";  
+                    rowHtml += "<td>"+element.questionsCount+"</td>"; 
                     rowHtml += "</tr>";
                     $("#mockTestTable").append(rowHtml);
                 });
@@ -1796,6 +1884,60 @@ $(document).ready(function(){
                     });
                 }
             }
+    });
+
+    var selectedMockTest = "";
+    // MOCK TEST SCORES DIALOG
+    $("#mockTestDialog").dialog({
+        autoOpen: false,
+        resizable: false,
+        height: 700,
+        width: "auto",
+        modal: true,
+        buttons: {
+            "EDIT MOCK TEST": function(){
+                editMockTest(selectedMockTest);
+                $( this ).dialog( "close" );                
+            },
+            "DELETE MOCK TEST": function(){
+                $("#deleteMockTestDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+selectedMockTest+" Assessment?</p>");
+                $("#deleteMockTestDialog").dialog("open");
+            },
+            "CLOSE": function(){
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+
+    $("#mockTestTable").on("click",".mockTestDetails", function(){
+        selectedMockTest = $(this).find("td:first-child").text();
+        var mocktestHtml = "";
+        mocktestHtml += "<h2>MOCK TEST: "+selectedMockTest+"</h2>";
+        $.ajax({
+            type: "post",
+            url: "./php/getScores.php",
+            data: {
+                table: "MOCKTEST",
+                title: selectedMockTest
+            },
+            success: function (response) {
+                const responseObj = JSON.parse(response);
+                if(responseObj.length < 1){
+                    mocktestHtml += "<h3>NO RESPONSES</h3>";
+                }else{
+                    mocktestHtml += "<table><tr><th>Date</th><th>User</th><th>Score</th></tr>";
+                    responseObj.forEach(mockTestScore => {
+                        mocktestHtml += "<tr><td>"+mockTestScore.date+"</td>";
+                        mocktestHtml += "<td>"+mockTestScore.user+"</td>";
+                        mocktestHtml += "<td>"+mockTestScore.score+"</td></tr>";
+                    });
+                    mocktestHtml += "</table>";
+                }
+            
+                $("#mockTestDialog").html(mocktestHtml);
+                $("#mockTestDialog").dialog("open");
+            }
+        });
     });
 
     // TO ADD MOCK TEST FORM
@@ -1867,7 +2009,7 @@ $(document).ready(function(){
             questionHtml += "<option selected=\"selected\">True</option>";
             questionHtml += "<option>False</option>";
             questionHtml += "</select>";
-        }else if($("#testQuestionTypee").val() == "Identification"){
+        }else if($("#testQuestionType").val() == "Identification"){
             questionHtml += "<input type=\"hidden\" id=\"type-"+questionNumber+"\" name=\"type-"+questionNumber+"\" value=\"identify\">";
             questionHtml += "<h3>Identification</h3>";
             
@@ -1977,15 +2119,6 @@ $(document).ready(function(){
         });
     });
 
-    // DELETE MOCK TEST
-    var mockTestToDelete = "";
-    $("#mockTestTable").on("click",".deleteMockTestBtn",function () {
-        //Get row details
-        row = $(this).closest("tr");
-        mockTestToDelete = row.find("td:first-child").text();
-        $("#deleteMockTestDialog").html("<p><span class=\"ui-icon ui-icon-alert\" style=\"margin:12px 12px 15px 0\"></span> Are you sure you want to delete "+mockTestToDelete+" Mock Test?</p>");
-        $("#deleteMockTestDialog").dialog("open");
-    });
 
     // DELETE MOCK TEST MODAL
     $("#deleteMockTestDialog").dialog({
@@ -1996,13 +2129,11 @@ $(document).ready(function(){
         modal: true,
         buttons: {
             Confirm: function(){
-                //Get row details
-                mockTestToDelete = row.find("td:first-child").text();
 
                 $.ajax({
                     type: "POST",
                     url: "./php/deleteMockTest.php",
-                    data: "mockTestDelete="+mockTestToDelete,
+                    data: "mockTestDelete="+selectedMockTest,
                     beforeSend: function (){
                         //Hide Mock Test Table
                         $("#mockTestTable").fadeOut(100);
@@ -2015,30 +2146,25 @@ $(document).ready(function(){
                         }else{
                             //Update Mock Test Table
                             refreshMockTest();
+                            $("#mockTestDialog").dialog("close");
                             $("#successDialog p").append(response);
                             $("#successDialog").dialog("open");
                             $("#mockTestTable").fadeIn(100);
-                            mockTestToDelete = "";
                         }
                     }
                 });
                 $( this ).dialog( "close" );
             },
             Cancel: function() {
-                mockTestToDelete = "";
                 $( this ).dialog( "close" );
             }
         }
     });
 
     // EDIT MOCK TEST
-    var mockTestToEdit = "";
-    $("#mockTestTable").on("click",".editMockTestBtn",function () {
+    function editMockTest(mockTestToEdit) {
         $(".button").button();
         $("select").selectmenu();
-        //Get row details
-        row = $(this).closest("tr"),
-        mockTestToEdit = row.find("td:first-child").text();
         $.ajax({
             type: "post",
             url: "./php/getMockTest.php",
@@ -2150,7 +2276,7 @@ $(document).ready(function(){
                 });
             }
         });
-    });
+    };
 
     // ADD QUESTION IN EDIT MOCK TEST FORM
     var deleteIndexBuffer = [];
@@ -2263,7 +2389,7 @@ $(document).ready(function(){
         if(isValid){
             var formData = new FormData($("#editMockTestForm")[0]);
             formData.append("totalQuestions",totalQuestions);
-            formData.append("oldTitle",mockTestToEdit); //----------------------------------------------------------------REMEMBER
+            formData.append("oldTitle",selectedMockTest);
             $.ajax({
                 type: "post",
                 url: "./php/editMockTest.php",
@@ -2398,7 +2524,7 @@ $(document).ready(function(){
                     //Parse JSON response from PHP AJAX
                     const obj = JSON.parse(response);
                     //Display profile data
-                    $("#student_profile h2").html(obj.firstName + " " + obj.middleName + " " + obj.lastName);
+                    $("#admin_profile h2").html(obj.firstName + " " + obj.middleName + " " + obj.lastName);
                     $("#username").html("Username: " + obj.username);
                     $("#email").html("Email: " + obj.email);
                     $(".profile_icon").attr("src", "php/"+obj.image);

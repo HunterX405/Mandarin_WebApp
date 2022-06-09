@@ -6,37 +6,11 @@
       <middleName/>
       <lastName>Administrator</lastName>
     </name>
-    <profileImage>images/1.jpg</profileImage>
+    <profileImage>images/1.png</profileImage>
     <password>$2y$10$QS7W5Uxe.ytfchy714ecJ.vrWSRrHsH3TX3Zeubxh2c5VvMxMl1vi</password>
-    <homeAddress/>
+    <homeAddress>Calumpit, Bulacan</homeAddress>
     <school>Bulacan State University</school>
     <birthday>06/02/2022</birthday>
-    <gender>Male</gender>
-  </user>
-  <user username="hunterxhenrick" email="johnhenrick.espiritu.sc@bulsu.edu.ph" access="student" regDate="05/28/2022">
-    <name>
-      <firstName>John</firstName>
-      <middleName/>
-      <lastName>Espiritu</lastName>
-    </name>
-    <profileImage>images/1.jpg</profileImage>
-    <password>$2y$10$awQ0HsRAzVriE.y/MMXbz.vPBrS0KeveGPV6s2zLan40cMF6py1xO</password>
-    <homeAddress>Malolos City</homeAddress>
-    <school>Bulacan State University</school>
-    <birthday>12/04/2000</birthday>
-    <gender>Female</gender>
-  </user>
-  <user username="test" email="test@gmail.com" access="student" regDate="06/01/2022">
-    <name>
-      <firstName>test</firstName>
-      <middleName/>
-      <lastName>account</lastName>
-    </name>
-    <profileImage>images/1.jpg</profileImage>
-    <password>$2y$10$hVh9JcDkqalj2lifeUipROA2hOKhayb0ioi9LzukndGBpDEZ8fm1e</password>
-    <homeAddress/>
-    <school/>
-    <birthday>06/01/2022</birthday>
     <gender>Male</gender>
   </user>
   <user username="Vio" email="johnvincent.viojan.c@bulsu.edu.ph" access="admin" regDate="06/07/2022">
@@ -52,19 +26,6 @@
     <birthday>06/27/2012</birthday>
     <gender>Female</gender>
   </user>
-  <user username="henrick405" email="hunterxhenrick@gmail.com" access="student" regDate="06/08/2022">
-    <name>
-      <firstName>John Henrick</firstName>
-      <middleName/>
-      <lastName>Espiritu</lastName>
-    </name>
-    <profileImage>images/profile_icon.avif</profileImage>
-    <password>$2y$10$fEuWQEG.dp4mA9vSL6sqCuy8VKea4LhUkERkkUNRFPsD7gww6HX0W</password>
-    <homeAddress>Malolos City</homeAddress>
-    <school>Bulacan State University</school>
-    <birthday>12/16/2000</birthday>
-    <gender>Male</gender>
-  </user>
   <user username="Drew" email="drewmiranda10@gmail.com" access="admin" regDate="06/08/2022">
     <name>
       <firstName>Philip</firstName>
@@ -78,7 +39,7 @@
     <birthday>03/10/2001</birthday>
     <gender>Male</gender>
   </user>
-  <user username="irvan123" email="psilungan@gmail.com" access="admin" regDate="06/08/2022">
+  <user username="irvan123" email="psilungan@gmail.com" access="student" regDate="06/08/2022">
     <name>
       <firstName>Patrick Irvan</firstName>
       <middleName>Santos</middleName>
@@ -91,7 +52,20 @@
     <birthday>12/19/2000</birthday>
     <gender>Male</gender>
   </user>
-  <user username="Ampol" email="johnpaul.pagtalunan.a@bulsu.edu.ph" access="admin" regDate="06/08/2022">
+  <user username="JCadag" email="jonkyiel@yahoo.com" access="student" regDate="06/09/2022">
+    <name>
+      <firstName>Jonkyiel</firstName>
+      <middleName>Lagriada</middleName>
+      <lastName>Cadag</lastName>
+    </name>
+    <profileImage/>
+    <password>$2y$10$Q1ZSH./aOFE053a8RAC/9OS/P26QPlWJHC5umT6fi.kmzhBMW7f8e</password>
+    <homeAddress>San Rafael Bulacan</homeAddress>
+    <school>Bulacan State University</school>
+    <birthday>03/03/2022</birthday>
+    <gender>Male</gender>
+  </user>
+  <user username="Ampol" email="Ampol" access="student" regDate="06/08/2022">
     <name>
       <firstName>John Paul</firstName>
       <middleName/>
@@ -102,6 +76,19 @@
     <homeAddress/>
     <school/>
     <birthday>12/11/2001</birthday>
+    <gender>Male</gender>
+  </user>
+  <user username="henrick405" email="henrick405@gmail.com" access="student" regDate="06/08/2022">
+    <name>
+      <firstName>John Henrick</firstName>
+      <middleName/>
+      <lastName>Espiritu</lastName>
+    </name>
+    <profileImage/>
+    <password>$2y$10$i80.3hEHyXSMU8PcaPglkuGeSiFqMGjrnkAdq4yR32E28DLMqv3t6</password>
+    <homeAddress>Malolos City</homeAddress>
+    <school>Bulacan State University</school>
+    <birthday>12/16/2000</birthday>
     <gender>Male</gender>
   </user>
 </users>
