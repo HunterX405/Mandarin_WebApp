@@ -37,11 +37,23 @@
 
             //Save XML file
             
-
-            if($_POST['table'] == "ACTIVE"){
-                $xml->save("userAccounts.xml");
+            if(isset($_POST['table'])){
+                if($_POST['table'] == "ACTIVE"){
+                    $xml->save("userAccounts.xml");
+                }else{
+                    $xml->save("archivedUsers.xml");
+                }
             }else{
-                $xml->save("archivedUsers.xml");
+                $xml->save("userAccounts.xml");
+            }
+            
+
+            $userD = "";
+
+            if(isset($_SESSION['admin'])){
+                $userD = $_SESSION['admin'];
+            }else{
+                $userD = $_SESSION['user'];
             }
             
             // Add to Activity Log
@@ -50,7 +62,7 @@
             $xmlLog->formatOutput = true;
             $xmlLog->load("activity.xml"); 
 
-            $log = $xmlLog->createElement("log","Admin ".$_SESSION['admin']." deleted user ".$accountToDelete." Account");
+            $log = $xmlLog->createElement("log","Admin ".$userD." deleted user ".$accountToDelete." Account");
             $log->setAttribute("type","DELETE USER");
             $log->setAttribute("date",date("m/d/Y"));
             

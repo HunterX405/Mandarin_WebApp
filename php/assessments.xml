@@ -460,11 +460,11 @@
       <choice>Y&#x1D4;m&#xE1;oqi&#xFA;</choice>
       <choice>L&#xE1;nqi&#xFA;</choice>
       <choice>Z&#xFA;qi&#xFA;</choice>
-      <answer>L&#xE1;nqi&#xFA;</answer>
+      <answer>Y&#x1D4;m&#xE1;oqi&#xFA;</answer>
     </question>
     <question type="multiple" id="2">
       <text>2. Identify the given picture by choosing the right Pinyin.</text>
-      <image>images/soccer.jpg</image>
+      <image>images/Soccer.png</image>
       <choice>P&#xE1;iqi&#xFA;</choice>
       <choice>Y&#x1D4;m&#xE1;oqi&#xFA;</choice>
       <choice>L&#xE1;nqi&#xFA;</choice>
@@ -473,7 +473,7 @@
     </question>
     <question type="multiple" id="3">
       <text>3. Identify the given picture by choosing the right Pinyin.</text>
-      <image>images/basketball.jpg</image>
+      <image>images/Basketball.png</image>
       <choice>P&#xE1;iqi&#xFA;</choice>
       <choice>Y&#x1D4;m&#xE1;oqi&#xFA;</choice>
       <choice>L&#xE1;nqi&#xFA;</choice>
@@ -545,16 +545,16 @@
     </question>
     <question type="multiple" id="11">
       <text>11. Identify the given picture by choosing the right Pinyin.</text>
-      <image>images/chinese.jpg</image>
+      <image>images/Mandarin.png</image>
       <choice>P&#x1D4;t&#x14D;nghu&#xE0;</choice>
       <choice>F&#x1CE;y&#x1D4;</choice>
       <choice>H&#xE1;ngu&#xF3; r&#xE9;n</choice>
       <choice>Zh&#x14D;nggu&#xF3; r&#xE9;n</choice>
-      <answer>Zh&#x14D;nggu&#xF3; r&#xE9;n</answer>
+      <answer>P&#x1D4;t&#x14D;nghu&#xE0;</answer>
     </question>
     <question type="multiple" id="12">
       <text>12. Identify the given picture by choosing the right Pinyin.</text>
-      <image>images/french.jpg</image>
+      <image>images/France.png</image>
       <choice>P&#x1D4;t&#x14D;nghu&#xE0;</choice>
       <choice>F&#x1CE;y&#x1D4;</choice>
       <choice>H&#xE1;ngu&#xF3; r&#xE9;n</choice>
@@ -635,7 +635,7 @@
     </question>
     <question type="multiple" id="21">
       <text>21. Identify the given picture by choosing the right Pinyin</text>
-      <image>images/orange.jpg</image>
+      <image>images/Orange.png</image>
       <choice>P&#xED;ngzi</choice>
       <choice>Ch&#xE9;ngzi</choice>
       <choice>P&#xED;nggu&#x1D2;</choice>
@@ -644,7 +644,7 @@
     </question>
     <question type="multiple" id="22">
       <text>22. Identify the given picture by choosing the right Pinyin</text>
-      <image>images/apple.jpg</image>
+      <image>images/Apple.png</image>
       <choice>P&#xED;ngzi</choice>
       <choice>Ch&#xE9;ngzi</choice>
       <choice>P&#xED;nggu&#x1D2;</choice>
@@ -703,7 +703,7 @@
       <choice>Much</choice>
       <choice>Many </choice>
       <choice>Any</choice>
-      <answer>Few</answer>
+      <answer>Many </answer>
     </question>
     <question type="multiple" id="29">
       <text>29. Arrange the Pinyin to form the correct Chinese sentence &#x201D; Ma w&#x1D2; n&#xE9;ng y&#xE0;o j&#x1D0; p&#xED;ng&#x201D;</text>
@@ -725,7 +725,7 @@
     </question>
     <question type="multiple" id="31">
       <text>31. Identify the given picture by choosing the right Pinyin</text>
-      <image>images/money.jpg</image>
+      <image>images/Yuan.png</image>
       <choice>Qi&#xE1;n</choice>
       <choice>X&#x12B;nshu&#x1D0;</choice>
       <choice>M&#x11B;i f&#x113;n</choice>
@@ -734,7 +734,7 @@
     </question>
     <question type="multiple" id="32">
       <text>32. Identify the given picture by choosing the right Pinyin</text>
-      <image>images/coin.jpg</image>
+      <image>images/Coin.png</image>
       <choice>Qi&#xE1;n</choice>
       <choice>X&#x12B;nshu&#x1D0;</choice>
       <choice>M&#x11B;i f&#x113;n</choice>
@@ -815,7 +815,7 @@
     </question>
     <question type="multiple" id="41">
       <text>41. Identify the given picture by choosing the right Pinyin</text>
-      <image>images/balloons.jpg</image>
+      <image>images/Ballon.png</image>
       <choice>Q&#xEC;qi&#xFA;</choice>
       <choice>D&#xE0;ng&#x101;o</choice>
       <choice>L&#x1D0;w&#xF9;</choice>
@@ -824,7 +824,7 @@
     </question>
     <question type="multiple" id="42">
       <text>42. Identify the given picture by choosing the right Pinyin</text>
-      <image>images/candy.jpg</image>
+      <image>images/Candies.png</image>
       <choice>Q&#xEC;qi&#xFA;</choice>
       <choice>D&#xE0;ng&#x101;o</choice>
       <choice>L&#x1D0;w&#xF9;</choice>
@@ -1730,6 +1730,818 @@
       <choice>Change</choice>
       <choice>Money </choice>
       <answer>Payment </answer>
+    </question>
+    <question type="multiple" id="11">
+      <text>11. Choose the correct pinyin translation of "Happy New Year!"</text>
+      <image/>
+      <choice>X&#x12B;nni&#xE1;n ku&#xE0;il&#xE8;!</choice>
+      <choice>Xi&#xE8;xi&#xE8; n&#x1D0;! </choice>
+      <choice>Zh&#xF9; n&#x1D0; h&#x1CE;o y&#xF9;n! </choice>
+      <choice>W&#x1D2; y&#x11B;sh&#xEC;!</choice>
+      <answer>X&#x12B;nni&#xE1;n ku&#xE0;il&#xE8;!</answer>
+    </question>
+    <question type="multiple" id="12">
+      <text>12. Choose the correct pinyin translation of "Thank you!"</text>
+      <image/>
+      <choice>X&#x12B;nni&#xE1;n ku&#xE0;il&#xE8;! </choice>
+      <choice>Xi&#xE8;xi&#xE8; n&#x1D0;!</choice>
+      <choice>Zh&#xF9; n&#x1D0; h&#x1CE;o y&#xF9;n!       </choice>
+      <choice>W&#x1D2; y&#x11B;s</choice>
+      <answer>Xi&#xE8;xi&#xE8; n&#x1D0;!</answer>
+    </question>
+    <question type="multiple" id="13">
+      <text>13. Choose the correct pinyin translation of "Wishing you luck!"</text>
+      <image/>
+      <choice>X&#x12B;nni&#xE1;n ku&#xE0;il&#xE8;! </choice>
+      <choice>Xi&#xE8;xi&#xE8; n&#x1D0;!</choice>
+      <choice>Zh&#xF9; n&#x1D0; h&#x1CE;o y&#xF9;n! </choice>
+      <choice>W&#x1D2; y&#x11B;sh&#xEC;!</choice>
+      <answer>Zh&#xF9; n&#x1D0; h&#x1CE;o y&#xF9;n! </answer>
+    </question>
+    <question type="multiple" id="14">
+      <text>14. Choose the correct pinyin translation of "Me too!"</text>
+      <image/>
+      <choice> X&#x12B;nni&#xE1;n ku&#xE0;il&#xE8;!     </choice>
+      <choice>Xi&#xE8;xi&#xE8; n&#x1D0;!      </choice>
+      <choice>Zh&#xF9; n&#x1D0; h&#x1CE;o y&#xF9;n!      </choice>
+      <choice>W&#x1D2; y&#x11B;sh&#xEC;!</choice>
+      <answer>W&#x1D2; y&#x11B;sh&#xEC;!</answer>
+    </question>
+    <question type="multiple" id="15">
+      <text>15. Choose the correct pinyin translation of "Wishing you the same!"</text>
+      <image/>
+      <choice>X&#x12B;w&#xE0;ng n&#x1D0; y&#x11B; y&#x12B;y&#xE0;ng!!</choice>
+      <choice>Xi&#xE8;xi&#xE8; n&#x1D0;! </choice>
+      <choice>Zh&#xF9; n&#x1D0; h&#x1CE;o y&#xF9;n! </choice>
+      <choice>W&#x1D2; y&#x11B;sh&#xEC;!</choice>
+      <answer>X&#x12B;w&#xE0;ng n&#x1D0; y&#x11B; y&#x12B;y&#xE0;ng!!</answer>
+    </question>
+    <question type="multiple" id="16">
+      <text>16. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/year-of-the-tiger.jpg</image>
+      <choice>H&#x1D4; ni&#xE1;n </choice>
+      <choice>T&#xF9; ni&#xE1;n </choice>
+      <choice>L&#xF3;ng ni&#xE1;n </choice>
+      <choice>Sh&#xE9; ni&#xE1;n</choice>
+      <answer>H&#x1D4; ni&#xE1;n </answer>
+    </question>
+    <question type="multiple" id="17">
+      <text>17. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/Rabbit-.jpg</image>
+      <choice>T&#xF9; ni&#xE1;n</choice>
+      <choice>L&#xF3;ng ni&#xE1;n </choice>
+      <choice>Sh&#xE9; ni&#xE1;n </choice>
+      <choice>M&#x1CE; ni&#xE1;n</choice>
+      <answer>T&#xF9; ni&#xE1;n</answer>
+    </question>
+    <question type="multiple" id="18">
+      <text>18. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/year-of-the-dog.jpg</image>
+      <choice>Sh&#x1D4; ni&#xE1;n</choice>
+      <choice>Ni&#xFA; ni&#xE1;n </choice>
+      <choice>H&#x1D4; ni&#xE1;n </choice>
+      <choice>G&#x1D2;u ni&#xE1;n</choice>
+      <answer>G&#x1D2;u ni&#xE1;n</answer>
+    </question>
+    <question type="multiple" id="19">
+      <text>19. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/pig.jpg</image>
+      <choice>H&#xF3;u ni&#xE1;n </choice>
+      <choice>J&#x12B; ni&#xE1;n </choice>
+      <choice>G&#x1D2;u ni&#xE1;n</choice>
+      <choice>Zh&#x16B; ni&#xE1;n</choice>
+      <answer>Zh&#x16B; ni&#xE1;n</answer>
+    </question>
+    <question type="multiple" id="20">
+      <text>20. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/dragon.jpg</image>
+      <choice>H&#x1D4; ni&#xE1;n </choice>
+      <choice>T&#xF9; ni&#xE1;n </choice>
+      <choice>L&#xF3;ng ni&#xE1;n </choice>
+      <choice>Sh&#xE9; ni&#xE1;n</choice>
+      <answer>L&#xF3;ng ni&#xE1;n </answer>
+    </question>
+    <question type="multiple" id="21">
+      <text>21. Choose the correct pinyin translation of "One"</text>
+      <image/>
+      <choice>Y&#x12B; </choice>
+      <choice>S&#x101;n</choice>
+      <choice>W&#x1D4; </choice>
+      <choice>S&#xEC;</choice>
+      <answer>Y&#x12B; </answer>
+    </question>
+    <question type="multiple" id="22">
+      <text>22. Choose the correct pinyin translation of "Five"</text>
+      <image/>
+      <choice>Y&#x12B; </choice>
+      <choice>S&#x101;n </choice>
+      <choice>W&#x1D4; </choice>
+      <choice>S&#xEC;</choice>
+      <answer>W&#x1D4; </answer>
+    </question>
+    <question type="multiple" id="23">
+      <text>23. Choose the correct pinyin translation of "Ten"</text>
+      <image/>
+      <choice>Li&#xF9;	</choice>
+      <choice>Sh&#xED;</choice>
+      <choice>B&#x101; </choice>
+      <choice>Ji&#x1D4;</choice>
+      <answer>Sh&#xED;</answer>
+    </question>
+    <question type="multiple" id="24">
+      <text>24. Choose the correct pinyin translation of "Nine"</text>
+      <image/>
+      <choice>Sh&#xED; </choice>
+      <choice>B&#x101; </choice>
+      <choice>Ji&#x1D4; </choice>
+      <choice>&#xC8;r</choice>
+      <answer>Ji&#x1D4; </answer>
+    </question>
+    <question type="multiple" id="25">
+      <text>25. Choose the correct pinyin translation of "Seven"</text>
+      <image/>
+      <choice>B&#x101; </choice>
+      <choice>Ji&#x1D4;</choice>
+      <choice>&#xC8;r </choice>
+      <choice>Q&#x12B;</choice>
+      <answer>Q&#x12B;</answer>
+    </question>
+    <question type="multiple" id="26">
+      <text>26. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/Banana-Single.jpg</image>
+      <choice>M&#xE0;if&#x101;ng </choice>
+      <choice>Xi&#x101;ngji&#x101;o </choice>
+      <choice>M&#x1CE;if&#x101;ng </choice>
+      <choice>Qi&#xE1;n</choice>
+      <answer>Xi&#x101;ngji&#x101;o </answer>
+    </question>
+    <question type="multiple" id="27">
+      <text>27. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/apple_158989157.jpg</image>
+      <choice>P&#xED;nggu&#x1D2; </choice>
+      <choice>M&#xE0;if&#x101;ng</choice>
+      <choice>Xi&#x101;ngji&#x101;o </choice>
+      <choice>M&#x1CE;if&#x101;ng</choice>
+      <answer>P&#xED;nggu&#x1D2; </answer>
+    </question>
+    <question type="multiple" id="28">
+      <text>28. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/mango.jpg</image>
+      <choice>Qi&#xE1;n </choice>
+      <choice>M&#xE1;nggu&#x1D2; </choice>
+      <choice>M&#xE0;if&#x101;ng</choice>
+      <choice>Sh&#xEC;ch&#x1CE;ng</choice>
+      <answer>M&#xE1;nggu&#x1D2; </answer>
+    </question>
+    <question type="multiple" id="29">
+      <text>29. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/market.jpg</image>
+      <choice>Qi&#xE1;n </choice>
+      <choice>M&#xE1;nggu&#x1D2; </choice>
+      <choice>M&#xE0;if&#x101;ng </choice>
+      <choice>Sh&#xEC;ch&#x1CE;ng</choice>
+      <answer>M&#xE0;if&#x101;ng </answer>
+    </question>
+    <question type="multiple" id="30">
+      <text>30. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/money.jpg</image>
+      <choice>Xi&#x101;ngji&#x101;o </choice>
+      <choice>M&#x1CE;if&#x101;ng </choice>
+      <choice>Qi&#xE1;n </choice>
+      <choice>M&#xE1;nggu&#x1D2;</choice>
+      <answer>Qi&#xE1;n </answer>
+    </question>
+    <question type="multiple" id="31">
+      <text>31. Choose the correct pinyin translation of "Teacher"</text>
+      <image/>
+      <choice>T&#xF3;ngxu&#xE9; </choice>
+      <choice>L&#x1CE;osh&#x12B; </choice>
+      <choice>H&#xE1;izi </choice>
+      <choice>Zh&#x1D4;y&#xE0;o de</choice>
+      <answer>L&#x1CE;osh&#x12B; </answer>
+    </question>
+    <question type="multiple" id="32">
+      <text>32. Choose the correct pinyin translation of "Student"</text>
+      <image/>
+      <choice>H&#xE1;izi </choice>
+      <choice>Zh&#x1D4;y&#xE0;o de </choice>
+      <choice>Xu&#xE9;sh&#x113;ng</choice>
+      <choice>M&#x1D4;q&#x12B;n</choice>
+      <answer>Xu&#xE9;sh&#x113;ng</answer>
+    </question>
+    <question type="multiple" id="33">
+      <text>33. Choose the correct pinyin translation of "School"</text>
+      <image/>
+      <choice>Xu&#xE9;sh&#x113;ng </choice>
+      <choice>M&#x1D4;q&#x12B;n </choice>
+      <choice>Xu&#xE9;xi&#xE0;o</choice>
+      <choice>J&#x1D0;ngw&#xE8;i</choice>
+      <answer>Xu&#xE9;xi&#xE0;o</answer>
+    </question>
+    <question type="multiple" id="34">
+      <text>34. Choose the correct pinyin translation of "Lesson"</text>
+      <image/>
+      <choice>J&#x1D0;ngw&#xE8;i </choice>
+      <choice>K&#xE8; </choice>
+      <choice>Sh&#xED;t&#xE1;ng </choice>
+      <choice>L&#x1CE;ngs&#xF2;ng</choice>
+      <answer>K&#xE8; </answer>
+    </question>
+    <question type="multiple" id="35">
+      <text>35. Choose the correct pinyin translation of "Recitation"</text>
+      <image/>
+      <choice>Sh&#xED;t&#xE1;ng</choice>
+      <choice>L&#x1CE;ngs&#xF2;ng</choice>
+      <choice>Xu&#xE9;xi&#xE0;o </choice>
+      <choice>J&#x1D0;ngw&#xE8;i</choice>
+      <answer>L&#x1CE;ngs&#xF2;ng</answer>
+    </question>
+    <question type="multiple" id="36">
+      <text>36. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/red.png</image>
+      <choice>a.	hu&#xE1;ngs&#xE8; </choice>
+      <choice>b.	h&#xF3;ngs&#xE8; de </choice>
+      <choice>c.	f&#x11B;ns&#xE8; de </choice>
+      <choice>d.	h&#x113;is&#xE8; de</choice>
+      <answer>b.	h&#xF3;ngs&#xE8; de </answer>
+    </question>
+    <question type="multiple" id="37">
+      <text>37. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/yellow.jpg</image>
+      <choice>b&#xE1;is&#xE8; de </choice>
+      <choice>hu&#xE1;ngs&#xE8; </choice>
+      <choice>h&#xF3;ngs&#xE8; de </choice>
+      <choice>f&#x11B;ns&#xE8; de</choice>
+      <answer>hu&#xE1;ngs&#xE8; </answer>
+    </question>
+    <question type="multiple" id="38">
+      <text>38. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/orange.jpg</image>
+      <choice>l&#x1DC;s&#xE8; de </choice>
+      <choice>ch&#xE9;ngzi </choice>
+      <choice>di&#xE0;nq&#x12B;ng </choice>
+      <choice>z&#x1D0;s&#xE8;</choice>
+      <answer>ch&#xE9;ngzi </answer>
+    </question>
+    <question type="multiple" id="39">
+      <text>39. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/blue.jpg</image>
+      <choice>L&#xE1;n s&#xE8; de </choice>
+      <choice>b&#xE1;is&#xE8; de </choice>
+      <choice>hu&#xE1;ngs&#xE8; </choice>
+      <choice>h&#xF3;ngs&#xE8; de</choice>
+      <answer>L&#xE1;n s&#xE8; de </answer>
+    </question>
+    <question type="multiple" id="40">
+      <text>40. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/violet.png</image>
+      <choice>l&#x1DC;s&#xE8; de </choice>
+      <choice>ch&#xE9;ngzi </choice>
+      <choice>di&#xE0;nq&#x12B;ng </choice>
+      <choice>z&#x1D0;s&#xE8;</choice>
+      <answer>z&#x1D0;s&#xE8;</answer>
+    </question>
+    <question type="multiple" id="41">
+      <text>41. Choose the correct pinyin translation of "Party"</text>
+      <image/>
+      <choice>J&#xEC;hu&#xE0; </choice>
+      <choice>P&#xE0;idu&#xEC; </choice>
+      <choice>Q&#xFA;nzi </choice>
+      <choice>Du&#x1CE;n q&#xFA;n</choice>
+      <answer>P&#xE0;idu&#xEC; </answer>
+    </question>
+    <question type="multiple" id="42">
+      <text>42. Choose the correct pinyin translation of "Plan"</text>
+      <image/>
+      <choice>K&#xF9;zi </choice>
+      <choice>J&#xEC;hu&#xE0;  </choice>
+      <choice>Chu&#x101;n </choice>
+      <choice>Sh&#xE9;nme</choice>
+      <answer>J&#xEC;hu&#xE0;  </answer>
+    </question>
+    <question type="multiple" id="43">
+      <text>43. Choose the correct pinyin translation of "Think"</text>
+      <image/>
+      <choice>W&#x1D2; </choice>
+      <choice>W&#x1D2;men </choice>
+      <choice>S&#x12B;k&#x1CE;o </choice>
+      <choice>H&#xE9;sh&#xEC; de</choice>
+      <answer>S&#x12B;k&#x1CE;o </answer>
+    </question>
+    <question type="multiple" id="44">
+      <text>44. Choose the correct pinyin translation of "Waiting"</text>
+      <image/>
+      <choice>Chu&#x101;n </choice>
+      <choice>Sh&#xE9;nme </choice>
+      <choice>Sh&#xEC;w&#xF9; </choice>
+      <choice>D&#x11B;ngd&#xE0;i</choice>
+      <answer>D&#x11B;ngd&#xE0;i</answer>
+    </question>
+    <question type="multiple" id="45">
+      <text>45. Choose the correct pinyin translation of "Let</text>
+      <image/>
+      <choice>D&#x11B;ngd&#xE0;i </choice>
+      <choice>W&#x1D2;men z&#x1D2;u ba </choice>
+      <choice>W&#x1D2; </choice>
+      <choice>W&#x1D2;men</choice>
+      <answer>W&#x1D2;men z&#x1D2;u ba </answer>
+    </question>
+    <question type="multiple" id="46">
+      <text>46. There are many different ____ Here.</text>
+      <image>images/clothes.jpg</image>
+      <choice>K&#xF9;zi </choice>
+      <choice>y&#x12B;f&#xFA; </choice>
+      <choice>b&#x101;o </choice>
+      <choice>xi&#xE9;zi</choice>
+      <answer>y&#x12B;f&#xFA; </answer>
+    </question>
+    <question type="multiple" id="47">
+      <text>47. I enjoyed the ____!</text>
+      <image>images/party.jpg</image>
+      <choice>J&#xF9;hu&#xEC;</choice>
+      <choice>y&#xE1;nt&#x1CE;o hu&#xEC; </choice>
+      <choice>p&#xE0;idu&#xEC;</choice>
+      <choice>hu&#xEC;y&#xEC;</choice>
+      <answer>p&#xE0;idu&#xEC;</answer>
+    </question>
+    <question type="multiple" id="48">
+      <text>48. We will be having _______ in my birthday?</text>
+      <image>images/celeb.jpg</image>
+      <choice>B&#x101;nj&#xED;</choice>
+      <choice>r&#xE8;nw&#xF9; </choice>
+      <choice>q&#xEC;ngdi&#x1CE;n </choice>
+      <choice>q&#xFA;nzi</choice>
+      <answer>q&#xEC;ngdi&#x1CE;n </answer>
+    </question>
+    <question type="multiple" id="49">
+      <text>49. I love your _____.</text>
+      <image>images/dress.jpg</image>
+      <choice>Ch&#xE8;nsh&#x101;n </choice>
+      <choice>q&#xFA;nzi </choice>
+      <choice>du&#x1CE;n de</choice>
+      <choice>xi&#xE9;</choice>
+      <answer>q&#xFA;nzi </answer>
+    </question>
+    <question type="multiple" id="50">
+      <text>50. ____ are united!</text>
+      <image>images/we.jpg</image>
+      <choice>W&#x1D2;men </choice>
+      <choice>y&#x12B;sh&#xEC; </choice>
+      <choice>t&#x101;men </choice>
+      <choice>n&#x1D0;</choice>
+      <answer>W&#x1D2;men </answer>
+    </question>
+  </assessment>
+  <assessment title="Lesson 6" items="10">
+    <question type="multiple" id="1">
+      <text>1. I think I have a "flu".</text>
+      <image/>
+      <choice>t&#xF3;u </choice>
+      <choice>b&#xED;zi</choice>
+      <choice>li&#xFA;g&#x1CE;n </choice>
+      <choice>n&#xE1;</choice>
+      <answer>li&#xFA;g&#x1CE;n </answer>
+    </question>
+    <question type="multiple" id="2">
+      <text>2. Please "take" some medicine.</text>
+      <image/>
+      <choice>t&#xF3;u </choice>
+      <choice>b&#xED;zi </choice>
+      <choice>li&#xFA;g&#x1CE;n</choice>
+      <choice>n&#xE1;</choice>
+      <answer>n&#xE1;</answer>
+    </question>
+    <question type="multiple" id="3">
+      <text>3. "Get well" soon!</text>
+      <image/>
+      <choice>n&#xE1; </choice>
+      <choice>qu&#xE1;ny&#xF9; </choice>
+      <choice>b&#xF9; t&#xE0;i h&#x1CE;o </choice>
+      <choice>m&#x11B;ih&#x1CE;o de</choice>
+      <answer>qu&#xE1;ny&#xF9; </answer>
+    </question>
+    <question type="multiple" id="4">
+      <text>4. My "head" hurts a lot!</text>
+      <image/>
+      <choice>Sh&#xED;w&#xF9; </choice>
+      <choice>T&#xF3;u </choice>
+      <choice>Q&#x1D4;ch&#x16B; </choice>
+      <choice>Zh&#xE0;ngd&#x101;n</choice>
+      <answer>T&#xF3;u </answer>
+    </question>
+    <question type="multiple" id="5">
+      <text>5. What do you "feel?"</text>
+      <image/>
+      <choice>X&#x1D0;hu&#x101;n </choice>
+      <choice>G&#x1CE;nju&#xE9;  </choice>
+      <choice>T&#xF3;u </choice>
+      <choice>B&#xED;zi</choice>
+      <answer>G&#x1CE;nju&#xE9;  </answer>
+    </question>
+    <question type="multiple" id="6">
+      <text>6. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/DOC.png</image>
+      <choice>y&#xE0;ow&#xF9; </choice>
+      <choice>y&#x12B;sh&#x113;ng </choice>
+      <choice>h&#xF9;sh&#xEC; </choice>
+      <choice>l&#x1CE;osh&#x12B;</choice>
+      <answer>y&#x12B;sh&#x113;ng </answer>
+    </question>
+    <question type="multiple" id="7">
+      <text>7. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/Hospital.png</image>
+      <choice>Li&#xFA;g&#x1CE;n </choice>
+      <choice>s&#x1D0;w&#xE1;ng </choice>
+      <choice>y&#x12B;yu&#xE0;n </choice>
+      <choice>sh&#xEC;ch&#x1CE;ng</choice>
+      <answer>y&#x12B;yu&#xE0;n </answer>
+    </question>
+    <question type="multiple" id="8">
+      <text>8. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/gamot.avif</image>
+      <choice>sh&#xEC;ch&#x1CE;ng </choice>
+      <choice>y&#xE0;ow&#xF9; </choice>
+      <choice>y&#x12B;sh&#x113;ng </choice>
+      <choice>h&#xF9;sh&#xEC;</choice>
+      <answer>y&#xE0;ow&#xF9; </answer>
+    </question>
+    <question type="multiple" id="9">
+      <text>9. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/pharma.jpg</image>
+      <choice>y&#xE0;odi&#xE0;n </choice>
+      <choice>c&#x101;nt&#x12B;ng </choice>
+      <choice>b&#xEC;ngr&#xE9;n </choice>
+      <choice>k&#xE8;h&#xF9;</choice>
+      <answer>y&#xE0;odi&#xE0;n </answer>
+    </question>
+    <question type="multiple" id="10">
+      <text>10. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/flu.jpg</image>
+      <choice>Li&#xFA;g&#x1CE;n </choice>
+      <choice>s&#x1D0;w&#xE1;ng </choice>
+      <choice>y&#x12B;yu&#xE0;n </choice>
+      <choice>sh&#xEC;ch&#x1CE;n </choice>
+      <answer>Li&#xFA;g&#x1CE;n </answer>
+    </question>
+    <question type="multiple" id="11">
+      <text>11. Choose the correct pinyin translation of "At the top of cabinet."</text>
+      <image/>
+      <choice>Z&#xE0;i gu&#xEC;zi de d&#x1D0;ngb&#xF9;. </choice>
+      <choice>W&#x1D2; z&#xE0;i n&#x1D0; b&#x101;o l&#x1D0; k&#xE0;n d&#xE0;ole. </choice>
+      <choice>W&#x1D2; k&#xE0;nji&#xE0;n n&#x1D0;. </choice>
+      <choice>N&#x1D0; k&#xE0;n d&#xE0;o w&#x1D2; de sh&#x1D2;uj&#x12B;le ma?</choice>
+      <answer>Z&#xE0;i gu&#xEC;zi de d&#x1D0;ngb&#xF9;. </answer>
+    </question>
+    <question type="multiple" id="12">
+      <text>12. Choose the correct pinyin translation of "I saw it inside your bag."</text>
+      <image/>
+      <choice>X&#x12B;nn Z&#xE0;i gu&#xEC;zi de d&#x1D0;ngb&#xF9;. </choice>
+      <choice>W&#x1D2; z&#xE0;i n&#x1D0; b&#x101;o l&#x1D0; k&#xE0;n d&#xE0;ole. </choice>
+      <choice>W&#x1D2; k&#xE0;nji&#xE0;n n&#x1D0;. </choice>
+      <choice>N&#x1D0; k&#xE0;n d&#xE0;o w&#x1D2; de sh&#x1D2;uj&#x12B;le ma?</choice>
+      <answer>W&#x1D2; z&#xE0;i n&#x1D0; b&#x101;o l&#x1D0; k&#xE0;n d&#xE0;ole. </answer>
+    </question>
+    <question type="multiple" id="13">
+      <text>13. Choose the correct pinyin translation of "Where did you place my bag?"</text>
+      <image/>
+      <choice>Z&#xE0;i gu&#xEC;zi de d&#x1D0;ngb&#xF9;. </choice>
+      <choice>W&#x1D2; z&#xE0;i n&#x1D0; b&#x101;o l&#x1D0; k&#xE0;n d&#xE0;ole. </choice>
+      <choice>N&#x1D0; b&#x1CE; w&#x1D2; de b&#x101;o f&#xE0;ng z&#xE0;i n&#x1CE;l&#x1D0;le? </choice>
+      <choice>N&#x1D0; k&#xE0;n d&#xE0;o w&#x1D2; de sh&#x1D2;uj&#x12B;le ma?</choice>
+      <answer>N&#x1D0; b&#x1CE; w&#x1D2; de b&#x101;o f&#xE0;ng z&#xE0;i n&#x1CE;l&#x1D0;le? </answer>
+    </question>
+    <question type="multiple" id="14">
+      <text>14. Choose the correct pinyin translation of "Did you see my phone?"</text>
+      <image/>
+      <choice>Z&#xE0;i gu&#xEC;zi de d&#x1D0;ngb&#xF9;. </choice>
+      <choice>W&#x1D2; z&#xE0;i n&#x1D0; b&#x101;o l&#x1D0; k&#xE0;n d&#xE0;ole. </choice>
+      <choice>N&#x1D0; b&#x1CE; w&#x1D2; de b&#x101;o f&#xE0;ng z&#xE0;i n&#x1CE;l&#x1D0;le? </choice>
+      <choice>N&#x1D0; k&#xE0;n d&#xE0;o w&#x1D2; de sh&#x1D2;uj&#x12B;le ma?</choice>
+      <answer>N&#x1D0; k&#xE0;n d&#xE0;o w&#x1D2; de sh&#x1D2;uj&#x12B;le ma?</answer>
+    </question>
+    <question type="multiple" id="15">
+      <text>15. Choose the correct pinyin translation of "I saw it"</text>
+      <image/>
+      <choice>W&#x1D2; z&#xE0;i n&#x1D0; b&#x101;o l&#x1D0; k&#xE0;n d&#xE0;ole?</choice>
+      <choice>N&#x1D0; b&#x1CE; w&#x1D2; de b&#x101;o f&#xE0;ng z&#xE0;i n&#x1CE;l&#x1D0;le?</choice>
+      <choice>N&#x1D0; k&#xE0;n d&#xE0;o w&#x1D2; de sh&#x1D2;uj&#x12B;le ma! </choice>
+      <choice>W&#x1D2; k&#xE0;n d&#xE0;ole</choice>
+      <answer>W&#x1D2; k&#xE0;n d&#xE0;ole</answer>
+    </question>
+    <question type="multiple" id="16">
+      <text>16. The ball is ____ the box.</text>
+      <image>images/ball below.png</image>
+      <choice>K&#xE0;oj&#xEC;n </choice>
+      <choice>y&#x1D0;xi&#xE0; </choice>
+      <choice>yu&#x1CE;n de </choice>
+      <choice>z&#xE0;i</choice>
+      <answer>y&#x1D0;xi&#xE0; </answer>
+    </question>
+    <question type="multiple" id="17">
+      <text>17. The robot is ____ the box.</text>
+      <image>images/ROBOT IN BOX.png</image>
+      <choice>yu&#x1CE;n de </choice>
+      <choice>z&#xE0;i </choice>
+      <choice>sh&#xE0;ng </choice>
+      <choice>y&#x1D0;sh&#xE0;ng</choice>
+      <answer>z&#xE0;i </answer>
+    </question>
+    <question type="multiple" id="18">
+      <text>18. The rabbit is ___ the box</text>
+      <image>images/RABBIT ON.png</image>
+      <choice>z&#xE0;i </choice>
+      <choice>sh&#xE0;ng </choice>
+      <choice>y&#x1D0;sh&#xE0;ng </choice>
+      <choice>z&#xE0;i h&#xF2;umi&#xE0;n</choice>
+      <answer>sh&#xE0;ng </answer>
+    </question>
+    <question type="multiple" id="19">
+      <text>19. The cat is ___ the box.</text>
+      <image>images/CAT BEHIND.png</image>
+      <choice>y&#x1D0;sh&#xE0;ng</choice>
+      <choice>z&#xE0;i h&#xF2;umi&#xE0;n </choice>
+      <choice>p&#xE1;ngbi&#x101;n</choice>
+      <choice>zh&#x12B; ji&#x101;n</choice>
+      <answer>z&#xE0;i h&#xF2;umi&#xE0;n </answer>
+    </question>
+    <question type="multiple" id="20">
+      <text>20. The ball is ___ the boxes.</text>
+      <image/>
+      <choice>y&#x1D0;sh&#xE0;ng </choice>
+      <choice>z&#xE0;i h&#xF2;umi&#xE0;n </choice>
+      <choice>p&#xE1;ngbi&#x101;n </choice>
+      <choice>zh&#x12B; ji&#x101;n</choice>
+      <answer>zh&#x12B; ji&#x101;n</answer>
+    </question>
+    <question type="multiple" id="21">
+      <text>21. Choose the correct pinyin translation of "Direction"</text>
+      <image/>
+      <choice>F&#x101;ngxi&#xE0;ng </choice>
+      <choice>d&#xEC;di&#x1CE;n </choice>
+      <choice>p&#xED;ngm&#xED;n </choice>
+      <choice>j&#x1D0;ngch&#xE1;</choice>
+      <answer>F&#x101;ngxi&#xE0;ng </answer>
+    </question>
+    <question type="multiple" id="22">
+      <text>22. Choose the correct pinyin translation of "Location"</text>
+      <image/>
+      <choice>F&#x101;ngxi&#xE0;ng</choice>
+      <choice>d&#xEC;di&#x1CE;n </choice>
+      <choice>p&#xED;ngm&#xED;n </choice>
+      <choice>j&#x1D0;ngch&#xE1;</choice>
+      <answer>d&#xEC;di&#x1CE;n </answer>
+    </question>
+    <question type="multiple" id="23">
+      <text>23. Choose the correct pinyin translation of "Distance"</text>
+      <image/>
+      <choice>F&#x101;ngxi&#xE0;ng </choice>
+      <choice>d&#xEC;di&#x1CE;n </choice>
+      <choice>p&#xED;ngm&#xED;n</choice>
+      <choice>J&#xF9;l&#xED;</choice>
+      <answer>J&#xF9;l&#xED;</answer>
+    </question>
+    <question type="multiple" id="24">
+      <text>24. Choose the correct pinyin translation of "Far"</text>
+      <image/>
+      <choice>g&#x14D;ngl&#x1D0; </choice>
+      <choice>y&#x12B;ngl&#x1D0; </choice>
+      <choice>yu&#x1CE;n de </choice>
+      <choice>k&#xE0;oj&#xEC;n</choice>
+      <answer>yu&#x1CE;n de </answer>
+    </question>
+    <question type="multiple" id="25">
+      <text>25. Choose the correct pinyin translation of "Near"</text>
+      <image/>
+      <choice>g&#x14D;ngl&#x1D0; </choice>
+      <choice>y&#x12B;ngl&#x1D0; </choice>
+      <choice>yu&#x1CE;n de</choice>
+      <choice>k&#xE0;oj&#xEC;n</choice>
+      <answer>k&#xE0;oj&#xEC;n</answer>
+    </question>
+    <question type="multiple" id="26">
+      <text>26. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/north.png</image>
+      <choice>N&#xE1;n </choice>
+      <choice>b&#x11B;i </choice>
+      <choice>x&#x12B;f&#x101;ng </choice>
+      <choice>d&#x14D;ng</choice>
+      <answer>b&#x11B;i </answer>
+    </question>
+    <question type="multiple" id="27">
+      <text>27. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/east.png</image>
+      <choice>N&#xE1;n </choice>
+      <choice>b&#x11B;i </choice>
+      <choice>x&#x12B;f&#x101;ng </choice>
+      <choice>d&#x14D;ng</choice>
+      <answer>d&#x14D;ng</answer>
+    </question>
+    <question type="multiple" id="28">
+      <text>28. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/left.png</image>
+      <choice>Zu&#x1D2; zhu&#x1CE;n </choice>
+      <choice>y&#xF2;u zhu&#x1CE;n </choice>
+      <choice>hu&#xED;q&#xF9; </choice>
+      <choice>w&#x1CE;ng qi&#xE1;n z&#x1D2;u</choice>
+      <answer>Zu&#x1D2; zhu&#x1CE;n </answer>
+    </question>
+    <question type="multiple" id="29">
+      <text>29. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/right.jpg</image>
+      <choice>Zu&#x1D2; zhu&#x1CE;n </choice>
+      <choice>y&#xF2;u zhu&#x1CE;n </choice>
+      <choice>hu&#xED;q&#xF9;</choice>
+      <choice>w&#x1CE;ng qi&#xE1;n z&#x1D2;u</choice>
+      <answer>y&#xF2;u zhu&#x1CE;n </answer>
+    </question>
+    <question type="multiple" id="30">
+      <text>30. Identify the given picture by choosing the right Pinyin</text>
+      <image>images/south.png</image>
+      <choice>N&#xE1;n </choice>
+      <choice>b&#x11B;i</choice>
+      <choice>x&#x12B;f&#x101;ng</choice>
+      <choice>d&#x14D;ng</choice>
+      <answer>N&#xE1;n </answer>
+    </question>
+    <question type="multiple" id="31">
+      <text>31. Choose the correct pinyin translation of "Vacation"</text>
+      <image/>
+      <choice>li&#xE0;q&#x12B; </choice>
+      <choice>l&#x1DA;x&#xED;ng </choice>
+      <choice>y&#xF3;uy&#x1D2;ng </choice>
+      <choice>ti&#x101;n</choice>
+      <answer>li&#xE0;q&#x12B; </answer>
+    </question>
+    <question type="multiple" id="32">
+      <text>32. Choose the correct pinyin translation of "Place"</text>
+      <image/>
+      <choice>ni&#xE1;n </choice>
+      <choice>xi&#x1CE;ngsh&#xF2;u </choice>
+      <choice>d&#xEC;f&#x101;ng</choice>
+      <choice>ti&#x101;nq&#xEC;</choice>
+      <answer>d&#xEC;f&#x101;ng</answer>
+    </question>
+    <question type="multiple" id="33">
+      <text>33. Choose the correct pinyin translation of "Weather"</text>
+      <image/>
+      <choice>ni&#xE1;n </choice>
+      <choice>xi&#x1CE;ngsh&#xF2;u </choice>
+      <choice>d&#xEC;f&#x101;ng </choice>
+      <choice>ti&#x101;nq&#xEC;</choice>
+      <answer>ti&#x101;nq&#xEC;</answer>
+    </question>
+    <question type="multiple" id="34">
+      <text>34. Choose the correct pinyin translation of "Season"</text>
+      <image/>
+      <choice>Jb&#xE0;of&#x113;ngy&#x1D4;</choice>
+      <choice>J&#xEC;ji&#xE9; </choice>
+      <choice>Sh&#xE9;nme sh&#xED;h&#xF2;u </choice>
+      <choice>z&#xE0;i n&#x1CE;l&#x1D0;</choice>
+      <answer>J&#xEC;ji&#xE9; </answer>
+    </question>
+    <question type="multiple" id="35">
+      <text>35. Choose the correct pinyin translation of "Where"</text>
+      <image/>
+      <choice>J&#xEC;ji&#xE9; </choice>
+      <choice>Sh&#xE9;nme sh&#xED;h&#xF2;u </choice>
+      <choice>z&#xE0;i n&#x1CE;l&#x1D0;</choice>
+      <choice>G&#x1CE;nju&#xE9;</choice>
+      <answer>z&#xE0;i n&#x1CE;l&#x1D0;</answer>
+    </question>
+    <question type="multiple" id="36">
+      <text>36. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/winter.png</image>
+      <choice>sh&#x101;n </choice>
+      <choice>b&#xE0;of&#x113;ngy&#x1D4; </choice>
+      <choice>j&#xEC;ji&#xE9; </choice>
+      <choice>d&#x14D;ngti&#x101;n</choice>
+      <answer>d&#x14D;ngti&#x101;n</answer>
+    </question>
+    <question type="multiple" id="37">
+      <text>37. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/rainy.jpg</image>
+      <choice>Xi&#xE0; y&#x1D4; </choice>
+      <choice>ti&#x101;nq&#xEC; </choice>
+      <choice>h&#x1CE;i </choice>
+      <choice>q&#xED;ngti&#x101;n</choice>
+      <answer>Xi&#xE0; y&#x1D4; </answer>
+    </question>
+    <question type="multiple" id="38">
+      <text>38. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/mountain.jpg</image>
+      <choice>y&#x1D2;u f&#x113;ng</choice>
+      <choice>xi&#xE0; y&#x1D4; </choice>
+      <choice>sh&#x101;n </choice>
+      <choice>b&#xE0;of&#x113;ngy&#x1D4;</choice>
+      <answer>sh&#x101;n </answer>
+    </question>
+    <question type="multiple" id="39">
+      <text>39. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/summer.jpg</image>
+      <choice>q&#xED;ngti&#x101;n </choice>
+      <choice>du&#x14D;y&#xFA;n de </choice>
+      <choice>xi&#xE0;ti&#x101;n </choice>
+      <choice>s&#x113;nl&#xED;n</choice>
+      <answer>xi&#xE0;ti&#x101;n </answer>
+    </question>
+    <question type="multiple" id="40">
+      <text>40. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/SEA.jpg</image>
+      <choice>h&#x1CE;i</choice>
+      <choice>q&#xED;ngti&#x101;n </choice>
+      <choice>du&#x14D;y&#xFA;n de</choice>
+      <choice>xi&#xE0;ti&#x101;n</choice>
+      <answer>h&#x1CE;i</answer>
+    </question>
+    <question type="multiple" id="41">
+      <text>41. I will go to the "school".</text>
+      <image/>
+      <choice>Hu&#xF3;d&#xF2;ng </choice>
+      <choice>Xu&#xE9;xi&#xE0;o </choice>
+      <choice>C&#x101;nji&#x101; </choice>
+      <choice>X&#x12B;ngf&#xE8;n de</choice>
+      <answer>Xu&#xE9;xi&#xE0;o </answer>
+    </question>
+    <question type="multiple" id="42">
+      <text>42. I will participate to the upcoming "school event".</text>
+      <image/>
+      <choice>Xu&#xE9;xi&#xE0;o hu&#xF3;d&#xF2;ng </choice>
+      <choice>C&#x101;nji&#x101; </choice>
+      <choice>X&#x12B;ngf&#xE8;n de </choice>
+      <choice>Y&#xF9;nd&#xF2;ng de</choice>
+      <answer>Xu&#xE9;xi&#xE0;o hu&#xF3;d&#xF2;ng </answer>
+    </question>
+    <question type="multiple" id="43">
+      <text>43. Good morning "teacher!"</text>
+      <image/>
+      <choice>Ji&#xE0;oxu&#xE9; </choice>
+      <choice>W&#x1D2;men</choice>
+      <choice>L&#x1CE;osh&#x12B; </choice>
+      <choice>Xu&#xE9;x&#xED;</choice>
+      <answer>L&#x1CE;osh&#x12B; </answer>
+    </question>
+    <question type="multiple" id="44">
+      <text>44. Are you a "student?"</text>
+      <image/>
+      <choice>Xu&#xE9;sh&#x113;ng </choice>
+      <choice>Xu&#xE9;x&#xED;  </choice>
+      <choice>K&#xE8; </choice>
+      <choice>Hu&#xF3;d&#xF2;ng</choice>
+      <answer>Xu&#xE9;sh&#x113;ng </answer>
+    </question>
+    <question type="multiple" id="45">
+      <text>45. I am "studying" our lesson.</text>
+      <image/>
+      <choice>Ji&#xE0;oxu&#xE9;</choice>
+      <choice>xu&#xE9;x&#xED; </choice>
+      <choice>w&#xE8;nh&#xF2;u</choice>
+      <choice>hu&#xF3;d&#xF2;ng</choice>
+      <answer>xu&#xE9;x&#xED; </answer>
+    </question>
+    <question type="multiple" id="46">
+      <text>46. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/SPORT.jpg</image>
+      <choice>Zh&#x12B;sh&#xEC; </choice>
+      <choice>Y&#xF9;nd&#xF2;ng de </choice>
+      <choice>K&#xE8; </choice>
+      <choice>C&#xE8;y&#xE0;n</choice>
+      <answer>Y&#xF9;nd&#xF2;ng de </answer>
+    </question>
+    <question type="multiple" id="47">
+      <text>47. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/PARTICIPATE.jpg</image>
+      <choice>C&#x101;nji&#x101;</choice>
+      <choice>X&#x12B;ngf&#xE8;n de </choice>
+      <choice>Zh&#x12B;sh&#xEC; </choice>
+      <choice>Y&#xF9;nd&#xF2;ng de</choice>
+      <answer>C&#x101;nji&#x101;</answer>
+    </question>
+    <question type="multiple" id="48">
+      <text>48. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/SCHOOL.jpg</image>
+      <choice>Ji&#xE0;oxu&#xE9; </choice>
+      <choice>Xu&#xE9;x&#xED; </choice>
+      <choice>W&#xE8;nh&#xF2;u </choice>
+      <choice>Xu&#xE9;xi&#xE0;o</choice>
+      <answer>Xu&#xE9;xi&#xE0;o</answer>
+    </question>
+    <question type="multiple" id="49">
+      <text>49. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/STUDENT.jpg</image>
+      <choice>C&#xE8;y&#xE0;n</choice>
+      <choice>Xi&#xE0;ngm&#xF9; </choice>
+      <choice>R&#xE8;nw&#xF9;</choice>
+      <choice>Xu&#xE9;sh&#x113;ng</choice>
+      <answer>Xu&#xE9;sh&#x113;ng</answer>
+    </question>
+    <question type="multiple" id="50">
+      <text>50. Identify the given picture by choosing the right Pinyin.</text>
+      <image>images/TEACHER.jpg</image>
+      <choice>Ji&#xE0;oxu&#xE9; </choice>
+      <choice>Xu&#xE9;x&#xED; </choice>
+      <choice>W&#xE8;nh&#xF2;u </choice>
+      <choice>L&#x1CE;osh&#x12B;</choice>
+      <answer>L&#x1CE;osh&#x12B;</answer>
     </question>
   </assessment>
 </assessments>

@@ -1544,4 +1544,480 @@
   <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
   <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 5</log>
   <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 2</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 2</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User Ampol Logged In</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled Lesson 4</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled Lesson 1</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled Lesson 2</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled Lesson 5</log>
+  <log type="LOGOUT" date="06/09/2022">User Ampol Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/09/2022">Admin webadmin added the word test in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="EDIT WORD" date="06/09/2022">Admin webadmin edited the word test1 in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="DELETE WORD" date="06/09/2022">Admin webadmin deleted the word test1 in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="EDIT WORD" date="06/09/2022">Admin webadmin edited the word r&#xE8;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="EDIT WORD" date="06/09/2022">Admin webadmin edited the word r&#xE8; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 5</log>
+  <log type="EDIT WORD" date="06/09/2022">Admin webadmin edited the word t&#x101;n in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="EDIT WORD" date="06/09/2022">Admin webadmin edited the word t&#x101; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="DELETE WORD" date="06/09/2022">Admin webadmin deleted the word w&#x1D2; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/09/2022">Admin webadmin added the word w&#x1D2; in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="NEW USER" date="06/09/2022">New User MSantos signed up</log>
+  <log type="LOGIN" date="06/09/2022">User MSantos Logged In</log>
+  <log type="LOGOUT" date="06/09/2022">User MSantos Logged Out</log>
+  <log type="NEW USER" date="06/09/2022">New User JDCruz signed up</log>
+  <log type="NEW USER" date="06/09/2022">New User CSantos signed up</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 5</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 5</log>
+  <log type="NEW USER" date="06/09/2022">New User MReyes signed up</log>
+  <log type="NEW USER" date="06/09/2022">New User SRamos signed up</log>
+  <log type="NEW USER" date="06/09/2022">New User AGonzales signed up</log>
+  <log type="NEW USER" date="06/09/2022">New User ABautista signed up</log>
+  <log type="LOGIN" date="06/09/2022">User ABautista Logged In</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User ABautista started an assessment titled Lesson 1</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User ABautista completed an assessment titled Lesson 1 and got a score of 2/10</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User ABautista started an assessment titled Lesson 2</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User ABautista completed an assessment titled Lesson 2 and got a score of 1/10</log>
+  <log type="LOGOUT" date="06/09/2022">User ABautista Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User MSantos Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User MSantos viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User MSantos started an assessment titled Lesson 1</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User MSantos completed an assessment titled Lesson 1 and got a score of 0/10</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User MSantos started an assessment titled Lesson 2</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User MSantos completed an assessment titled Lesson 2 and got a score of 3/10</log>
+  <log type="LOGOUT" date="06/09/2022">User MSantos Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User JDCruz Logged In</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User JDCruz started an assessment titled Lesson 1</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User JDCruz completed an assessment titled Lesson 1 and got a score of 4/10</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User JDCruz started an assessment titled Lesson 2</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User JDCruz completed an assessment titled Lesson 2 and got a score of 1/10</log>
+  <log type="LOGOUT" date="06/09/2022">User JDCruz Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User CSantos Logged In</log>
+  <log type="START MOCK TEST" date="06/09/2022">User CSantos started a mock test titled LEVEL 1</log>
+  <log type="MOCK TEST COMPLETE" date="06/09/2022">User CSantos completed an mock test titled LEVEL 1 and got a score of 5/20</log>
+  <log type="START MOCK TEST" date="06/09/2022">User CSantos started a mock test titled LEVEL 1</log>
+  <log type="MOCK TEST COMPLETE" date="06/09/2022">User CSantos completed an mock test titled LEVEL 1 and got a score of 5/20</log>
+  <log type="START MOCK TEST" date="06/09/2022">User CSantos started a mock test titled LEVEL 1</log>
+  <log type="MOCK TEST COMPLETE" date="06/09/2022">User CSantos completed an mock test titled LEVEL 1 and got a score of 6/20</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User CSantos started an assessment titled Lesson 1</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User CSantos completed an assessment titled Lesson 1 and got a score of 3/10</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User CSantos started an assessment titled Lesson 2</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User CSantos completed an assessment titled Lesson 2 and got a score of 2/10</log>
+  <log type="LOGOUT" date="06/09/2022">User CSantos Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User MReyes Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User MReyes viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User MReyes viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User MReyes started an assessment titled Lesson 1</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User MReyes completed an assessment titled Lesson 1 and got a score of 5/10</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User MReyes started an assessment titled Lesson 2</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User MReyes completed an assessment titled Lesson 2 and got a score of 3/10</log>
+  <log type="START MOCK TEST" date="06/09/2022">User MReyes started a mock test titled LEVEL 1</log>
+  <log type="MOCK TEST COMPLETE" date="06/09/2022">User MReyes completed an mock test titled LEVEL 1 and got a score of 4/20</log>
+  <log type="LOGOUT" date="06/09/2022">User MReyes Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User SRamos Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User SRamos viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User SRamos viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User SRamos started an assessment titled Lesson 1</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User SRamos completed an assessment titled Lesson 1 and got a score of 2/10</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User SRamos started an assessment titled Lesson 2</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User SRamos completed an assessment titled Lesson 2 and got a score of 3/10</log>
+  <log type="START MOCK TEST" date="06/09/2022">User SRamos started a mock test titled LEVEL 1</log>
+  <log type="MOCK TEST COMPLETE" date="06/09/2022">User SRamos completed an mock test titled LEVEL 1 and got a score of 5/20</log>
+  <log type="START MOCK TEST" date="06/09/2022">User SRamos started a mock test titled LEVEL 1</log>
+  <log type="NEW USER" date="06/09/2022">New User danbndc signed up</log>
+  <log type="MOCK TEST COMPLETE" date="06/09/2022">User SRamos completed an mock test titled LEVEL 1 and got a score of 2/20</log>
+  <log type="LOGIN" date="06/09/2022">User danbndc Logged In</log>
+  <log type="LOGOUT" date="06/09/2022">User SRamos Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User SRamos Logged In</log>
+  <log type="LOGOUT" date="06/09/2022">User SRamos Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User ABautista Logged In</log>
+  <log type="LOGOUT" date="06/09/2022">User ABautista Logged Out</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 5</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="DELETE USER" date="06/09/2022">Admin webadmin deleted user JDCruz Account</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="NEW USER" date="06/09/2022">New User jdcruz signed up</log>
+  <log type="LOGIN" date="06/09/2022">User jdcruz Logged In</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled GREETINGS in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled PINYIN AND TONES in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled WORDS IN SCHOOL in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled OTHER LANGUAGE IN MANDARIN in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled NOUNS AND QUANTIFIERS in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled CHINESE MONEY in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled HAPPY BIRTHDAY in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled OBJECT LOCATION in LESSON 6</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled DIRECTION in LESSON 6</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled VACATION in LESSON 6</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled SCHOOL EVENTS in LESSON 6</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User jdcruz viewed a topic titled AT THE HOSPITAL in LESSON 6</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User jdcruz started an assessment titled Lesson 1</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User jdcruz completed an assessment titled Lesson 1 and got a score of 7/10</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User jdcruz viewed the dictionary</log>
+  <log type="START MOCK TEST" date="06/09/2022">User jdcruz started a mock test titled LEVEL 2</log>
+  <log type="MOCK TEST COMPLETE" date="06/09/2022">User jdcruz completed an mock test titled LEVEL 2 and got a score of 3/10</log>
+  <log type="START MOCK TEST" date="06/09/2022">User jdcruz started a mock test titled LEVEL 2</log>
+  <log type="MOCK TEST COMPLETE" date="06/09/2022">User jdcruz completed an mock test titled LEVEL 2 and got a score of 5/10</log>
+  <log type="LOGOUT" date="06/09/2022">User jdcruz Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 5</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User Ampol Logged In</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User Ampol viewed a topic titled SCHOOL EVENTS in LESSON 6</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled Lesson 5</log>
+  <log type="ARCHIVE USER" date="06/09/2022">Admin webadmin archived JCadag Account.</log>
+  <log type="RESTORE USER" date="06/09/2022">Admin webadmin restored JCadag Account.</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled Lesson 3</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled BASIC CONVERSATION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="LOGOUT" date="06/09/2022">User Ampol Logged Out</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled GREETINGS in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled BASIC CONVERSATION in LESSON 1</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="ADD LESSON" date="06/09/2022">Admin webadmin added a new lesson titled LESSON 7</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD LESSON" date="06/09/2022">Admin webadmin added a new lesson titled LESSON 8</log>
+  <log type="DELETE LESSON" date="06/09/2022">Admin webadmin deleted a lesson titled LESSON 8</log>
+  <log type="ADD TOPIC" date="06/09/2022">Admin webadmin added a topic titled TOPIC 1 in LESSON 7</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 5</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="ADD TOPIC" date="06/09/2022">Admin webadmin added a topic titled TOPIC 2 in LESSON 7</log>
+  <log type="LOGIN" date="06/09/2022">User Ampol Logged In</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled TOPIC 2 in LESSON 7</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled TOPIC 1 in LESSON 7</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled TOPIC 2 in LESSON 7</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled Lesson 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled TOPIC 1 in LESSON 7</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled TOPIC 2 in LESSON 7</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled TOPIC 1 in LESSON 7</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled Lesson 5</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled Lesson 5</log>
+  <log type="LOGOUT" date="06/09/2022">User Ampol Logged Out</log>
+  <log type="EDIT TOPIC" date="06/09/2022">Admin webadmin edited a topic titled TOPIC 1 in LESSON 7</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled TOPIC 2 in LESSON 7</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled TOPIC 3 in LESSON 7</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled TOPIC 2 in LESSON 7</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled TOPIC 3 in LESSON 7</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled TOPIC 2 in LESSON 7</log>
+  <log type="DELETE TOPIC" date="06/09/2022">Admin webadmin deleted a topic titled TOPIC 2 in LESSON 7</log>
+  <log type="DELETE LESSON" date="06/09/2022">Admin webadmin deleted a lesson titled LESSON 7</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 5</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User Ampol Logged In</log>
+  <log type="ADD ASSESSMENT" date="06/09/2022">Admin webadmin added an assessment titled ASSESSMENT 1</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled Lesson 5</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled ASSESSMENT 1</log>
+  <log type="LOGOUT" date="06/09/2022">User Ampol Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User Ampol Logged In</log>
+  <log type="DELETE ASSESSMENT" date="06/09/2022">Admin webadmin deleted an assessment titled ASSESSMENT 1</log>
+  <log type="LOGOUT" date="06/09/2022">User Ampol Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/09/2022">Admin webadmin added the word WORD in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="DELETE WORD" date="06/09/2022">Admin webadmin deleted the word WORD in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD MOCK TEST" date="06/09/2022">Admin webadmin added a mock test titled MOCK TEST</log>
+  <log type="DELETE MOCK TEST" date="06/09/2022">Admin webadmin deleted a mock test titled MOCK TEST</log>
+  <log type="UPDATE PROFILE" date="06/09/2022">Admin webadmin updated his/her account</log>
+  <log type="CHANGE PASSWORD" date="06/09/2022">Admin webadmin changed his/her password</log>
+  <log type="CHANGE PASSWORD" date="06/09/2022">Admin webadmin changed his/her password</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled GREETINGS in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled PINYIN AND TONES in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled WORDS IN SCHOOL in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled BASIC CONVERSATION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled COLORS in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled CLOTHING in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled ORDERING IN RESTAURANT in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled COLORS in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled CLOTHING in LESSON 5</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="EDIT MOCK TEST" date="06/09/2022">Admin webadmin edited a mock test titled LEVEL 2</log>
+  <log type="EDIT MOCK TEST" date="06/09/2022">Admin webadmin edited a mock test titled LEVEL 2</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="ADD ASSESSMENT" date="06/09/2022">Admin webadmin added an assessment titled Lesson 6</log>
+  <log type="LOGIN" date="06/09/2022">Admin Vio Logged In</log>
+  <log type="START ASSESSMENT" date="06/09/2022">Admin Vio started an assessment titled Lesson 1</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User Vio completed an assessment titled Lesson 1 and got a score of 6/10</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Vio viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Vio viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Vio viewed the dictionary</log>
+  <log type="START MOCK TEST" date="06/09/2022">Admin Vio started a mock test titled LEVEL 2</log>
+  <log type="MOCK TEST COMPLETE" date="06/09/2022">User Vio completed an mock test titled LEVEL 2 and got a score of 9/20</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Vio viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Vio viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/09/2022">Admin Vio started an assessment titled Lesson 2</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User Vio completed an assessment titled Lesson 2 and got a score of 3/10</log>
+  <log type="START ASSESSMENT" date="06/09/2022">Admin Vio started an assessment titled Lesson 3</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User Vio completed an assessment titled Lesson 3 and got a score of 6/10</log>
+  <log type="START ASSESSMENT" date="06/09/2022">Admin Vio started an assessment titled Lesson 4</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User Vio completed an assessment titled Lesson 4 and got a score of 5/10</log>
+  <log type="START ASSESSMENT" date="06/09/2022">Admin Vio started an assessment titled Lesson 5</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User Vio completed an assessment titled Lesson 5 and got a score of 3/10</log>
+  <log type="START ASSESSMENT" date="06/09/2022">Admin Vio started an assessment titled Lesson 6</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User Vio completed an assessment titled Lesson 6 and got a score of 4/10</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Vio viewed the dictionary</log>
+  <log type="START MOCK TEST" date="06/09/2022">Admin Vio started a mock test titled LEVEL 1</log>
+  <log type="MOCK TEST COMPLETE" date="06/09/2022">User Vio completed an mock test titled LEVEL 1 and got a score of 5/20</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 6</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 6</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 6</log>
+  <log type="EDIT ASSESSMENT" date="06/09/2022">Admin webadmin edited an assessment titled Lesson 6</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User Ampol Logged In</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled Lesson 6</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User Ampol started an assessment titled Lesson 6</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">Admin Drew Logged In</log>
+  <log type="START ASSESSMENT" date="06/09/2022">Admin Drew started an assessment titled Lesson 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User Ampol viewed a topic titled VACATION in LESSON 6</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User Drew completed an assessment titled Lesson 1 and got a score of 7/10</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/09/2022">Admin Drew started an assessment titled Lesson 2</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User Drew completed an assessment titled Lesson 2 and got a score of 1/10</log>
+  <log type="START ASSESSMENT" date="06/09/2022">Admin Drew started an assessment titled Lesson 3</log>
+  <log type="NEW USER" date="06/09/2022">New User henrick2 signed up</log>
+  <log type="LOGIN" date="06/09/2022">User henrick2 Logged In</log>
+  <log type="UPDATE PROFILE" date="06/09/2022">User henrick2 updated his/her account</log>
+  <log type="UPDATE PROFILE" date="06/09/2022">User henrick2 updated his/her account</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="CHANGE PASSWORD" date="06/09/2022">User henrick2 changed his/her password</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled GREETINGS in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled PINYIN AND TONES in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled WORDS IN SCHOOL in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled OTHER LANGUAGE IN MANDARIN in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled NOUNS AND QUANTIFIERS in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled CHINESE MONEY in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled HAPPY BIRTHDAY in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled WELCOMING FOREIGNER in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled PETS in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled ORDERING IN STORES in LESSON 3</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled FAMILY MEMBERS in LESSON 3</log>
+  <log type="LOGIN" date="06/09/2022">User irvan123 Logged In</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled OCCASSIONS in LESSON 4</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled DAYS OF THE WEEK in LESSON 4</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled WEATHER in LESSON 4</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled SEASONS in LESSON 4</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled CHINESE NEW YEAR in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled ORDERING IN SUPERMARKET in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled COLORS in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled CLOTHING in LESSON 5</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled OBJECT LOCATION in LESSON 6</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled DIRECTION in LESSON 6</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled VACATION in LESSON 6</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled SCHOOL EVENTS in LESSON 6</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled VACATION in LESSON 6</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled OBJECT LOCATION in LESSON 6</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled AT THE HOSPITAL in LESSON 6</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User henrick2 started an assessment titled Lesson 1</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User henrick2 completed an assessment titled Lesson 1 and got a score of 4/10</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User henrick2 viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User henrick2 viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User henrick2 viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User henrick2 viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User henrick2 viewed the dictionary</log>
+  <log type="START MOCK TEST" date="06/09/2022">User henrick2 started a mock test titled LEVEL 1</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User irvan123 viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User irvan123 viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User irvan123 viewed the dictionary</log>
+  <log type="MOCK TEST COMPLETE" date="06/09/2022">User henrick2 completed an mock test titled LEVEL 1 and got a score of 5/20</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User irvan123 viewed the dictionary</log>
+  <log type="START MOCK TEST" date="06/09/2022">User henrick2 started a mock test titled LEVEL 1</log>
+  <log type="MOCK TEST COMPLETE" date="06/09/2022">User henrick2 completed an mock test titled LEVEL 1 and got a score of 3/20</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User henrick2 viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User henrick2 viewed the dictionary</log>
+  <log type="DELETE USER" date="06/09/2022">Admin  deleted user henrick2 Account</log>
+  <log type="LOGOUT" date="06/09/2022">User  Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="ADD TOPIC" date="06/09/2022">Admin webadmin added a topic titled test in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled test in LESSON 1</log>
+  <log type="EDIT TOPIC" date="06/09/2022">Admin webadmin edited a topic titled test in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled test1 in LESSON 1</log>
+  <log type="DELETE TOPIC" date="06/09/2022">Admin webadmin deleted a topic titled test1 in LESSON 1</log>
+  <log type="ADD LESSON" date="06/09/2022">Admin webadmin added a new lesson titled LESSON 7</log>
+  <log type="DELETE LESSON" date="06/09/2022">Admin webadmin deleted a lesson titled LESSON 7</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD WORD" date="06/09/2022">Admin webadmin added the word test in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="EDIT WORD" date="06/09/2022">Admin webadmin edited the word test1 in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="DELETE WORD" date="06/09/2022">Admin webadmin deleted the word test1 in the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="ADD MOCK TEST" date="06/09/2022">Admin webadmin added a mock test titled test</log>
+  <log type="EDIT MOCK TEST" date="06/09/2022">Admin webadmin edited a mock test titled test</log>
+  <log type="DELETE MOCK TEST" date="06/09/2022">Admin webadmin deleted a mock test titled test</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/09/2022">User irvan123 Logged Out</log>
+  <log type="UPDATE PROFILE" date="06/09/2022">Admin webadmin updated his/her account</log>
+  <log type="UPDATE PROFILE" date="06/09/2022">Admin webadmin updated his/her account</log>
+  <log type="UPDATE PROFILE" date="06/09/2022">Admin Drew updated his/her account</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User henrick2 Logged In</log>
+  <log type="UPDATE PROFILE" date="06/09/2022">User henrick2 updated his/her account</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled GREETINGS in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled PINYIN AND TONES in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled WORDS IN SCHOOL in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled OTHER LANGUAGE IN MANDARIN in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled NOUNS AND QUANTIFIERS in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled CHINESE MONEY in LESSON 2</log>
+  <log type="VIEW TOPIC" date="06/09/2022">User henrick2 viewed a topic titled HAPPY BIRTHDAY in LESSON 2</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User henrick2 viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User henrick2 viewed the dictionary</log>
+  <log type="START ASSESSMENT" date="06/09/2022">User henrick2 started an assessment titled Lesson 2</log>
+  <log type="ASSESSMENT COMPLETE" date="06/09/2022">User henrick2 completed an assessment titled Lesson 2 and got a score of 4/10</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User henrick2 viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin Drew viewed the dictionary</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User irvan123 Logged In</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="NEW USER" date="06/09/2022">New User chan signed up</log>
+  <log type="LOGIN" date="06/09/2022">User chan Logged In</log>
+  <log type="LOGOUT" date="06/09/2022">User chan Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="LOGOUT" date="06/09/2022">Admin webadmin Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="DELETE USER" date="06/09/2022">Admin  deleted user henrick2 Account</log>
+  <log type="LOGIN" date="06/09/2022">User henrick2 Logged In</log>
+  <log type="DELETE USER" date="06/09/2022">Admin  deleted user henrick2 Account</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="LOGIN" date="06/09/2022">User henrick2 Logged In</log>
+  <log type="DELETE USER" date="06/09/2022">Admin  deleted user henrick2 Account</log>
+  <log type="LOGIN" date="06/09/2022">User henrick2 Logged In</log>
+  <log type="DELETE USER" date="06/09/2022">Admin henrick2 deleted user henrick2 Account</log>
+  <log type="LOGIN" date="06/09/2022">User henrick2 Logged In</log>
+  <log type="DELETE USER" date="06/09/2022">Admin henrick2 deleted user henrick2 Account</log>
+  <log type="LOGIN" date="06/09/2022">Admin webadmin Logged In</log>
+  <log type="ARCHIVE USER" date="06/09/2022">Admin webadmin archived henrick405 Account.</log>
+  <log type="RESTORE USER" date="06/09/2022">Admin webadmin restored henrick405 Account.</log>
+  <log type="ARCHIVE USER" date="06/09/2022">Admin webadmin archived AGonzales Account.</log>
+  <log type="ARCHIVE USER" date="06/09/2022">Admin webadmin archived SRamos Account.</log>
+  <log type="ARCHIVE USER" date="06/09/2022">Admin webadmin archived MReyes Account.</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled INTRODUCTION in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled GREETINGS in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled PINYIN AND TONES in LESSON 1</log>
+  <log type="VIEW TOPIC" date="06/09/2022">Admin webadmin viewed a topic titled WORDS IN SCHOOL in LESSON 1</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">Admin webadmin viewed the dictionary</log>
+  <log type="VIEW DICTIONARY" date="06/09/2022">User irvan123 viewed the dictionary</log>
+  <log type="LOGOUT" date="06/09/2022">User irvan123 Logged Out</log>
+  <log type="LOGIN" date="06/09/2022">User irvan123 Logged In</log>
+  <log type="DELETE USER" date="06/09/2022">Admin webadmin deleted user jdcruz Account</log>
+  <log type="DELETE USER" date="06/09/2022">Admin webadmin deleted user SRamos Account</log>
 </logs>

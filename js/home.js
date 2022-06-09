@@ -388,7 +388,7 @@ $(document).ready(function(){
         $.ajax({
             url: "./php/deleteUser.php",
             success: function (deleteAccountResponse) {
-                if(deleteAccountResponse == "Account Deleted Successfully!"){
+                if(deleteAccountResponse.trim() == "Account Deleted Successfully!"){
                     window.location.href="./";
                 }else{
                     $("#profileError").text(deleteAccountResponse).show(200);

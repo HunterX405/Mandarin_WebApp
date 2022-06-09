@@ -8,7 +8,7 @@
     }
 
     //Get Active Users
-    if($_POST['data']=="ACTIVE"){
+    if($_POST['data'] == "ACTIVE"){
         $xml = simplexml_load_file("userAccounts.xml");
     }else{
     // Get Archived Users

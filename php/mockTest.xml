@@ -147,7 +147,7 @@
       <answer>&#x524D;&#x9762;qi&#xE1;nmi&#xE0;n</answer>
     </question>
   </mocktest>
-  <mocktest title="LEVEL 2" items="10">
+  <mocktest title="LEVEL 2" items="20">
     <question type="truefalse" id="1">
       <text>TRUE IF THE WORD DESCRIBE THE PICTURE, FALSE IF ITS NOT</text>
       <image>images/Picture.png</image>
@@ -217,6 +217,96 @@
       <choice>&#x8FDB;(j&#xEC;n)</choice>
       <choice>&#x81EA;&#x884C;&#x8F66;(z&#xEC;x&#xED;ngch&#x113;)</choice>
       <answer>&#x81EA;&#x884C;&#x8F66;(z&#xEC;x&#xED;ngch&#x113;)</answer>
+    </question>
+    <question type="multiple" id="11">
+      <text>&#x6211; &#x4EEC; &#x8981; &#x5411; &#x60A8; &#x5B66;&#x4E60;&#xFF01;(W&#x1D2;men y&#xE0;o xi&#xE0;ng n&#xED;n xu&#xE9;x&#xED;!)</text>
+      <image/>
+      <choice> &#x5F88; &#x8FD1; &#xFF0C;&#x4ECE; &#x8FD9;&#x513F; &#x5750; &#x51FA;&#x79DF;&#x8F66;&#xFF0C;&#x516D;&#x4E03; &#x5206;&#x949F; &#x5C31; &#x5230;&#xFF0E;&#x4E86;&#x3002;(H&#x11B;n j&#xEC;n&#xFF0C;c&#xF3;ng zh&#xE8;r zu&#xF2; ch&#x16B;z&#x16B;ch&#x113;&#xFF0C;li&#xF9;-q&#x12B; f&#x113;nzh&#x14D;ng ji&#xF9; d&#xE0;o le)</choice>
+      <choice>&#x5979; &#x4E09; &#x5E74; &#x7684; &#x65F6;&#x95F4;&#xFF0C;&#x91CC;&#xFF0C;&#x5199;&#x4E86;4 &#x672C;&#xFF0E;&#x4E66; &#x3002;(T&#x101; s&#x101;n ni&#xE1;n de sh&#xED;ji&#x101;n l&#x1D0; xi&#x11B;le sh&#x16B;)</choice>
+      <choice>&#x4ED6; &#x5728;  &#x54EA;&#x513F; &#x5462; &#xFF1F;&#x4F60; &#x770B;&#x89C1;&#x4ED6; &#x4E86;&#x5417; &#xFF1F;(T&#x101; z&#xE0;i n&#x1CE;r ne&#xFF1F;N&#x1D0; k&#xE0;nji&#xE0;n t&#x101; le ma&#xFF1F;)</choice>
+      <choice>&#x5C0F; &#x5218; &#x53EB; &#x6211; &#x4E00;&#x8D77; &#x53BB;&#xFF0E;&#x8DD1;&#x6B65;&#x3002;(Xi&#x1CE;o Li&#xFA; ji&#xE0;o w&#x1D2; y&#xEC;q&#x1D0; q&#xF9; p&#x1CE;ob&#xF9;)</choice>
+      <answer>&#x4ED6; &#x5728;  &#x54EA;&#x513F; &#x5462; &#xFF1F;&#x4F60; &#x770B;&#x89C1;&#x4ED6; &#x4E86;&#x5417; &#xFF1F;(T&#x101; z&#xE0;i n&#x1CE;r ne&#xFF1F;N&#x1D0; k&#xE0;nji&#xE0;n t&#x101; le ma&#xFF1F;)</answer>
+    </question>
+    <question type="multiple" id="12">
+      <text>&#x706B;&#x8F66;&#x7AD9; &#x79BB; &#x8FD9;&#x513F; &#x8FDC; &#x5417;&#xFF1F;(Hu&#x1D2;ch&#x113;zh&#xE0;n l&#xED; zh&#xE8;r yu&#x1CE;n ma&#xFF1F;)</text>
+      <image/>
+      <choice> &#x5F88; &#x8FD1; &#xFF0C;&#x4ECE; &#x8FD9;&#x513F; &#x5750; &#x51FA;&#x79DF;&#x8F66;&#xFF0C;&#x516D;&#x4E03; &#x5206;&#x949F; &#x5C31; &#x5230;&#xFF0E;&#x4E86;&#x3002;(H&#x11B;n j&#xEC;n&#xFF0C;c&#xF3;ng zh&#xE8;r zu&#xF2; ch&#x16B;z&#x16B;ch&#x113;&#xFF0C;li&#xF9;-q&#x12B; f&#x113;nzh&#x14D;ng ji&#xF9; d&#xE0;o le)</choice>
+      <choice>&#x5979; &#x4E09; &#x5E74; &#x7684; &#x65F6;&#x95F4;&#xFF0C;&#x91CC;&#xFF0C;&#x5199;&#x4E86;4 &#x672C;&#xFF0E;&#x4E66; &#x3002;(T&#x101; s&#x101;n ni&#xE1;n de sh&#xED;ji&#x101;n l&#x1D0; xi&#x11B;le sh&#x16B;)</choice>
+      <choice>&#x4ED6; &#x5728;  &#x54EA;&#x513F; &#x5462; &#xFF1F;&#x4F60; &#x770B;&#x89C1;&#x4ED6; &#x4E86;&#x5417; &#xFF1F;(T&#x101; z&#xE0;i n&#x1CE;r ne&#xFF1F;N&#x1D0; k&#xE0;nji&#xE0;n t&#x101; le ma&#xFF1F;)</choice>
+      <choice>&#x5C0F; &#x5218; &#x53EB; &#x6211; &#x4E00;&#x8D77; &#x53BB;&#xFF0E;&#x8DD1;&#x6B65;&#x3002;(Xi&#x1CE;o Li&#xFA; ji&#xE0;o w&#x1D2; y&#xEC;q&#x1D0; q&#xF9; p&#x1CE;ob&#xF9;)</choice>
+      <answer>&#x5979; &#x4E09; &#x5E74; &#x7684; &#x65F6;&#x95F4;&#xFF0C;&#x91CC;&#xFF0C;&#x5199;&#x4E86;4 &#x672C;&#xFF0E;&#x4E66; &#x3002;(T&#x101; s&#x101;n ni&#xE1;n de sh&#xED;ji&#x101;n l&#x1D0; xi&#x11B;le sh&#x16B;)</answer>
+    </question>
+    <question type="multiple" id="13">
+      <text>&#x5DF2;&#x7ECF;  &#x5FEB; 8 &#x70B9;&#xFF0C;&#x4E86;&#xFF0C;&#x4F60; &#x8FD8; &#x51FA;&#x53BB; &#x505A; &#x4EC0;&#x4E48;&#xFF1F;(Y&#x1D0;j&#x12B;ng ku&#xE0;i 8 di&#x1CE;n le n&#x1D0; h&#xE1;i ch&#x16B;q&#xF9; zu&#xF2; sh&#xE9;nme&#xFF1F;)</text>
+      <image/>
+      <choice> &#x5F88; &#x8FD1; &#xFF0C;&#x4ECE; &#x8FD9;&#x513F; &#x5750; &#x51FA;&#x79DF;&#x8F66;&#xFF0C;&#x516D;&#x4E03; &#x5206;&#x949F; &#x5C31; &#x5230;&#xFF0E;&#x4E86;&#x3002;(H&#x11B;n j&#xEC;n&#xFF0C;c&#xF3;ng zh&#xE8;r zu&#xF2; ch&#x16B;z&#x16B;ch&#x113;&#xFF0C;li&#xF9;-q&#x12B; f&#x113;nzh&#x14D;ng ji&#xF9; d&#xE0;o le)</choice>
+      <choice>&#x5979; &#x4E09; &#x5E74; &#x7684; &#x65F6;&#x95F4;&#xFF0C;&#x91CC;&#xFF0C;&#x5199;&#x4E86;4 &#x672C;&#xFF0E;&#x4E66; &#x3002;(T&#x101; s&#x101;n ni&#xE1;n de sh&#xED;ji&#x101;n l&#x1D0; xi&#x11B;le sh&#x16B;)</choice>
+      <choice>&#x4ED6; &#x5728;  &#x54EA;&#x513F; &#x5462; &#xFF1F;&#x4F60; &#x770B;&#x89C1;&#x4ED6; &#x4E86;&#x5417; &#xFF1F;(T&#x101; z&#xE0;i n&#x1CE;r ne&#xFF1F;N&#x1D0; k&#xE0;nji&#xE0;n t&#x101; le ma&#xFF1F;)</choice>
+      <choice>&#x5C0F; &#x5218; &#x53EB; &#x6211; &#x4E00;&#x8D77; &#x53BB;&#xFF0E;&#x8DD1;&#x6B65;&#x3002;(Xi&#x1CE;o Li&#xFA; ji&#xE0;o w&#x1D2; y&#xEC;q&#x1D0; q&#xF9; p&#x1CE;ob&#xF9;)</choice>
+      <answer>&#x5C0F; &#x5218; &#x53EB; &#x6211; &#x4E00;&#x8D77; &#x53BB;&#xFF0E;&#x8DD1;&#x6B65;&#x3002;(Xi&#x1CE;o Li&#xFA; ji&#xE0;o w&#x1D2; y&#xEC;q&#x1D0; q&#xF9; p&#x1CE;ob&#xF9;)</answer>
+    </question>
+    <question type="multiple" id="14">
+      <text>&#x5C0F;&#x72D7; &#x600E;&#x4E48; &#x4E86;&#xFF1F;&#x4E3A; &#x4EC0;&#x4E48; &#x4E0D; &#x5403; &#x4E1C;&#x897F;&#xFF1F;(Xi&#x1CE;og&#x1D2;u z&#x11B;nme le&#xFF1F;W&#xE8;i sh&#xE9;nme b&#xF9; ch&#x12B; d&#x14D;ngxi&#xFF1F;)</text>
+      <image/>
+      <choice>&#x5B83; &#x4E0D; &#x8BA4;&#x8BC6;&#xFF0E;&#x4F60;&#x3002;(T&#x101; b&#xFA; r&#xE8;nshi n&#x1D0;)</choice>
+      <choice>&#x4ED6; &#x5728;  &#x54EA;&#x513F; &#x5462; &#xFF1F;&#x4F60; &#x770B;&#x89C1;&#x4ED6; &#x4E86;&#x5417; &#xFF1F;(T&#x101; z&#xE0;i n&#x1CE;r ne&#xFF1F;N&#x1D0; k&#xE0;nji&#xE0;n t&#x101; le ma&#xFF1F;)</choice>
+      <choice>&#x4F60; &#x6BD4; &#x4ED6; &#x5927; &#x4E00;&#xFF0E;&#x5C81;&#x3002;(N&#x1D0; b&#x1D0; t&#x101; d&#xE0; y&#xED; su&#xEC;)</choice>
+      <choice>&#x5C0F; &#x5218; &#x53EB; &#x6211; &#x4E00;&#x8D77; &#x53BB;&#xFF0E;&#x8DD1;&#x6B65;&#x3002;(Xi&#x1CE;o Li&#xFA; ji&#xE0;o w&#x1D2; y&#xEC;q&#x1D0; q&#xF9; p&#x1CE;ob&#xF9;)</choice>
+      <answer>&#x5B83; &#x4E0D; &#x8BA4;&#x8BC6;&#xFF0E;&#x4F60;&#x3002;(T&#x101; b&#xFA; r&#xE8;nshi n&#x1D0;)</answer>
+    </question>
+    <question type="multiple" id="15">
+      <text>&#x4F46;&#x662F;&#xFF0C;&#x4F60;&#xFF0C;&#x77E5;&#x9053;&#xFF0C; &#x4F60; &#x6CA1;&#x6709; &#x4ED6;&#xFF0E;&#x9AD8;&#x3002;(D&#xE0;nsh&#xEC;, n&#x1D0; zh&#x12B;d&#xE0;o n&#x1D0; m&#xE9;iy&#x1D2;u t&#x101; g&#x101;o)</text>
+      <image/>
+      <choice>&#x5B83; &#x4E0D; &#x8BA4;&#x8BC6;&#xFF0E;&#x4F60;&#x3002;(T&#x101; b&#xFA; r&#xE8;nshi n&#x1D0;)</choice>
+      <choice>&#x4ED6; &#x5728;  &#x54EA;&#x513F; &#x5462; &#xFF1F;&#x4F60; &#x770B;&#x89C1;&#x4ED6; &#x4E86;&#x5417; &#xFF1F;(T&#x101; z&#xE0;i n&#x1CE;r ne&#xFF1F;N&#x1D0; k&#xE0;nji&#xE0;n t&#x101; le ma&#xFF1F;)</choice>
+      <choice>&#x4F60; &#x6BD4; &#x4ED6; &#x5927; &#x4E00;&#xFF0E;&#x5C81;&#x3002;(N&#x1D0; b&#x1D0; t&#x101; d&#xE0; y&#xED; su&#xEC;)</choice>
+      <choice>&#x5C0F; &#x5218; &#x53EB; &#x6211; &#x4E00;&#x8D77; &#x53BB;&#xFF0E;&#x8DD1;&#x6B65;&#x3002;(Xi&#x1CE;o Li&#xFA; ji&#xE0;o w&#x1D2; y&#xEC;q&#x1D0; q&#xF9; p&#x1CE;ob&#xF9;)</choice>
+      <answer>&#x4F60; &#x6BD4; &#x4ED6; &#x5927; &#x4E00;&#xFF0E;&#x5C81;&#x3002;(N&#x1D0; b&#x1D0; t&#x101; d&#xE0; y&#xED; su&#xEC;)</answer>
+    </question>
+    <question type="multiple" id="16">
+      <text> &#x5927;&#x5BB6; &#x597D;&#xFF01;&#x6211; &#x59D3; &#x738B;&#xFF0C;&#x662F; &#x65B0; &#x6765; &#x7684; &#x6C49;&#x8BED;&#xFF0E;&#x8001;&#x5E08;&#x3002;(D&#xE0;ji&#x101; h&#x1CE;o!W&#x1D2; x&#xEC;ng W&#xE1;ng&#xFF0C;sh&#xEC; x&#x12B;n l&#xE1;i de H&#xE0;ny&#x1D4; l&#x1CE;osh&#x12B;)</text>
+      <image/>
+      <choice>&#x4ED6; &#x662F; &#x6211; &#x5F1F;&#x5F1F; &#x7684; &#x4E2D;&#x5B66;&#xFF0E;&#x540C;&#x5B66;&#x3002;(T&#x101; sh&#xEC; w&#x1D2; d&#xEC;di de zh&#x14D;ngxu&#xE9; t&#xF3;ngxu&#xE9;)</choice>
+      <choice>&#x8C22;&#x8C22; &#x60A8; &#x7ED9; &#x6211;&#x4EEC; &#x7684; &#x5E2E;&#x52A9;&#xFF01;(Xi&#xE8;xie n&#xED;n g&#x11B;i w&#x1D2;men de b&#x101;ngzh&#xF9;!)</choice>
+      <choice>&#x4ED6; &#x73B0;&#x5728; &#x6BCF; &#x5929; &#x5DE5;&#x4F5C; 10 &#x4E2A; &#xFF0C;&#x5C0F;&#x65F6;&#xFF0C;&#x661F;&#x671F;&#x516D; &#x4E5F; &#x4E0D;&#xFF0E;&#x4F11;&#x606F;&#x3002;(T&#x101; xi&#xE0;nz&#xE0;i m&#x11B;i ti&#x101;n g&#x14D;ngzu&#xF2; 10 ge xi&#x1CE;osh&#xED;, x&#x12B;ngq&#x12B;li&#xF9; y&#x11B;  b&#xF9; xi&#x16B;xi) </choice>
+      <choice>&#x4F60;&#x4EEC; &#x542C; &#x61C2; &#x6211; &#x8BF4; &#x7684; &#x8BDD; &#x4E86; &#x5417;&#xFF1F;(N&#x1D0;men t&#x12B;ng d&#x1D2;ng w&#x1D2; shu&#x14D; de hu&#xE0; le ma&#xFF1F;)</choice>
+      <answer>&#x4F60;&#x4EEC; &#x542C; &#x61C2; &#x6211; &#x8BF4; &#x7684; &#x8BDD; &#x4E86; &#x5417;&#xFF1F;(N&#x1D0;men t&#x12B;ng d&#x1D2;ng w&#x1D2; shu&#x14D; de hu&#xE0; le ma&#xFF1F;)</answer>
+    </question>
+    <question type="multiple" id="17">
+      <text>&#x8FD9;&#x4E2A; &#x6708; &#x771F; &#x7684; &#x975E;&#x5E38; &#x5FD9;&#x3002;(Zh&#xE8;ge yu&#xE8; zh&#x113;n de f&#x113;ich&#xE1;ng m&#xE1;ng&#xFF0E;)</text>
+      <image/>
+      <choice>&#x4ED6; &#x662F; &#x6211; &#x5F1F;&#x5F1F; &#x7684; &#x4E2D;&#x5B66;&#xFF0E;&#x540C;&#x5B66;&#x3002;(T&#x101; sh&#xEC; w&#x1D2; d&#xEC;di de zh&#x14D;ngxu&#xE9; t&#xF3;ngxu&#xE9;)</choice>
+      <choice>&#x8C22;&#x8C22; &#x60A8; &#x7ED9; &#x6211;&#x4EEC; &#x7684; &#x5E2E;&#x52A9;&#xFF01;(Xi&#xE8;xie n&#xED;n g&#x11B;i w&#x1D2;men de b&#x101;ngzh&#xF9;!)</choice>
+      <choice>&#x4ED6; &#x73B0;&#x5728; &#x6BCF; &#x5929; &#x5DE5;&#x4F5C; 10 &#x4E2A; &#xFF0C;&#x5C0F;&#x65F6;&#xFF0C;&#x661F;&#x671F;&#x516D; &#x4E5F; &#x4E0D;&#xFF0E;&#x4F11;&#x606F;&#x3002;(T&#x101; xi&#xE0;nz&#xE0;i m&#x11B;i ti&#x101;n g&#x14D;ngzu&#xF2; 10 ge xi&#x1CE;osh&#xED;, x&#x12B;ngq&#x12B;li&#xF9; y&#x11B;  b&#xF9; xi&#x16B;xi) </choice>
+      <choice>&#x4F60;&#x4EEC; &#x542C; &#x61C2; &#x6211; &#x8BF4; &#x7684; &#x8BDD; &#x4E86; &#x5417;&#xFF1F;(N&#x1D0;men t&#x12B;ng d&#x1D2;ng w&#x1D2; shu&#x14D; de hu&#xE0; le ma&#xFF1F;)</choice>
+      <answer>&#x4ED6; &#x73B0;&#x5728; &#x6BCF; &#x5929; &#x5DE5;&#x4F5C; 10 &#x4E2A; &#xFF0C;&#x5C0F;&#x65F6;&#xFF0C;&#x661F;&#x671F;&#x516D; &#x4E5F; &#x4E0D;&#xFF0E;&#x4F11;&#x606F;&#x3002;(T&#x101; xi&#xE0;nz&#xE0;i m&#x11B;i ti&#x101;n g&#x14D;ngzu&#xF2; 10 ge xi&#x1CE;osh&#xED;, x&#x12B;ngq&#x12B;li&#xF9; y&#x11B;  b&#xF9; xi&#x16B;xi) </answer>
+    </question>
+    <question type="multiple" id="18">
+      <text> &#x5F00; &#x95E8;&#xFF0C;&#x5FEB; &#x5F00; &#x95E8;&#x3002;(K&#x101;i m&#xE9;n&#xFF0C;ku&#xE0;i k&#x101;i m&#xE9;n&#xFF0E;)</text>
+      <image/>
+      <choice>&#x4ED6; &#x662F; &#x6211; &#x5F1F;&#x5F1F; &#x7684; &#x4E2D;&#x5B66;&#xFF0E;&#x540C;&#x5B66;&#x3002;(T&#x101; sh&#xEC; w&#x1D2; d&#xEC;di de zh&#x14D;ngxu&#xE9; t&#xF3;ngxu&#xE9;)</choice>
+      <choice>&#x8C22;&#x8C22; &#x60A8; &#x7ED9; &#x6211;&#x4EEC; &#x7684; &#x5E2E;&#x52A9;&#xFF01;(Xi&#xE8;xie n&#xED;n g&#x11B;i w&#x1D2;men de b&#x101;ngzh&#xF9;!)</choice>
+      <choice>&#x4ED6; &#x73B0;&#x5728; &#x6BCF; &#x5929; &#x5DE5;&#x4F5C; 10 &#x4E2A; &#xFF0C;&#x5C0F;&#x65F6;&#xFF0C;&#x661F;&#x671F;&#x516D; &#x4E5F; &#x4E0D;&#xFF0E;&#x4F11;&#x606F;&#x3002;(T&#x101; xi&#xE0;nz&#xE0;i m&#x11B;i ti&#x101;n g&#x14D;ngzu&#xF2; 10 ge xi&#x1CE;osh&#xED;, x&#x12B;ngq&#x12B;li&#xF9; y&#x11B;  b&#xF9; xi&#x16B;xi) </choice>
+      <choice>&#x7B49; &#x4E00;&#x4E0B;&#x3002;&#x4F60; &#x600E;&#x4E48; &#x56DE;&#x6765; &#x8FD9;&#x4E48; &#x665A;&#xFF1F;(D&#x11B;ng y&#xED;xi&#xE0;&#xFF0E;N&#x1D0; z&#x11B;nme hu&#xED;lai zh&#xE8;me w&#x1CE;n&#xFF1F;)</choice>
+      <answer>&#x7B49; &#x4E00;&#x4E0B;&#x3002;&#x4F60; &#x600E;&#x4E48; &#x56DE;&#x6765; &#x8FD9;&#x4E48; &#x665A;&#xFF1F;(D&#x11B;ng y&#xED;xi&#xE0;&#xFF0E;N&#x1D0; z&#x11B;nme hu&#xED;lai zh&#xE8;me w&#x1CE;n&#xFF1F;)</answer>
+    </question>
+    <question type="multiple" id="19">
+      <text>&#x5979; &#x7B11;&#x7740; &#x5BF9; &#x6211; &#x8BF4;&#xFF1A;&#x201C;&#x4E0D;&#xFF0E;&#x201D;&#x5BA2;&#x6C14; "&#x3002;(T&#x101; xi&#xE0;ozhe du&#xEC; w&#x1D2; shu&#x14D; :"b&#xFA; k&#xE8;qi")</text>
+      <image/>
+      <choice>&#x4ED6; &#x662F; &#x6211; &#x5F1F;&#x5F1F; &#x7684; &#x4E2D;&#x5B66;&#xFF0E;&#x540C;&#x5B66;&#x3002;(T&#x101; sh&#xEC; w&#x1D2; d&#xEC;di de zh&#x14D;ngxu&#xE9; t&#xF3;ngxu&#xE9;)</choice>
+      <choice>&#x8C22;&#x8C22; &#x60A8; &#x7ED9; &#x6211;&#x4EEC; &#x7684; &#x5E2E;&#x52A9;&#xFF01;(Xi&#xE8;xie n&#xED;n g&#x11B;i w&#x1D2;men de b&#x101;ngzh&#xF9;!)</choice>
+      <choice>&#x4ED6; &#x73B0;&#x5728; &#x6BCF; &#x5929; &#x5DE5;&#x4F5C; 10 &#x4E2A; &#xFF0C;&#x5C0F;&#x65F6;&#xFF0C;&#x661F;&#x671F;&#x516D; &#x4E5F; &#x4E0D;&#xFF0E;&#x4F11;&#x606F;&#x3002;(T&#x101; xi&#xE0;nz&#xE0;i m&#x11B;i ti&#x101;n g&#x14D;ngzu&#xF2; 10 ge xi&#x1CE;osh&#xED;, x&#x12B;ngq&#x12B;li&#xF9; y&#x11B;  b&#xF9; xi&#x16B;xi) </choice>
+      <choice>&#x7B49; &#x4E00;&#x4E0B;&#x3002;&#x4F60; &#x600E;&#x4E48; &#x56DE;&#x6765; &#x8FD9;&#x4E48; &#x665A;&#xFF1F;(D&#x11B;ng y&#xED;xi&#xE0;&#xFF0E;N&#x1D0; z&#x11B;nme hu&#xED;lai zh&#xE8;me w&#x1CE;n&#xFF1F;)</choice>
+      <answer>&#x8C22;&#x8C22; &#x60A8; &#x7ED9; &#x6211;&#x4EEC; &#x7684; &#x5E2E;&#x52A9;&#xFF01;(Xi&#xE8;xie n&#xED;n g&#x11B;i w&#x1D2;men de b&#x101;ngzh&#xF9;!)</answer>
+    </question>
+    <question type="multiple" id="20">
+      <text>&#x6211; &#x7684; &#x5929;&#xFF01;&#x4F60;&#x4EEC; &#x8BA4;&#x8BC6;&#xFF1F;&#x8FD9; &#x600E;&#x4E48; &#x53EF;&#x80FD;&#xFF1F;(W&#x1D2; de ti&#x101;n! N&#x1D0;men r&#xE8;nshi&#xFF1F;Zh&#xE8; z&#x11B;nme k&#x11B;n&#xE9;ng&#xFF1F;)</text>
+      <image/>
+      <choice>&#x4ED6; &#x662F; &#x6211; &#x5F1F;&#x5F1F; &#x7684; &#x4E2D;&#x5B66;&#xFF0E;&#x540C;&#x5B66;&#x3002;(T&#x101; sh&#xEC; w&#x1D2; d&#xEC;di de zh&#x14D;ngxu&#xE9; t&#xF3;ngxu&#xE9;)</choice>
+      <choice>&#x8C22;&#x8C22; &#x60A8; &#x7ED9; &#x6211;&#x4EEC; &#x7684; &#x5E2E;&#x52A9;&#xFF01;(Xi&#xE8;xie n&#xED;n g&#x11B;i w&#x1D2;men de b&#x101;ngzh&#xF9;!)</choice>
+      <choice>&#x4ED6; &#x73B0;&#x5728; &#x6BCF; &#x5929; &#x5DE5;&#x4F5C; 10 &#x4E2A; &#xFF0C;&#x5C0F;&#x65F6;&#xFF0C;&#x661F;&#x671F;&#x516D; &#x4E5F; &#x4E0D;&#xFF0E;&#x4F11;&#x606F;&#x3002;(T&#x101; xi&#xE0;nz&#xE0;i m&#x11B;i ti&#x101;n g&#x14D;ngzu&#xF2; 10 ge xi&#x1CE;osh&#xED;, x&#x12B;ngq&#x12B;li&#xF9; y&#x11B;  b&#xF9; xi&#x16B;xi) </choice>
+      <choice>&#x7B49; &#x4E00;&#x4E0B;&#x3002;&#x4F60; &#x600E;&#x4E48; &#x56DE;&#x6765; &#x8FD9;&#x4E48; &#x665A;&#xFF1F;(D&#x11B;ng y&#xED;xi&#xE0;&#xFF0E;N&#x1D0; z&#x11B;nme hu&#xED;lai zh&#xE8;me w&#x1CE;n&#xFF1F;)</choice>
+      <answer>&#x4ED6; &#x662F; &#x6211; &#x5F1F;&#x5F1F; &#x7684; &#x4E2D;&#x5B66;&#xFF0E;&#x540C;&#x5B66;&#x3002;(T&#x101; sh&#xEC; w&#x1D2; d&#xEC;di de zh&#x14D;ngxu&#xE9; t&#xF3;ngxu&#xE9;)</answer>
     </question>
   </mocktest>
 </mocktests>

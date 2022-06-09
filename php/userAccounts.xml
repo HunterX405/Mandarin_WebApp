@@ -6,12 +6,12 @@
       <middleName/>
       <lastName>Administrator</lastName>
     </name>
-    <profileImage>images/1.png</profileImage>
-    <password>$2y$10$QS7W5Uxe.ytfchy714ecJ.vrWSRrHsH3TX3Zeubxh2c5VvMxMl1vi</password>
-    <homeAddress>Calumpit, Bulacan</homeAddress>
+    <profileImage>images/1.jpg</profileImage>
+    <password>$2y$10$ek6gLg4ere8QIlf3j9CA4u4xxVpQG2sR/J1ChQ9w5nV8V47DqPgOO</password>
+    <homeAddress>Malolos, Bulacan</homeAddress>
     <school>Bulacan State University</school>
     <birthday>06/02/2022</birthday>
-    <gender>Male</gender>
+    <gender>Female</gender>
   </user>
   <user username="Vio" email="johnvincent.viojan.c@bulsu.edu.ph" access="admin" regDate="06/07/2022">
     <name>
@@ -29,13 +29,13 @@
   <user username="Drew" email="drewmiranda10@gmail.com" access="admin" regDate="06/08/2022">
     <name>
       <firstName>Philip</firstName>
-      <middleName/>
+      <middleName>Pingul</middleName>
       <lastName>Miranda</lastName>
     </name>
     <profileImage>images/profile_icon.avif</profileImage>
     <password>$2y$10$5SEOfyBydsY7TEtk2AKkNuHloiyk08htU0fETS5QAfgXPvGpkk.dq</password>
-    <homeAddress/>
-    <school/>
+    <homeAddress>Mojon Malolos City of Bulacan</homeAddress>
+    <school>Bulsu</school>
     <birthday>03/10/2001</birthday>
     <gender>Male</gender>
   </user>
@@ -52,19 +52,6 @@
     <birthday>12/19/2000</birthday>
     <gender>Male</gender>
   </user>
-  <user username="JCadag" email="jonkyiel@yahoo.com" access="student" regDate="06/09/2022">
-    <name>
-      <firstName>Jonkyiel</firstName>
-      <middleName>Lagriada</middleName>
-      <lastName>Cadag</lastName>
-    </name>
-    <profileImage/>
-    <password>$2y$10$Q1ZSH./aOFE053a8RAC/9OS/P26QPlWJHC5umT6fi.kmzhBMW7f8e</password>
-    <homeAddress>San Rafael Bulacan</homeAddress>
-    <school>Bulacan State University</school>
-    <birthday>03/03/2022</birthday>
-    <gender>Male</gender>
-  </user>
   <user username="Ampol" email="Ampol" access="student" regDate="06/08/2022">
     <name>
       <firstName>John Paul</firstName>
@@ -78,7 +65,85 @@
     <birthday>12/11/2001</birthday>
     <gender>Male</gender>
   </user>
-  <user username="henrick405" email="henrick405@gmail.com" access="student" regDate="06/08/2022">
+  <user username="MSantos" email="MSantos@gmail.com" access="student" regDate="06/09/2022">
+    <name>
+      <firstName>Maria</firstName>
+      <middleName/>
+      <lastName>Santos</lastName>
+    </name>
+    <profileImage>images/profile_icon.avif</profileImage>
+    <password>$2y$10$.IeAQUKsPanhB4MGxCgkLeEK5R.CN3Oi01DT/p1jnAjtA6cgQ2BPi</password>
+    <homeAddress/>
+    <school/>
+    <birthday>06/03/1993</birthday>
+    <gender>Female</gender>
+  </user>
+  <user username="CSantos" email="CSantos@gmail.com" access="student" regDate="06/09/2022">
+    <name>
+      <firstName>Christine</firstName>
+      <middleName>Cruz</middleName>
+      <lastName>Santos</lastName>
+    </name>
+    <profileImage>images/profile_icon.avif</profileImage>
+    <password>$2y$10$Q79xjG0kadj57DVJbewDp./G9qJirvs3QUQBfhXn2tgQXfpLQPHpa</password>
+    <homeAddress>Bustos, Bulacan</homeAddress>
+    <school/>
+    <birthday>03/08/2003</birthday>
+    <gender>Female</gender>
+  </user>
+  <user username="ABautista" email="ABautista@gmail.com" access="student" regDate="06/09/2022">
+    <name>
+      <firstName>Angela </firstName>
+      <middleName/>
+      <lastName>Bautista</lastName>
+    </name>
+    <profileImage>images/profile_icon.avif</profileImage>
+    <password>$2y$10$Ui7BF7ED1OX6nu8LzMFJh.DFfHZUb90c62144P3fQq1xnnHJVZ5Um</password>
+    <homeAddress>Pulilan, Bulacan</homeAddress>
+    <school/>
+    <birthday>03/04/2022</birthday>
+    <gender>Female</gender>
+  </user>
+  <user username="danbndc" email="danvictor.bondoc.r@bulsu.edu.ph" access="student" regDate="06/09/2022">
+    <name>
+      <firstName>Dan Victor</firstName>
+      <middleName>Ramos</middleName>
+      <lastName>Bondoc</lastName>
+    </name>
+    <profileImage>images/profile_icon.avif</profileImage>
+    <password>$2y$10$e5CZ65lgEjz8mC1xUtE9oekgyGTiPUp1DgsXV3.0.8nd28NWh2RAK</password>
+    <homeAddress/>
+    <school>Bulacan State University</school>
+    <birthday>01/02/2000</birthday>
+    <gender>Male</gender>
+  </user>
+  <user username="JCadag" email="JCadag" access="student" regDate="06/09/2022">
+    <name>
+      <firstName>Jonkyiel</firstName>
+      <middleName>Lagriada</middleName>
+      <lastName>Cadag</lastName>
+    </name>
+    <profileImage/>
+    <password>$2y$10$Q1ZSH./aOFE053a8RAC/9OS/P26QPlWJHC5umT6fi.kmzhBMW7f8e</password>
+    <homeAddress>San Rafael Bulacan</homeAddress>
+    <school>Bulacan State University</school>
+    <birthday>03/03/2022</birthday>
+    <gender>Male</gender>
+  </user>
+  <user username="chan" email="xtiangalvez16@gmail.com" access="student" regDate="06/09/2022">
+    <name>
+      <firstName>Christian Rey</firstName>
+      <middleName/>
+      <lastName>Galvez</lastName>
+    </name>
+    <profileImage>images/profile_icon.avif</profileImage>
+    <password>$2y$10$JGk/OeJXO9UgpbUY0ufzl.ZFV1A8l2Grx.lguagDNKTHvyi7pdShq</password>
+    <homeAddress>Caingin, Malolos, Bulacan</homeAddress>
+    <school/>
+    <birthday>01/01/2000</birthday>
+    <gender>Male</gender>
+  </user>
+  <user username="henrick405" email="henrick405" access="student" regDate="06/08/2022">
     <name>
       <firstName>John Henrick</firstName>
       <middleName/>

@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <words>
+  <word pinyin="w&#x1D2;">
+    <hanzi>&#x6211;</hanzi>
+    <definition>I, me</definition>
+    <speech>Personal Pronoun</speech>
+    <sentence>I am 20 years old.</sentence>
+  </word>
   <word pinyin="w&#x1D2;men">
     <hanzi>&#x6211;&#x4EEC;</hanzi>
     <definition>we, us</definition>
     <speech>Personal Pronoun</speech>
     <sentence>W&#x1D2;men hu&#xED;l&#xE1;ile. (We are back.)</sentence>
-  </word>
-  <word pinyin="w&#x1D2;">
-    <hanzi>a</hanzi>
-    <definition>a</definition>
-    <speech>Noun</speech>
-    <sentence>a</sentence>
   </word>
   <word pinyin="t&#x101;">
     <hanzi>&#x4ED6;</hanzi>

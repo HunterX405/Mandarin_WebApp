@@ -205,20 +205,18 @@ $(document).ready(function(){
                             $("#errorDialog p").append(response);
                             $("#errorDialog").dialog("open");
                         }else{
-                            //Update Dictionary Table
+                            //Update Users Table
                             refreshUsers("ACTIVE");
                             $("#userDialog").dialog("close");
                             $("#successDialog p").append(response);
                             $("#successDialog").dialog("open");
                             $("#usersTable").fadeIn(100);
                         }
-                        userToArchive = "";
                     }
                 });
                 $( this ).dialog( "close" );
             },
             Cancel: function() {
-                userToArchive = "";
                 $( this ).dialog( "close" );
             }
         }
@@ -249,20 +247,17 @@ $(document).ready(function(){
                             $("#errorDialog p").append(response);
                             $("#errorDialog").dialog("open");
                         }else{
-                            //Update Dictionary Table
                             refreshUsers("ARCHIVED");
                             $("#userDialog").dialog("close");
                             $("#successDialog p").append(response);
                             $("#successDialog").dialog("open");
                             $("#usersTable").fadeIn(100);
                         }
-                        userToRestore = "";
                     }
                 });
                 $( this ).dialog( "close" );
             },
             Cancel: function() {
-                userToRestore = "";
                 $( this ).dialog( "close" );
             }
         }
@@ -285,7 +280,6 @@ $(document).ready(function(){
                         table: $('input[name=userData]:checked').val(),
                     },
                     beforeSend: function (){
-                        //Hide Dictionary Table
                         $("#usersTable").fadeOut(100);
                     },
                     success: function (response) {
@@ -294,20 +288,17 @@ $(document).ready(function(){
                             $("#errorDialog p").append(response);
                             $("#errorDialog").dialog("open");
                         }else{
-                            //Update Dictionary Table
                             refreshUsers($('input[name=userData]:checked').val());
                             $("#userDialog").dialog("close");
                             $("#successDialog p").append(response);
                             $("#successDialog").dialog("open");
                             $("#usersTable").fadeIn(100);
                         }
-                        userToRestore = "";
                     }
                 });
                 $( this ).dialog( "close" );
             },
             Cancel: function() {
-                userToRestore = "";
                 $( this ).dialog( "close" );
             }
         }
@@ -1121,7 +1112,7 @@ $(document).ready(function(){
                 },
                 success: function (response) {
 
-                    if(response != "Word Edited Successfully!"){
+                    if(response.trim() != "Word Edited Successfully!"){
                         $("#dictionaryTable").fadeIn(100);
                         errorResponse(response);
                     }else{
